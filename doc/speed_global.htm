@@ -1,0 +1,176 @@
+<html>
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath:  [ ['@(@','@)@'] ] ,
+    displayMath: [ ['@[@','@]@'] ]
+  }
+});
+</script>
+<script type='text/javascript' src=
+'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=default'
+>
+</script>
+<head>
+<title>Speed Program Global Variables</title>
+<meta http-equiv='Content-Type' content='text/html' charset='utf-8'>
+<meta name="description" id="description" content="Speed Program Global Variables">
+<meta name="keywords" id="keywords" content=" speed program global variables initialization global_problem_ptr global_size global_colpack global_indirect global_optimize global_setup global_reverse global_onepass global_correct global_x global_nnz global_correct_ok ">
+<style type='text/css'>
+body { color : black }
+body { background-color : white }
+A:link { color : blue }
+A:visited { color : purple }
+A:active { color : purple }
+</style>
+<script type='text/javascript' language='JavaScript' src='_speed_global_htm.js'>
+</script>
+</head>
+<body>
+<table><tr>
+<td><a href="speed.htm" target="_top">Prev</a>
+</td><td><a href="speed_setup.htm" target="_top">Next</a>
+</td><td>
+<select onchange='choose_across0(this)'>
+<option>Index-&gt;</option>
+<option>contents</option>
+<option>reference</option>
+<option>index</option>
+<option>search</option>
+<option>external</option>
+</select>
+</td>
+<td>
+<select onchange='choose_up0(this)'>
+<option>Up-&gt;</option>
+<option>sparsity_paper</option>
+<option>speed</option>
+<option>speed_global</option>
+</select>
+</td>
+<td>
+<script type='text/javascript' language='JavaScript' src='_childtable_sparsity_paper_htm.js'></script>
+</td>
+<td>
+<script type='text/javascript' language='JavaScript' src='_childtable_speed_htm.js'></script>
+</td>
+<td>speed_global</td>
+</tr></table><br>
+@(@\newcommand{\B}[1]{ {\bf #1} }@)@<center><b><big><big>Speed Program Global Variables</big></big></b></center>
+
+<br><a href="speed_global.htm#Initialization" target="_top">Initialization</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_global.htm#Initialization.global_problem_ptr" target="_top">global_problem_ptr</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_global.htm#Initialization.global_size" target="_top">global_size</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_global.htm#Initialization.global_colpack" target="_top">global_colpack</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_global.htm#Initialization.global_indirect" target="_top">global_indirect</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_global.htm#Initialization.global_optimize" target="_top">global_optimize</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_global.htm#Initialization.global_setup" target="_top">global_setup</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_global.htm#Initialization.global_reverse" target="_top">global_reverse</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_global.htm#Initialization.global_onepass" target="_top">global_onepass</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_global.htm#Initialization.global_correct" target="_top">global_correct</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_global.htm#Initialization.global_x" target="_top">global_x</a>
+<br><a href="speed_global.htm#global_nnz" target="_top">global_nnz</a>
+<br><a href="speed_global.htm#global_correct_ok" target="_top">global_correct_ok</a>
+<br><br>
+<b><big><a name="Initialization" id="Initialization">Initialization</a></big></b>
+<br>
+The following globals are set by the speed initialization routine
+before any other subroutines are called.
+
+<br>
+<br>
+<big><a name="Initialization.global_problem_ptr" id="Initialization.global_problem_ptr">global_problem_ptr</a></big>
+<br>
+minpack2 representation of the problem:
+<pre style='display:inline'><tt>
+fun_base<font color="#990000">*</font> global_problem_ptr<font color="#990000">;</font>
+</tt></pre>
+<br>
+<big><a name="Initialization.global_size" id="Initialization.global_size">global_size</a></big>
+<br>
+size for this problem:
+<pre style='display:inline'><tt>
+<font color="#008080">size_t</font> global_size<font color="#990000">;</font>
+</tt></pre>
+<br>
+<big><a name="Initialization.global_colpack" id="Initialization.global_colpack">global_colpack</a></big>
+<br>
+use colpack coloring:
+<pre style='display:inline'><tt>
+<font color="#009900">bool</font> global_colpack<font color="#990000">;</font>
+</tt></pre>
+<br>
+<big><a name="Initialization.global_indirect" id="Initialization.global_indirect">global_indirect</a></big>
+<br>
+use indirect computation
+<pre style='display:inline'><tt>
+<font color="#009900">bool</font> global_indirect<font color="#990000">;</font>
+
+</tt></pre>
+<big><a name="Initialization.global_optimize" id="Initialization.global_optimize">global_optimize</a></big>
+<br>
+was this AD function optimized
+<pre style='display:inline'><tt>
+<font color="#009900">bool</font> global_optimize<font color="#990000">;</font>
+</tt></pre>
+<br>
+<big><a name="Initialization.global_setup" id="Initialization.global_setup">global_setup</a></big>
+<br>
+is taping of function AD operations included in timing
+<pre style='display:inline'><tt>
+<font color="#009900">bool</font> global_setup<font color="#990000">;</font>
+</tt></pre>
+<br>
+<big><a name="Initialization.global_reverse" id="Initialization.global_reverse">global_reverse</a></big>
+<br>
+are we using reverse mode (otherwise forward mode)
+<pre style='display:inline'><tt>
+<font color="#009900">bool</font> global_reverse<font color="#990000">;</font>
+</tt></pre>
+<br>
+<big><a name="Initialization.global_onepass" id="Initialization.global_onepass">global_onepass</a></big>
+<br>
+are we using one pass of the tape to compute entire Jacobian
+<pre style='display:inline'><tt>
+<font color="#009900">bool</font> global_onepass<font color="#990000">;</font>
+</tt></pre>
+<br>
+<big><a name="Initialization.global_correct" id="Initialization.global_correct">global_correct</a></big>
+<br>
+are we checking for correctness and result of check
+<pre style='display:inline'><tt>
+<font color="#009900">bool</font> global_correct<font color="#990000">;</font>
+</tt></pre>
+<br>
+<big><a name="Initialization.global_x" id="Initialization.global_x">global_x</a></big>
+<br>
+argument value at which we are evaluation function and Jacobian
+<pre style='display:inline'><tt>
+<font color="#008080">d_vector</font> global_x<font color="#990000">;</font>
+</tt></pre>
+<br>
+<b><big><a name="global_nnz" id="global_nnz">global_nnz</a></big></b>
+<br>
+This value, set at the end of every test, is the number of non-zeros
+int the sparsity pattern detected by the method:
+<pre style='display:inline'><tt>
+<font color="#008080">size_t</font> global_nnz<font color="#990000">;</font>
+</tt></pre>
+<br>
+<b><big><a name="global_correct_ok" id="global_correct_ok">global_correct_ok</a></big></b>
+<br>
+If 
+<code><i><font color="black"><span style='white-space: nowrap'>global_correct</span></font></i></code>
+ is true this value is set at the end of every test
+and is true (fails) if the correctness test passes (fails):
+If 
+<code><i><font color="black"><span style='white-space: nowrap'>global_correct</span></font></i></code>
+ is fails, this value is never set or used.
+<pre style='display:inline'><tt>
+<font color="#009900">bool</font> global_correct_ok<font color="#990000">;</font>
+</tt></pre>
+
+<hr>Input File: src/speed/speed.cpp
+
+</body>
+</html>

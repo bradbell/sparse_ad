@@ -1,0 +1,116 @@
+<html>
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath:  [ ['@(@','@)@'] ] ,
+    displayMath: [ ['@[@','@]@'] ]
+  }
+});
+</script>
+<script type='text/javascript' src=
+'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=default'
+>
+</script>
+<head>
+<title>Print A CppAD Sparsity Pattern or Sparse Matrix</title>
+<meta http-equiv='Content-Type' content='text/html' charset='utf-8'>
+<meta name="description" id="description" content="Print A CppAD Sparsity Pattern or Sparse Matrix">
+<meta name="keywords" id="keywords" content=" print cppad sparsity pattern sparse matrix syntax prototype name ">
+<style type='text/css'>
+body { color : black }
+body { background-color : white }
+A:link { color : blue }
+A:visited { color : purple }
+A:active { color : purple }
+</style>
+<script type='text/javascript' language='JavaScript' src='_prt_sparse_htm.js'>
+</script>
+</head>
+<body>
+<table><tr>
+<td><a href="adolc2sparse_rcv.htm" target="_top">Prev</a>
+</td><td><a href="upper_triangle.htm" target="_top">Next</a>
+</td><td>
+<select onchange='choose_across0(this)'>
+<option>Index-&gt;</option>
+<option>contents</option>
+<option>reference</option>
+<option>index</option>
+<option>search</option>
+<option>external</option>
+</select>
+</td>
+<td>
+<select onchange='choose_up0(this)'>
+<option>Up-&gt;</option>
+<option>sparsity_paper</option>
+<option>utility</option>
+<option>prt_sparse</option>
+</select>
+</td>
+<td>
+<script type='text/javascript' language='JavaScript' src='_childtable_sparsity_paper_htm.js'></script>
+</td>
+<td>
+<script type='text/javascript' language='JavaScript' src='_childtable_utility_htm.js'></script>
+</td>
+<td>prt_sparse</td>
+</tr></table><br>
+@(@\newcommand{\B}[1]{ {\bf #1} }@)@
+
+
+<center><b><big><big>Print A CppAD Sparsity Pattern or Sparse Matrix</big></big></b></center>
+
+<br><a href="prt_sparse.htm#Syntax" target="_top">Syntax</a>
+<br><a href="prt_sparse.htm#Prototype" target="_top">Prototype</a>
+<br><a href="prt_sparse.htm#name" target="_top">name</a>
+<br><a href="prt_sparse.htm#pattern" target="_top">pattern</a>
+<br><a href="prt_sparse.htm#matrix" target="_top">matrix</a>
+<br><br>
+<b><big><a name="Syntax" id="Syntax">Syntax</a></big></b>
+
+<br>
+
+<code><font color="blue"><span style='white-space: nowrap'>prt_sparse(</span></font><i><font color="black"><span style='white-space: nowrap'>name</span></font></i><font color="blue"><span style='white-space: nowrap'>,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>pattern</span></font></i><font color="blue"><span style='white-space: nowrap'>)<br>
+</span></font></code>
+
+<code><font color="blue"><span style='white-space: nowrap'>prt_sparse(</span></font><i><font color="black"><span style='white-space: nowrap'>name</span></font></i><font color="blue"><span style='white-space: nowrap'>,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>matrix</span></font></i><font color="blue"><span style='white-space: nowrap'>)<br>
+</span></font></code>
+<br>
+<b><big><a name="Prototype" id="Prototype">Prototype</a></big></b>
+
+<pre><tt>
+<font color="#009900">void</font> <b><font color="#000000">prt_sparse</font></b><font color="#990000">(</font>
+    <b><font color="#0000FF">const</font></b> std<font color="#990000">::</font>string<font color="#990000">&amp;</font>                name    <font color="#990000">,</font>
+    <b><font color="#0000FF">const</font></b> CppAD<font color="#990000">::</font>sparse_rc<font color="#990000">&lt;</font>s_vector<font color="#990000">&gt;&amp;</font> pattern <font color="#990000">)</font></tt></pre>
+<pre style='display:inline'><tt>
+<font color="#009900">void</font> <b><font color="#000000">prt_sparse</font></b><font color="#990000">(</font>
+    <b><font color="#0000FF">const</font></b> std<font color="#990000">::</font>string<font color="#990000">&amp;</font>                           name   <font color="#990000">,</font>
+    <b><font color="#0000FF">const</font></b> CppAD<font color="#990000">::</font>sparse_rcv<font color="#990000">&lt;</font>s_vector<font color="#990000">,</font> d_vector<font color="#990000">&gt;&amp;</font> matrix <font color="#990000">)</font>
+</tt></pre>
+<b><big><a name="name" id="name">name</a></big></b>
+<br>
+Is the name for the matrix.
+
+<br>
+<br>
+<b><big><a name="pattern" id="pattern">pattern</a></big></b>
+<br>
+Is the sparsity pattern that is printed.
+In this case the row and column indices
+corresponding to possibly non-zero values are printed.
+
+<br>
+<br>
+<b><big><a name="matrix" id="matrix">matrix</a></big></b>
+<br>
+Is the sparse matrix that is printed.
+In this case the possibly non-zero values are printed
+along with the corresponding row and column indices.
+
+
+
+<hr>Input File: src/utility/prt_sparse.cpp
+
+</body>
+</html>

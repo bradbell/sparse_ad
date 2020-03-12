@@ -1,0 +1,434 @@
+<html>
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath:  [ ['@(@','@)@'] ] ,
+    displayMath: [ ['@[@','@]@'] ]
+  }
+});
+</script>
+<script type='text/javascript' src=
+'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=default'
+>
+</script>
+<head>
+<title>Base Class For Test Function Objects</title>
+<meta http-equiv='Content-Type' content='text/html' charset='utf-8'>
+<meta name="description" id="description" content="Base Class For Test Function Objects">
+<meta name="keywords" id="keywords" content=" base class test function objects syntax purpose fun_obj constructor type definitions start x_out n size_range m fun x fun_out jac ok jac_out grad grad_out hes hes_out ">
+<style type='text/css'>
+body { color : black }
+body { background-color : white }
+A:link { color : blue }
+A:visited { color : purple }
+A:active { color : purple }
+</style>
+<script type='text/javascript' language='JavaScript' src='_fun_base.hpp_htm.js'>
+</script>
+</head>
+<body>
+<table><tr>
+<td><a href="typedef.hpp.htm" target="_top">Prev</a>
+</td><td><a href="utility.htm" target="_top">Next</a>
+</td><td>
+<select onchange='choose_across0(this)'>
+<option>Index-&gt;</option>
+<option>contents</option>
+<option>reference</option>
+<option>index</option>
+<option>search</option>
+<option>external</option>
+</select>
+</td>
+<td>
+<select onchange='choose_up0(this)'>
+<option>Up-&gt;</option>
+<option>sparsity_paper</option>
+<option>fun_base.hpp</option>
+</select>
+</td>
+<td>
+<script type='text/javascript' language='JavaScript' src='_childtable_sparsity_paper_htm.js'></script>
+</td>
+<td>fun_base.hpp</td>
+</tr></table><br>
+@(@\newcommand{\B}[1]{ {\bf #1} }@)@<center><b><big><big>Base Class For Test Function Objects</big></big></b></center>
+
+<br><a href="fun_base.hpp.htm#Syntax" target="_top">Syntax</a>
+<br><a href="fun_base.hpp.htm#Purpose" target="_top">Purpose</a>
+<br><a href="fun_base.hpp.htm#fun_obj" target="_top">fun_obj</a>
+<br><a href="fun_base.hpp.htm#Constructor" target="_top">Constructor</a>
+<br><a href="fun_base.hpp.htm#Type Definitions" target="_top">Type&nbsp;Definitions</a>
+<br><a href="fun_base.hpp.htm#start" target="_top">start</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="fun_base.hpp.htm#start.x_out" target="_top">x_out</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="fun_base.hpp.htm#start.n" target="_top">n</a>
+<br><a href="fun_base.hpp.htm#size_range" target="_top">size_range</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="fun_base.hpp.htm#size_range.m" target="_top">m</a>
+<br><a href="fun_base.hpp.htm#fun" target="_top">fun</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="fun_base.hpp.htm#fun.x" target="_top">x</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="fun_base.hpp.htm#fun.fun_out" target="_top">fun_out</a>
+<br><a href="fun_base.hpp.htm#jac" target="_top">jac</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="fun_base.hpp.htm#jac.ok" target="_top">ok</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="fun_base.hpp.htm#jac.x" target="_top">x</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="fun_base.hpp.htm#jac.jac_out" target="_top">jac_out</a>
+<br><a href="fun_base.hpp.htm#grad" target="_top">grad</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="fun_base.hpp.htm#grad.ok" target="_top">ok</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="fun_base.hpp.htm#grad.x" target="_top">x</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="fun_base.hpp.htm#grad.grad_out" target="_top">grad_out</a>
+<br><a href="fun_base.hpp.htm#hes" target="_top">hes</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="fun_base.hpp.htm#hes.ok" target="_top">ok</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="fun_base.hpp.htm#hes.x" target="_top">x</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="fun_base.hpp.htm#hes.hes_out" target="_top">hes_out</a>
+<br><br>
+<b><big><a name="Syntax" id="Syntax">Syntax</a></big></b>
+
+<br>
+
+<code><font color="blue"><span style='white-space: nowrap'>#&nbsp;include&nbsp;&lt;src/fun_obj/fun_base.hpp&gt;<br>
+</span></font></code>
+
+<code><i><font color="black"><span style='white-space: nowrap'>x_out</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;=&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>fun_obj</span></font></i><font color="blue"><span style='white-space: nowrap'>.start()<br>
+</span></font></code>
+
+<code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;=&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>fun_obj</span></font></i><font color="blue"><span style='white-space: nowrap'>.size_range()<br>
+</span></font></code>
+
+<code><i><font color="black"><span style='white-space: nowrap'>fun_obj</span></font></i><font color="blue"><span style='white-space: nowrap'>.fun(</span></font><i><font color="black"><span style='white-space: nowrap'>x</span></font></i><font color="blue"><span style='white-space: nowrap'>,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>fun_out</span></font></i><font color="blue"><span style='white-space: nowrap'>)<br>
+</span></font></code>
+
+<code><i><font color="black"><span style='white-space: nowrap'>ok</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;=&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>fun_obj</span></font></i><font color="blue"><span style='white-space: nowrap'>.jac(</span></font><i><font color="black"><span style='white-space: nowrap'>x</span></font></i><font color="blue"><span style='white-space: nowrap'>,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>jac_out</span></font></i><font color="blue"><span style='white-space: nowrap'>)<br>
+</span></font></code>
+
+<code><i><font color="black"><span style='white-space: nowrap'>ok</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;=&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>fun_obj</span></font></i><font color="blue"><span style='white-space: nowrap'>.grad(</span></font><i><font color="black"><span style='white-space: nowrap'>x</span></font></i><font color="blue"><span style='white-space: nowrap'>,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>grad_out</span></font></i><font color="blue"><span style='white-space: nowrap'>)<br>
+</span></font></code>
+
+<code><i><font color="black"><span style='white-space: nowrap'>ok</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;=&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>fun_obj</span></font></i><font color="blue"><span style='white-space: nowrap'>.hes(</span></font><i><font color="black"><span style='white-space: nowrap'>x</span></font></i><font color="blue"><span style='white-space: nowrap'>,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>hes_out</span></font></i><font color="blue"><span style='white-space: nowrap'>)<br>
+</span></font></code>
+<br>
+<b><big><a name="Purpose" id="Purpose">Purpose</a></big></b>
+<br>
+Each of the test functions is a mapping
+<small>@(@
+f : \B{R}^n \rightarrow \B{R}^m
+@)@</small>.
+It is defined using a class that is derived from the base class
+<code><font color="blue">fun_base</font></code>.
+
+<br>
+<br>
+<b><big><a name="fun_obj" id="fun_obj">fun_obj</a></big></b>
+<br>
+We use the notation 
+<code><i><font color="black"><span style='white-space: nowrap'>fun_obj</span></font></i></code>
+ for a derived class object
+corresponding to the function <small>@(@
+f(x)
+@)@</small>.
+
+<br>
+<br>
+<b><big><a name="Constructor" id="Constructor">Constructor</a></big></b>
+<br>
+The constructor (and destructor) for a <code><font color="blue">fun_base</font></code> has no arguments.
+
+<br>
+<br>
+<b><big><a name="Type Definitions" id="Type Definitions">Type Definitions</a></big></b>
+<br>
+The file <a href="typedef.hpp.htm" target="_top"><span style='white-space: nowrap'>typedef.hpp</span></a>
+ is included by <code><font color="blue">fun_base.hpp</font></code>.
+
+<br>
+<br>
+<b><big><a name="start" id="start">start</a></big></b>
+<br>
+This function returns the standard starting point for point for optimizing
+the function. It has the following prototype
+<pre style='display:inline'><tt>
+    <b><font color="#0000FF">virtual</font></b> <font color="#008080">d_vector</font> <b><font color="#000000">start</font></b><font color="#990000">(</font><font color="#009900">void</font><font color="#990000">)</font> <font color="#990000">=</font> <font color="#993399">0</font> <font color="#990000">;</font>
+</tt></pre>
+<br>
+<big><a name="start.x_out" id="start.x_out">x_out</a></big>
+<br>
+This vector is the starting point.
+
+<br>
+<br>
+<big><a name="start.n" id="start.n">n</a></big>
+<br>
+The dimension of the domain space is equal to the size of 
+<code><i><font color="black"><span style='white-space: nowrap'>x_out</span></font></i></code>
+.
+
+<br>
+<br>
+<b><big><a name="size_range" id="size_range">size_range</a></big></b>
+<br>
+This function has the following prototype
+<pre style='display:inline'><tt>
+    <b><font color="#0000FF">virtual</font></b> <font color="#008080">size_t</font> <b><font color="#000000">size_range</font></b><font color="#990000">(</font><font color="#009900">void</font><font color="#990000">)</font> <font color="#990000">=</font> <font color="#993399">0</font><font color="#990000">;</font>
+</tt></pre>
+The corresponding virtual function must be defined by the derived class.
+
+<br>
+<br>
+<big><a name="size_range.m" id="size_range.m">m</a></big>
+<br>
+The return value 
+<code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i></code>
+ is the dimension of the range.
+
+<br>
+<br>
+<b><big><a name="fun" id="fun">fun</a></big></b>
+<br>
+These functions function evaluate <small>@(@
+f(x)
+@)@</small>.
+They have the following prototypes
+<pre><tt>    <b><font color="#0000FF">virtual</font></b> <font color="#009900">void</font> <b><font color="#000000">fun</font></b><font color="#990000">(</font>d_vector<font color="#990000">&amp;</font>       x<font color="#990000">,</font> d_vector<font color="#990000">&amp;</font>       fun_out<font color="#990000">)</font> <font color="#990000">=</font> <font color="#993399">0</font> <font color="#990000">;</font>
+    <b><font color="#0000FF">virtual</font></b> <font color="#009900">void</font> <b><font color="#000000">fun</font></b><font color="#990000">(</font>adolc_vector<font color="#990000">&amp;</font>   x<font color="#990000">,</font> adolc_vector<font color="#990000">&amp;</font>   fun_out<font color="#990000">)</font> <font color="#990000">=</font> <font color="#993399">0</font> <font color="#990000">;</font>
+    <b><font color="#0000FF">virtual</font></b> <font color="#009900">void</font> <b><font color="#000000">fun</font></b><font color="#990000">(</font>cppad_vector<font color="#990000">&amp;</font>   x<font color="#990000">,</font> cppad_vector<font color="#990000">&amp;</font>   fun_out<font color="#990000">)</font> <font color="#990000">=</font> <font color="#993399">0</font> <font color="#990000">;</font>
+    <b><font color="#0000FF">virtual</font></b> <font color="#009900">void</font> <b><font color="#000000">fun</font></b><font color="#990000">(</font>cppadcg_vector<font color="#990000">&amp;</font> x<font color="#990000">,</font> cppadcg_vector<font color="#990000">&amp;</font> fun_out<font color="#990000">)</font> <font color="#990000">=</font> <font color="#993399">0</font> <font color="#990000">;</font></tt></pre>
+The corresponding virtual functions must be defined by the derived class.
+
+<br>
+<br>
+<big><a name="fun.x" id="fun.x">x</a></big>
+<br>
+The argument 
+<code><i><font color="black"><span style='white-space: nowrap'>x</span></font></i></code>
+ has size 
+<code><i><font color="black"><span style='white-space: nowrap'>n</span></font></i></code>
+ and specifies
+the point at which the function is evaluated.
+It is effectively <code><font color="blue">const</font></code>, but is not prototyped as such
+in order to avoid the time to copy the vector to a temporary.
+
+<br>
+<br>
+<big><a name="fun.fun_out" id="fun.fun_out">fun_out</a></big>
+<br>
+The return value 
+<code><i><font color="black"><span style='white-space: nowrap'>fun_out</span></font></i></code>
+ has size 
+<code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i></code>
+.
+The input value of its elements does not matter.
+Upon return, it contains the value of <small>@(@
+f(x)
+@)@</small>.
+
+<br>
+<br>
+<b><big><a name="jac" id="jac">jac</a></big></b>
+<br>
+This function evaluates <small>@(@
+f'(x)
+@)@</small>
+It has the following prototype
+<pre style='display:inline'><tt>
+    <b><font color="#0000FF">virtual</font></b> <font color="#009900">bool</font> <b><font color="#000000">jac</font></b><font color="#990000">(</font>d_vector<font color="#990000">&amp;</font> x<font color="#990000">,</font> d_vector<font color="#990000">&amp;</font> jac_out<font color="#990000">)</font> <font color="#990000">=</font> <font color="#993399">0</font> <font color="#990000">;</font>
+</tt></pre>
+The corresponding virtual functions must be defined by the derived class.
+
+<br>
+<br>
+<big><a name="jac.ok" id="jac.ok">ok</a></big>
+<br>
+If 
+<code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;==&nbsp;1</span></font></code>
+, this function returns 
+<code><i><font color="black"><span style='white-space: nowrap'>ok</span></font></i></code>
+ as false
+and no other action is taken.
+Otherwise 
+<code><i><font color="black"><span style='white-space: nowrap'>ok</span></font></i></code>
+ is true.
+
+<br>
+<br>
+<big><a name="jac.x" id="jac.x">x</a></big>
+<br>
+The argument 
+<code><i><font color="black"><span style='white-space: nowrap'>x</span></font></i></code>
+ has size 
+<code><i><font color="black"><span style='white-space: nowrap'>n</span></font></i></code>
+ and specifies
+the point at which the function is evaluated.
+It is effectively <code><font color="blue">const</font></code>, but is not prototyped as such
+in order to avoid the time to copy the vector to a temporary.
+
+<br>
+<br>
+<big><a name="jac.jac_out" id="jac.jac_out">jac_out</a></big>
+<br>
+The return value 
+<code><i><font color="black"><span style='white-space: nowrap'>jac_out</span></font></i></code>
+ has size 
+<code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;*&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>n</span></font></i></code>
+.
+The input value of its elements does not matter.
+Upon return, it contains the value of <small>@(@
+f'(x)
+@)@</small>.
+To be specific,
+for 
+<code><i><font color="black"><span style='white-space: nowrap'>i</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;=&nbsp;0&nbsp;,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>...</span></font></i><font color="blue"><span style='white-space: nowrap'>,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>m</span></font></i><font color="blue"><span style='white-space: nowrap'>-1</span></font></code>
+,
+
+<code><i><font color="black"><span style='white-space: nowrap'>j</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;=&nbsp;0&nbsp;,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>...</span></font></i><font color="blue"><span style='white-space: nowrap'>,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>n</span></font></i><font color="blue"><span style='white-space: nowrap'>-1</span></font></code>
+,
+
+<code><i><font color="black"><span style='white-space: nowrap'>jac_out</span></font></i><font color="blue"><span style='white-space: nowrap'>[</span></font><i><font color="black"><span style='white-space: nowrap'>i</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;+&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>m</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;*&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>j</span></font></i><font color="blue"><span style='white-space: nowrap'>]</span></font></code>
+
+is the partial of <small>@(@
+f_i (x)
+@)@</small> with respect to <small>@(@
+x_j
+@)@</small>.
+
+<br>
+<br>
+<b><big><a name="grad" id="grad">grad</a></big></b>
+<br>
+This function evaluates <small>@(@
+f'(x)
+@)@</small>.
+It has the following prototype
+<pre style='display:inline'><tt>
+    <b><font color="#0000FF">virtual</font></b> <font color="#009900">bool</font> <b><font color="#000000">grad</font></b><font color="#990000">(</font>d_vector<font color="#990000">&amp;</font> x<font color="#990000">,</font> d_vector<font color="#990000">&amp;</font> grad_out<font color="#990000">)</font> <font color="#990000">=</font> <font color="#993399">0</font> <font color="#990000">;</font>
+</tt></pre>
+The corresponding virtual functions must be defined by the derived class.
+
+<br>
+<br>
+<big><a name="grad.ok" id="grad.ok">ok</a></big>
+<br>
+If 
+<code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;!=&nbsp;1</span></font></code>
+, this function returns 
+<code><i><font color="black"><span style='white-space: nowrap'>ok</span></font></i></code>
+ as false
+and no other action is taken.
+Otherwise 
+<code><i><font color="black"><span style='white-space: nowrap'>ok</span></font></i></code>
+ is true.
+
+<br>
+<br>
+<big><a name="grad.x" id="grad.x">x</a></big>
+<br>
+The argument 
+<code><i><font color="black"><span style='white-space: nowrap'>x</span></font></i></code>
+ has size 
+<code><i><font color="black"><span style='white-space: nowrap'>n</span></font></i></code>
+ and specifies
+the point at which the function is evaluated.
+It is effectively <code><font color="blue">const</font></code>, but is not prototyped as such
+in order to avoid the time to copy the vector to a temporary.
+
+<br>
+<br>
+<big><a name="grad.grad_out" id="grad.grad_out">grad_out</a></big>
+<br>
+The return value 
+<code><i><font color="black"><span style='white-space: nowrap'>grad_out</span></font></i></code>
+ has size 
+<code><i><font color="black"><span style='white-space: nowrap'>n</span></font></i></code>
+.
+The input value of its elements does not matter.
+Upon return, it contains the value of <small>@(@
+f'(x)
+@)@</small>.
+To be specific,
+for 
+<code><i><font color="black"><span style='white-space: nowrap'>j</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;=&nbsp;0&nbsp;,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>...</span></font></i><font color="blue"><span style='white-space: nowrap'>,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>n</span></font></i><font color="blue"><span style='white-space: nowrap'>-1</span></font></code>
+,
+
+<code><i><font color="black"><span style='white-space: nowrap'>grad_out</span></font></i><font color="blue"><span style='white-space: nowrap'>[</span></font><i><font color="black"><span style='white-space: nowrap'>j</span></font></i><font color="blue"><span style='white-space: nowrap'>]</span></font></code>
+
+is the partial of <small>@(@
+f(x)
+@)@</small> with respect to <small>@(@
+x_j
+@)@</small>.
+
+<br>
+<br>
+<b><big><a name="hes" id="hes">hes</a></big></b>
+<br>
+This function evaluates <small>@(@
+f^{(2)}(x)
+@)@</small>.
+It has the following prototype
+<pre style='display:inline'><tt>
+    <b><font color="#0000FF">virtual</font></b> <font color="#009900">bool</font> <b><font color="#000000">hes</font></b><font color="#990000">(</font>d_vector<font color="#990000">&amp;</font> x<font color="#990000">,</font> d_vector<font color="#990000">&amp;</font> hes_out<font color="#990000">)</font> <font color="#990000">=</font> <font color="#993399">0</font> <font color="#990000">;</font>
+</tt></pre>
+The corresponding virtual functions must be defined by the derived class.
+
+<br>
+<br>
+<big><a name="hes.ok" id="hes.ok">ok</a></big>
+<br>
+If 
+<code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;!=&nbsp;1</span></font></code>
+, this function returns 
+<code><i><font color="black"><span style='white-space: nowrap'>ok</span></font></i></code>
+ as false
+and no other action is taken.
+Otherwise 
+<code><i><font color="black"><span style='white-space: nowrap'>ok</span></font></i></code>
+ is true.
+
+<br>
+<br>
+<big><a name="hes.x" id="hes.x">x</a></big>
+<br>
+The argument 
+<code><i><font color="black"><span style='white-space: nowrap'>x</span></font></i></code>
+ has size 
+<code><i><font color="black"><span style='white-space: nowrap'>n</span></font></i></code>
+ and specifies
+the point at which the function is evaluated.
+It is effectively <code><font color="blue">const</font></code>, but is not prototyped as such
+in order to avoid the time to copy the vector to a temporary.
+
+<br>
+<br>
+<big><a name="hes.hes_out" id="hes.hes_out">hes_out</a></big>
+<br>
+The return value 
+<code><i><font color="black"><span style='white-space: nowrap'>hes_out</span></font></i></code>
+ has size 
+<code><i><font color="black"><span style='white-space: nowrap'>n</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;*&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>n</span></font></i></code>
+.
+The input value of its elements does not matter.
+Upon return, it contains the value of <small>@(@
+f^{(2)} (x)
+@)@</small>.
+To be specific,
+for 
+<code><i><font color="black"><span style='white-space: nowrap'>j</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;=&nbsp;0&nbsp;,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>...</span></font></i><font color="blue"><span style='white-space: nowrap'>,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>n</span></font></i><font color="blue"><span style='white-space: nowrap'>-1</span></font></code>
+,
+
+<code><i><font color="black"><span style='white-space: nowrap'>k</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;=&nbsp;0&nbsp;,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>...</span></font></i><font color="blue"><span style='white-space: nowrap'>,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>n</span></font></i><font color="blue"><span style='white-space: nowrap'>-1</span></font></code>
+,
+
+<code><i><font color="black"><span style='white-space: nowrap'>hes_out</span></font></i><font color="blue"><span style='white-space: nowrap'>[</span></font><i><font color="black"><span style='white-space: nowrap'>j</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;+&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>k</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;*&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>n</span></font></i><font color="blue"><span style='white-space: nowrap'>]</span></font></code>
+
+is the second partial of <small>@(@
+f(x)
+@)@</small> with respect to
+<small>@(@
+x_j
+@)@</small> and <small>@(@
+x_k
+@)@</small>.
+
+
+
+<hr>Input File: src/fun_obj/fun_base.hpp
+
+</body>
+</html>

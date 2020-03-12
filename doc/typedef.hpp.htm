@@ -1,0 +1,193 @@
+<html>
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath:  [ ['@(@','@)@'] ] ,
+    displayMath: [ ['@[@','@]@'] ]
+  }
+});
+</script>
+<script type='text/javascript' src=
+'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=default'
+>
+</script>
+<head>
+<title>Type Definitions</title>
+<meta http-equiv='Content-Type' content='text/html' charset='utf-8'>
+<meta name="description" id="description" content="Type Definitions">
+<meta name="keywords" id="keywords" content=" type definitions syntax scalar types ftnlen adolc_double cppad_double cg_double cppadcg_double vector d_vector c_vector s_vector b_vector adolc_vector cppad_vector cg_vector cppadcg_vector ">
+<style type='text/css'>
+body { color : black }
+body { background-color : white }
+A:link { color : blue }
+A:visited { color : purple }
+A:active { color : purple }
+</style>
+<script type='text/javascript' language='JavaScript' src='_typedef.hpp_htm.js'>
+</script>
+</head>
+<body>
+<table><tr>
+<td><a href="csv2tex.py.htm" target="_top">Prev</a>
+</td><td><a href="fun_base.hpp.htm" target="_top">Next</a>
+</td><td>
+<select onchange='choose_across0(this)'>
+<option>Index-&gt;</option>
+<option>contents</option>
+<option>reference</option>
+<option>index</option>
+<option>search</option>
+<option>external</option>
+</select>
+</td>
+<td>
+<select onchange='choose_up0(this)'>
+<option>Up-&gt;</option>
+<option>sparsity_paper</option>
+<option>typedef.hpp</option>
+</select>
+</td>
+<td>
+<script type='text/javascript' language='JavaScript' src='_childtable_sparsity_paper_htm.js'></script>
+</td>
+<td>typedef.hpp</td>
+</tr></table><br>
+@(@\newcommand{\B}[1]{ {\bf #1} }@)@
+
+
+<center><b><big><big>Type Definitions</big></big></b></center>
+
+<br><a href="typedef.hpp.htm#Syntax" target="_top">Syntax</a>
+<br><a href="typedef.hpp.htm#Scalar Types" target="_top">Scalar&nbsp;Types</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="typedef.hpp.htm#Scalar Types.ftnlen" target="_top">ftnlen</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="typedef.hpp.htm#Scalar Types.adolc_double" target="_top">adolc_double</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="typedef.hpp.htm#Scalar Types.cppad_double" target="_top">cppad_double</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="typedef.hpp.htm#Scalar Types.cg_double" target="_top">cg_double</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="typedef.hpp.htm#Scalar Types.cppadcg_double" target="_top">cppadcg_double</a>
+<br><a href="typedef.hpp.htm#Vector Types" target="_top">Vector&nbsp;Types</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="typedef.hpp.htm#Vector Types.d_vector" target="_top">d_vector</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="typedef.hpp.htm#Vector Types.c_vector" target="_top">c_vector</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="typedef.hpp.htm#Vector Types.s_vector" target="_top">s_vector</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="typedef.hpp.htm#Vector Types.b_vector" target="_top">b_vector</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="typedef.hpp.htm#Vector Types.adolc_vector" target="_top">adolc_vector</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="typedef.hpp.htm#Vector Types.cppad_vector" target="_top">cppad_vector</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="typedef.hpp.htm#Vector Types.cg_vector" target="_top">cg_vector</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="typedef.hpp.htm#Vector Types.cppadcg_vector" target="_top">cppadcg_vector</a>
+<br><br>
+<b><big><a name="Syntax" id="Syntax">Syntax</a></big></b>
+
+<br>
+
+<code><font color="blue"><span style='white-space: nowrap'>#&nbsp;include&nbsp;&lt;src/typedef.hpp&gt;<br>
+</span></font></code>
+<br>
+<b><big><a name="Scalar Types" id="Scalar Types">Scalar Types</a></big></b>
+
+
+<br>
+<br>
+<big><a name="Scalar Types.ftnlen" id="Scalar Types.ftnlen">ftnlen</a></big>
+<br>
+type used by f2c for fortran integers:
+<pre style='display:inline'><tt>
+<b><font color="#0000FF">typedef</font></b> <font color="#009900">int</font>                          ftnlen<font color="#990000">;</font>
+</tt></pre>
+<br>
+<big><a name="Scalar Types.adolc_double" id="Scalar Types.adolc_double">adolc_double</a></big>
+<br>
+type used by adolc method to record operations:
+<pre style='display:inline'><tt>
+<b><font color="#0000FF">typedef</font></b> <font color="#008080">adouble</font>                      adolc_double<font color="#990000">;</font>
+</tt></pre>
+<br>
+<big><a name="Scalar Types.cppad_double" id="Scalar Types.cppad_double">cppad_double</a></big>
+<br>
+type used by cppad and subgraph methods to record operations:
+<pre style='display:inline'><tt>
+<b><font color="#0000FF">typedef</font></b> CppAD<font color="#990000">::</font><font color="#008080">AD&lt;double&gt;</font>            cppad_double<font color="#990000">;</font>
+</tt></pre>
+<br>
+<big><a name="Scalar Types.cg_double" id="Scalar Types.cg_double">cg_double</a></big>
+<br>
+type used by cppadcg methods to evaluate derivatives
+<pre style='display:inline'><tt>
+<b><font color="#0000FF">typedef</font></b> CppAD<font color="#990000">::</font>cg<font color="#990000">::</font><font color="#008080">CG&lt;double&gt;</font>        cg_double<font color="#990000">;</font>
+</tt></pre>
+<br>
+<big><a name="Scalar Types.cppadcg_double" id="Scalar Types.cppadcg_double">cppadcg_double</a></big>
+<br>
+type used by cppadcg methods to record operations:
+<pre style='display:inline'><tt>
+<b><font color="#0000FF">typedef</font></b> CppAD<font color="#990000">::</font><font color="#008080">AD&lt;cg_double&gt;</font>         cppadcg_double<font color="#990000">;</font>
+</tt></pre>
+<br>
+<b><big><a name="Vector Types" id="Vector Types">Vector Types</a></big></b>
+
+<br>
+
+<code><font color="blue"><span style='white-space: nowrap'>CppAD::vector&lt;</span></font><i><font color="black"><span style='white-space: nowrap'>T</span></font></i><font color="blue"><span style='white-space: nowrap'>&gt;</span></font></code>
+ is a vector with elements of type 
+<code><i><font color="black"><span style='white-space: nowrap'>T</span></font></i></code>
+ and
+
+<code><font color="blue"><span style='white-space: nowrap'>CppAD::vector&lt;</span></font><i><font color="black"><span style='white-space: nowrap'>T</span></font></i><font color="blue"><span style='white-space: nowrap'>&gt;::data()</span></font></code>
+ is the corresponding 
+<code><i><font color="black"><span style='white-space: nowrap'>T</span></font></i><font color="blue"><span style='white-space: nowrap'>*</span></font></code>
+
+pointer.
+
+<br>
+<br>
+<big><a name="Vector Types.d_vector" id="Vector Types.d_vector">d_vector</a></big>
+
+<pre style='display:inline'><tt>
+<b><font color="#0000FF">typedef</font></b> CppAD<font color="#990000">::</font><font color="#008080">vector&lt;double&gt;</font>          d_vector<font color="#990000">;</font>
+</tt></pre>
+<br>
+<big><a name="Vector Types.c_vector" id="Vector Types.c_vector">c_vector</a></big>
+
+<pre style='display:inline'><tt>
+<b><font color="#0000FF">typedef</font></b> CppAD<font color="#990000">::</font><font color="#008080">vector&lt;char&gt;</font>            c_vector<font color="#990000">;</font>
+</tt></pre>
+<br>
+<big><a name="Vector Types.s_vector" id="Vector Types.s_vector">s_vector</a></big>
+
+<pre style='display:inline'><tt>
+<b><font color="#0000FF">typedef</font></b> CppAD<font color="#990000">::</font><font color="#008080">vector&lt;size_t&gt;</font>          s_vector<font color="#990000">;</font>
+</tt></pre>
+<br>
+<big><a name="Vector Types.b_vector" id="Vector Types.b_vector">b_vector</a></big>
+
+<pre style='display:inline'><tt>
+<b><font color="#0000FF">typedef</font></b> CppAD<font color="#990000">::</font><font color="#008080">vector&lt;bool&gt;</font>            b_vector<font color="#990000">;</font>
+</tt></pre>
+<br>
+<big><a name="Vector Types.adolc_vector" id="Vector Types.adolc_vector">adolc_vector</a></big>
+
+<pre style='display:inline'><tt>
+<b><font color="#0000FF">typedef</font></b> CppAD<font color="#990000">::</font><font color="#008080">vector&lt;adolc_double&gt;</font>    adolc_vector<font color="#990000">;</font>
+</tt></pre>
+<br>
+<big><a name="Vector Types.cppad_vector" id="Vector Types.cppad_vector">cppad_vector</a></big>
+
+<pre style='display:inline'><tt>
+<b><font color="#0000FF">typedef</font></b> CppAD<font color="#990000">::</font><font color="#008080">vector&lt;cppad_double&gt;</font>    cppad_vector<font color="#990000">;</font>
+
+</tt></pre>
+<big><a name="Vector Types.cg_vector" id="Vector Types.cg_vector">cg_vector</a></big>
+
+<pre style='display:inline'><tt>
+<b><font color="#0000FF">typedef</font></b> CppAD<font color="#990000">::</font><font color="#008080">vector&lt;cg_double&gt;</font>       cg_vector<font color="#990000">;</font>
+
+</tt></pre>
+<big><a name="Vector Types.cppadcg_vector" id="Vector Types.cppadcg_vector">cppadcg_vector</a></big>
+
+<pre style='display:inline'><tt>
+<b><font color="#0000FF">typedef</font></b> CppAD<font color="#990000">::</font><font color="#008080">vector&lt;cppadcg_double&gt;</font>  cppadcg_vector<font color="#990000">;</font>
+
+</tt></pre>
+
+<hr>Input File: src/typedef.hpp
+
+</body>
+</html>

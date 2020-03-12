@@ -1,0 +1,175 @@
+<html>
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath:  [ ['@(@','@)@'] ] ,
+    displayMath: [ ['@[@','@]@'] ]
+  }
+});
+</script>
+<script type='text/javascript' src=
+'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=default'
+>
+</script>
+<head>
+<title>Setup a Speed Test Problem</title>
+<meta http-equiv='Content-Type' content='text/html' charset='utf-8'>
+<meta name="description" id="description" content="Setup a Speed Test Problem">
+<meta name="keywords" id="keywords" content=" setup speed test problem syntax prototype purpose method globals initialization m hessian jacobian not used ">
+<style type='text/css'>
+body { color : black }
+body { background-color : white }
+A:link { color : blue }
+A:visited { color : purple }
+A:active { color : purple }
+</style>
+<script type='text/javascript' language='JavaScript' src='_speed_setup_htm.js'>
+</script>
+</head>
+<body>
+<table><tr>
+<td><a href="speed_global.htm" target="_top">Prev</a>
+</td><td><a href="speed_test.htm" target="_top">Next</a>
+</td><td>
+<select onchange='choose_across0(this)'>
+<option>Index-&gt;</option>
+<option>contents</option>
+<option>reference</option>
+<option>index</option>
+<option>search</option>
+<option>external</option>
+</select>
+</td>
+<td>
+<select onchange='choose_up0(this)'>
+<option>Up-&gt;</option>
+<option>sparsity_paper</option>
+<option>speed</option>
+<option>speed_setup</option>
+</select>
+</td>
+<td>
+<script type='text/javascript' language='JavaScript' src='_childtable_sparsity_paper_htm.js'></script>
+</td>
+<td>
+<script type='text/javascript' language='JavaScript' src='_childtable_speed_htm.js'></script>
+</td>
+<td>speed_setup</td>
+</tr></table><br>
+@(@\newcommand{\B}[1]{ {\bf #1} }@)@<center><b><big><big>Setup a Speed Test Problem</big></big></b></center>
+
+<br><a href="speed_setup.htm#Syntax" target="_top">Syntax</a>
+<br><a href="speed_setup.htm#Prototype" target="_top">Prototype</a>
+<br><a href="speed_setup.htm#Purpose" target="_top">Purpose</a>
+<br><a href="speed_setup.htm#method" target="_top">method</a>
+<br><a href="speed_setup.htm#Globals" target="_top">Globals</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_setup.htm#Globals.Initialization" target="_top">Initialization</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_setup.htm#Globals.m" target="_top">m</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_setup.htm#Globals.Hessian" target="_top">Hessian</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_setup.htm#Globals.Jacobian" target="_top">Jacobian</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_setup.htm#Globals.Not used" target="_top">Not&nbsp;used</a>
+<br><br>
+<b><big><a name="Syntax" id="Syntax">Syntax</a></big></b>
+
+<br>
+
+<code><font color="blue"><span style='white-space: nowrap'>setup_</span></font><i><font color="black"><span style='white-space: nowrap'>method</span></font></i><font color="blue"><span style='white-space: nowrap'>()</span></font></code>
+
+
+<br>
+<br>
+<b><big><a name="Prototype" id="Prototype">Prototype</a></big></b>
+
+<pre><tt><b><font color="#0000FF">extern</font></b> <font color="#009900">void</font> <b><font color="#000000">setup_adolc</font></b><font color="#990000">(</font><font color="#009900">void</font><font color="#990000">);</font>
+<b><font color="#0000FF">extern</font></b> <font color="#009900">void</font> <b><font color="#000000">setup_cppad</font></b><font color="#990000">(</font><font color="#009900">void</font><font color="#990000">);</font>
+<b><font color="#0000FF">extern</font></b> <font color="#009900">void</font> <b><font color="#000000">setup_subgraph</font></b><font color="#990000">(</font><font color="#009900">void</font><font color="#990000">);</font>
+<b><font color="#0000FF">extern</font></b> <font color="#009900">void</font> <b><font color="#000000">setup_cppadcg</font></b><font color="#990000">(</font><font color="#009900">void</font><font color="#990000">);</font>
+<b><font color="#0000FF">extern</font></b> <font color="#009900">void</font> <b><font color="#000000">setup_subcg</font></b><font color="#990000">(</font><font color="#009900">void</font><font color="#990000">);</font></tt></pre>
+<br>
+<b><big><a name="Purpose" id="Purpose">Purpose</a></big></b>
+<br>
+Do as much of the calculation as possible, excluding knowing
+the argument value <small>@(@
+x
+@)@</small> at which we are evaluating the Jacobian or
+Hessian of <small>@(@
+f(x)
+@)@</small>.
+
+<br>
+<br>
+<b><big><a name="method" id="method">method</a></big></b>
+<br>
+is one of the following
+<code><font color="blue">adolc</font></code>,
+<code><font color="blue">cppad</font></code>,
+<code><font color="blue">subgraph</font></code>,
+<code><font color="blue">cppadcg</font></code>,
+<code><font color="blue">subcg</font></code>.
+
+<br>
+<br>
+<b><big><a name="Globals" id="Globals">Globals</a></big></b>
+
+
+<br>
+<br>
+<big><a name="Globals.Initialization" id="Globals.Initialization">Initialization</a></big>
+<br>
+The <a href="speed_global.htm#Initialization" target="_top"><span style='white-space: nowrap'>initialization</span></a>
+ global variables
+are inputs and not changed by the setup routines.
+
+<br>
+<br>
+<big><a name="Globals.m" id="Globals.m">m</a></big>
+<br>
+We use 
+<code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i></code>
+ for the value <code><font color="blue">global_problem_ptr-&gt;size_range()</font></code>
+see <a href="speed_global.htm#Initialization.global_problem_ptr" target="_top"><span style='white-space: nowrap'>global_problem_ptr</span></a>
+.
+This is the dimension of the range space for <small>@(@
+f(x)
+@)@</small>.
+
+<br>
+<br>
+<big><a name="Globals.Hessian" id="Globals.Hessian">Hessian</a></big>
+<br>
+A problem is a Hessian test case if 
+<code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;=&nbsp;1</span></font></code>
+.
+In the case 
+<code><font color="blue"><span style='white-space: nowrap'>test_</span></font><i><font color="black"><span style='white-space: nowrap'>method</span></font></i><font color="blue"><span style='white-space: nowrap'>_hes</span></font></code>
+ will be called to determine
+the speed of evaluation of the Hessian.
+
+<br>
+<br>
+<big><a name="Globals.Jacobian" id="Globals.Jacobian">Jacobian</a></big>
+<br>
+A problem is a Jacobian test case if 
+<code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&gt;&nbsp;1</span></font></code>
+.
+In the case 
+<code><font color="blue"><span style='white-space: nowrap'>test_</span></font><i><font color="black"><span style='white-space: nowrap'>method</span></font></i><font color="blue"><span style='white-space: nowrap'>_jac</span></font></code>
+ will be called to determine
+the speed of evaluation of the Jacobian.
+
+<br>
+<br>
+<big><a name="Globals.Not used" id="Globals.Not used">Not used</a></big>
+
+<br>
+<a href="speed_global.htm#global_nnz" target="_top"><span style='white-space: nowrap'>global_nnz</span></a>
+ and
+<a href="speed_global.htm#global_correct_ok" target="_top"><span style='white-space: nowrap'>global_correct_ok</span></a>
+
+are not used by these routines.
+
+
+<hr>Input File: src/speed/setup.hpp
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<html>
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath:  [ ['@(@','@)@'] ] ,
+    displayMath: [ ['@[@','@]@'] ]
+  }
+});
+</script>
+<script type='text/javascript' src=
+'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=default'
+>
+</script>
+<head>
+<title>CppADCodeGen Dynamic Libraries</title>
+<meta http-equiv='Content-Type' content='text/html' charset='utf-8'>
+<meta name="description" id="description" content="CppADCodeGen Dynamic Libraries">
+<meta name="keywords" id="keywords" content=" cppadcodegen dynamic libraries syntax prototype fun_name other_fun cg_fun file_name swap x y ">
+<style type='text/css'>
+body { color : black }
+body { background-color : white }
+A:link { color : blue }
+A:visited { color : purple }
+A:active { color : purple }
+</style>
+<script type='text/javascript' language='JavaScript' src='_cppadcg_library_htm.js'>
+</script>
+</head>
+<body>
+<table><tr>
+<td><a href="upper_triangle.htm" target="_top">Prev</a>
+</td><td><a href="_reference.htm" target="_top">Next</a>
+</td><td>
+<select onchange='choose_across0(this)'>
+<option>Index-&gt;</option>
+<option>contents</option>
+<option>reference</option>
+<option>index</option>
+<option>search</option>
+<option>external</option>
+</select>
+</td>
+<td>
+<select onchange='choose_up0(this)'>
+<option>Up-&gt;</option>
+<option>sparsity_paper</option>
+<option>utility</option>
+<option>cppadcg_library</option>
+</select>
+</td>
+<td>
+<script type='text/javascript' language='JavaScript' src='_childtable_sparsity_paper_htm.js'></script>
+</td>
+<td>
+<script type='text/javascript' language='JavaScript' src='_childtable_utility_htm.js'></script>
+</td>
+<td>cppadcg_library</td>
+</tr></table><br>
+@(@\newcommand{\B}[1]{ {\bf #1} }@)@
+
+
+<center><b><big><big>CppADCodeGen Dynamic Libraries</big></big></b></center>
+
+<br><a href="cppadcg_library.htm#Syntax" target="_top">Syntax</a>
+<br><a href="cppadcg_library.htm#Prototype" target="_top">Prototype</a>
+<br><a href="cppadcg_library.htm#fun_name" target="_top">fun_name</a>
+<br><a href="cppadcg_library.htm#other_fun" target="_top">other_fun</a>
+<br><a href="cppadcg_library.htm#cg_fun" target="_top">cg_fun</a>
+<br><a href="cppadcg_library.htm#file_name" target="_top">file_name</a>
+<br><a href="cppadcg_library.htm#swap" target="_top">swap</a>
+<br><a href="cppadcg_library.htm#x" target="_top">x</a>
+<br><a href="cppadcg_library.htm#y" target="_top">y</a>
+<br><br>
+<b><big><a name="Syntax" id="Syntax">Syntax</a></big></b>
+
+<br>
+
+<code><font color="blue"><span style='white-space: nowrap'>cppadcg_library&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>fun_name</span></font></i><font color="blue"><span style='white-space: nowrap'>(</span></font><i><font color="black"><span style='white-space: nowrap'>cg_fun</span></font></i><font color="blue"><span style='white-space: nowrap'>,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>file_name</span></font></i><font color="blue"><span style='white-space: nowrap'>)<br>
+</span></font></code>
+
+<code><font color="blue"><span style='white-space: nowrap'>cppadcg_library&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>fun_name</span></font></i><font color="blue"><span style='white-space: nowrap'>(</span></font><i><font color="black"><span style='white-space: nowrap'>file_name</span></font></i><font color="blue"><span style='white-space: nowrap'>)<br>
+</span></font></code>
+
+<code><font color="blue"><span style='white-space: nowrap'>cppadcg_library&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>fun_name</span></font></i><font color="blue"><span style='white-space: nowrap'>()<br>
+</span></font></code>
+
+<code><i><font color="black"><span style='white-space: nowrap'>fun_name</span></font></i><font color="blue"><span style='white-space: nowrap'>.swap(</span></font><i><font color="black"><span style='white-space: nowrap'>other_fun</span></font></i><font color="blue"><span style='white-space: nowrap'>)<br>
+</span></font></code>
+
+<code><i><font color="black"><span style='white-space: nowrap'>y</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;=&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>fun_name</span></font></i><font color="blue"><span style='white-space: nowrap'>(</span></font><i><font color="black"><span style='white-space: nowrap'>x</span></font></i><font color="blue"><span style='white-space: nowrap'>)<br>
+</span></font></code>
+<br>
+<b><big><a name="Prototype" id="Prototype">Prototype</a></big></b>
+
+<pre><tt>
+cppadcg_library<font color="#990000">::</font><b><font color="#000000">cppadcg_library</font></b><font color="#990000">(</font>
+    CppAD<font color="#990000">::</font>ADFun<font color="#990000">&lt;</font>cg_double<font color="#990000">&gt;&amp;</font> cg_fun    <font color="#990000">,</font>
+    <b><font color="#0000FF">const</font></b> std<font color="#990000">::</font>string<font color="#990000">&amp;</font>       file_name <font color="#990000">)</font></tt></pre>
+<pre style='display:inline'><tt>
+cppadcg_library<font color="#990000">::</font><b><font color="#000000">cppadcg_library</font></b><font color="#990000">(</font>
+    <b><font color="#0000FF">const</font></b> std<font color="#990000">::</font>string<font color="#990000">&amp;</font>       file_name <font color="#990000">)</font>
+</tt></pre>
+<pre style='display:inline'><tt>
+cppadcg_library<font color="#990000">::</font><b><font color="#000000">cppadcg_library</font></b><font color="#990000">(</font><font color="#009900">void</font><font color="#990000">)</font>
+</tt></pre>
+<pre style='display:inline'><tt>
+<font color="#009900">void</font> cppadcg_library<font color="#990000">::</font><b><font color="#000000">swap</font></b><font color="#990000">(</font>cppadcg_library<font color="#990000">&amp;</font> other_fun<font color="#990000">)</font>
+</tt></pre>
+<pre style='display:inline'><tt>
+<font color="#008080">d_vector</font> cppadcg_library<font color="#990000">::</font><b><font color="#0000FF">operator</font></b><font color="#990000">()(</font><b><font color="#0000FF">const</font></b> d_vector<font color="#990000">&amp;</font> x<font color="#990000">)</font>
+</tt></pre>
+<b><big><a name="fun_name" id="fun_name">fun_name</a></big></b>
+<br>
+This is the name of the <code><font color="blue">cppadcg_library</font></code> object.
+
+<br>
+<br>
+<b><big><a name="other_fun" id="other_fun">other_fun</a></big></b>
+<br>
+This is the name of another <code><font color="blue">cppadcg_library</font></code> object.
+
+<br>
+<br>
+<b><big><a name="cg_fun" id="cg_fun">cg_fun</a></big></b>
+<br>
+This is a CppAD function object that corresponds to a function
+<small>@(@
+f : \B{R}^n \rightarrow \B{R}^m
+@)@</small>.
+If this arguments is present in the constructor,
+a new dynamic library is created.
+
+<br>
+<br>
+<b><big><a name="file_name" id="file_name">file_name</a></big></b>
+<br>
+This is the absolute or relative path for the
+file that contains the dynamic library.
+It does not include the files extension at the end that is used
+for dynamic libraries on this system.
+If 
+<code><i><font color="black"><span style='white-space: nowrap'>cg_fun</span></font></i></code>
+ is not present in the constructor,
+it must have been present in a previous constructor with the same
+
+<code><i><font color="black"><span style='white-space: nowrap'>file_name</span></font></i></code>
+.
+
+<br>
+<br>
+<b><big><a name="swap" id="swap">swap</a></big></b>
+<br>
+This exchanges the library in 
+<code><i><font color="black"><span style='white-space: nowrap'>fun_name</span></font></i></code>
+ with the library in
+
+<code><i><font color="black"><span style='white-space: nowrap'>other_fun</span></font></i></code>
+.
+
+<br>
+<br>
+<b><big><a name="x" id="x">x</a></big></b>
+<br>
+is a vector of size 
+<code><i><font color="black"><span style='white-space: nowrap'>n</span></font></i></code>
+ specifying the argument value
+at which the function will be evaluated.
+
+<br>
+<br>
+<b><big><a name="y" id="y">y</a></big></b>
+<br>
+This return value has size 
+<code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i></code>
+ and is the value of <small>@(@
+f(x)
+@)@</small>.
+
+
+
+<hr>Input File: src/utility/cppadcg_library.cpp
+
+</body>
+</html>

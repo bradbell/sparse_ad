@@ -1,0 +1,211 @@
+<html>
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath:  [ ['@(@','@)@'] ] ,
+    displayMath: [ ['@[@','@]@'] ]
+  }
+});
+</script>
+<script type='text/javascript' src=
+'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=default'
+>
+</script>
+<head>
+<title>Setup a Speed Test Problem</title>
+<meta http-equiv='Content-Type' content='text/html' charset='utf-8'>
+<meta name="description" id="description" content="Setup a Speed Test Problem">
+<meta name="keywords" id="keywords" content=" setup speed test problem syntax prototype jacobian hessian purpose method globals initialization m global_nnz global_correct_ok ">
+<style type='text/css'>
+body { color : black }
+body { background-color : white }
+A:link { color : blue }
+A:visited { color : purple }
+A:active { color : purple }
+</style>
+<script type='text/javascript' language='JavaScript' src='_speed_test_htm.js'>
+</script>
+</head>
+<body>
+<table><tr>
+<td><a href="speed_setup.htm" target="_top">Prev</a>
+</td><td><a href="speed_write_csv.htm" target="_top">Next</a>
+</td><td>
+<select onchange='choose_across0(this)'>
+<option>Index-&gt;</option>
+<option>contents</option>
+<option>reference</option>
+<option>index</option>
+<option>search</option>
+<option>external</option>
+</select>
+</td>
+<td>
+<select onchange='choose_up0(this)'>
+<option>Up-&gt;</option>
+<option>sparsity_paper</option>
+<option>speed</option>
+<option>speed_test</option>
+</select>
+</td>
+<td>
+<script type='text/javascript' language='JavaScript' src='_childtable_sparsity_paper_htm.js'></script>
+</td>
+<td>
+<script type='text/javascript' language='JavaScript' src='_childtable_speed_htm.js'></script>
+</td>
+<td>speed_test</td>
+</tr></table><br>
+@(@\newcommand{\B}[1]{ {\bf #1} }@)@
+
+
+<center><b><big><big>Setup a Speed Test Problem</big></big></b></center>
+
+<br><a href="speed_test.htm#Syntax" target="_top">Syntax</a>
+<br><a href="speed_test.htm#Prototype" target="_top">Prototype</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_test.htm#Prototype.Jacobian" target="_top">Jacobian</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_test.htm#Prototype.Hessian" target="_top">Hessian</a>
+<br><a href="speed_test.htm#Purpose" target="_top">Purpose</a>
+<br><a href="speed_test.htm#method" target="_top">method</a>
+<br><a href="speed_test.htm#Setup" target="_top">Setup</a>
+<br><a href="speed_test.htm#Globals" target="_top">Globals</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_test.htm#Globals.Initialization" target="_top">Initialization</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_test.htm#Globals.m" target="_top">m</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_test.htm#Globals.Jacobian" target="_top">Jacobian</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_test.htm#Globals.Hessian" target="_top">Hessian</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_test.htm#Globals.global_nnz" target="_top">global_nnz</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_test.htm#Globals.global_correct_ok" target="_top">global_correct_ok</a>
+<br><br>
+<b><big><a name="Syntax" id="Syntax">Syntax</a></big></b>
+
+<br>
+
+<code><font color="blue"><span style='white-space: nowrap'>test_</span></font><i><font color="black"><span style='white-space: nowrap'>method</span></font></i><font color="blue"><span style='white-space: nowrap'>_jac(</span></font><i><font color="black"><span style='white-space: nowrap'>repeat</span></font></i><font color="blue"><span style='white-space: nowrap'>)<br>
+</span></font></code>
+<code><font color="blue">%test_%method%_hes(%repeat%)%</font></code>
+
+<br>
+<br>
+<b><big><a name="Prototype" id="Prototype">Prototype</a></big></b>
+
+
+<br>
+<br>
+<big><a name="Prototype.Jacobian" id="Prototype.Jacobian">Jacobian</a></big>
+
+<pre><tt><b><font color="#0000FF">extern</font></b> <font color="#009900">void</font> <b><font color="#000000">test_adolc_jac</font></b><font color="#990000">(</font><font color="#008080">size_t</font> repeat<font color="#990000">);</font>
+<b><font color="#0000FF">extern</font></b> <font color="#009900">void</font> <b><font color="#000000">test_cppad_jac</font></b><font color="#990000">(</font><font color="#008080">size_t</font> repeat<font color="#990000">);</font>
+<b><font color="#0000FF">extern</font></b> <font color="#009900">void</font> <b><font color="#000000">test_subgraph_jac</font></b><font color="#990000">(</font><font color="#008080">size_t</font> repeat<font color="#990000">);</font>
+<b><font color="#0000FF">extern</font></b> <font color="#009900">void</font> <b><font color="#000000">test_cppadcg_jac</font></b><font color="#990000">(</font><font color="#008080">size_t</font> repeat<font color="#990000">);</font>
+<b><font color="#0000FF">extern</font></b> <font color="#009900">void</font> <b><font color="#000000">test_subcg_jac</font></b><font color="#990000">(</font><font color="#008080">size_t</font> repeat<font color="#990000">);</font></tt></pre>
+<br>
+<big><a name="Prototype.Hessian" id="Prototype.Hessian">Hessian</a></big>
+
+<pre><tt><b><font color="#0000FF">extern</font></b> <font color="#009900">void</font> <b><font color="#000000">test_adolc_hes</font></b><font color="#990000">(</font><font color="#008080">size_t</font> repeat<font color="#990000">);</font>
+<b><font color="#0000FF">extern</font></b> <font color="#009900">void</font> <b><font color="#000000">test_cppad_hes</font></b><font color="#990000">(</font><font color="#008080">size_t</font> repeat<font color="#990000">);</font>
+<b><font color="#0000FF">extern</font></b> <font color="#009900">void</font> <b><font color="#000000">test_subgraph_hes</font></b><font color="#990000">(</font><font color="#008080">size_t</font> repeat<font color="#990000">);</font>
+<b><font color="#0000FF">extern</font></b> <font color="#009900">void</font> <b><font color="#000000">test_cppadcg_hes</font></b><font color="#990000">(</font><font color="#008080">size_t</font> repeat<font color="#990000">);</font>
+<b><font color="#0000FF">extern</font></b> <font color="#009900">void</font> <b><font color="#000000">test_subcg_hes</font></b><font color="#990000">(</font><font color="#008080">size_t</font> repeat<font color="#990000">);</font></tt></pre>
+<br>
+<b><big><a name="Purpose" id="Purpose">Purpose</a></big></b>
+<br>
+The Jacobian (Hessian) routines calculate the Jacobian (Hessian)
+for objective corresponding to the problem specified by
+<a href="speed_global.htm#Initialization.global_problem_ptr" target="_top"><span style='white-space: nowrap'>global_problem_ptr</span></a>
+
+
+<br>
+<br>
+<b><big><a name="method" id="method">method</a></big></b>
+<br>
+is one of the following
+<code><font color="blue">adolc</font></code>,
+<code><font color="blue">cppad</font></code>,
+<code><font color="blue">subgraph</font></code>,
+<code><font color="blue">cppadcg</font></code>,
+<code><font color="blue">subcg</font></code>.
+
+<br>
+<br>
+<b><big><a name="Setup" id="Setup">Setup</a></big></b>
+<br>
+The routine 
+<code><font color="blue"><span style='white-space: nowrap'>setup_</span></font><i><font color="black"><span style='white-space: nowrap'>method</span></font></i><font color="blue"><span style='white-space: nowrap'>()</span></font></code>
+ is called before
+
+<code><font color="blue"><span style='white-space: nowrap'>test_</span></font><i><font color="black"><span style='white-space: nowrap'>method</span></font></i><font color="blue"><span style='white-space: nowrap'>_jac(</span></font><i><font color="black"><span style='white-space: nowrap'>repeat</span></font></i><font color="blue"><span style='white-space: nowrap'>)</span></font></code>
+ or
+<code><font color="blue">%test_%method%_hes(%repeat%)%</font></code>.
+
+<br>
+<br>
+<b><big><a name="Globals" id="Globals">Globals</a></big></b>
+
+
+<br>
+<br>
+<big><a name="Globals.Initialization" id="Globals.Initialization">Initialization</a></big>
+<br>
+The <a href="speed_global.htm#Initialization" target="_top"><span style='white-space: nowrap'>initialization</span></a>
+ global variables
+are inputs and not changed by the setup routines.
+In addition, the have the same values as during the call to
+
+<code><font color="blue"><span style='white-space: nowrap'>setup_</span></font><i><font color="black"><span style='white-space: nowrap'>method</span></font></i><font color="blue"><span style='white-space: nowrap'>()</span></font></code>
+.
+
+<br>
+<br>
+<big><a name="Globals.m" id="Globals.m">m</a></big>
+<br>
+We use 
+<code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i></code>
+ for the value <code><font color="blue">global_problem_ptr-&gt;size_range()</font></code>
+see <a href="speed_global.htm#Initialization.global_problem_ptr" target="_top"><span style='white-space: nowrap'>global_problem_ptr</span></a>
+.
+This is the dimension of the range space for <small>@(@
+f(x)
+@)@</small>.
+
+<br>
+<br>
+<big><a name="Globals.Jacobian" id="Globals.Jacobian">Jacobian</a></big>
+<br>
+If 
+<code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&gt;&nbsp;1</span></font></code>
+, the Jacobian test for this method is called.
+
+<br>
+<br>
+<big><a name="Globals.Hessian" id="Globals.Hessian">Hessian</a></big>
+<br>
+If 
+<code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;=&nbsp;1</span></font></code>
+, the Hessian test for this method is called.
+
+<br>
+<br>
+<big><a name="Globals.global_nnz" id="Globals.global_nnz">global_nnz</a></big>
+<br>
+The input value of this global does not matter.
+Upon return, it has been set to the number of non-zeros in the sparsity
+pattern for the sparse Jacobian or Hessian that is calculated.
+
+<br>
+<br>
+<big><a name="Globals.global_correct_ok" id="Globals.global_correct_ok">global_correct_ok</a></big>
+<br>
+The input value of this global does not matter.
+If <a href="speed_global.htm#Initialization.global_correct" target="_top"><span style='white-space: nowrap'>global_correct</span></a>
+
+is true, <code><font color="blue">global_correct_ok</font></code> has been set to true (false)
+if the result calculated by the last repetition of the test
+passes (fails) the correctness test; see <a href="check_sparse.htm" target="_top"><span style='white-space: nowrap'>check_sparse</span></a>
+.
+
+
+
+<hr>Input File: src/speed/test.hpp
+
+</body>
+</html>

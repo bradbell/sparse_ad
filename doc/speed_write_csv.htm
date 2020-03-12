@@ -1,0 +1,232 @@
+<html>
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath:  [ ['@(@','@)@'] ] ,
+    displayMath: [ ['@[@','@]@'] ]
+  }
+});
+</script>
+<script type='text/javascript' src=
+'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=default'
+>
+</script>
+<head>
+<title>Writes One Row of the Speed Csv Output File</title>
+<meta http-equiv='Content-Type' content='text/html' charset='utf-8'>
+<meta name="description" id="description" content="Writes One Row of the Speed Csv Output File">
+<meta name="keywords" id="keywords" content=" writes one row the speed csv output file syntax prototype csv_file header name value method problem options n m nnz sec ">
+<style type='text/css'>
+body { color : black }
+body { background-color : white }
+A:link { color : blue }
+A:visited { color : purple }
+A:active { color : purple }
+</style>
+<script type='text/javascript' language='JavaScript' src='_speed_write_csv_htm.js'>
+</script>
+</head>
+<body>
+<table><tr>
+<td><a href="speed_test.htm" target="_top">Prev</a>
+</td><td><a href="bin.htm" target="_top">Next</a>
+</td><td>
+<select onchange='choose_across0(this)'>
+<option>Index-&gt;</option>
+<option>contents</option>
+<option>reference</option>
+<option>index</option>
+<option>search</option>
+<option>external</option>
+</select>
+</td>
+<td>
+<select onchange='choose_up0(this)'>
+<option>Up-&gt;</option>
+<option>sparsity_paper</option>
+<option>speed</option>
+<option>speed_write_csv</option>
+</select>
+</td>
+<td>
+<script type='text/javascript' language='JavaScript' src='_childtable_sparsity_paper_htm.js'></script>
+</td>
+<td>
+<script type='text/javascript' language='JavaScript' src='_childtable_speed_htm.js'></script>
+</td>
+<td>speed_write_csv</td>
+</tr></table><br>
+@(@\newcommand{\B}[1]{ {\bf #1} }@)@
+
+
+<center><b><big><big>Writes One Row of the Speed Csv Output File</big></big></b></center>
+
+<br><a href="speed_write_csv.htm#Syntax" target="_top">Syntax</a>
+<br><a href="speed_write_csv.htm#Prototype" target="_top">Prototype</a>
+<br><a href="speed_write_csv.htm#csv_file" target="_top">csv_file</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed_write_csv.htm#csv_file.header" target="_top">header</a>
+<br><a href="speed_write_csv.htm#name, value" target="_top">name,&nbsp;value</a>
+<br><a href="speed_write_csv.htm#method" target="_top">method</a>
+<br><a href="speed_write_csv.htm#problem" target="_top">problem</a>
+<br><a href="speed_write_csv.htm#options" target="_top">options</a>
+<br><a href="speed_write_csv.htm#n, m, nnz" target="_top">n,&nbsp;m,&nbsp;nnz</a>
+<br><a href="speed_write_csv.htm#sec" target="_top">sec</a>
+<br><br>
+<b><big><a name="Syntax" id="Syntax">Syntax</a></big></b>
+
+<br>
+
+<code><font color="blue"><span style='white-space: nowrap'>write_csv(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>csv_file</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>name</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>value</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&nbsp;&nbsp;&nbsp;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>method</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&nbsp;&nbsp;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>problem</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&nbsp;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>colpack</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&nbsp;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>indirect</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>optimize</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>setup</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&nbsp;&nbsp;&nbsp;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>reverse</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&nbsp;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>onepass</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&nbsp;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>correct</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&nbsp;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>n</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>m</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>nnz</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>sec</span></font></i><font color="blue"><span style='white-space: nowrap'><br>
+)</span></font></code>
+
+
+<br>
+<br>
+<b><big><a name="Prototype" id="Prototype">Prototype</a></big></b>
+
+<pre><tt>
+<font color="#009900">void</font> <b><font color="#000000">write_csv</font></b><font color="#990000">(</font>
+    <b><font color="#0000FF">const</font></b> std<font color="#990000">::</font>string<font color="#990000">&amp;</font>                csv_file   <font color="#990000">,</font>
+    <b><font color="#0000FF">const</font></b> CppAD<font color="#990000">::</font>vector<font color="#990000">&lt;</font>std<font color="#990000">::</font>string<font color="#990000">&gt;&amp;</font> name       <font color="#990000">,</font>
+    <b><font color="#0000FF">const</font></b> CppAD<font color="#990000">::</font>vector<font color="#990000">&lt;</font>std<font color="#990000">::</font>string<font color="#990000">&gt;&amp;</font> value      <font color="#990000">,</font>
+    <b><font color="#0000FF">const</font></b> std<font color="#990000">::</font>string<font color="#990000">&amp;</font>                method     <font color="#990000">,</font>
+    <b><font color="#0000FF">const</font></b> std<font color="#990000">::</font>string<font color="#990000">&amp;</font>                problem    <font color="#990000">,</font>
+    <font color="#009900">bool</font>                              colpack    <font color="#990000">,</font>
+    <font color="#009900">bool</font>                              indirect   <font color="#990000">,</font>
+    <font color="#009900">bool</font>                              optimize   <font color="#990000">,</font>
+    <font color="#009900">bool</font>                              setup      <font color="#990000">,</font>
+    <font color="#009900">bool</font>                              reverse    <font color="#990000">,</font>
+    <font color="#009900">bool</font>                              onepass    <font color="#990000">,</font>
+    <font color="#009900">bool</font>                              correct    <font color="#990000">,</font>
+    <font color="#008080">size_t</font>                            n          <font color="#990000">,</font>
+    <font color="#008080">size_t</font>                            m          <font color="#990000">,</font>
+    <font color="#008080">size_t</font>                            nnz        <font color="#990000">,</font>
+    <font color="#009900">double</font>                            sec        <font color="#990000">)</font></tt></pre>
+<br>
+<b><big><a name="csv_file" id="csv_file">csv_file</a></big></b>
+<br>
+is the name of the csv file.
+If the file does not exist the header is written to the file.
+Otherwise, the header is checked to make sure it is as expected.
+The data corresponding to this call is written as one row at the
+end of the file.
+
+<br>
+<br>
+<big><a name="csv_file.header" id="csv_file.header">header</a></big>
+<br>
+The header for the csv file is its first row.
+The header row begins with
+
+<code><font color="blue"><span style='white-space: nowrap'><br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>first_name</span></font></i><font color="blue"><span style='white-space: nowrap'>,</span></font><i><font color="black"><span style='white-space: nowrap'>...</span></font></i><font color="blue"><span style='white-space: nowrap'>,</span></font><i><font color="black"><span style='white-space: nowrap'>last_name</span></font></i><font color="blue"><span style='white-space: nowrap'>,method,problem,<br>
+</span></font></code>
+where 
+<code><i><font color="black"><span style='white-space: nowrap'>first_name</span></font></i></code>
+ is the first component of 
+<code><i><font color="black"><span style='white-space: nowrap'>name</span></font></i></code>
+,
+and 
+<code><i><font color="black"><span style='white-space: nowrap'>last_name</span></font></i></code>
+ is the last component of 
+<code><i><font color="black"><span style='white-space: nowrap'>name</span></font></i></code>
+.
+The header row ends with
+
+<code><font color="blue"><span style='white-space: nowrap'><br>
+&nbsp;&nbsp;&nbsp;&nbsp;colpack,indirect,optimize,setup,reverse,onepass,correct,n,m,nnz,sec<br>
+</span></font></code>
+There are no spaces in the header row.
+
+<br>
+<br>
+<b><big><a name="name, value" id="name, value">name, value</a></big></b>
+<br>
+The vectors 
+<code><i><font color="black"><span style='white-space: nowrap'>name</span></font></i></code>
+ and 
+<code><i><font color="black"><span style='white-space: nowrap'>value</span></font></i></code>
+ have the same size.
+The <code><i>i</i></code>-th element of 
+<code><i><font color="black"><span style='white-space: nowrap'>name</span></font></i></code>
+ is the header entry
+corresponding to the <code><i>i</i></code>-th element of 
+<code><i><font color="black"><span style='white-space: nowrap'>value</span></font></i></code>
+.
+
+<br>
+<br>
+<b><big><a name="method" id="method">method</a></big></b>
+<br>
+This is the value written in the method column.
+
+<br>
+<br>
+<b><big><a name="problem" id="problem">problem</a></big></b>
+<br>
+This is the value written in the problem column.
+
+<br>
+<br>
+<b><big><a name="options" id="options">options</a></big></b>
+<br>
+The option arguments are
+
+<code><i><font color="black"><span style='white-space: nowrap'>colpack</span></font></i></code>
+,
+
+<code><i><font color="black"><span style='white-space: nowrap'>indirect</span></font></i></code>
+,
+
+<code><i><font color="black"><span style='white-space: nowrap'>optimize</span></font></i></code>
+,
+
+<code><i><font color="black"><span style='white-space: nowrap'>setup</span></font></i></code>
+,
+
+<code><i><font color="black"><span style='white-space: nowrap'>reverse</span></font></i></code>
+,
+
+<code><i><font color="black"><span style='white-space: nowrap'>onepass</span></font></i></code>
+,
+
+<code><i><font color="black"><span style='white-space: nowrap'>correct</span></font></i></code>
+.
+For each option, if it is true (false)
+the string <code><font color="blue">true</font></code> (<code><font color="blue">false</font></code>) is written in the corresponding column.
+
+<br>
+<br>
+<b><big><a name="n, m, nnz" id="n, m, nnz">n, m, nnz</a></big></b>
+<br>
+These values are converted to strings and written in
+the corresponding columns.
+
+<br>
+<br>
+<b><big><a name="sec" id="sec">sec</a></big></b>
+<br>
+This value is converted to a string using fixed point notation
+and ten digits after the decimal point.
+
+
+<hr>Input File: src/speed/write_csv.cpp
+
+</body>
+</html>

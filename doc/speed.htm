@@ -1,0 +1,476 @@
+<html>
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath:  [ ['@(@','@)@'] ] ,
+    displayMath: [ ['@[@','@]@'] ]
+  }
+});
+</script>
+<script type='text/javascript' src=
+'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=default'
+>
+</script>
+<head>
+<title>Running Jacobian and Hessian Speed Tests</title>
+<meta http-equiv='Content-Type' content='text/html' charset='utf-8'>
+<meta name="description" id="description" content="Running Jacobian and Hessian Speed Tests">
+<meta name="keywords" id="keywords" content=" running jacobian hessian speed tests syntax name_k=value_k method adolc cppad subgraph cppadcg subcg problem dficfj dierfj deptfg size option_list --colpack --indirect --optimize --setup --reverse --onepass --correct csv_file name_k options n m nnz sec other output ">
+<style type='text/css'>
+body { color : black }
+body { background-color : white }
+A:link { color : blue }
+A:visited { color : purple }
+A:active { color : purple }
+</style>
+<script type='text/javascript' language='JavaScript' src='_speed_htm.js'>
+</script>
+</head>
+<body>
+<table><tr>
+<td><a href="_contents.htm" target="_top">Prev</a>
+</td><td><a href="speed_global.htm" target="_top">Next</a>
+</td><td>
+<select onchange='choose_across0(this)'>
+<option>Index-&gt;</option>
+<option>contents</option>
+<option>reference</option>
+<option>index</option>
+<option>search</option>
+<option>external</option>
+</select>
+</td>
+<td>
+<select onchange='choose_up0(this)'>
+<option>Up-&gt;</option>
+<option>sparsity_paper</option>
+<option>speed</option>
+</select>
+</td>
+<td>
+<script type='text/javascript' language='JavaScript' src='_childtable_sparsity_paper_htm.js'></script>
+</td>
+<td>
+<script type='text/javascript' language='JavaScript' src='_childtable_speed_htm.js'></script>
+</td>
+</tr></table><br>
+@(@\newcommand{\B}[1]{ {\bf #1} }@)@<center><b><big><big>Running Jacobian and Hessian Speed Tests</big></big></b></center>
+
+<br><a href="speed.htm#Syntax" target="_top">Syntax</a>
+<br><a href="speed.htm#name_k=value_k" target="_top">name_k=value_k</a>
+<br><a href="speed.htm#method" target="_top">method</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#method.adolc" target="_top">adolc</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#method.cppad" target="_top">cppad</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#method.subgraph" target="_top">subgraph</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#method.cppadcg" target="_top">cppadcg</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#method.subcg" target="_top">subcg</a>
+<br><a href="speed.htm#problem" target="_top">problem</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#problem.dficfj" target="_top">dficfj</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#problem.dierfj" target="_top">dierfj</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#problem.deptfg" target="_top">deptfg</a>
+<br><a href="speed.htm#size" target="_top">size</a>
+<br><a href="speed.htm#option_list" target="_top">option_list</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#option_list.--colpack" target="_top">--colpack</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#option_list.--indirect" target="_top">--indirect</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#option_list.--optimize" target="_top">--optimize</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#option_list.--setup" target="_top">--setup</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#option_list.--reverse" target="_top">--reverse</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#option_list.--onepass" target="_top">--onepass</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#option_list.--correct" target="_top">--correct</a>
+<br><a href="speed.htm#csv_file" target="_top">csv_file</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#csv_file.name_k" target="_top">name_k</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#csv_file.method" target="_top">method</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#csv_file.problem" target="_top">problem</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#csv_file.Options" target="_top">Options</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#csv_file.n, m" target="_top">n,&nbsp;m</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#csv_file.nnz" target="_top">nnz</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#csv_file.sec" target="_top">sec</a>
+<br><a href="speed.htm#Other Output" target="_top">Other&nbsp;Output</a>
+<br><a href="speed.htm#Contents" target="_top">Contents</a>
+<br><br>
+<b><big><a name="Syntax" id="Syntax">Syntax</a></big></b>
+
+<br>
+
+<code><font color="blue"><span style='white-space: nowrap'>speed&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>csv_file</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;\<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>[&nbsp;name_1</span></font></i><font color="blue"><span style='white-space: nowrap'>=</span></font><i><font color="black"><span style='white-space: nowrap'>value_1&nbsp;]</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>...</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>[&nbsp;name_K</span></font></i><font color="blue"><span style='white-space: nowrap'>=</span></font><i><font color="black"><span style='white-space: nowrap'>value_K&nbsp;]</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;\<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>method</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>problem</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>size</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>option_list</span></font></i></code>
+
+
+<br>
+<br>
+<b><big><a name="name_k=value_k" id="name_k=value_k">name_k=value_k</a></big></b>
+<br>
+For 
+<code><i><font color="black"><span style='white-space: nowrap'>k</span></font></i><font color="blue"><span style='white-space: nowrap'>=1,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>...</span></font></i><font color="blue"><span style='white-space: nowrap'>,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>K</span></font></i></code>
+, there is an extra column in the
+output file with heading equal to 
+<code><i><font color="black"><span style='white-space: nowrap'>name_k</span></font></i></code>
+.
+The value in this column,
+in the new row of <a href="speed.htm#csv_file" target="_top"><span style='white-space: nowrap'>csv_file</span></a>
+,
+is 
+<code><i><font color="black"><span style='white-space: nowrap'>value_k</span></font></i></code>
+.
+Neither 
+<code><i><font color="black"><span style='white-space: nowrap'>name_k</span></font></i></code>
+ nor 
+<code><i><font color="black"><span style='white-space: nowrap'>value_k</span></font></i></code>
+ can contain,
+<code><font color="blue">=</font></code>, the equals character.
+
+<br>
+<br>
+<b><big><a name="method" id="method">method</a></big></b>
+<br>
+This must be one of the following:
+
+<br>
+<br>
+<big><a name="method.adolc" id="method.adolc">adolc</a></big>
+<br>
+Use the ADOL-C <code><font color="blue">sparse_jac</font></code> method to compute Jacobians.
+
+<br>
+<br>
+<big><a name="method.cppad" id="method.cppad">cppad</a></big>
+<br>
+Use the CppAD <code><font color="blue">sparse_jac_for</font></code> or <code><font color="blue">sparse_jac_rev</font></code>
+method to computing Jacobians and Hessians.
+
+<br>
+<br>
+<big><a name="method.subgraph" id="method.subgraph">subgraph</a></big>
+<br>
+Use the CppAD <code><font color="blue">subgraph_jac_rev</font></code> method to computing Jacobians
+and Hessians.
+
+<br>
+<br>
+<big><a name="method.cppadcg" id="method.cppadcg">cppadcg</a></big>
+<br>
+Use the CppAD <code><font color="blue">sparse_jac_for</font></code> or <code><font color="blue">sparse_jac_rev</font></code> method
+together with CppADCodeGen to compute Jacobians.
+
+<br>
+<br>
+<big><a name="method.subcg" id="method.subcg">subcg</a></big>
+<br>
+Use the CppAD <code><font color="blue">subgraph_jac_rev</font></code> method together with CppADCodeGen
+to compute Jacobians and Hessians.
+
+<br>
+<br>
+<b><big><a name="problem" id="problem">problem</a></big></b>
+<br>
+This argument identifies the case that we are testing and
+is one of the following:
+
+<br>
+<br>
+<big><a name="problem.dficfj" id="problem.dficfj">dficfj</a></big>
+<br>
+This is the Minpack2 Flow in a Channel problem.
+The corresponding test computes sparse Jacobians
+for <small>@(@
+f : \B{R}^n \rightarrow \B{R}^n
+@)@</small>.
+
+<br>
+<br>
+<big><a name="problem.dierfj" id="problem.dierfj">dierfj</a></big>
+<br>
+This is the Minpack2 Incompressible Elastic Rod problem.
+The corresponding test computes sparse Jacobians
+for <small>@(@
+f : \B{R}^n \rightarrow \B{R}^n
+@)@</small>.
+
+<br>
+<br>
+<big><a name="problem.deptfg" id="problem.deptfg">deptfg</a></big>
+<br>
+This is the Minpack2 Elastic-Plastic Torsion problem.
+The corresponding test computes sparse Hessians
+for <small>@(@
+f : \B{R}^n \rightarrow \B{R}
+@)@</small>.
+
+<br>
+<br>
+<b><big><a name="size" id="size">size</a></big></b>
+<br>
+This is the size of the test problem; e.g.,
+for <code><font color="blue">dficfj</font></code> it is the number of sub-intervals.
+This corresponds to the number of variables is 
+<code><i><font color="black"><span style='white-space: nowrap'>n</span></font></i></code>
+ below:
+
+<table><tr><td align='left'  valign='top'>
+
+
+<code><i><font color="black"><span style='white-space: nowrap'>problem</span></font></i></code>
+ <code><span style='white-space: nowrap'>&nbsp;&nbsp;</span></code> </td><td align='left'  valign='top'>
+ 
+<code><i><font color="black"><span style='white-space: nowrap'>n</span></font></i></code>
+                  </td></tr><tr><td align='left'  valign='top'>
+
+<code><font color="blue">dficfj</font></code>   <code><span style='white-space: nowrap'>&nbsp;&nbsp;</span></code> </td><td align='left'  valign='top'>
+ 
+<code><font color="blue"><span style='white-space: nowrap'>8</span></font><i><font color="black"><span style='white-space: nowrap'>&nbsp;*&nbsp;</span></font></i><font color="blue"><span style='white-space: nowrap'>size</span></font></code>
+        </td></tr><tr><td align='left'  valign='top'>
+
+<code><font color="blue">dierfj</font></code>   <code><span style='white-space: nowrap'>&nbsp;&nbsp;</span></code> </td><td align='left'  valign='top'>
+ 
+<code><font color="blue"><span style='white-space: nowrap'>15</span></font><i><font color="black"><span style='white-space: nowrap'>&nbsp;*&nbsp;</span></font></i><font color="blue"><span style='white-space: nowrap'>size</span></font><i><font color="black"><span style='white-space: nowrap'>&nbsp;+&nbsp;3</span></font></i></code>
+  </td></tr><tr><td align='left'  valign='top'>
+
+<code><font color="blue">deptfg</font></code>   <code><span style='white-space: nowrap'>&nbsp;&nbsp;</span></code> </td><td align='left'  valign='top'>
+ 
+<code><i><font color="black"><span style='white-space: nowrap'>size</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;*&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>size</span></font></i></code>
+
+</td></tr>
+</table>
+<br>
+<b><big><a name="option_list" id="option_list">option_list</a></big></b>
+<br>
+This is a list of options,
+that may or may not be present, at the end of the command line.
+The possible options are as follows:
+
+<br>
+<br>
+<big><a name="option_list.--colpack" id="option_list.--colpack">--colpack</a></big>
+<br>
+This option must be present when using the <code><font color="blue">adolc</font></code> method and
+cannot be present when using the <code><font color="blue">subgraph</font></code> and <code><font color="blue">subcg</font></code> methods.
+If it is present (not present) the matrix compression is computed
+using the Colpack (CppAD) coloring algorithms.
+(The <code><font color="blue">subgraph</font></code> and <code><font color="blue">subcg</font></code> methods
+does not use a coloring algorithm.)
+
+<br>
+<br>
+<big><a name="option_list.--indirect" id="option_list.--indirect">--indirect</a></big>
+<br>
+This option can only be present when computing sparse Hessians
+using the <code><font color="blue">adolc</font></code> method.
+If it is present (not present)
+the corresponding sparse Hessian is
+computed by solving a triangular set of equations (computed directly)
+from the AD results.
+
+<br>
+<br>
+<big><a name="option_list.--optimize" id="option_list.--optimize">--optimize</a></big>
+<br>
+If this option is present (not present),
+the corresponding cppad function objects are optimized (not optimized).
+This optimization is not include in the timing results.
+This option can not be used when 
+<code><i><font color="black"><span style='white-space: nowrap'>method</span></font></i></code>
+ is <code><font color="blue">adolc</font></code>.
+
+<br>
+<br>
+<big><a name="option_list.--setup" id="option_list.--setup">--setup</a></big>
+<br>
+If this option is present (not present),
+the time to setup the AD calculation is included (not included)
+in the timing test.
+This includes recording the function,
+calculating the sparsity pattern,  compression.
+In the case of <code><font color="blue">cppadcg</font></code> and <code><font color="blue">subcg</font></code> methods
+it also includes generating and compiling the source code.
+
+<br>
+<br>
+<big><a name="option_list.--reverse" id="option_list.--reverse">--reverse</a></big>
+<br>
+If this option is present (not present),
+reverse mode is used (not used) to calculate the results.
+This option must be present when 
+<code><i><font color="black"><span style='white-space: nowrap'>method</span></font></i></code>
+ is
+<code><font color="blue">subgraph</font></code> or <code><font color="blue">subcg</font></code>.
+(so far CppAD has only implemented reverse mode sub-graphs).
+This option cannot be present when method is
+<code><font color="blue">cppad</font></code> or <code><font color="blue">cppadcg</font></code> and
+<a href="speed.htm#option_list.--onepass" target="_top"><span style='white-space: nowrap'>--onepass</span></a>
+ is present.
+It cannot be present for Hessian problems when method is <code><font color="blue">adolc</font></code>.
+
+<br>
+<br>
+<big><a name="option_list.--onepass" id="option_list.--onepass">--onepass</a></big>
+<br>
+If this option is present (not present),
+one pass of the tape (recorded function)
+is used to compute the entire sparse Jacobian.
+Otherwise only one direction is computed for each pass of the tape.
+(Multiple columns of the Jacobian still get compressed into each pass).
+This option must be present for the Jacobian cases where
+method is <code><font color="blue">adolc</font></code>.
+This option cannot be present for the following cases:
+<ol type="1"><li>
+Hessian problems.
+</li><li>
+
+when 
+<code><i><font color="black"><span style='white-space: nowrap'>method</span></font></i></code>
+ is <code><font color="blue">subgraph</font></code> or <code><font color="blue">subcg</font></code>.
+</li><li>
+
+when 
+<code><i><font color="black"><span style='white-space: nowrap'>method</span></font></i></code>
+ is <code><font color="blue">cppad</font></code> or <code><font color="blue">cppadcg</font></code>
+and <a href="speed.htm#option_list.--reverse" target="_top"><span style='white-space: nowrap'>--reverse</span></a>
+ is present.
+(so far CppAD has only implemented multiple directions for forward mode).
+</li></ol>
+
+
+<br>
+<br>
+<big><a name="option_list.--correct" id="option_list.--correct">--correct</a></big>
+<br>
+If this option is present (not present),
+a correctness check is included (not included).
+This slows down the calculations and is intended to be used
+to check that the program is functioning properly.
+
+<br>
+<br>
+<b><big><a name="csv_file" id="csv_file">csv_file</a></big></b>
+<br>
+The first line of this csv file is the header which contains the column names.
+It starts with
+
+<code><font color="blue"><span style='white-space: nowrap'><br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>name_1</span></font></i><font color="blue"><span style='white-space: nowrap'>,</span></font><i><font color="black"><span style='white-space: nowrap'>...</span></font></i><font color="blue"><span style='white-space: nowrap'>,</span></font><i><font color="black"><span style='white-space: nowrap'>name_K</span></font></i><font color="blue"><span style='white-space: nowrap'>,method,problem,<br>
+</span></font></code>
+Next the header contains the names of the options in order; i.e.,
+
+<code><font color="blue"><span style='white-space: nowrap'><br>
+&nbsp;&nbsp;&nbsp;&nbsp;colpack,</span></font><i><font color="black"><span style='white-space: nowrap'>...</span></font></i><font color="blue"><span style='white-space: nowrap'>,correct,<br>
+</span></font></code>
+At the end the header contains the column names
+
+<code><font color="blue"><span style='white-space: nowrap'><br>
+&nbsp;&nbsp;&nbsp;&nbsp;n,nnz,sec<br>
+</span></font></code>
+If the file does not exist, it is created.
+Each run of <code><font color="blue">speed</font></code> creates a new line of data
+at the end of the file in this file.
+The values placed in this line, for each column,
+is specified below:
+
+<br>
+<br>
+<big><a name="csv_file.name_k" id="csv_file.name_k">name_k</a></big>
+<br>
+For 
+<code><i><font color="black"><span style='white-space: nowrap'>k</span></font></i><font color="blue"><span style='white-space: nowrap'>=1,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>...</span></font></i><font color="blue"><span style='white-space: nowrap'>,&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>K</span></font></i></code>
+, the value 
+<code><i><font color="black"><span style='white-space: nowrap'>value_k</span></font></i></code>
+ is placed
+in column 
+<code><i><font color="black"><span style='white-space: nowrap'>name_k</span></font></i></code>
+.
+
+<br>
+<br>
+<big><a name="csv_file.method" id="csv_file.method">method</a></big>
+<br>
+The values 
+<code><i><font color="black"><span style='white-space: nowrap'>method</span></font></i></code>
+ is the corresponding
+command line arguments when <code><font color="blue">speed</font></code>.
+
+<br>
+<br>
+<big><a name="csv_file.problem" id="csv_file.problem">problem</a></big>
+<br>
+The values 
+<code><i><font color="black"><span style='white-space: nowrap'>problem</span></font></i></code>
+ is the corresponding
+command line arguments when <code><font color="blue">speed</font></code>.
+
+<br>
+<br>
+<big><a name="csv_file.Options" id="csv_file.Options">Options</a></big>
+<br>
+The option values 
+<code><i><font color="black"><span style='white-space: nowrap'>colpack</span></font></i></code>
+, ... ,
+<code><i><font color="black"><span style='white-space: nowrap'>correct</span></font></i></code>
+ are
+<code><font color="blue">true</font></code> (<code><font color="blue">false</font></code>)
+if the corresponding option is present (not present) in the
+<a href="speed.htm#option_list" target="_top"><span style='white-space: nowrap'>option_list</span></a>
+.
+
+<br>
+<br>
+<big><a name="csv_file.n, m" id="csv_file.n, m">n, m</a></big>
+<br>
+The value 
+<code><i><font color="black"><span style='white-space: nowrap'>n</span></font></i></code>
+ (
+<code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i></code>
+) is the size of the domain space
+(range space).
+
+<br>
+<br>
+<big><a name="csv_file.nnz" id="csv_file.nnz">nnz</a></big>
+<br>
+The value 
+<code><i><font color="black"><span style='white-space: nowrap'>nnz</span></font></i></code>
+ is the number of non-zeros in the sparse
+Jacobian (when 
+<code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;!=&nbsp;1</span></font></code>
+) or sparse Hessian (when 
+<code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;==&nbsp;1</span></font></code>
+).
+Note that 
+<code><i><font color="black"><span style='white-space: nowrap'>nnz</span></font></i></code>
+ for the <code><font color="blue">double</font></code> method is the
+actual number of non-zeros, while for the other methods it is number
+of possibly non-zero values.
+
+<br>
+<br>
+<big><a name="csv_file.sec" id="csv_file.sec">sec</a></big>
+<br>
+The value 
+<code><i><font color="black"><span style='white-space: nowrap'>sec</span></font></i></code>
+ is the average number of seconds for each calculation
+of the Jacobian if 
+<code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;==&nbsp;1</span></font></code>
+, or Hessian if 
+<code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&gt;&nbsp;1</span></font></code>
+.
+
+<br>
+<br>
+<b><big><a name="Other Output" id="Other Output">Other Output</a></big></b>
+<br>
+If no errors are detected, <code><font color="blue">speed: OK</font></code> is printed
+on standard output and
+program exits with status <code><font color="blue">0</font></code>.
+If an error is detected; e.g., the correctness check fails,
+an error message is printed on standard error and the program exits
+with status <code><font color="blue">1</font></code>.
+
+<br>
+<br>
+<b><big><a name="Contents" id="Contents">Contents</a></big></b>
+<br>
+<table>
+<tr><td><a href="speed_global.htm" target="_top">speed_global</a></td><td>Speed&nbsp;Program&nbsp;Global&nbsp;Variables</td></tr><tr><td><a href="speed_setup.htm" target="_top">speed_setup</a></td><td>Setup&nbsp;a&nbsp;Speed&nbsp;Test&nbsp;Problem</td></tr><tr><td><a href="speed_test.htm" target="_top">speed_test</a></td><td>Setup&nbsp;a&nbsp;Speed&nbsp;Test&nbsp;Problem</td></tr><tr><td><a href="speed_write_csv.htm" target="_top">speed_write_csv</a></td><td>Writes&nbsp;One&nbsp;Row&nbsp;of&nbsp;the&nbsp;Speed&nbsp;Csv&nbsp;Output&nbsp;File</td></tr></table>
+<hr>Input File: src/speed/speed.omh
+
+</body>
+</html>
