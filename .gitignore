@@ -1,0 +1,29 @@
+# ---------------------------------------------------------------------------
+# files and directories in the top repository directory
+#
+# temporary copy of Brad's script for making git commits.
+/git_commit.sh
+#
+# log file for building documentation
+/omhelp.doc.log
+#
+# documentation directory
+# /doc/
+#
+# build directories
+/build
+/build.debug/
+/build.release/
+#
+# new directories (used like git cache)
+/new/
+/new.*/
+# ----------------------------------------------------------------------------
+# files in any directory
+junk
+junk.*
+# ----------------------------------------------------------------------------
+# files extensitons in any directory
+#
+# vim swap files
+*.swp
