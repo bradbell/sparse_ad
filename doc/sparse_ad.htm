@@ -1,0 +1,164 @@
+<html>
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath:  [ ['@(@','@)@'] ] ,
+    displayMath: [ ['@[@','@]@'] ]
+  }
+});
+</script>
+<script type='text/javascript' src=
+'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=default'
+>
+</script>
+<head>
+<title>sparse_ad-20200311: Computing Sparse Jacobians and Hessians Using AD</title>
+<meta http-equiv='Content-Type' content='text/html' charset='utf-8'>
+<meta name="description" id="description" content="sparse_ad-20200311: Computing Sparse Jacobians and Hessians Using AD">
+<meta name="keywords" id="keywords" content=" sparse_ad-20200311: computing sparse jacobians hessians using ad github system requirements build_type special check build run speed tests ">
+<style type='text/css'>
+body { color : black }
+body { background-color : white }
+A:link { color : blue }
+A:visited { color : purple }
+A:active { color : purple }
+</style>
+<script type='text/javascript' language='JavaScript' src='_sparse_ad_htm.js'>
+</script>
+</head>
+<body>
+<table><tr>
+<td>Prev</td><td><a href="_contents.htm" target="_top">Next</a>
+</td><td>
+<select onchange='choose_across0(this)'>
+<option>Index-&gt;</option>
+<option>contents</option>
+<option>reference</option>
+<option>index</option>
+<option>search</option>
+<option>external</option>
+</select>
+</td>
+<td>
+<select onchange='choose_up0(this)'>
+<option>Up-&gt;</option>
+<option>sparse_ad</option>
+</select>
+</td>
+<td>
+<script type='text/javascript' language='JavaScript' src='_childtable_sparse_ad_htm.js'></script>
+</td>
+</tr></table><br>
+<small>@(@
+\newcommand{\B}[1]{ {\bf #1} }
+@)@</small><center><b><big><big>sparse_ad-20200311: Computing Sparse Jacobians and Hessians Using AD</big></big></b></center>
+
+<br><a href="sparse_ad.htm#github" target="_top">github</a>
+<br><a href="sparse_ad.htm#System Requirements" target="_top">System&nbsp;Requirements</a>
+<br><a href="sparse_ad.htm#build_type" target="_top">build_type</a>
+<br><a href="sparse_ad.htm#Special Requirements" target="_top">Special&nbsp;Requirements</a>
+<br><a href="sparse_ad.htm#Check Build" target="_top">Check&nbsp;Build</a>
+<br><a href="sparse_ad.htm#Run Speed Tests" target="_top">Run&nbsp;Speed&nbsp;Tests</a>
+<br><a href="sparse_ad.htm#Contents" target="_top">Contents</a>
+<br><br>
+<b><big><a name="github" id="github">github</a></big></b>
+
+<br>
+<a href="https://github.com/bradbell/sparse_ad" target="_top"><span style='white-space: nowrap'>github</span></a>
+.
+
+<br>
+<br>
+<b><big><a name="System Requirements" id="System Requirements">System Requirements</a></big></b>
+<br>
+In addition to the standard Linux utilities, like <code><font color="blue">bash</font></code>,
+you must have the following programs installed on your system:
+<code><font color="blue">clang</font></code>, <code><font color="blue">git</font></code>, <code><font color="blue">f2c</font></code>, <code><font color="blue">python3</font></code>, <code><font color="blue">valgrind</font></code>.
+
+<br>
+<br>
+<b><big><a name="build_type" id="build_type">build_type</a></big></b>
+<br>
+The current 
+<code><i><font color="black"><span style='white-space: nowrap'>build_type</span></font></i></code>
+ is set in the script <code><font color="blue">bin/run_cmake.sh</font></code>
+and must be either <code><font color="blue">debug</font></code> or <code><font color="blue">release</font></code>.
+You can choose this setting with <code><font color="blue">release</font></code> being faster
+and <code><font color="blue">debug</font></code> being useful for debugging.
+
+<br>
+<br>
+<b><big><a name="Special Requirements" id="Special Requirements">Special Requirements</a></big></b>
+<br>
+The special requirements <code><font color="blue">adolc</font></code>, <code><font color="blue">colpack</font></code>, <code><font color="blue">cppadcg</font></code>,
+<code><font color="blue">cppad</font></code>, and <code><font color="blue">eigen</font></code> are installed with the following command:
+
+<code><font color="blue"><span style='white-space: nowrap'><br>
+&nbsp;&nbsp;&nbsp;&nbsp;bin/get_all.sh<br>
+</span></font></code>
+The <code><font color="blue">build</font></code> directory is soft link to 
+<code><font color="blue"><span style='white-space: nowrap'>build.</span></font><i><font color="black"><span style='white-space: nowrap'>build_type</span></font></i></code>
+
+which is where the programs get installed.
+
+<br>
+<br>
+<b><big><a name="Check Build" id="Check Build">Check Build</a></big></b>
+<br>
+The following command will build and check all the programs:
+
+<code><font color="blue"><span style='white-space: nowrap'><br>
+&nbsp;&nbsp;&nbsp;&nbsp;bin/check_all.sh<br>
+</span></font></code>
+The following command will check all the possible <a href="speed.htm" target="_top"><span style='white-space: nowrap'>speed</span></a>
+ program
+options, methods, and problems:
+
+<code><font color="blue"><span style='white-space: nowrap'><br>
+&nbsp;&nbsp;&nbsp;&nbsp;bin/run_speed.sh&nbsp;correct&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>build_type</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;--correct<br>
+</span></font></code>
+The results will be written to the file
+
+<code><font color="blue"><span style='white-space: nowrap'><br>
+&nbsp;&nbsp;&nbsp;&nbsp;build/src/speed/correct-</span></font><i><font color="black"><span style='white-space: nowrap'>mmdd</span></font></i><font color="blue"><span style='white-space: nowrap'><br>
+</span></font></code>
+where 
+<code><i><font color="black"><span style='white-space: nowrap'>mm</span></font></i></code>
+ is the current month and 
+<code><i><font color="black"><span style='white-space: nowrap'>dd</span></font></i></code>
+ is the current day.
+
+<br>
+<br>
+<b><big><a name="Run Speed Tests" id="Run Speed Tests">Run Speed Tests</a></big></b>
+<br>
+The <a href="speed.htm" target="_top"><span style='white-space: nowrap'>speed</span></a>
+ program is in the <code><font color="blue">build/src/speed</font></code> directory.
+You can use it to run one speed test.
+You can run all the possible option and problem combinations using the command:
+
+<code><font color="blue"><span style='white-space: nowrap'><br>
+&nbsp;&nbsp;&nbsp;&nbsp;bin/run_speed.sh&nbsp;speed&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>build_type</span></font></i><font color="blue"><span style='white-space: nowrap'><br>
+</span></font></code>
+This will take a while because (hours) to complete.
+The results will be written to the file
+
+<code><font color="blue"><span style='white-space: nowrap'><br>
+&nbsp;&nbsp;&nbsp;&nbsp;build/src/speed/speed-</span></font><i><font color="black"><span style='white-space: nowrap'>mmdd</span></font></i><font color="blue"><span style='white-space: nowrap'><br>
+</span></font></code>
+where 
+<code><i><font color="black"><span style='white-space: nowrap'>mm</span></font></i></code>
+ is the current month and 
+<code><i><font color="black"><span style='white-space: nowrap'>dd</span></font></i></code>
+ is the current day.
+
+<br>
+<br>
+<b><big><a name="Contents" id="Contents">Contents</a></big></b>
+<br>
+<table>
+<tr><td><a href="_contents.htm" target="_top">_contents</a></td><td>Table&nbsp;of&nbsp;Contents</td></tr><tr><td><a href="speed.htm" target="_top">speed</a></td><td>Running&nbsp;Jacobian&nbsp;and&nbsp;Hessian&nbsp;Speed&nbsp;Tests</td></tr><tr><td><a href="bin.htm" target="_top">bin</a></td><td>Executable&nbsp;Scripts</td></tr><tr><td><a href="typedef.hpp.htm" target="_top">typedef.hpp</a></td><td>Type&nbsp;Definitions</td></tr><tr><td><a href="fun_base.hpp.htm" target="_top">fun_base.hpp</a></td><td>Base&nbsp;Class&nbsp;For&nbsp;Test&nbsp;Function&nbsp;Objects</td></tr><tr><td><a href="utility.htm" target="_top">utility</a></td><td>Utility&nbsp;Routines</td></tr><tr><td><a href="_reference.htm" target="_top">_reference</a></td><td>Alphabetic&nbsp;Listing&nbsp;of&nbsp;Cross&nbsp;Reference&nbsp;Tags</td></tr><tr><td><a href="_index.htm" target="_top">_index</a></td><td>Keyword&nbsp;Index</td></tr><tr><td><a href="_search.htm" target="_top">_search</a></td><td>Search&nbsp;This&nbsp;Web&nbsp;Site</td></tr><tr><td><a href="_external.htm" target="_top">_external</a></td><td>External&nbsp;Internet&nbsp;References</td></tr></table>
+<hr>Input File: doc.omh
+
+</body>
+</html>

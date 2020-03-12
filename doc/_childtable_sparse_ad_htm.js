@@ -1,7 +1,7 @@
-// Child table for section sparsity_paper
+// Child table for section sparse_ad
 document.write('\
-<select onchange="sparsity_paper_child(this)">\
-<option>sparsity_paper-&gt;</option>\
+<select onchange="sparse_ad_child(this)">\
+<option>sparse_ad-&gt;</option>\
 <option>speed</option>\
 <option>bin</option>\
 <option>typedef.hpp</option>\
@@ -13,7 +13,7 @@ document.write('\
 <option>_external</option>\
 </select>\
 ');
-function sparsity_paper_child(item)
+function sparse_ad_child(item)
 {	var child_list = [
 		'speed.htm',
 		'bin.htm',

@@ -6,7 +6,7 @@ var list_across0 = [
 '_external.htm'
 ];
 var list_up0 = [
-'sparsity_paper.htm',
+'sparse_ad.htm',
 '_contents.htm'
 ];
 function choose_across0(item)

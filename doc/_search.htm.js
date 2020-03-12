@@ -3,7 +3,7 @@
 // ------------------------------------------------------------ 
 Keyword = 
 [
-{ tag: 'sparsity_paper', title:'Sparsity Paper Software: sparsity_paper-20200311', other:'' },
+{ tag: 'sparse_ad', title:'sparse_ad-20200311: Computing Sparse Jacobians and Hessians Using AD', other:' github system requirements build_type special check run speed tests' },
 { tag: 'speed', title:'Running Jacobian and Hessian Speed Tests', other:' syntax name_k=value_k method adolc cppad subgraph cppadcg subcg problem dficfj dierfj deptfg size option_list --colpack --indirect --optimize --setup --reverse --onepass --correct csv_file options nnz sec other output' },
 { tag: 'speed_global', title:'Speed Program Global Variables', other:' initialization global_problem_ptr global_size global_colpack global_indirect global_optimize global_setup global_reverse global_onepass global_correct global_x global_nnz global_correct_ok' },
 { tag: 'speed_setup', title:'Setup a Speed Test Problem', other:' syntax prototype purpose method globals initialization hessian jacobian not used' },
