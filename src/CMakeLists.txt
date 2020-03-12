@@ -1,0 +1,5 @@
+# vim: set expandtab:
+#
+ADD_SUBDIRECTORY(fun_obj)
+ADD_SUBDIRECTORY(utility)
+ADD_SUBDIRECTORY(speed)

@@ -1,0 +1,1 @@
+extern int dgl1fg_(integer *n, doublereal *x, doublereal *f, doublereal *fgrad, char *task, doublereal *t, ftnlen task_len);

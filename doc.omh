@@ -1,0 +1,20 @@
+vim: set expandtab:
+
+$begin sparsity_paper$$
+
+$comment Begin: Setting that apply to all sections$$
+$escape $$
+$aindex section head subhead$$
+$latex \newcommand{\B}[1]{ {\bf #1} }$$
+$comment End: Setting that apply to all sections$$
+
+$section Sparsity Paper Software: sparsity_paper-20200311$$
+
+$childtable%src/speed/speed.omh
+    %bin/bin.omh
+    %src/typedef.hpp
+    %src/fun_obj/fun_base.hpp
+    %src/utility/utility.omh
+%$$
+
+$end

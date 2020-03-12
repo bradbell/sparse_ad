@@ -1,0 +1,21 @@
+vim: set expandtab:
+
+$begin bin$$
+$spell
+    gitignore
+$$
+
+$section Executable Scripts$$
+
+$head Working Directory$$
+All of the scripts below must be executed from the
+git root directory for this repository; i.e,
+the directory that contains the $code .gitignore$$ file.
+
+$childtable%bin/wget_minpack2.sh
+    %bin/f2c.sh
+    %bin/c2hpp.py
+    %bin/csv2tex.py
+%$$
+
+$end

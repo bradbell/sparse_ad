@@ -1,0 +1,1 @@
+extern int dierfj_(integer *n, doublereal *x, doublereal *fvec, doublereal *fjac, integer *ldfjac, char *task, doublereal *a, doublereal *b, doublereal *c__, integer *nint, ftnlen task_len);

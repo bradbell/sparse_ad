@@ -1,0 +1,1 @@
+extern int dgl1hs_(integer *n, doublereal *x, doublereal *s, doublereal *y, doublereal *t);

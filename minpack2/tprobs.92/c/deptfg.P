@@ -1,0 +1,1 @@
+extern int deptfg_(integer *nx, integer *ny, doublereal *x, doublereal *f, doublereal *fgrad, char *task, doublereal *c__, ftnlen task_len);
