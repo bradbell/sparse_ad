@@ -84,6 +84,12 @@ echo_eval ulimit -d $mem
 echo_eval ulimit -v $swap
 # --------------------------------------------------------------------------
 #
+count='0'
+for just_count in 'true' 'false'
+do
+    total_count="$count"
+    count='0'
+    #
 for problem in $problem_list
 do
 for setup in --setup   ''
@@ -173,9 +179,15 @@ do
     fi
     if [ "$skip" == '' ]
     then
-        run_speed $method $problem $size $correct \
-            $setup $reverse $onepass  $optimize $indirect $colpack
+        let "count = $count + 1"
+        if [ "$just_count" == 'false' ]
+        then
+            echo "run $count of $total_count ----------------------------------"
+            run_speed $method $problem $size $correct \
+                $setup $reverse $onepass  $optimize $indirect $colpack
+        fi
     fi
+done
 done
 done
 done
