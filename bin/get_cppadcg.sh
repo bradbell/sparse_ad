@@ -1,10 +1,8 @@
 #! /bin/bash -e
 # vim: set expandtab:
 # --------------------------------------------------------------------------
-# date corresponding to this commit is 20200126
-version='505f1a2a1661a454a4e66ad07fcb4ca206e96d7e'
-version='master'
-version='v2.4.1'
+# can use a git has, branch, or release tag
+version='v2.4.2'
 # --------------------------------------------------------------------------
 echo_eval() {
     echo $*
@@ -66,10 +64,10 @@ then
         https://github.com/joaoleal/CppADCodeGen.git cppadcg.git
 fi
 echo_eval cd cppadcg.git
+echo_eval git reset --hard
+echo_eval git checkout master
+echo_eval git pull
 echo_eval git checkout --quiet $version
-# patch source code
-sed -i include/cppad/cg/util.hpp \
-    -e 's|^std::string readStringFromFile(|inline &|'
 if [ -e build ]
 then
     echo_eval rm -r build
