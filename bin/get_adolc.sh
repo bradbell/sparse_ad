@@ -1,6 +1,7 @@
 #! /bin/bash -e
 # vim: set expandtab:
-version='v2.6.3'
+web_page='https://github.com/coin-or/ADOL-C.git'
+version='releases/2.6.3'
 # --------------------------------------------------------------------------
 echo_eval() {
     echo $*
@@ -58,7 +59,7 @@ cd build/external
 # --------------------------------------------------------------------------
 if [ ! -e adolc.git ]
 then
-    echo_eval git clone https://gitlab.com/adol-c/adol-c.git adolc.git
+    echo_eval git clone $web_page adolc.git
 fi
 echo_eval cd adolc.git
 echo_eval git reset --hard

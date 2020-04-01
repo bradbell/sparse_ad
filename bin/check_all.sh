@@ -20,7 +20,17 @@ then
 fi
 build_type="$1"
 # -----------------------------------------------------------------------------
-sed -i bin/run_cmake.sh -e "s|^build_type=.*|build_type='$build_type'|"
+if ! grep "^build_type='release'" bin/run_cmake.sh > /dev/null
+then
+    echo 'bin/check_all.sh: build_type in bin/run_cmake.sh must be release'
+    echo 'when starting this script and is restored at end of this script.'
+    exit 1
+fi
+if [ "$build_type" == 'debug' ]
+then
+    # change build_type in bin/run_cmake.sh
+    sed -i bin/run_cmake.sh -e "s|^build_type=.*|build_type='debug'|"
+fi
 # -----------------------------------------------------------------------------
 bin/check_tab.sh
 bin/check_inc_guard.sh
@@ -81,11 +91,12 @@ fi
 bin/run_cmake.sh
 # -----------------------------------------------------------------------------
 # check example
-cd build
+pushd build
 make check_example
+popd
 # -----------------------------------------------------------------------------
 # check speed
-cd src/speed
+pushd build/src/speed
 make speed
 if [ -e speed.csv ]
 then
@@ -119,7 +130,13 @@ do
             $method $problem $size $colpack $onepass $reverse --correct
     done
 done
-
+popd
+# -----------------------------------------------------------------------------
+if [ "$build_type" == 'debug' ]
+then
+    # restore build_type in bin/run_cmake.sh
+    sed -i bin/run_cmake.sh -e "s|^build_type=.*|build_type='release'|"
+fi
 # -----------------------------------------------------------------------------
 echo 'check_all.sh: OK'
 exit 0
