@@ -15,7 +15,7 @@ $codei%write_csv(
     %csv_file% ,
     %name%     ,
     %value%    ,
-    %method%   ,
+    %implement%   ,
     %problem%  ,
     %colpack%  ,
     %indirect% ,
@@ -46,7 +46,7 @@ $subhead header$$
 The header for the csv file is its first row.
 The header row begins with
 $codei%
-    %first_name%,%...%,%last_name%,method,problem,
+    %first_name%,%...%,%last_name%,implement,problem,
 %$$
 where $icode first_name$$ is the first component of $icode name$$,
 and $icode last_name$$ is the last component of $icode name$$.
@@ -61,8 +61,8 @@ The vectors $icode name$$ and $icode value$$ have the same size.
 The $th i$$ element of $icode name$$ is the header entry
 corresponding to the $th i$$ element of $icode value$$.
 
-$head method$$
-This is the value written in the method column.
+$head implement$$
+This is the value written in the $icode implement$$ column.
 
 $head problem$$
 This is the value written in the problem column.
@@ -98,7 +98,7 @@ void write_csv(
     const std::string&                csv_file   ,
     const CppAD::vector<std::string>& name       ,
     const CppAD::vector<std::string>& value      ,
-    const std::string&                method     ,
+    const std::string&                implement  ,
     const std::string&                problem    ,
     bool                              colpack    ,
     bool                              indirect   ,
@@ -116,7 +116,7 @@ void write_csv(
     std::string header = "";
     for(size_t k = 0; k < name.size(); ++k)
         header += name[k] + ",";
-    header += "method,problem,";
+    header += "implement,problem,";
     header += "colpack,indirect,optimize,setup,reverse,onepass,correct,";
     header += "n,m,nnz,sec";
     //
@@ -146,7 +146,7 @@ void write_csv(
     for(size_t k = 0; k < value.size(); ++k)
         afile << value[k] << ",";
     afile
-    << method             << ","
+    << implement          << ","
     << problem            << ","
     << bool2str[colpack]  << ","
     << bool2str[indirect] << ","

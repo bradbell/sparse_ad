@@ -34,25 +34,25 @@ typedef int                          ftnlen;
 /* %$$
 
 $subhead adolc_double$$
-type used by adolc method to record operations:
+type used by adolc implementation to record operations:
 $srccode%hpp% */
 typedef adouble                      adolc_double;
 /* %$$
 
 $subhead cppad_double$$
-type used by cppad and subgraph methods to record operations:
+type used by cppad and subgraph implementations to record operations:
 $srccode%hpp% */
 typedef CppAD::AD<double>            cppad_double;
 /* %$$
 
 $subhead cg_double$$
-type used by cppadcg methods to evaluate derivatives
+type used by cppadcg implementations to evaluate derivatives
 $srccode%hpp% */
 typedef CppAD::cg::CG<double>        cg_double;
 /* %$$
 
 $subhead cppadcg_double$$
-type used by cppadcg methods to record operations:
+type used by cppadcg implementations to record operations:
 $srccode%hpp% */
 typedef CppAD::AD<cg_double>         cppadcg_double;
 /* %$$

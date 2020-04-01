@@ -25,7 +25,7 @@ $section Running Jacobian and Hessian Speed Tests$$
 $head Syntax$$
 $codei%speed %csv_file% \
     %[ name_1%=%value_1 ]% %...% %[ name_K%=%value_K ]% \
-    %method% %problem% %size% %option_list%$$
+    %implement% %problem% %size% %option_list%$$
 
 $head name_k=value_k$$
 For $icode%k%=1, %...%, %K%$$, there is an extra column in the
@@ -36,26 +36,26 @@ is $icode value_k$$.
 Neither $icode name_k$$ nor $icode value_k$$ can contain,
 $code =$$, the equals character.
 
-$head method$$
+$head implement$$
 This must be one of the following:
 
 $subhead adolc$$
-Use the ADOL-C $code sparse_jac$$ method to compute Jacobians.
+Use the ADOL-C $code sparse_jac$$ routine to compute Jacobians.
 
 $subhead cppad$$
 Use the CppAD $code sparse_jac_for$$ or $code sparse_jac_rev$$
-method to computing Jacobians and Hessians.
+routine to compute Jacobians and Hessians.
 
 $subhead subgraph$$
-Use the CppAD $code subgraph_jac_rev$$ method to computing Jacobians
+Use the CppAD $code subgraph_jac_rev$$ routine to compute Jacobians
 and Hessians.
 
 $subhead cppadcg$$
-Use the CppAD $code sparse_jac_for$$ or $code sparse_jac_rev$$ method
+Use the CppAD $code sparse_jac_for$$ or $code sparse_jac_rev$$ routine
 together with CppADCodeGen to compute Jacobians.
 
 $subhead subcg$$
-Use the CppAD $code subgraph_jac_rev$$ method together with CppADCodeGen
+Use the CppAD $code subgraph_jac_rev$$ routine together with CppADCodeGen
 to compute Jacobians and Hessians.
 
 $head problem$$
@@ -95,16 +95,16 @@ that may or may not be present, at the end of the command line.
 The possible options are as follows:
 
 $subhead --colpack$$
-This option must be present when using the $code adolc$$ method and
-cannot be present when using the $code subgraph$$ and $code subcg$$ methods.
+This option must be present when using the $code adolc$$ implementation and
+cannot be present when using the $code subgraph$$ and $code subcg$$ implementations.
 If it is present (not present) the matrix compression is computed
 using the Colpack (CppAD) coloring algorithms.
-(The $code subgraph$$ and $code subcg$$ methods
+(The $code subgraph$$ and $code subcg$$ implementations
 does not use a coloring algorithm.)
 
 $subhead --indirect$$
 This option can only be present when computing sparse Hessians
-using the $code adolc$$ method.
+using the $code adolc$$ implementation.
 If it is present (not present)
 the corresponding sparse Hessian is
 computed by solving a triangular set of equations (computed directly)
@@ -114,7 +114,7 @@ $subhead --optimize$$
 If this option is present (not present),
 the corresponding cppad function objects are optimized (not optimized).
 This optimization is not include in the timing results.
-This option can not be used when $icode method$$ is $code adolc$$.
+This option can not be used when $icode implement$$ is $code adolc$$.
 
 $subhead --setup$$
 If this option is present (not present),
@@ -122,19 +122,19 @@ the time to setup the AD calculation is included (not included)
 in the timing test.
 This includes recording the function,
 calculating the sparsity pattern,  compression.
-In the case of $code cppadcg$$ and $code subcg$$ methods
+In the case of $code cppadcg$$ and $code subcg$$ implementations
 it also includes generating and compiling the source code.
 
 $subhead --reverse$$
 If this option is present (not present),
 reverse mode is used (not used) to calculate the results.
-This option must be present when $icode method$$ is
+This option must be present when $icode implement$$ is
 $code subgraph$$ or $code subcg$$.
 (so far CppAD has only implemented reverse mode sub-graphs).
-This option cannot be present when method is
+This option cannot be present when implementation is
 $code cppad$$ or $code cppadcg$$ and
 $cref/--onepass/speed/option_list/--onepass/$$ is present.
-It cannot be present for Hessian problems when method is $code adolc$$.
+It cannot be present for Hessian problems when $icode implement$$ is $code adolc$$.
 
 $subhead --onepass$$
 If this option is present (not present),
@@ -143,14 +143,14 @@ is used to compute the entire sparse Jacobian.
 Otherwise only one direction is computed for each pass of the tape.
 (Multiple columns of the Jacobian still get compressed into each pass).
 This option must be present for the Jacobian cases where
-method is $code adolc$$.
+$icode implement$$ is $code adolc$$.
 This option cannot be present for the following cases:
 $list number$$
 Hessian problems.
 $lnext
-when $icode method$$ is $code subgraph$$ or $code subcg$$.
+when $icode implement$$ is $code subgraph$$ or $code subcg$$.
 $lnext
-when $icode method$$ is $code cppad$$ or $code cppadcg$$
+when $icode implement$$ is $code cppad$$ or $code cppadcg$$
 and $cref/--reverse/speed/option_list/--reverse/$$ is present.
 (so far CppAD has only implemented multiple directions for forward mode).
 $lend
@@ -165,7 +165,7 @@ $head csv_file$$
 The first line of this csv file is the header which contains the column names.
 It starts with
 $codei%
-    %name_1%,%...%,%name_K%,method,problem,
+    %name_1%,%...%,%name_K%,implement,problem,
 %$$
 Next the header contains the names of the options in order; i.e.,
 $codei%
@@ -185,8 +185,8 @@ $subhead name_k$$
 For $icode%k%=1, %...%, %K%$$, the value $icode value_k$$ is placed
 in column $icode name_k$$.
 
-$subhead method$$
-The values $icode method$$ is the corresponding
+$subhead implement$$
+The values $icode implement$$ is the corresponding
 command line arguments when $code speed$$.
 
 $subhead problem$$
@@ -206,8 +206,8 @@ The value $icode n$$ ($icode m$$) is the size of the domain space
 $subhead nnz$$
 The value $icode nnz$$ is the number of non-zeros in the sparse
 Jacobian (when $icode%m% != 1%$$) or sparse Hessian (when $icode%m% == 1%$$).
-Note that $icode nnz$$ for the $code double$$ method is the
-actual number of non-zeros, while for the other methods it is number
+Note that $icode nnz$$ for the $code double$$ implementation is the
+actual number of non-zeros, while for the other implementations it is number
 of possibly non-zero values.
 
 $subhead sec$$

@@ -21,7 +21,7 @@ $section Setup a Speed Test Problem$$
 
 
 $head Syntax$$
-$codei%setup_%method%()%$$
+$codei%setup_%implement%()%$$
 
 $head Prototype$$
 $srccode%hpp% */
@@ -37,7 +37,7 @@ Do as much of the calculation as possible, excluding knowing
 the argument value $latex x$$ at which we are evaluating the Jacobian or
 Hessian of $latex f(x)$$.
 
-$head method$$
+$head implement$$
 is one of the following
 $code adolc$$,
 $code cppad$$,
@@ -58,12 +58,12 @@ This is the dimension of the range space for $latex f(x)$$.
 
 $subhead Hessian$$
 A problem is a Hessian test case if $icode%m% = 1%$$.
-In the case $codei%test_%method%_hes%$$ will be called to determine
+In the case $codei%test_%implement%_hes%$$ will be called to determine
 the speed of evaluation of the Hessian.
 
 $subhead Jacobian$$
 A problem is a Jacobian test case if $icode%m% > 1%$$.
-In the case $codei%test_%method%_jac%$$ will be called to determine
+In the case $codei%test_%implement%_jac%$$ will be called to determine
 the speed of evaluation of the Jacobian.
 
 $subhead Not used$$

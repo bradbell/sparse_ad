@@ -91,7 +91,7 @@ d_vector global_x;
 
 $head global_nnz$$
 This value, set at the end of every test, is the number of non-zeros
-int the sparsity pattern detected by the method:
+int the sparsity pattern detected by the implementation:
 $srccode%cpp% */
 size_t global_nnz;
 /* %$$
@@ -111,7 +111,7 @@ namespace {
     // -----------------------------------------------------------------------
     // initialize
     void initialize(
-        std::string method     ,
+        std::string implement     ,
         fun_base* problem_ptr  ,
         size_t    size         ,
         bool      colpack      ,
@@ -148,54 +148,54 @@ namespace {
         //
         // illegal colpack cases
         if( colpack )
-        {   if( method == "subgraph" ) msg =
-                "method is subgraph and --colpack is present";
-            if( method == "subcg" ) msg =
-                "method is subcg and --colpack is present";
+        {   if( implement == "subgraph" ) msg =
+                "implement is subgraph and --colpack is present";
+            if( implement == "subcg" ) msg =
+                "implement is subcg and --colpack is present";
         }
         else
-        {   if( method == "adolc" ) msg =
-                "method is adolc and --colpack missing";
+        {   if( implement == "adolc" ) msg =
+                "implement is adolc and --colpack missing";
         }
         // illegal indirect cases
         if( indirect )
-        {   if( method != "adolc" ) msg =
-                "method is not adolc and --indirect is present";
+        {   if( implement != "adolc" ) msg =
+                "implement is not adolc and --indirect is present";
             if( ! hessian ) msg =
                 "--indirect is present for a Jacobian problem";
         }
         // illegal optimize cases
         if( optimize )
-        {   if( method == "adolc" )  msg =
-                "method is adolc and --optimize is present";
+        {   if( implement == "adolc" )  msg =
+                "implement is adolc and --optimize is present";
         }
         // illegal reverse cases
         if( reverse )
-        {   if( method == "adolc" && hessian ) msg =
-                "method is adolc for Hessian problem and --reverse present";
-            if( method == "cppad" && onepass  ) msg =
-                "method is cppad, --reverse present, and --onepass  present";
+        {   if( implement == "adolc" && hessian ) msg =
+                "implement is adolc for Hessian problem and --reverse present";
+            if( implement == "cppad" && onepass  ) msg =
+                "implement is cppad, --reverse present, and --onepass  present";
         }
         else
-        {   if( method == "subgraph" ) msg =
-                "method is subgraph and --reverse missing";
-            if( method == "subcg" ) msg =
-                "method is subcg and --reverse missing";
+        {   if( implement == "subgraph" ) msg =
+                "implement is subgraph and --reverse missing";
+            if( implement == "subcg" ) msg =
+                "implement is subcg and --reverse missing";
         }
         // illegal onepass  cases
         if( onepass  )
         {   if( hessian ) msg =
                 "--onepass  present for a Hessian problem";
-            if( method == "subgraph" ) msg =
-                "method is subgraph and --onepass  present";
-            if( method == "subcg" ) msg =
-                "method is subcg and --onepass  present";
-            if( method == "cppad" && reverse ) msg =
-                "method is cppad, --reverse present, and --onepass  present";
+            if( implement == "subgraph" ) msg =
+                "implement is subgraph and --onepass  present";
+            if( implement == "subcg" ) msg =
+                "implement is subcg and --onepass  present";
+            if( implement == "cppad" && reverse ) msg =
+                "implement is cppad, --reverse present, and --onepass  present";
         }
         else
-        {   if( method == "adolc" && ! hessian ) msg =
-                "method is adolc and --onepass  missing for Jacobian problem";
+        {   if( implement == "adolc" && ! hessian ) msg =
+                "implement is adolc and --onepass  missing for Jacobian problem";
         }
         //
         // exit if any error case above was found
@@ -206,15 +206,15 @@ namespace {
         //
         if( ! global_setup )
         {   // must run setup before first because not inclued in timing
-            if( method == "adolc" )
+            if( implement == "adolc" )
                 setup_adolc();
-            if( method == "cppad" )
+            if( implement == "cppad" )
                 setup_cppad();
-            if( method == "subgraph" )
+            if( implement == "subgraph" )
                 setup_subgraph();
-            if( method == "cppadcg" )
+            if( implement == "cppadcg" )
                 setup_cppadcg();
-            if( method == "subcg" )
+            if( implement == "subcg" )
                 setup_subcg();
         }
     }
@@ -224,7 +224,7 @@ namespace {
         const std::string&                csv_file ,
         const CppAD::vector<std::string>& name     ,
         const CppAD::vector<std::string>& value    ,
-        const std::string&                method   ,
+        const std::string&                implement,
         const std::string&                problem  ,
         void               (*test)(size_t repeat)  )
     {   assert( name.size() == value.size() );
@@ -240,7 +240,7 @@ namespace {
             csv_file,
             name,
             value,
-            method,
+            implement,
             problem,
             global_colpack,
             global_indirect,
@@ -281,7 +281,7 @@ namespace {
 int main(int argc, char* argv[])
 {   std::string usage = "speed csv_file\\\n\t";
     usage += "name_1=value_1 ... name_k=value_k\\\n\t";
-    usage += "method problem size \\\n\t";
+    usage += "implement problem size \\\n\t";
     usage += "[--colpack] [--indirect] [--optimize] [--setup] ";
     usage += "[--reverse] [--onepass] [--correct]\n";
     usage += "csv_file:   is the csv file where the resutls are written\n";
@@ -323,15 +323,15 @@ int main(int argc, char* argv[])
         pos = name_value.find("=");
     }
     //
-    // method, method_vec, method_index
-    std::string method = argv[++iarg];
-    CppAD::vector<std::string> method_vec(5);
-    method_vec[0] = "adolc";
-    method_vec[1] = "cppad";
-    method_vec[2] = "subgraph";
-    method_vec[3] = "cppadcg";
-    method_vec[4] = "subcg";
-    size_t method_index = check_arg("method", method, method_vec);
+    // implement, implement_vec, implement_index
+    std::string implement = argv[++iarg];
+    CppAD::vector<std::string> implement_vec(5);
+    implement_vec[0] = "adolc";
+    implement_vec[1] = "cppad";
+    implement_vec[2] = "subgraph";
+    implement_vec[3] = "cppadcg";
+    implement_vec[4] = "subcg";
+    size_t implement_index = check_arg("implement", implement, implement_vec);
     //
     // problem, problem_vec
     std::string problem = argv[++iarg];
@@ -381,14 +381,14 @@ int main(int argc, char* argv[])
     //
     // test_jac
     typedef void (*test_function)(size_t repeat);
-    CppAD::vector<test_function> test_jac(method_vec.size());
+    CppAD::vector<test_function> test_jac(implement_vec.size());
     test_jac[0] = test_adolc_jac;
     test_jac[1] = test_cppad_jac;
     test_jac[2] = test_subgraph_jac;
     test_jac[3] = test_cppadcg_jac;
     test_jac[4] = test_subcg_jac;
     // test_hes
-    CppAD::vector<test_function> test_hes(method_vec.size());
+    CppAD::vector<test_function> test_hes(implement_vec.size());
     test_hes[0] = test_adolc_hes;
     test_hes[1] = test_cppad_hes;
     test_hes[2] = test_subgraph_hes;
@@ -399,7 +399,7 @@ int main(int argc, char* argv[])
     {   fun_dficfj fun_obj(size);
         fun_base* problem_ptr = static_cast<fun_base*>( &fun_obj );
         initialize(
-            method,
+            implement,
             problem_ptr,
             size,
             colpack,
@@ -416,16 +416,16 @@ int main(int argc, char* argv[])
             csv_file,
             name,
             value,
-            method,
+            implement,
             problem,
-            test_jac[method_index]
+            test_jac[implement_index]
         );
     }
     else if( problem == "dierfj" )
     {   fun_dierfj fun_obj(size);
         fun_base* problem_ptr = static_cast<fun_base*>( &fun_obj );
         initialize(
-            method,
+            implement,
             problem_ptr,
             size,
             colpack,
@@ -442,16 +442,16 @@ int main(int argc, char* argv[])
             csv_file,
             name,
             value,
-            method,
+            implement,
             problem,
-            test_jac[method_index]
+            test_jac[implement_index]
         );
     }
     else if( problem == "deptfg" )
     {   fun_deptfg fun_obj(size, size);
         fun_base* problem_ptr = static_cast<fun_base*>( &fun_obj );
         initialize(
-            method,
+            implement,
             problem_ptr,
             size,
             colpack,
@@ -468,16 +468,16 @@ int main(int argc, char* argv[])
             csv_file,
             name,
             value,
-            method,
+            implement,
             problem,
-            test_hes[method_index]
+            test_hes[implement_index]
         );
     }
     else if( problem == "dgl1fg" )
     {   fun_dgl1fg fun_obj(size);
         fun_base* problem_ptr = static_cast<fun_base*>( &fun_obj );
         initialize(
-            method,
+            implement,
             problem_ptr,
             size,
             colpack,
@@ -494,9 +494,9 @@ int main(int argc, char* argv[])
             csv_file,
             name,
             value,
-            method,
+            implement,
             problem,
-            test_hes[method_index]
+            test_hes[implement_index]
         );
     }
     if( correct )
