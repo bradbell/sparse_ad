@@ -1,6 +1,7 @@
 #! /bin/bash -e
 # vim: set expandtab:
-method_list='adolc cppad subgraph cppadcg subcg'
+implement_list='adolc cppad subgraph cppadcg subcg'
+implement_list='adolc cppad subgraph' # without code generation
 problem_list='dficfj dierfj deptfg dgl1fg'
 # --------------------------------------------------------------------------
 echo_eval() {
@@ -98,7 +99,7 @@ for reverse in --reverse ''
 do
 for onepass in --onepass  ''
 do
-for method in $method_list
+for implement in $implement_list
 do
 for optimize in --optimize ''
 do
@@ -136,7 +137,7 @@ do
     then
         skip='--skip'
     fi
-    if [ "$method" == 'subgraph' ] || [ "$method" == 'subcg' ]
+    if [ "$implement" == 'subgraph' ] || [ "$implement" == 'subcg' ]
     then
         if [ "$reverse" == '' ] || [ "$onepass" == '--onepass' ]
         then
@@ -147,7 +148,7 @@ do
             skip='--skip'
         fi
     fi
-    if [ "$method" == 'cppad' ] || [ "$method" == 'cppadcg' ]
+    if [ "$implement" == 'cppad' ] || [ "$implement" == 'cppadcg' ]
     then
         if [ "$reverse" == '--reverse' ] && [ "$onepass" == '--onepass' ]
         then
@@ -158,7 +159,7 @@ do
             skip='--skip'
         fi
     fi
-    if [ "$method" == 'adolc' ]
+    if [ "$implement" == 'adolc' ]
     then
         if [ "$optimize" == '--optimize' ] || [ "$colpack" != '--colpack' ]
         then
@@ -183,7 +184,7 @@ do
         if [ "$just_count" == 'false' ]
         then
             echo "run $count of $total_count ----------------------------------"
-            run_speed $method $problem $size $correct \
+            run_speed $implement $problem $size $correct \
                 $setup $reverse $onepass  $optimize $indirect $colpack
         fi
     fi
