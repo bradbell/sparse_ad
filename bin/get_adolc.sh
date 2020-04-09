@@ -1,7 +1,7 @@
 #! /bin/bash -e
 # vim: set expandtab:
 web_page='https://github.com/coin-or/ADOL-C.git'
-version='releases/2.6.3'
+version='25a69c486829ddaa19c115afc05cb7cf3b4e2410'
 # --------------------------------------------------------------------------
 echo_eval() {
     echo $*
@@ -63,12 +63,11 @@ then
 fi
 echo_eval cd adolc.git
 echo_eval git reset --hard
+echo_eval git checkout master
+echo_eval git pull
 echo_eval git checkout --quiet $version
 echo_eval autoreconf --force --install
 #
-# Patch to fix memory leak in sparse reverse mode
-sed -i 'ADOL-C/src/fo_rev.c' \
-    -e 's|^    myfree2(rpp_A);|    free(rpp_A[0]);\n&|'
 # --------------------------------------------------------------------------
 if [ -e build ]
 then
@@ -81,7 +80,7 @@ flags="--prefix=$prefix"
 flags="$flags --with-colpack=$prefix"
 flags="$flags --libdir=$prefix/$libdir"
 flags="$flags --with-colpack=$prefix"
-flags="$flags --enable-sparse --enable-static --disable-shared --enable-addexa"
+flags="$flags --enable-sparse --enable-static --enable-shared --enable-addexa"
 if [ "$build_type" == 'debug' ]
 then
     export CFLAGS='-g -O0'
