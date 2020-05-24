@@ -15,7 +15,7 @@ MathJax.Hub.Config({
 <title>Setup a Speed Test Problem</title>
 <meta http-equiv='Content-Type' content='text/html' charset='utf-8'>
 <meta name="description" id="description" content="Setup a Speed Test Problem">
-<meta name="keywords" id="keywords" content=" setup speed test problem syntax prototype jacobian hessian purpose method globals initialization m global_nnz global_correct_ok ">
+<meta name="keywords" id="keywords" content=" setup speed test problem syntax prototype jacobian hessian purpose implement globals initialization m global_nnz global_correct_ok ">
 <style type='text/css'>
 body { color : black }
 body { background-color : white }
@@ -66,7 +66,7 @@ A:active { color : purple }
 <br>&#160;&#160;&#160;&#160;&#160;<a href="speed_test.htm#Prototype.Jacobian" target="_top">Jacobian</a>
 <br>&#160;&#160;&#160;&#160;&#160;<a href="speed_test.htm#Prototype.Hessian" target="_top">Hessian</a>
 <br><a href="speed_test.htm#Purpose" target="_top">Purpose</a>
-<br><a href="speed_test.htm#method" target="_top">method</a>
+<br><a href="speed_test.htm#implement" target="_top">implement</a>
 <br><a href="speed_test.htm#Setup" target="_top">Setup</a>
 <br><a href="speed_test.htm#Globals" target="_top">Globals</a>
 <br>&#160;&#160;&#160;&#160;&#160;<a href="speed_test.htm#Globals.Initialization" target="_top">Initialization</a>
@@ -80,9 +80,9 @@ A:active { color : purple }
 
 <br>
 
-<code><font color="blue"><span style='white-space: nowrap'>test_</span></font><i><font color="black"><span style='white-space: nowrap'>method</span></font></i><font color="blue"><span style='white-space: nowrap'>_jac(</span></font><i><font color="black"><span style='white-space: nowrap'>repeat</span></font></i><font color="blue"><span style='white-space: nowrap'>)<br>
+<code><font color="blue"><span style='white-space: nowrap'>test_</span></font><i><font color="black"><span style='white-space: nowrap'>implement</span></font></i><font color="blue"><span style='white-space: nowrap'>_jac(</span></font><i><font color="black"><span style='white-space: nowrap'>repeat</span></font></i><font color="blue"><span style='white-space: nowrap'>)<br>
 </span></font></code>
-<code><font color="blue">%test_%method%_hes(%repeat%)%</font></code>
+<code><font color="blue">%test_%implement%_hes(%repeat%)%</font></code>
 
 <br>
 <br>
@@ -116,7 +116,7 @@ for objective corresponding to the problem specified by
 
 <br>
 <br>
-<b><big><a name="method" id="method">method</a></big></b>
+<b><big><a name="implement" id="implement">implement</a></big></b>
 <br>
 is one of the following
 <code><font color="blue">adolc</font></code>,
@@ -130,12 +130,12 @@ is one of the following
 <b><big><a name="Setup" id="Setup">Setup</a></big></b>
 <br>
 The routine 
-<code><font color="blue"><span style='white-space: nowrap'>setup_</span></font><i><font color="black"><span style='white-space: nowrap'>method</span></font></i><font color="blue"><span style='white-space: nowrap'>()</span></font></code>
+<code><font color="blue"><span style='white-space: nowrap'>setup_</span></font><i><font color="black"><span style='white-space: nowrap'>implement</span></font></i><font color="blue"><span style='white-space: nowrap'>()</span></font></code>
  is called before
 
-<code><font color="blue"><span style='white-space: nowrap'>test_</span></font><i><font color="black"><span style='white-space: nowrap'>method</span></font></i><font color="blue"><span style='white-space: nowrap'>_jac(</span></font><i><font color="black"><span style='white-space: nowrap'>repeat</span></font></i><font color="blue"><span style='white-space: nowrap'>)</span></font></code>
+<code><font color="blue"><span style='white-space: nowrap'>test_</span></font><i><font color="black"><span style='white-space: nowrap'>implement</span></font></i><font color="blue"><span style='white-space: nowrap'>_jac(</span></font><i><font color="black"><span style='white-space: nowrap'>repeat</span></font></i><font color="blue"><span style='white-space: nowrap'>)</span></font></code>
  or
-<code><font color="blue">%test_%method%_hes(%repeat%)%</font></code>.
+<code><font color="blue">%test_%implement%_hes(%repeat%)%</font></code>.
 
 <br>
 <br>
@@ -151,7 +151,7 @@ The <a href="speed_global.htm#Initialization" target="_top"><span style='white-s
 are inputs and not changed by the setup routines.
 In addition, the have the same values as during the call to
 
-<code><font color="blue"><span style='white-space: nowrap'>setup_</span></font><i><font color="black"><span style='white-space: nowrap'>method</span></font></i><font color="blue"><span style='white-space: nowrap'>()</span></font></code>
+<code><font color="blue"><span style='white-space: nowrap'>setup_</span></font><i><font color="black"><span style='white-space: nowrap'>implement</span></font></i><font color="blue"><span style='white-space: nowrap'>()</span></font></code>
 .
 
 <br>
@@ -173,7 +173,7 @@ f(x)
 <br>
 If 
 <code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&gt;&nbsp;1</span></font></code>
-, the Jacobian test for this method is called.
+, the Jacobian test for this implementation is called.
 
 <br>
 <br>
@@ -181,7 +181,7 @@ If
 <br>
 If 
 <code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;=&nbsp;1</span></font></code>
-, the Hessian test for this method is called.
+, the Hessian test for this implementation is called.
 
 <br>
 <br>

@@ -87,7 +87,7 @@ A:active { color : purple }
 <br>
 ad&#160;<a href="sparse_ad.htm" target="_top">sparse_ad-20200311:&nbsp;Computing&nbsp;Sparse&nbsp;Jacobians&nbsp;and&nbsp;Hessians&nbsp;Using&nbsp;AD</a><br>
 adolc&#160;<a href="adolc2sparse_rcv.htm" target="_top">Convert&nbsp;An&nbsp;Adolc&nbsp;Sparse&nbsp;Matrix&nbsp;to&nbsp;CppAD&nbsp;Form</a><br>
-&#160;&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#method.adolc" target="_top">Running&nbsp;Jacobian&nbsp;and&nbsp;Hessian&nbsp;Speed&nbsp;Tests:&#160;method.adolc</a><br>
+&#160;&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#implement.adolc" target="_top">Running&nbsp;Jacobian&nbsp;and&nbsp;Hessian&nbsp;Speed&nbsp;Tests:&#160;implement.adolc</a><br>
 adolc<b>_</b>double&#160;<a href="typedef.hpp.htm#Scalar Types.adolc_double" target="_top">Type&nbsp;Definitions:&#160;Scalar&nbsp;Types.adolc_double</a><br>
 adolc<b>_</b>vector&#160;<a href="typedef.hpp.htm#Vector Types.adolc_vector" target="_top">Type&nbsp;Definitions:&#160;Vector&nbsp;Types.adolc_vector</a><br>
 argonne&#160;<a href="wget_minpack2.sh.htm" target="_top">Get&nbsp;a&nbsp;Minpack2&nbsp;File&nbsp;From&nbsp;Argonne&nbsp;National&nbsp;Laboratory</a><br>
@@ -118,10 +118,10 @@ cppad&#160;<a href="upper_triangle.htm" target="_top">Extract&nbsp;Upper&nbsp;Tr
 &#160;&#160;&#160;&#160;&#160;&#160;<a href="prt_sparse.htm" target="_top">Print&nbsp;A&nbsp;CppAD&nbsp;Sparsity&nbsp;Pattern&nbsp;or&nbsp;Sparse&nbsp;Matrix</a><br>
 &#160;&#160;&#160;&#160;&#160;&#160;<a href="adolc2sparse_rcv.htm" target="_top">Convert&nbsp;An&nbsp;Adolc&nbsp;Sparse&nbsp;Matrix&nbsp;to&nbsp;CppAD&nbsp;Form</a><br>
 &#160;&#160;&#160;&#160;&#160;&#160;<a href="check_sparse.htm" target="_top">Compare&nbsp;A&nbsp;CppAD&nbsp;Sparse&nbsp;Matrix&nbsp;and&nbsp;a&nbsp;Dense&nbsp;Matrix</a><br>
-&#160;&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#method.cppad" target="_top">Running&nbsp;Jacobian&nbsp;and&nbsp;Hessian&nbsp;Speed&nbsp;Tests:&#160;method.cppad</a><br>
+&#160;&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#implement.cppad" target="_top">Running&nbsp;Jacobian&nbsp;and&nbsp;Hessian&nbsp;Speed&nbsp;Tests:&#160;implement.cppad</a><br>
 cppad<b>_</b>double&#160;<a href="typedef.hpp.htm#Scalar Types.cppad_double" target="_top">Type&nbsp;Definitions:&#160;Scalar&nbsp;Types.cppad_double</a><br>
 cppad<b>_</b>vector&#160;<a href="typedef.hpp.htm#Vector Types.cppad_vector" target="_top">Type&nbsp;Definitions:&#160;Vector&nbsp;Types.cppad_vector</a><br>
-cppadcg&#160;<a href="speed.htm#method.cppadcg" target="_top">Running&nbsp;Jacobian&nbsp;and&nbsp;Hessian&nbsp;Speed&nbsp;Tests:&#160;method.cppadcg</a><br>
+cppadcg&#160;<a href="speed.htm#implement.cppadcg" target="_top">Running&nbsp;Jacobian&nbsp;and&nbsp;Hessian&nbsp;Speed&nbsp;Tests:&#160;implement.cppadcg</a><br>
 cppadcg<b>_</b>double&#160;<a href="typedef.hpp.htm#Scalar Types.cppadcg_double" target="_top">Type&nbsp;Definitions:&#160;Scalar&nbsp;Types.cppadcg_double</a><br>
 cppadcg<b>_</b>vector&#160;<a href="typedef.hpp.htm#Vector Types.cppadcg_vector" target="_top">Type&nbsp;Definitions:&#160;Vector&nbsp;Types.cppadcg_vector</a><br>
 cppadcodegen&#160;<a href="cppadcg_library.htm" target="_top">CppADCodeGen&nbsp;Dynamic&nbsp;Libraries</a><br>
@@ -222,6 +222,11 @@ hessians&#160;<a href="sparse_ad.htm" target="_top">sparse_ad-20200311:&nbsp;Com
 
 <b><big><a name="I">I</a></big></b>
 <br>
+implement&#160;<a href="speed_write_csv.htm#implement" target="_top">Writes&nbsp;One&nbsp;Row&nbsp;of&nbsp;the&nbsp;Speed&nbsp;Csv&nbsp;Output&nbsp;File:&#160;implement</a><br>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a href="speed_test.htm#implement" target="_top">Setup&nbsp;a&nbsp;Speed&nbsp;Test&nbsp;Problem:&#160;implement</a><br>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a href="speed_setup.htm#implement" target="_top">Setup&nbsp;a&nbsp;Speed&nbsp;Test&nbsp;Problem:&#160;implement</a><br>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#csv_file.implement" target="_top">Running&nbsp;Jacobian&nbsp;and&nbsp;Hessian&nbsp;Speed&nbsp;Tests:&#160;csv_file.implement</a><br>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#implement" target="_top">Running&nbsp;Jacobian&nbsp;and&nbsp;Hessian&nbsp;Speed&nbsp;Tests:&#160;implement</a><br>
 initialization&#160;<a href="speed_test.htm#Globals.Initialization" target="_top">Setup&nbsp;a&nbsp;Speed&nbsp;Test&nbsp;Problem:&#160;Globals.Initialization</a><br>
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a href="speed_setup.htm#Globals.Initialization" target="_top">Setup&nbsp;a&nbsp;Speed&nbsp;Test&nbsp;Problem:&#160;Globals.Initialization</a><br>
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a href="speed_global.htm#Initialization" target="_top">Speed&nbsp;Program&nbsp;Global&nbsp;Variables:&#160;Initialization</a><br>
@@ -254,11 +259,6 @@ matrix&#160;<a href="prt_sparse.htm#matrix" target="_top">Print&nbsp;A&nbsp;CppA
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;<a href="adolc2sparse_rcv.htm" target="_top">Convert&nbsp;An&nbsp;Adolc&nbsp;Sparse&nbsp;Matrix&nbsp;to&nbsp;CppAD&nbsp;Form</a><br>
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;<a href="check_sparse.htm" target="_top">Compare&nbsp;A&nbsp;CppAD&nbsp;Sparse&nbsp;Matrix&nbsp;and&nbsp;a&nbsp;Dense&nbsp;Matrix</a><br>
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;<a href="check_sparse.htm" target="_top">Compare&nbsp;A&nbsp;CppAD&nbsp;Sparse&nbsp;Matrix&nbsp;and&nbsp;a&nbsp;Dense&nbsp;Matrix</a><br>
-method&#160;<a href="speed_write_csv.htm#method" target="_top">Writes&nbsp;One&nbsp;Row&nbsp;of&nbsp;the&nbsp;Speed&nbsp;Csv&nbsp;Output&nbsp;File:&#160;method</a><br>
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a href="speed_test.htm#method" target="_top">Setup&nbsp;a&nbsp;Speed&nbsp;Test&nbsp;Problem:&#160;method</a><br>
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a href="speed_setup.htm#method" target="_top">Setup&nbsp;a&nbsp;Speed&nbsp;Test&nbsp;Problem:&#160;method</a><br>
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#csv_file.method" target="_top">Running&nbsp;Jacobian&nbsp;and&nbsp;Hessian&nbsp;Speed&nbsp;Tests:&#160;csv_file.method</a><br>
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#method" target="_top">Running&nbsp;Jacobian&nbsp;and&nbsp;Hessian&nbsp;Speed&nbsp;Tests:&#160;method</a><br>
 minpack2&#160;<a href="wget_minpack2.sh.htm" target="_top">Get&nbsp;a&nbsp;Minpack2&nbsp;File&nbsp;From&nbsp;Argonne&nbsp;National&nbsp;Laboratory</a><br>
 
 <b><big><a name="N">N</a></big></b>
@@ -367,8 +367,8 @@ speed&#160;<a href="csv2tex.py.htm" target="_top">Extract&nbsp;Latex&nbsp;Tables
 &#160;&#160;&#160;&#160;&#160;&#160;<a href="speed.htm" target="_top">Running&nbsp;Jacobian&nbsp;and&nbsp;Hessian&nbsp;Speed&nbsp;Tests</a><br>
 &#160;&#160;&#160;&#160;&#160;&#160;<a href="sparse_ad.htm#Run Speed Tests" target="_top">sparse_ad-20200311:&nbsp;Computing&nbsp;Sparse&nbsp;Jacobians&nbsp;and&nbsp;Hessians&nbsp;Using&nbsp;AD:&#160;Run&nbsp;Speed&nbsp;Tests</a><br>
 start&#160;<a href="fun_base.hpp.htm#start" target="_top">Base&nbsp;Class&nbsp;For&nbsp;Test&nbsp;Function&nbsp;Objects:&#160;start</a><br>
-subcg&#160;<a href="speed.htm#method.subcg" target="_top">Running&nbsp;Jacobian&nbsp;and&nbsp;Hessian&nbsp;Speed&nbsp;Tests:&#160;method.subcg</a><br>
-subgraph&#160;<a href="speed.htm#method.subgraph" target="_top">Running&nbsp;Jacobian&nbsp;and&nbsp;Hessian&nbsp;Speed&nbsp;Tests:&#160;method.subgraph</a><br>
+subcg&#160;<a href="speed.htm#implement.subcg" target="_top">Running&nbsp;Jacobian&nbsp;and&nbsp;Hessian&nbsp;Speed&nbsp;Tests:&#160;implement.subcg</a><br>
+subgraph&#160;<a href="speed.htm#implement.subgraph" target="_top">Running&nbsp;Jacobian&nbsp;and&nbsp;Hessian&nbsp;Speed&nbsp;Tests:&#160;implement.subgraph</a><br>
 subset&#160;<a href="csv2tex.py.htm#Output Files.Subset" target="_top">Extract&nbsp;Latex&nbsp;Tables&nbsp;From&nbsp;Speed&nbsp;Test&nbsp;Csv&nbsp;File:&#160;Output&nbsp;Files.Subset</a><br>
 swap&#160;<a href="cppadcg_library.htm#swap" target="_top">CppADCodeGen&nbsp;Dynamic&nbsp;Libraries:&#160;swap</a><br>
 syntax&#160;<a href="cppadcg_library.htm#Syntax" target="_top">CppADCodeGen&nbsp;Dynamic&nbsp;Libraries:&#160;Syntax</a><br>

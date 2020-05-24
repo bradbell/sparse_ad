@@ -15,7 +15,7 @@ MathJax.Hub.Config({
 <title>Running Jacobian and Hessian Speed Tests</title>
 <meta http-equiv='Content-Type' content='text/html' charset='utf-8'>
 <meta name="description" id="description" content="Running Jacobian and Hessian Speed Tests">
-<meta name="keywords" id="keywords" content=" running jacobian hessian speed tests syntax name_k=value_k method adolc cppad subgraph cppadcg subcg problem dficfj dierfj deptfg size option_list --colpack --indirect --optimize --setup --reverse --onepass --correct csv_file name_k options n m nnz sec other output ">
+<meta name="keywords" id="keywords" content=" running jacobian hessian speed tests syntax name_k=value_k implement adolc cppad subgraph cppadcg subcg problem dficfj dierfj deptfg size option_list --colpack --indirect --optimize --setup --reverse --onepass --correct csv_file name_k options n m nnz sec other output ">
 <style type='text/css'>
 body { color : black }
 body { background-color : white }
@@ -58,12 +58,12 @@ A:active { color : purple }
 
 <br><a href="speed.htm#Syntax" target="_top">Syntax</a>
 <br><a href="speed.htm#name_k=value_k" target="_top">name_k=value_k</a>
-<br><a href="speed.htm#method" target="_top">method</a>
-<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#method.adolc" target="_top">adolc</a>
-<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#method.cppad" target="_top">cppad</a>
-<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#method.subgraph" target="_top">subgraph</a>
-<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#method.cppadcg" target="_top">cppadcg</a>
-<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#method.subcg" target="_top">subcg</a>
+<br><a href="speed.htm#implement" target="_top">implement</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#implement.adolc" target="_top">adolc</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#implement.cppad" target="_top">cppad</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#implement.subgraph" target="_top">subgraph</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#implement.cppadcg" target="_top">cppadcg</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#implement.subcg" target="_top">subcg</a>
 <br><a href="speed.htm#problem" target="_top">problem</a>
 <br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#problem.dficfj" target="_top">dficfj</a>
 <br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#problem.dierfj" target="_top">dierfj</a>
@@ -79,7 +79,7 @@ A:active { color : purple }
 <br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#option_list.--correct" target="_top">--correct</a>
 <br><a href="speed.htm#csv_file" target="_top">csv_file</a>
 <br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#csv_file.name_k" target="_top">name_k</a>
-<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#csv_file.method" target="_top">method</a>
+<br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#csv_file.implement" target="_top">implement</a>
 <br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#csv_file.problem" target="_top">problem</a>
 <br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#csv_file.Options" target="_top">Options</a>
 <br>&#160;&#160;&#160;&#160;&#160;<a href="speed.htm#csv_file.n, m" target="_top">n,&nbsp;m</a>
@@ -94,7 +94,7 @@ A:active { color : purple }
 
 <code><font color="blue"><span style='white-space: nowrap'>speed&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>csv_file</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;\<br>
 &nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>[&nbsp;name_1</span></font></i><font color="blue"><span style='white-space: nowrap'>=</span></font><i><font color="black"><span style='white-space: nowrap'>value_1&nbsp;]</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>...</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>[&nbsp;name_K</span></font></i><font color="blue"><span style='white-space: nowrap'>=</span></font><i><font color="black"><span style='white-space: nowrap'>value_K&nbsp;]</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;\<br>
-&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>method</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>problem</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>size</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>option_list</span></font></i></code>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>implement</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>problem</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>size</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>option_list</span></font></i></code>
 
 
 <br>
@@ -122,42 +122,42 @@ Neither
 
 <br>
 <br>
-<b><big><a name="method" id="method">method</a></big></b>
+<b><big><a name="implement" id="implement">implement</a></big></b>
 <br>
 This must be one of the following:
 
 <br>
 <br>
-<big><a name="method.adolc" id="method.adolc">adolc</a></big>
+<big><a name="implement.adolc" id="implement.adolc">adolc</a></big>
 <br>
-Use the ADOL-C <code><font color="blue">sparse_jac</font></code> method to compute Jacobians.
+Use the ADOL-C <code><font color="blue">sparse_jac</font></code> routine to compute Jacobians.
 
 <br>
 <br>
-<big><a name="method.cppad" id="method.cppad">cppad</a></big>
+<big><a name="implement.cppad" id="implement.cppad">cppad</a></big>
 <br>
 Use the CppAD <code><font color="blue">sparse_jac_for</font></code> or <code><font color="blue">sparse_jac_rev</font></code>
-method to computing Jacobians and Hessians.
+routine to compute Jacobians and Hessians.
 
 <br>
 <br>
-<big><a name="method.subgraph" id="method.subgraph">subgraph</a></big>
+<big><a name="implement.subgraph" id="implement.subgraph">subgraph</a></big>
 <br>
-Use the CppAD <code><font color="blue">subgraph_jac_rev</font></code> method to computing Jacobians
+Use the CppAD <code><font color="blue">subgraph_jac_rev</font></code> routine to compute Jacobians
 and Hessians.
 
 <br>
 <br>
-<big><a name="method.cppadcg" id="method.cppadcg">cppadcg</a></big>
+<big><a name="implement.cppadcg" id="implement.cppadcg">cppadcg</a></big>
 <br>
-Use the CppAD <code><font color="blue">sparse_jac_for</font></code> or <code><font color="blue">sparse_jac_rev</font></code> method
+Use the CppAD <code><font color="blue">sparse_jac_for</font></code> or <code><font color="blue">sparse_jac_rev</font></code> routine
 together with CppADCodeGen to compute Jacobians.
 
 <br>
 <br>
-<big><a name="method.subcg" id="method.subcg">subcg</a></big>
+<big><a name="implement.subcg" id="implement.subcg">subcg</a></big>
 <br>
-Use the CppAD <code><font color="blue">subgraph_jac_rev</font></code> method together with CppADCodeGen
+Use the CppAD <code><font color="blue">subgraph_jac_rev</font></code> routine together with CppADCodeGen
 to compute Jacobians and Hessians.
 
 <br>
@@ -243,11 +243,11 @@ The possible options are as follows:
 <br>
 <big><a name="option_list.--colpack" id="option_list.--colpack">--colpack</a></big>
 <br>
-This option must be present when using the <code><font color="blue">adolc</font></code> method and
-cannot be present when using the <code><font color="blue">subgraph</font></code> and <code><font color="blue">subcg</font></code> methods.
+This option must be present when using the <code><font color="blue">adolc</font></code> implementation and
+cannot be present when using the <code><font color="blue">subgraph</font></code> and <code><font color="blue">subcg</font></code> implementations.
 If it is present (not present) the matrix compression is computed
 using the Colpack (CppAD) coloring algorithms.
-(The <code><font color="blue">subgraph</font></code> and <code><font color="blue">subcg</font></code> methods
+(The <code><font color="blue">subgraph</font></code> and <code><font color="blue">subcg</font></code> implementations
 does not use a coloring algorithm.)
 
 <br>
@@ -255,7 +255,7 @@ does not use a coloring algorithm.)
 <big><a name="option_list.--indirect" id="option_list.--indirect">--indirect</a></big>
 <br>
 This option can only be present when computing sparse Hessians
-using the <code><font color="blue">adolc</font></code> method.
+using the <code><font color="blue">adolc</font></code> implementation.
 If it is present (not present)
 the corresponding sparse Hessian is
 computed by solving a triangular set of equations (computed directly)
@@ -269,7 +269,7 @@ If this option is present (not present),
 the corresponding cppad function objects are optimized (not optimized).
 This optimization is not include in the timing results.
 This option can not be used when 
-<code><i><font color="black"><span style='white-space: nowrap'>method</span></font></i></code>
+<code><i><font color="black"><span style='white-space: nowrap'>implement</span></font></i></code>
  is <code><font color="blue">adolc</font></code>.
 
 <br>
@@ -281,7 +281,7 @@ the time to setup the AD calculation is included (not included)
 in the timing test.
 This includes recording the function,
 calculating the sparsity pattern,  compression.
-In the case of <code><font color="blue">cppadcg</font></code> and <code><font color="blue">subcg</font></code> methods
+In the case of <code><font color="blue">cppadcg</font></code> and <code><font color="blue">subcg</font></code> implementations
 it also includes generating and compiling the source code.
 
 <br>
@@ -291,15 +291,17 @@ it also includes generating and compiling the source code.
 If this option is present (not present),
 reverse mode is used (not used) to calculate the results.
 This option must be present when 
-<code><i><font color="black"><span style='white-space: nowrap'>method</span></font></i></code>
+<code><i><font color="black"><span style='white-space: nowrap'>implement</span></font></i></code>
  is
 <code><font color="blue">subgraph</font></code> or <code><font color="blue">subcg</font></code>.
 (so far CppAD has only implemented reverse mode sub-graphs).
-This option cannot be present when method is
+This option cannot be present when implementation is
 <code><font color="blue">cppad</font></code> or <code><font color="blue">cppadcg</font></code> and
 <a href="speed.htm#option_list.--onepass" target="_top"><span style='white-space: nowrap'>--onepass</span></a>
  is present.
-It cannot be present for Hessian problems when method is <code><font color="blue">adolc</font></code>.
+It cannot be present for Hessian problems when 
+<code><i><font color="black"><span style='white-space: nowrap'>implement</span></font></i></code>
+ is <code><font color="blue">adolc</font></code>.
 
 <br>
 <br>
@@ -311,19 +313,21 @@ is used to compute the entire sparse Jacobian.
 Otherwise only one direction is computed for each pass of the tape.
 (Multiple columns of the Jacobian still get compressed into each pass).
 This option must be present for the Jacobian cases where
-method is <code><font color="blue">adolc</font></code>.
+
+<code><i><font color="black"><span style='white-space: nowrap'>implement</span></font></i></code>
+ is <code><font color="blue">adolc</font></code>.
 This option cannot be present for the following cases:
 <ol type="1"><li>
 Hessian problems.
 </li><li>
 
 when 
-<code><i><font color="black"><span style='white-space: nowrap'>method</span></font></i></code>
+<code><i><font color="black"><span style='white-space: nowrap'>implement</span></font></i></code>
  is <code><font color="blue">subgraph</font></code> or <code><font color="blue">subcg</font></code>.
 </li><li>
 
 when 
-<code><i><font color="black"><span style='white-space: nowrap'>method</span></font></i></code>
+<code><i><font color="black"><span style='white-space: nowrap'>implement</span></font></i></code>
  is <code><font color="blue">cppad</font></code> or <code><font color="blue">cppadcg</font></code>
 and <a href="speed.htm#option_list.--reverse" target="_top"><span style='white-space: nowrap'>--reverse</span></a>
  is present.
@@ -348,7 +352,7 @@ The first line of this csv file is the header which contains the column names.
 It starts with
 
 <code><font color="blue"><span style='white-space: nowrap'><br>
-&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>name_1</span></font></i><font color="blue"><span style='white-space: nowrap'>,</span></font><i><font color="black"><span style='white-space: nowrap'>...</span></font></i><font color="blue"><span style='white-space: nowrap'>,</span></font><i><font color="black"><span style='white-space: nowrap'>name_K</span></font></i><font color="blue"><span style='white-space: nowrap'>,method,problem,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>name_1</span></font></i><font color="blue"><span style='white-space: nowrap'>,</span></font><i><font color="black"><span style='white-space: nowrap'>...</span></font></i><font color="blue"><span style='white-space: nowrap'>,</span></font><i><font color="black"><span style='white-space: nowrap'>name_K</span></font></i><font color="blue"><span style='white-space: nowrap'>,implement,problem,<br>
 </span></font></code>
 Next the header contains the names of the options in order; i.e.,
 
@@ -381,10 +385,10 @@ in column
 
 <br>
 <br>
-<big><a name="csv_file.method" id="csv_file.method">method</a></big>
+<big><a name="csv_file.implement" id="csv_file.implement">implement</a></big>
 <br>
 The values 
-<code><i><font color="black"><span style='white-space: nowrap'>method</span></font></i></code>
+<code><i><font color="black"><span style='white-space: nowrap'>implement</span></font></i></code>
  is the corresponding
 command line arguments when <code><font color="blue">speed</font></code>.
 
@@ -436,8 +440,8 @@ Jacobian (when
 ).
 Note that 
 <code><i><font color="black"><span style='white-space: nowrap'>nnz</span></font></i></code>
- for the <code><font color="blue">double</font></code> method is the
-actual number of non-zeros, while for the other methods it is number
+ for the <code><font color="blue">double</font></code> implementation is the
+actual number of non-zeros, while for the other implementations it is number
 of possibly non-zero values.
 
 <br>

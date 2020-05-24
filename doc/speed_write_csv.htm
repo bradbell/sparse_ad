@@ -15,7 +15,7 @@ MathJax.Hub.Config({
 <title>Writes One Row of the Speed Csv Output File</title>
 <meta http-equiv='Content-Type' content='text/html' charset='utf-8'>
 <meta name="description" id="description" content="Writes One Row of the Speed Csv Output File">
-<meta name="keywords" id="keywords" content=" writes one row the speed csv output file syntax prototype csv_file header name value method problem options n m nnz sec ">
+<meta name="keywords" id="keywords" content=" writes one row the speed csv output file syntax prototype csv_file header name value implement problem options n m nnz sec ">
 <style type='text/css'>
 body { color : black }
 body { background-color : white }
@@ -66,7 +66,7 @@ A:active { color : purple }
 <br><a href="speed_write_csv.htm#csv_file" target="_top">csv_file</a>
 <br>&#160;&#160;&#160;&#160;&#160;<a href="speed_write_csv.htm#csv_file.header" target="_top">header</a>
 <br><a href="speed_write_csv.htm#name, value" target="_top">name,&nbsp;value</a>
-<br><a href="speed_write_csv.htm#method" target="_top">method</a>
+<br><a href="speed_write_csv.htm#implement" target="_top">implement</a>
 <br><a href="speed_write_csv.htm#problem" target="_top">problem</a>
 <br><a href="speed_write_csv.htm#options" target="_top">options</a>
 <br><a href="speed_write_csv.htm#n, m, nnz" target="_top">n,&nbsp;m,&nbsp;nnz</a>
@@ -80,7 +80,7 @@ A:active { color : purple }
 &nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>csv_file</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>name</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>value</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&nbsp;&nbsp;&nbsp;,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>method</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&nbsp;&nbsp;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>implement</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&nbsp;&nbsp;,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>problem</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&nbsp;,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>colpack</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&nbsp;,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>indirect</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;,<br>
@@ -105,7 +105,7 @@ A:active { color : purple }
     <b><font color="#0000FF">const</font></b> std<font color="#990000">::</font>string<font color="#990000">&amp;</font>                csv_file   <font color="#990000">,</font>
     <b><font color="#0000FF">const</font></b> CppAD<font color="#990000">::</font>vector<font color="#990000">&lt;</font>std<font color="#990000">::</font>string<font color="#990000">&gt;&amp;</font> name       <font color="#990000">,</font>
     <b><font color="#0000FF">const</font></b> CppAD<font color="#990000">::</font>vector<font color="#990000">&lt;</font>std<font color="#990000">::</font>string<font color="#990000">&gt;&amp;</font> value      <font color="#990000">,</font>
-    <b><font color="#0000FF">const</font></b> std<font color="#990000">::</font>string<font color="#990000">&amp;</font>                method     <font color="#990000">,</font>
+    <b><font color="#0000FF">const</font></b> std<font color="#990000">::</font>string<font color="#990000">&amp;</font>                implement  <font color="#990000">,</font>
     <b><font color="#0000FF">const</font></b> std<font color="#990000">::</font>string<font color="#990000">&amp;</font>                problem    <font color="#990000">,</font>
     <font color="#009900">bool</font>                              colpack    <font color="#990000">,</font>
     <font color="#009900">bool</font>                              indirect   <font color="#990000">,</font>
@@ -135,7 +135,7 @@ The header for the csv file is its first row.
 The header row begins with
 
 <code><font color="blue"><span style='white-space: nowrap'><br>
-&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>first_name</span></font></i><font color="blue"><span style='white-space: nowrap'>,</span></font><i><font color="black"><span style='white-space: nowrap'>...</span></font></i><font color="blue"><span style='white-space: nowrap'>,</span></font><i><font color="black"><span style='white-space: nowrap'>last_name</span></font></i><font color="blue"><span style='white-space: nowrap'>,method,problem,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span></font><i><font color="black"><span style='white-space: nowrap'>first_name</span></font></i><font color="blue"><span style='white-space: nowrap'>,</span></font><i><font color="black"><span style='white-space: nowrap'>...</span></font></i><font color="blue"><span style='white-space: nowrap'>,</span></font><i><font color="black"><span style='white-space: nowrap'>last_name</span></font></i><font color="blue"><span style='white-space: nowrap'>,implement,problem,<br>
 </span></font></code>
 where 
 <code><i><font color="black"><span style='white-space: nowrap'>first_name</span></font></i></code>
@@ -172,9 +172,11 @@ corresponding to the <code><i>i</i></code>-th element of
 
 <br>
 <br>
-<b><big><a name="method" id="method">method</a></big></b>
+<b><big><a name="implement" id="implement">implement</a></big></b>
 <br>
-This is the value written in the method column.
+This is the value written in the 
+<code><i><font color="black"><span style='white-space: nowrap'>implement</span></font></i></code>
+ column.
 
 <br>
 <br>

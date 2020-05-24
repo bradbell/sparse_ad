@@ -4,11 +4,11 @@
 Keyword = 
 [
 { tag: 'sparse_ad', title:'sparse_ad-20200311: Computing Sparse Jacobians and Hessians Using AD', other:' github system requirements build_type special check run speed tests' },
-{ tag: 'speed', title:'Running Jacobian and Hessian Speed Tests', other:' syntax name_k=value_k method adolc cppad subgraph cppadcg subcg problem dficfj dierfj deptfg size option_list --colpack --indirect --optimize --setup --reverse --onepass --correct csv_file options nnz sec other output' },
+{ tag: 'speed', title:'Running Jacobian and Hessian Speed Tests', other:' syntax name_k=value_k implement adolc cppad subgraph cppadcg subcg problem dficfj dierfj deptfg size option_list --colpack --indirect --optimize --setup --reverse --onepass --correct csv_file options nnz sec other output' },
 { tag: 'speed_global', title:'Speed Program Global Variables', other:' initialization global_problem_ptr global_size global_colpack global_indirect global_optimize global_setup global_reverse global_onepass global_correct global_x global_nnz global_correct_ok' },
-{ tag: 'speed_setup', title:'Setup a Speed Test Problem', other:' syntax prototype purpose method globals initialization hessian jacobian not used' },
-{ tag: 'speed_test', title:'Setup a Speed Test Problem', other:' syntax prototype jacobian hessian purpose method globals initialization global_nnz global_correct_ok' },
-{ tag: 'speed_write_csv', title:'Writes One Row of the Speed Csv Output File', other:' syntax prototype csv_file header name value method problem options nnz sec' },
+{ tag: 'speed_setup', title:'Setup a Speed Test Problem', other:' syntax prototype purpose implement globals initialization hessian jacobian not used' },
+{ tag: 'speed_test', title:'Setup a Speed Test Problem', other:' syntax prototype jacobian hessian purpose implement globals initialization global_nnz global_correct_ok' },
+{ tag: 'speed_write_csv', title:'Writes One Row of the Speed Csv Output File', other:' syntax prototype csv_file header name value implement problem options nnz sec' },
 { tag: 'bin', title:'Executable Scripts', other:' working directory' },
 { tag: 'wget_minpack2.sh', title:'Get a Minpack2 File From Argonne National Laboratory', other:' syntax working directory result example' },
 { tag: 'f2c.sh', title:'Create a C Version of a Fortran File', other:' syntax working directory name result example' },

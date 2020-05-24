@@ -15,7 +15,7 @@ MathJax.Hub.Config({
 <title>Setup a Speed Test Problem</title>
 <meta http-equiv='Content-Type' content='text/html' charset='utf-8'>
 <meta name="description" id="description" content="Setup a Speed Test Problem">
-<meta name="keywords" id="keywords" content=" setup speed test problem syntax prototype purpose method globals initialization m hessian jacobian not used ">
+<meta name="keywords" id="keywords" content=" setup speed test problem syntax prototype purpose implement globals initialization m hessian jacobian not used ">
 <style type='text/css'>
 body { color : black }
 body { background-color : white }
@@ -61,7 +61,7 @@ A:active { color : purple }
 <br><a href="speed_setup.htm#Syntax" target="_top">Syntax</a>
 <br><a href="speed_setup.htm#Prototype" target="_top">Prototype</a>
 <br><a href="speed_setup.htm#Purpose" target="_top">Purpose</a>
-<br><a href="speed_setup.htm#method" target="_top">method</a>
+<br><a href="speed_setup.htm#implement" target="_top">implement</a>
 <br><a href="speed_setup.htm#Globals" target="_top">Globals</a>
 <br>&#160;&#160;&#160;&#160;&#160;<a href="speed_setup.htm#Globals.Initialization" target="_top">Initialization</a>
 <br>&#160;&#160;&#160;&#160;&#160;<a href="speed_setup.htm#Globals.m" target="_top">m</a>
@@ -73,7 +73,7 @@ A:active { color : purple }
 
 <br>
 
-<code><font color="blue"><span style='white-space: nowrap'>setup_</span></font><i><font color="black"><span style='white-space: nowrap'>method</span></font></i><font color="blue"><span style='white-space: nowrap'>()</span></font></code>
+<code><font color="blue"><span style='white-space: nowrap'>setup_</span></font><i><font color="black"><span style='white-space: nowrap'>implement</span></font></i><font color="blue"><span style='white-space: nowrap'>()</span></font></code>
 
 
 <br>
@@ -98,7 +98,7 @@ f(x)
 
 <br>
 <br>
-<b><big><a name="method" id="method">method</a></big></b>
+<b><big><a name="implement" id="implement">implement</a></big></b>
 <br>
 is one of the following
 <code><font color="blue">adolc</font></code>,
@@ -141,7 +141,7 @@ A problem is a Hessian test case if
 <code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;=&nbsp;1</span></font></code>
 .
 In the case 
-<code><font color="blue"><span style='white-space: nowrap'>test_</span></font><i><font color="black"><span style='white-space: nowrap'>method</span></font></i><font color="blue"><span style='white-space: nowrap'>_hes</span></font></code>
+<code><font color="blue"><span style='white-space: nowrap'>test_</span></font><i><font color="black"><span style='white-space: nowrap'>implement</span></font></i><font color="blue"><span style='white-space: nowrap'>_hes</span></font></code>
  will be called to determine
 the speed of evaluation of the Hessian.
 
@@ -153,7 +153,7 @@ A problem is a Jacobian test case if
 <code><i><font color="black"><span style='white-space: nowrap'>m</span></font></i><font color="blue"><span style='white-space: nowrap'>&nbsp;&gt;&nbsp;1</span></font></code>
 .
 In the case 
-<code><font color="blue"><span style='white-space: nowrap'>test_</span></font><i><font color="black"><span style='white-space: nowrap'>method</span></font></i><font color="blue"><span style='white-space: nowrap'>_jac</span></font></code>
+<code><font color="blue"><span style='white-space: nowrap'>test_</span></font><i><font color="black"><span style='white-space: nowrap'>implement</span></font></i><font color="blue"><span style='white-space: nowrap'>_jac</span></font></code>
  will be called to determine
 the speed of evaluation of the Jacobian.
 
