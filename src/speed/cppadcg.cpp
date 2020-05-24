@@ -35,7 +35,12 @@ void setup_cppadcg(void)
     CppAD::ADFun<cg_double> cg_f;
     cg_f.Dependent(acg_x, acg_fvec);
     if( global_optimize )
-        cg_f.optimize();
+    {   cg_f.optimize("collision_limit=30");
+        if( cg_f.exceed_collision_limit() )
+        {   std::cerr << "cppadcg: collision limit execeeded\n";
+            std::exit(1);
+        }
+    }
     //
     // acg_f
     CppAD::ADFun<cppadcg_double, cg_double> acg_f;
@@ -76,7 +81,12 @@ void setup_cppadcg(void)
         CppAD::ADFun<cg_double> cg_H;
         cg_H.Dependent(acg_x, acg_sparse_hes.val());
         if( global_optimize )
-            cg_H.optimize();
+        {   cg_H.optimize("collision_limit=30");
+            if( cg_H.exceed_collision_limit() )
+            {   std::cerr << "cppadcg: collision limit execeeded\n";
+                std::exit(1);
+            }
+        }
         //
         // lib_
         cppadcg_library sparse_hes_val(cg_H, "sparse_hes_val");
@@ -136,7 +146,12 @@ void setup_cppadcg(void)
         CppAD::ADFun<cg_double> cg_J;
         cg_J.Dependent(acg_x, acg_sparse_jac.val());
         if( global_optimize )
-            cg_J.optimize();
+        {   cg_J.optimize("collision_limit=30");
+            if( cg_J.exceed_collision_limit() )
+            {   std::cerr << "cppadcg: collision limit execeeded\n";
+                std::exit(1);
+            }
+        }
         //
         // lib_
         cppadcg_library sparse_jac_val(cg_J, "sparse_jac_val");

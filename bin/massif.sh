@@ -18,7 +18,13 @@ do
         rm $file
     fi
 done
-valgrind --tool=massif --massif-out-file=massif.out $* >& massif.err
+if ! valgrind --tool=massif --massif-out-file=massif.out $* >& massif.err
+then
+    dir=$(pwd)
+    echo "cat $dir/massif.err"
+    cat massif.err > /dev/stderr
+    exit 1
+fi
 #
 n_sum=`grep '^mem_heap_B=' massif.out | wc -l`
 sum=`grep '^mem_heap_B=' massif.out | \

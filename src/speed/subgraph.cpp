@@ -33,7 +33,12 @@ void setup_subgraph(void)
     global_problem_ptr->fun(ax, afvec);
     fun_.Dependent(ax, afvec);
     if( global_optimize )
-        fun_.optimize();
+    {   fun_.optimize("collision_limit=30");
+        if( fun_.exceed_collision_limit() )
+        {   std::cerr << "subgraph: collision limit execeeded\n";
+            std::exit(1);
+        }
+    }
     //
     bool transpose = false;
     if( m == 1 )
@@ -50,7 +55,12 @@ void setup_subgraph(void)
         cppad_vector agrad = af.Reverse(1, aw);
         grad_.Dependent(ax, agrad);
         if( global_optimize )
-            grad_.optimize();
+        {   grad_.optimize("collision_limit=30");
+            if( grad_.exceed_collision_limit() )
+            {   std::cerr << "subgraph: collision limit execeeded\n";
+                std::exit(1);
+            }
+        }
         //
         // Compute Jacobian sparsity pattern for grad'(x), which is a
         // Hessian sparsity pattern for g(x).

@@ -1,7 +1,7 @@
 #! /bin/bash -e
 # vim: set expandtab:
-hash='d83cf551c1f71c5fadca1ff87666e20eea906241'
-version='20200202'
+hash='5c86b1803d1ce47dfce5b20c58a64c6cf19a61e0'
+version='20200523'
 # --------------------------------------------------------------------------
 echo_eval() {
     echo $*

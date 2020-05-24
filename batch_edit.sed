@@ -30,4 +30,4 @@
 # '
 # ----------------------------------------------------------------------------
 # Put other sed commands below here and without # at start of line
-s|c_vector task(task_len + 1);|c_vector task(size_t(task_len + 1));|
+s|\.optimize()|\.optimize("collision_limit=30")|g

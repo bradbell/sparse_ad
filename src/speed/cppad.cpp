@@ -151,7 +151,12 @@ void setup_cppad(void)
     global_problem_ptr->fun(ax, afvec);
     fun_.Dependent(ax, afvec);
     if( global_optimize )
-        fun_.optimize();
+    {   fun_.optimize("collision_limit=30");
+        if( fun_.exceed_collision_limit() )
+        {   std::cerr << "cppad: collision limit execeeded\n";
+            std::exit(1);
+        }
+    }
     //
     if( m == 1 )
         eval_hes();
