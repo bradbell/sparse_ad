@@ -1,7 +1,7 @@
 #! /bin/bash -e
 # vim: set expandtab:
-implement_list='adolc cppad subgraph cppadcg subcg'
 implement_list='adolc cppad subgraph' # without code generation
+implement_list='adolc cppad subgraph cppadcg subcg'
 problem_list='dficfj dierfj deptfg dgl1fg'
 # --------------------------------------------------------------------------
 echo_eval() {
