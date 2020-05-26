@@ -30,4 +30,4 @@
 # '
 # ----------------------------------------------------------------------------
 # Put other sed commands below here and without # at start of line
-s|\.optimize()|\.optimize("collision_limit=30")|g
+s|\.optimize("collision_limit=30")|.optimize("no_cumulative_sum_op collision_limit=100")|

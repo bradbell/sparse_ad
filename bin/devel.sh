@@ -25,9 +25,6 @@ ignore_files='
     .gitignore
     batch_edit.sed
     bin/devel.sh
-    tex/siamart171218.cls
-    tex/siamplain.bst
-    tex/aspell.pws
 '
 # ----------------------------------------------------------------------------
 echo "copyright_owner=$copyright_owner"
