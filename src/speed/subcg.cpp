@@ -52,7 +52,7 @@ void setup_subcg(void)
         if( global_optimize )
         {   cg_grad.optimize("no_cumulative_sum_op collision_limit=100");
             if( cg_grad.exceed_collision_limit() )
-            {   std::cerr << "subcg: collision limit execeeded\n";
+            {   std::cerr << "subcg: cg_grad: collision limit execeeded\n";
                 std::exit(1);
             }
         }
@@ -85,7 +85,7 @@ void setup_subcg(void)
         if( global_optimize )
         {   cg_H.optimize("no_cumulative_sum_op collision_limit=100");
             if( cg_H.exceed_collision_limit() )
-            {   std::cerr << "subcg: collision limit execeeded\n";
+            {   std::cerr << "subcg: cg_H: collision limit execeeded\n";
                 std::exit(1);
             }
         }

@@ -153,7 +153,7 @@ void setup_cppad(void)
     if( global_optimize )
     {   fun_.optimize("no_cumulative_sum_op collision_limit=100");
         if( fun_.exceed_collision_limit() )
-        {   std::cerr << "cppad: collision limit execeeded\n";
+        {   std::cerr << "cppad: fun_: collision limit execeeded\n";
             std::exit(1);
         }
     }

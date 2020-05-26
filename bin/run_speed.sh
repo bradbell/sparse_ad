@@ -91,6 +91,8 @@ do
     total_count="$count"
     count='0'
     #
+for implement in $implement_list
+do
 for problem in $problem_list
 do
 for setup in --setup   ''
@@ -98,8 +100,6 @@ do
 for reverse in --reverse ''
 do
 for onepass in --onepass  ''
-do
-for implement in $implement_list
 do
 for optimize in --optimize ''
 do

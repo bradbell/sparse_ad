@@ -35,9 +35,9 @@ void setup_cppadcg(void)
     CppAD::ADFun<cg_double> cg_f;
     cg_f.Dependent(acg_x, acg_fvec);
     if( global_optimize )
-    {   cg_f.optimize("no_cumulative_sum_op collision_limit=100");
+    {   cg_f.optimize("no_cumulative_sum_op collision_limit=500");
         if( cg_f.exceed_collision_limit() )
-        {   std::cerr << "cppadcg: collision limit execeeded\n";
+        {   std::cerr << "cppadcg: cg_f: collision limit execeeded\n";
             std::exit(1);
         }
     }
@@ -81,9 +81,9 @@ void setup_cppadcg(void)
         CppAD::ADFun<cg_double> cg_H;
         cg_H.Dependent(acg_x, acg_sparse_hes.val());
         if( global_optimize )
-        {   cg_H.optimize("no_cumulative_sum_op collision_limit=100");
+        {   cg_H.optimize("no_cumulative_sum_op collision_limit=500");
             if( cg_H.exceed_collision_limit() )
-            {   std::cerr << "cppadcg: collision limit execeeded\n";
+            {   std::cerr << "cppadcg: cg_H: collision limit execeeded\n";
                 std::exit(1);
             }
         }
@@ -146,9 +146,9 @@ void setup_cppadcg(void)
         CppAD::ADFun<cg_double> cg_J;
         cg_J.Dependent(acg_x, acg_sparse_jac.val());
         if( global_optimize )
-        {   cg_J.optimize("no_cumulative_sum_op collision_limit=100");
+        {   cg_J.optimize("no_cumulative_sum_op collision_limit=500");
             if( cg_J.exceed_collision_limit() )
-            {   std::cerr << "cppadcg: collision limit execeeded\n";
+            {   std::cerr << "cppadcg: cg_J: collision limit execeeded\n";
                 std::exit(1);
             }
         }
