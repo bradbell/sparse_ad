@@ -50,7 +50,7 @@ void setup_subcg(void)
         CppAD::ADFun<cg_double> cg_grad;
         cg_grad.Dependent(acg_x, acg_g);
         if( global_optimize )
-        {   cg_grad.optimize("no_cumulative_sum_op collision_limit=100");
+        {   cg_grad.optimize("no_cumulative_sum_op collision_limit=300");
             if( cg_grad.exceed_collision_limit() )
             {   std::cerr << "subcg: cg_grad: collision limit execeeded\n";
                 std::exit(1);
@@ -83,7 +83,7 @@ void setup_subcg(void)
         CppAD::ADFun<cg_double> cg_H;
         cg_H.Dependent(acg_x, acg_sparse_hes.val());
         if( global_optimize )
-        {   cg_H.optimize("no_cumulative_sum_op collision_limit=100");
+        {   cg_H.optimize("no_cumulative_sum_op collision_limit=300");
             if( cg_H.exceed_collision_limit() )
             {   std::cerr << "subcg: cg_H: collision limit execeeded\n";
                 std::exit(1);
