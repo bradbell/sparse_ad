@@ -1,0 +1,22 @@
+$begin release_notes$$
+$spell
+    cppadcg
+    gcc
+$$
+
+$section Changes and Additions to sparse_ad$$
+
+$head 2020-07-27$$
+$list number$$
+Add these release notes and $cref get_all.sh$$
+to the documentation.
+$lnext
+Add a timeout check to $cref wget_minpack2.sh$$
+(in case the server is down).
+$lnext
+Advance $code bin/get_cppadcg.sh$$ from version 2.4.2 to 2.4.3
+(this fixes a compiler error with gcc 10.1.1.
+$lend
+
+
+$end

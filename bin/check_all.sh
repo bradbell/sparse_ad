@@ -41,7 +41,11 @@ list=`ls $dir/*.f`
 change='no'
 for file in $list
 do
-    bin/wget_minpack2.sh $file >& /dev/null
+    if ! bin/wget_minpack2.sh $file >& /dev/null
+    then
+        echo 'bin/check_all.sh: bin/wget_minpack2.sh failed'
+        exit 1
+    fi
     if ! git diff --exit-code $file > /dev/null
     then
         echo "file changed using: bin/wget_minpack2.sh $name"

@@ -12,7 +12,8 @@ All of the scripts below must be executed from the
 git root directory for this repository; i.e,
 the directory that contains the $code .gitignore$$ file.
 
-$childtable%bin/wget_minpack2.sh
+$childtable%bin/get_all.sh
+    %bin/wget_minpack2.sh
     %bin/f2c.sh
     %bin/c2hpp.py
     %bin/csv2tex.py

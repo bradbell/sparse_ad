@@ -81,6 +81,11 @@ then
     exit 1
 fi
 local_file=`echo $file | sed -e 's|^minpack2/||'`
-echo_eval wget $remote/$local_file -O minpack2/$local_file
+echo wget --timeout=5 $remote/$local_file -O minpack2/$local_file
+if ! wget --timeout=5 $remote/$local_file -O minpack2/$local_file
+then
+    echo 'wget_minpack.sh: Error'
+    exit 1
+fi
 echo 'wget_minpack2.sh: OK'
 exit 0

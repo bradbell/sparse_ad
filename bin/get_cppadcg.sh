@@ -1,8 +1,8 @@
 #! /bin/bash -e
 # vim: set expandtab:
 # --------------------------------------------------------------------------
-# can use a git has, branch, or release tag
-version='v2.4.2'
+# can use a git hash, branch, or release tag
+version='v2.4.3'
 # --------------------------------------------------------------------------
 echo_eval() {
     echo $*

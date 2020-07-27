@@ -84,6 +84,7 @@ $childtable%src/speed/speed.omh
     %src/typedef.hpp
     %src/fun_obj/fun_base.hpp
     %src/utility/utility.omh
+    %release_notes.omh
 %$$
 
 $end

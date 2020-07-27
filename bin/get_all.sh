@@ -12,11 +12,25 @@ then
     exit 1
 fi
 # --------------------------------------------------------------------------
-bin/get_colpack.sh
-bin/get_adolc.sh    # requires colpack
-bin/get_eigen.sh
-bin/get_cppad.sh
-bin/get_cppadcg.sh  # requires eigen and cppad
+# $begin get_all.sh$$
+#
+# $section Local install of Packages Required by sparse_ad$$
+#
+# $head Syntax$$
+# $codei%bin/get_all.sh%$$
+#
+# $head Implementation$$
+# This script just executes the following scripts in order:
+# $srccode%sh%
+bin/get_colpack.sh  # Colpack
+bin/get_adolc.sh    # ADOL-C:requires colpack
+bin/get_eigen.sh    # Eigen
+bin/get_cppad.sh    # CppAD
+bin/get_cppadcg.sh  # CppADCodeGen: requires Eigen and CppAD
+# %$$
+#
+# $end
+#
 # --------------------------------------------------------------------------
 echo 'bin/get_all.sh: OK'
 exit 1
