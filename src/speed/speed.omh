@@ -83,9 +83,9 @@ for $code dficfj$$ it is the number of sub-intervals.
 This corresponds to the number of variables is $icode n$$ below:
 
 $table
-$icode problem$$ $pre  $$ $cnext $icode n$$                  $rnext
-$code dficfj$$   $pre  $$ $cnext $codei%8% * %size%$$        $rnext
-$code dierfj$$   $pre  $$ $cnext $codei%15% * %size% + 3%$$  $rnext
+$icode problem$$ $pre  $$ $cnext $icode n$$                 $rnext
+$code dficfj$$   $pre  $$ $cnext $codei%8 * %size%$$        $rnext
+$code dierfj$$   $pre  $$ $cnext $codei%15 * %size% + 3%$$  $rnext
 $code deptfg$$   $pre  $$ $cnext $icode%size% * %size%$$
 $tend
 
