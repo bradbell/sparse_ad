@@ -12,7 +12,7 @@ then
     exit 1
 fi
 # --------------------------------------------------------------------------
-# $begin get_all.sh$$
+# $begin get_all.sh$$ $newlinech #$$
 #
 # $section Local install of Packages Required by sparse_ad$$
 #
@@ -27,6 +27,7 @@ bin/get_adolc.sh    # ADOL-C:requires colpack
 bin/get_eigen.sh    # Eigen
 bin/get_cppad.sh    # CppAD
 bin/get_cppadcg.sh  # CppADCodeGen: requires Eigen and CppAD
+bin/get_xsrst.sh    # Only needed to build sparse_ad documentation
 # %$$
 #
 # $end

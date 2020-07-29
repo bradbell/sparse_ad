@@ -2,9 +2,13 @@ $begin release_notes$$
 $spell
     cppadcg
     gcc
+    xsrst
 $$
 
 $section Changes and Additions to sparse_ad$$
+
+$head 2020-07-29$$
+Add $code bin/get_xsrst.sh$$ to $cref get_all.sh$$.
 
 $head 2020-07-27$$
 $list number$$
