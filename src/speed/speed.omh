@@ -5,13 +5,13 @@
 
 {xsrst_spell
     jac
-    cpp
     dierfj
     dficfj
     nnz
     csv
     deptfg
     onepass
+    coloring
 }
 
 Running Jacobian and Hessian Speed Tests
@@ -108,7 +108,7 @@ The possible options are as follows:
 --colpack
 =========
 This option must be present when using the ``adolc`` implementation and
-cannot be present when using the ``subgraph`` and ``subcg`` implementations.
+can not be present when using the ``subgraph`` and ``subcg`` implementations.
 If it is present (not present) the matrix compression is computed
 using the Colpack (CppAD) coloring algorithms.
 (The ``subgraph`` and ``subcg`` implementations
@@ -147,10 +147,10 @@ reverse mode is used (not used) to calculate the results.
 This option must be present when *implement* is
 ``subgraph`` or ``subcg`` .
 (so far CppAD has only implemented reverse mode sub-graphs).
-This option cannot be present when implementation is
+This option can't be present when implementation is
 ``cppad`` or ``cppadcg`` and
 :ref:`--onepass<speed.option_list.--onepass>` is present.
-It cannot be present for Hessian problems when *implement* is ``adolc`` .
+It can't be present for Hessian problems when *implement* is ``adolc`` .
 
 --onepass
 =========
@@ -161,7 +161,7 @@ Otherwise only one direction is computed for each pass of the tape.
 (Multiple columns of the Jacobian still get compressed into each pass).
 This option must be present for the Jacobian cases where
 *implement* is ``adolc`` .
-This option cannot be present for the following cases:
+This option can't be present for the following cases:
 
 #.  Hessian problems.
 #.  when *implement* is ``subgraph`` or ``subcg`` .

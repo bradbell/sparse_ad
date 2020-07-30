@@ -10,10 +10,8 @@
 # {xsrst_spell
 #   argonne
 #   wget
-#   ftp
 #   mcs
 #   anl
-#   gov
 #   tprobs
 #   dficfj
 # }

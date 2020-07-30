@@ -6,7 +6,6 @@
 .. include:: ../preamble.rst
 
 {xsrst_spell
-    cpp
 }
 
 Extract Upper Triangle From A CppAD Sparsity Pattern

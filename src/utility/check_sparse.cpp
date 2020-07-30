@@ -8,7 +8,6 @@
 .. include:: ../preamble.rst
 
 {xsrst_spell
-    cpp
     nr
     nc
 }

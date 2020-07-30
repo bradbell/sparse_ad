@@ -6,7 +6,6 @@
 .. include:: ../preamble.rst
 
 {xsrst_spell
-    cpp
     rcv
     nr
     nc

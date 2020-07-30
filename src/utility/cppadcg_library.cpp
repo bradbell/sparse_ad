@@ -5,7 +5,6 @@
 .. include:: ../preamble.rst
 
 {xsrst_spell
-    cpp
     cg
 }
 

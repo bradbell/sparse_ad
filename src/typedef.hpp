@@ -12,7 +12,6 @@
 
 {xsrst_spell
     ftnlen
-    cpp
     typedef
     hpp
     cg

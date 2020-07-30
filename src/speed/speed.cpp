@@ -20,6 +20,7 @@
     ptr
     onepass
     nnz
+    coloring
 }
 
 Speed Program Global Variables

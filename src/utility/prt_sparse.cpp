@@ -7,7 +7,6 @@
 .. include:: ../preamble.rst
 
 {xsrst_spell
-    cpp
     prt
 }
 

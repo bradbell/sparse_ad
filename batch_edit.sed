@@ -30,18 +30,6 @@
 # '
 # ----------------------------------------------------------------------------
 # Put other sed commands below here and without # at start of line
-/^    cppadcg$/d
-/^#   cppadcg$/d
-#
-/^    cppad$/d
-/^#   cppad$/d
-#
-/^    subgraph$/d
-/^#   subgraph$/d
-#
-/^    adolc$/d
-/^#   adolc$/d
-#
-/^    colpack$/d
-/^#   colpack$/d
+/^    cpp$/d
+/^#   cpp$/d
 #
