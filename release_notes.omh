@@ -4,6 +4,8 @@
 
 {xsrst_spell
     gcc
+    timeout
+    wget
 }
 
 Changes and Additions to sparse_ad

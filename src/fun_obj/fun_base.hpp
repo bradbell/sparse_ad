@@ -15,6 +15,9 @@
     prototyped
     hes
     hpp
+    grad
+    destructor
+    typedef
 }
 
 Base Class For Test Function Objects

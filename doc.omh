@@ -10,6 +10,7 @@ vim: set expandtab:
     cmake
     mmdd
     github
+    bradbell
 }
 
 .. comment:  Begin: Setting that apply to all sections

@@ -16,6 +16,7 @@
     typedef
     hpp
     cg
+    adouble
 }
 
 Type Definitions
