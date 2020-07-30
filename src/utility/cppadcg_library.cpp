@@ -6,7 +6,6 @@
 
 {xsrst_spell
     cpp
-    cppadcg
     cg
 }
 

@@ -6,14 +6,12 @@
 .. include:: ../preamble.rst
 
 {xsrst_spell
-    adolc
     cpp
     rcv
     nr
     nc
     nnz
     cind
-    cppad
 }
 
 Convert An Adolc Sparse Matrix to CppAD Form

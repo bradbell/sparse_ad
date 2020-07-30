@@ -4,10 +4,6 @@
 .. include:: ../preamble.rst
 
 {xsrst_spell
-    colpack
-    adolc
-    cppad
-    subgraph
     jac
     cpp
     dierfj
@@ -16,8 +12,6 @@
     csv
     deptfg
     onepass
-    cppadcg
-    subcg
 }
 
 Running Jacobian and Hessian Speed Tests

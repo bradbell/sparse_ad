@@ -1,7 +1,17 @@
+# standard computer words
 bool
 diff
+# sphinx commands
 https
 minpack
 rst
 xsrst
+# implementations
+adolc
+cppad
+cppadcg
+colpack
+subcg
+subgraph
+# latex commands
 \rightarrow

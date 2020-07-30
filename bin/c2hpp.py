@@ -16,9 +16,6 @@
 #   doublereal
 #   ftnlen
 #   clib
-#   adolc
-#   cppad
-#   cppadcg
 # }
 #
 # Create a C++ Template Version of an f2c File

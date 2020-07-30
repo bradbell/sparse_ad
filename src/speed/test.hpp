@@ -9,11 +9,6 @@
 {xsrst_spell
     hes
     jac
-    adolc
-    cppad
-    subgraph
-    cppadcg
-    subcg
     ptr
     globals
     nnz

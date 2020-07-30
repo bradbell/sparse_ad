@@ -12,13 +12,9 @@
 
 {xsrst_spell
     ftnlen
-    adolc
-    cppad
-    subgraph
     cpp
     typedef
     hpp
-    cppadcg
     cg
 }
 

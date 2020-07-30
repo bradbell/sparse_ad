@@ -18,7 +18,6 @@
 {xsrst_spell
     globals
     ptr
-    colpack
     onepass
     nnz
 }

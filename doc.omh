@@ -8,10 +8,6 @@ vim: set expandtab:
     linux
     valgrind
     cmake
-    adolc
-    colpack
-    cppadcg
-    cppad
     mmdd
     github
 }

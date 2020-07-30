@@ -30,4 +30,18 @@
 # '
 # ----------------------------------------------------------------------------
 # Put other sed commands below here and without # at start of line
-s|\.optimize("collision_limit=30")|.optimize("no_cumulative_sum_op collision_limit=100")|
+/^    cppadcg$/d
+/^#   cppadcg$/d
+#
+/^    cppad$/d
+/^#   cppad$/d
+#
+/^    subgraph$/d
+/^#   subgraph$/d
+#
+/^    adolc$/d
+/^#   adolc$/d
+#
+/^    colpack$/d
+/^#   colpack$/d
+#

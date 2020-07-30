@@ -6,7 +6,6 @@
 
 {xsrst_spell
     csv
-    colpack
     onepass
     nnz
 }
