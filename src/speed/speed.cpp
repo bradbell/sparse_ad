@@ -11,99 +11,114 @@
 # include "test.hpp"
 /*
 ------------------------------------------------------------------------------
-$begin speed_global$$
-$spell
+{xsrst_begin speed_global}
+
+.. include:: ../preamble.rst
+
+{xsrst_spell
     globals
     ptr
-    minpack
     colpack
     onepass
-    Jacobian
     nnz
-$$
+}
 
-$section Speed Program Global Variables$$
+Speed Program Global Variables
+##############################
 
-$head Initialization$$
+Initialization
+**************
 The following globals are set by the speed initialization routine
 before any other subroutines are called.
 
-$subhead global_problem_ptr$$
+global_problem_ptr
+==================
 minpack2 representation of the problem:
-$srccode%cpp% */
+{xsrst_code cpp} */
 fun_base* global_problem_ptr;
-/* %$$
+/* {xsrst_code}
 
-$subhead global_size$$
+global_size
+===========
 size for this problem:
-$srccode%cpp% */
+{xsrst_code cpp} */
 size_t global_size;
-/* %$$
+/* {xsrst_code}
 
-$subhead global_colpack$$
+global_colpack
+==============
 use colpack coloring:
-$srccode%cpp% */
+{xsrst_code cpp} */
 bool global_colpack;
-/* %$$
+/* {xsrst_code}
 
-$subhead global_indirect$$
+global_indirect
+===============
 use indirect computation
-$srccode%cpp% */
+{xsrst_code cpp} */
 bool global_indirect;
 
-/* %$$
+/* {xsrst_code}
 
-$subhead global_optimize$$
+global_optimize
+===============
 was this AD function optimized
-$srccode%cpp% */
+{xsrst_code cpp} */
 bool global_optimize;
-/* %$$
+/* {xsrst_code}
 
-$subhead global_setup$$
+global_setup
+============
 is taping of function AD operations included in timing
-$srccode%cpp% */
+{xsrst_code cpp} */
 bool global_setup;
-/* %$$
+/* {xsrst_code}
 
-$subhead global_reverse$$
+global_reverse
+==============
 are we using reverse mode (otherwise forward mode)
-$srccode%cpp% */
+{xsrst_code cpp} */
 bool global_reverse;
-/* %$$
+/* {xsrst_code}
 
-$subhead global_onepass$$
+global_onepass
+==============
 are we using one pass of the tape to compute entire Jacobian
-$srccode%cpp% */
+{xsrst_code cpp} */
 bool global_onepass;
-/* %$$
+/* {xsrst_code}
 
-$subhead global_correct$$
+global_correct
+==============
 are we checking for correctness and result of check
-$srccode%cpp% */
+{xsrst_code cpp} */
 bool global_correct;
-/* %$$
+/* {xsrst_code}
 
-$subhead global_x$$
+global_x
+========
 argument value at which we are evaluation function and Jacobian
-$srccode%cpp% */
+{xsrst_code cpp} */
 d_vector global_x;
-/* %$$
+/* {xsrst_code}
 
-$head global_nnz$$
+global_nnz
+**********
 This value, set at the end of every test, is the number of non-zeros
 int the sparsity pattern detected by the implementation:
-$srccode%cpp% */
+{xsrst_code cpp} */
 size_t global_nnz;
-/* %$$
+/* {xsrst_code}
 
-$head global_correct_ok$$
-If $icode global_correct$$ is true this value is set at the end of every test
+global_correct_ok
+*****************
+If *global_correct* is true this value is set at the end of every test
 and is true (fails) if the correctness test passes (fails):
-If $icode global_correct$$ is fails, this value is never set or used.
-$srccode%cpp% */
+If *global_correct* is fails, this value is never set or used.
+{xsrst_code cpp} */
 bool global_correct_ok;
-/* %$$
-$end
+/* {xsrst_code}
+{xsrst_end speed_global}
 */
 // -----------------------------------------------------------------------
 namespace {

@@ -1,30 +1,39 @@
 // vim: set expandtab:
 
 /*
-$begin upper_triangle$$
-$spell
-    CppAD
-$$
+{xsrst_begin upper_triangle}
 
-$section Extract Upper Triangle From A CppAD Sparsity Pattern$$
+.. include:: ../preamble.rst
 
-$head Syntax$$
-$icode%upper% = upper_triangle(%pattern%)%$$
+{xsrst_spell
+    cpp
+}
 
-$head Prototype$$
-$srcthisfile%
-    0%// BEGIN_PROTOTYPE%// END_PROTOTYPE%1
-%$$
+Extract Upper Triangle From A CppAD Sparsity Pattern
+####################################################
 
-$head pattern$$
+Syntax
+******
+*upper* =  ``upper_triangle`` ( *pattern* )
+
+Prototype
+*********
+{xsrst_file
+    // BEGIN_PROTOTYPE
+    // END_PROTOTYPE
+}
+
+pattern
+*******
 The a CppAD sparsity pattern.
 
-$head upper$$
+upper
+*****
 Is the CppAD sparsity pattern for the upper triangle of the
-matrix; i.e., only elements with index $codei%(%i%, %j%)%$$ such that
-$icode%i% <= %j%$$ are included in $icode upper$$.
+matrix; i.e., only elements with index ( *i* , *j* ) such that
+*i* <= *j* are included in *upper* .
 
-$end
+{xsrst_end upper_triangle}
 */
 
 # include "upper_triangle.hpp"

@@ -3,60 +3,71 @@
 # include "check_sparse.hpp"
 
 /*
-$begin check_sparse$$
-$spell
-    CppAD
+{xsrst_begin check_sparse}
+
+.. include:: ../preamble.rst
+
+{xsrst_spell
+    cpp
     nr
     nc
-$$
+}
 
-$section Compare A CppAD Sparse Matrix and a Dense Matrix$$
+Compare A CppAD Sparse Matrix and a Dense Matrix
+################################################
 
-$head Syntax$$
-$icode%ok% = check_sparse(
-    %sparse_matrix%, %dense_matrix%, %print_label%, %print_done%
-)%$$
+Syntax
+******
 
-$head Prototype$$
-$srcthisfile%0
-    %// BEGIN_PROTOTYPE%// END_PROTOTYPE%
-1%$$
+| *ok* =  ``check_sparse`` (
+| |tab| *sparse_matrix* , *dense_matrix* , *print_label* , *print_done*
+| )
 
-$head sparse_matrix$$
+Prototype
+*********
+{xsrst_file
+    // BEGIN_PROTOTYPE
+    // END_PROTOTYPE
+}
+
+sparse_matrix
+*************
 A CppAD sparse representation of the matrix.
 
-$head dense_matrix$$
+dense_matrix
+************
 A dense representation of the matrix as a vector of with size
-$icode%nr% * %nc%$$ and in column major order; i.e.,
-the value of the $codei%(%i%,%j%)%$$ element of the matrix is
-$icode%dense_matrix%[%i% + *%nr% * %j%]%$$.
+*nr* * *nc* and in column major order; i.e.,
+the value of the ( *i* , *j* ) element of the matrix is
+*dense_matrix* [ *i* + * *nr* * *j* ] .
 
-$head print_label$$
-A message is printed if $icode print_label$$ is non-empty
+print_label
+***********
+A message is printed if *print_label* is non-empty
 and one of the possibly non-zero values in the sparse matrix
-has value zero in $icode dense_matrix$$.
+has value zero in *dense_matrix* .
 The message printed is
-$codei%
-    :%print_label% matrix(%i%,%j%) == 0.0:
-%$$
+
+| |tab| ``:`` *print_label* ``matrix`` ( *i* , *j* ) == 0.0 ``:``
+
 Note this is still correct if the corresponding sparse matrix value
 is also zero.
 
-$head print_done$$
+print_done
+**********
 The return value for this argument is true (false)
 if the message discussed above is (is not) printed.
 
-$head ok$$
-The return value $icode ok$$ is true if the following two conditions hold:
-$list number$$
-All of the zero values in $icode dense_matrix$$
-correspond to zeros in the sparse matrix.
-$lnext
-The relative error for all of the non-zero values in
-$icode dense_matrix$$ is less than 200 time machine epsilon for double.
-$lend
+ok
+**
+The return value *ok* is true if the following two conditions hold:
 
-$end
+#.  All of the zero values in *dense_matrix*
+    correspond to zeros in the sparse matrix.
+#.  The relative error for all of the non-zero values in
+    *dense_matrix* is less than 200 time machine epsilon for double.
+
+{xsrst_end check_sparse}
 */
 
 // BEGIN_PROTOTYPE

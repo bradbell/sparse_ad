@@ -1,90 +1,96 @@
 vim: set expandtab:
 
-$begin sparse_ad$$
-$spell
-    Linux
+{xsrst_begin sparse_ad}
+
+.. include:: ../preamble.rst
+
+{xsrst_spell
+    linux
     valgrind
     cmake
     adolc
     colpack
     cppadcg
     cppad
-    eigen
-    src
     mmdd
-    mm
-    dd
-    Jacobians
     github
-$$
+}
 
-$comment Begin: Setting that apply to all sections$$
-$escape $$
-$aindex section head subhead$$
-$latex \newcommand{\B}[1]{ {\bf #1} }$$
-$comment End: Setting that apply to all sections$$
+.. comment:  Begin: Setting that apply to all sections
 
-$section sparse_ad-20200311: Computing Sparse Jacobians and Hessians Using AD$$
+.. comment:  End: Setting that apply to all sections
 
-$head github$$
-$href%https://github.com/bradbell/sparse_ad%github%$$.
+Computing Sparse Jacobians and Hessians Using AD
+################################################
 
-$head System Requirements$$
-In addition to the standard Linux utilities, like $code bash$$,
+github
+******
+`github <https://github.com/bradbell/sparse_ad>`_.
+
+System Requirements
+*******************
+In addition to the standard Linux utilities, like ``bash`` ,
 you must have the following programs installed on your system:
-$code clang$$, $code git$$, $code f2c$$, $code python3$$, $code valgrind$$.
+``clang`` , ``git`` , ``f2c`` , ``python3`` , ``valgrind`` .
 
-$head build_type$$
-The current $icode build_type$$ is set in the script $code bin/run_cmake.sh$$
-and must be either $code debug$$ or $code release$$.
-You can choose this setting with $code release$$ being faster
-and $code debug$$ being useful for debugging.
+build_type
+**********
+The current *build_type* is set in the script ``bin/run_cmake.sh``
+and must be either ``debug`` or ``release`` .
+You can choose this setting with ``release`` being faster
+and ``debug`` being useful for debugging.
 
-$head Special Requirements$$
-The special requirements $code adolc$$, $code colpack$$, $code cppadcg$$,
-$code cppad$$, and $code eigen$$ are installed with the following command:
-$codei%
-    bin/get_all.sh
-%$$
-The $code build$$ directory is soft link to $codei%build.%build_type%$$
+Special Requirements
+********************
+The special requirements ``adolc`` , ``colpack`` , ``cppadcg`` ,
+``cppad`` , and ``eigen`` are installed with the following command:
+
+| |tab| ``bin/get_all.sh``
+
+The ``build`` directory is soft link to ``build`` . *build_type*
 which is where the programs get installed.
 
-$head Check Build$$
+Check Build
+***********
 The following command will build and check all the programs:
-$codei%
-    bin/check_all.sh
-%$$
-The following command will check all the possible $cref speed$$ program
-options, methods, and problems:
-$codei%
-    bin/run_speed.sh correct %build_type% --correct
-%$$
-The results will be written to the file
-$codei%
-    build/src/speed/correct-%mmdd%
-%$$
-where $icode mm$$ is the current month and $icode dd$$ is the current day.
 
-$head Run Speed Tests$$
-The $cref speed$$ program is in the $code build/src/speed$$ directory.
+| |tab| ``bin/check_all.sh``
+
+The following command will check all the possible :ref:`speed<speed>` program
+options, methods, and problems:
+
+| |tab| ``bin/run_speed.sh correct`` *build_type* -- ``correct``
+
+The results will be written to the file
+
+| |tab| ``build/src/speed/correct`` - *mmdd*
+
+where *mm* is the current month and *dd* is the current day.
+
+Run Speed Tests
+***************
+The :ref:`speed<speed>` program is in the ``build/src/speed`` directory.
 You can use it to run one speed test.
 You can run all the possible option and problem combinations using the command:
-$codei%
-    bin/run_speed.sh speed %build_type%
-%$$
+
+| |tab| ``bin/run_speed.sh speed`` *build_type*
+
 This will take a while because (hours) to complete.
 The results will be written to the file
-$codei%
-    build/src/speed/speed-%mmdd%
-%$$
-where $icode mm$$ is the current month and $icode dd$$ is the current day.
 
-$childtable%src/speed/speed.omh
-    %bin/bin.omh
-    %src/typedef.hpp
-    %src/fun_obj/fun_base.hpp
-    %src/utility/utility.omh
-    %release_notes.omh
-%$$
+| |tab| ``build/src/speed/speed`` - *mmdd*
 
-$end
+where *mm* is the current month and *dd* is the current day.
+
+Children
+********
+{xsrst_child_list
+    src/speed/speed.omh
+    bin/bin.omh
+    src/typedef.hpp
+    src/fun_obj/fun_base.hpp
+    src/utility/utility.omh
+    release_notes.omh
+}
+
+{xsrst_end sparse_ad}

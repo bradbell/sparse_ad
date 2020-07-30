@@ -1,22 +1,30 @@
 vim: set expandtab:
 
-$begin bin$$
-$spell
+{xsrst_begin bin}
+
+.. include:: ../preamble.rst
+
+{xsrst_spell
     gitignore
-$$
+}
 
-$section Executable Scripts$$
+Executable Scripts
+##################
 
-$head Working Directory$$
+Working Directory
+*****************
 All of the scripts below must be executed from the
 git root directory for this repository; i.e,
-the directory that contains the $code .gitignore$$ file.
+the directory that contains the ``.gitignore`` file.
 
-$childtable%bin/get_all.sh
-    %bin/wget_minpack2.sh
-    %bin/f2c.sh
-    %bin/c2hpp.py
-    %bin/csv2tex.py
-%$$
+Children
+********
+{xsrst_child_list
+    bin/get_all.sh
+    bin/wget_minpack2.sh
+    bin/f2c.sh
+    bin/c2hpp.py
+    bin/csv2tex.py
+}
 
-$end
+{xsrst_end bin}

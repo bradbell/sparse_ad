@@ -1,52 +1,62 @@
 #! /bin/bash -e
 # vim: set expandtab:
 #
-# $begin wget_minpack2.sh$$ $newlinech #$$
-# $spell
-#   Minpack
-#   Argonne
+# {xsrst_comment_ch #}
+#
+# {xsrst_begin wget_minpack2_sh}
+#
+# .. include:: ../preamble.rst
+#
+# {xsrst_spell
+#   argonne
 #   wget
-#   gitignore
-#   ftp.mcs.anl.gov
+#   ftp
+#   mcs
+#   anl
+#   gov
 #   tprobs
 #   dficfj
-#   diff
-# $$
+# }
 #
-# $section Get a Minpack2 File From Argonne National Laboratory$$
+# Get a Minpack2 File From Argonne National Laboratory
+# ####################################################
 #
-# $head Syntax$$
-# $codei%bin/wget_minpack2.sh minpack2/%file
-# %$$
+# Syntax
+# ******
 #
-# $head Working Directory$$
-# see $cref/working directory/bin/Working Directory/$$.
+# | ``bin/wget_minpack2.sh minpack2`` / *file*
 #
-# $head file$$
-# The $icode file$$ part of the command line argument
-# $codei%minpack2/%file%$$ is a valid file location
+# Working Directory
+# *****************
+# see :ref:`working_directory<bin.working_directory>`.
+#
+# file
+# ****
+# The *file* part of the command line argument
+# ``minpack2`` / *file* is a valid file location
 # relative to the Argonne National Laboratory copy of minpack2; i.e.,
-# $codei%
-#   ftp.mcs.anl.gov/pub/MINPACK-2%file%
-# %$$
+#
+# | |tab| ``ftp.mcs.anl.gov/pub/MINPACK-2`` *file*
+#
 # is the a valid file location.
 #
-# $head Result$$
-# The file is copied to the location $codei%minpack2/%file%$$
+# Result
+# ******
+# The file is copied to the location ``minpack2`` / *file*
 # relative to the current working directory (git root directory).
 #
-# $head Example$$
+# Example
+# *******
 # If one is in the git root directory, the command
-# $codei%
-#   bin/wget_minpack2.sh minpack2/tprobs.92/dficfj.f
-# %$$
-# will overwrite the git repository copy of $code dficfj.f$$.
-# The result file should be the same which you can check using
-# $codei%
-#   git diff minpack2/tprobs.92/dficfj.f
-# %$$
 #
-# $end
+# | |tab| ``bin/wget_minpack2.sh minpack2/tprobs.92/dficfj.f``
+#
+# will overwrite the git repository copy of ``dficfj.f`` .
+# The result file should be the same which you can check using
+#
+# | |tab| ``git diff minpack2/tprobs.92/dficfj.f``
+#
+# {xsrst_end wget_minpack2_sh}
 # -----------------------------------------------------------------------------
 # bash function that echos and executes a command
 echo_eval() {
@@ -81,8 +91,8 @@ then
     exit 1
 fi
 local_file=`echo $file | sed -e 's|^minpack2/||'`
-echo wget --timeout=5 $remote/$local_file -O minpack2/$local_file
-if ! wget --timeout=5 $remote/$local_file -O minpack2/$local_file
+echo wget --timeout=10 $remote/$local_file -O minpack2/$local_file
+if ! wget --timeout=10 $remote/$local_file -O minpack2/$local_file
 then
     echo 'wget_minpack.sh: Error'
     exit 1

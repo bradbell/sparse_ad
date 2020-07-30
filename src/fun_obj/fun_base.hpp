@@ -4,183 +4,209 @@
 
 
 /*
-$begin fun_base.hpp$$
-$spell
+{xsrst_begin fun_base_hpp}
+
+.. include:: ../preamble.rst
+
+{xsrst_spell
     obj
     const
     jac
     prototyped
     hes
-    src
     hpp
-$$
+}
 
-$section Base Class For Test Function Objects$$
+Base Class For Test Function Objects
+####################################
 
-$head Syntax$$
-$codei%# include <src/fun_obj/fun_base.hpp>
-%$$
-$icode%x_out% = %fun_obj%.start()
-%$$
-$icode%m% = %fun_obj%.size_range()
-%$$
-$icode%fun_obj%.fun(%x%, %fun_out%)
-%$$
-$icode%ok% = %fun_obj%.jac(%x%, %jac_out%)
-%$$
-$icode%ok% = %fun_obj%.grad(%x%, %grad_out%)
-%$$
-$icode%ok% = %fun_obj%.hes(%x%, %hes_out%)
-%$$
+Syntax
+******
 
+| ``# include <src/fun_obj/fun_base.hpp`` >
+| *x_out* = *fun_obj* . ``start`` ()
+| *m* = *fun_obj* . ``size_range`` ()
+| *fun_obj* . ``fun`` ( *x* , *fun_out* )
+| *ok* = *fun_obj* . ``jac`` ( *x* , *jac_out* )
+| *ok* = *fun_obj* . ``grad`` ( *x* , *grad_out* )
+| *ok* = *fun_obj* . ``hes`` ( *x* , *hes_out* )
 
-$head Purpose$$
+Purpose
+*******
 Each of the test functions is a mapping
-$latex f : \B{R}^n \rightarrow \B{R}^m$$.
+:math:`f : \B{R}^n \rightarrow \B{R}^m`.
 It is defined using a class that is derived from the base class
-$code fun_base$$.
+``fun_base`` .
 
-$head fun_obj$$
-We use the notation $icode fun_obj$$ for a derived class object
-corresponding to the function $latex f(x)$$.
+fun_obj
+*******
+We use the notation *fun_obj* for a derived class object
+corresponding to the function :math:`f(x)`.
 
-$head Constructor$$
-The constructor (and destructor) for a $code fun_base$$ has no arguments.
+Constructor
+***********
+The constructor (and destructor) for a ``fun_base`` has no arguments.
 
-$head Type Definitions$$
-The file $cref typedef.hpp$$ is included by $code fun_base.hpp$$.
+Type Definitions
+****************
+The file :ref:`typedef_hpp<typedef_hpp>` is included by ``fun_base.hpp`` .
 
-$head start$$
+start
+*****
 This function returns the standard starting point for point for optimizing
 the function. It has the following prototype
-$srcthisfile%
-    0%// BEGIN_START%// END_START%1
-%$$
+{xsrst_file
+    // BEGIN_START
+    // END_START
+}
 
-$subhead x_out$$
+x_out
+=====
 This vector is the starting point.
 
-$subhead n$$
-The dimension of the domain space is equal to the size of $icode x_out$$.
+n
+=
+The dimension of the domain space is equal to the size of *x_out* .
 
-$head size_range$$
+size_range
+**********
 This function has the following prototype
-$srcthisfile%
-    0%// BEGIN_SIZE_RANGE%// END_SIZE_RANGE%1
-1%$$
+{xsrst_file
+    // BEGIN_SIZE_RANGE
+    // END_SIZE_RANGE
+}
 The corresponding virtual function must be defined by the derived class.
 
-$subhead m$$
-The return value $icode m$$ is the dimension of the range.
+m
+=
+The return value *m* is the dimension of the range.
 
-$head fun$$
-These functions function evaluate $latex f(x)$$.
+fun
+***
+These functions function evaluate :math:`f(x)`.
 They have the following prototypes
-$srcthisfile%
-    0%// BEGIN_FUN%// END_FUN%1
-1%$$
+{xsrst_file
+    // BEGIN_FUN
+    // END_FUN
+}
 The corresponding virtual functions must be defined by the derived class.
 
-$subhead x$$
-The argument $icode x$$ has size $icode n$$ and specifies
+x
+=
+The argument *x* has size *n* and specifies
 the point at which the function is evaluated.
-It is effectively $code const$$, but is not prototyped as such
+It is effectively ``const`` , but is not prototyped as such
 in order to avoid the time to copy the vector to a temporary.
 
-$subhead fun_out$$
-The return value $icode fun_out$$ has size $icode m$$.
+fun_out
+=======
+The return value *fun_out* has size *m* .
 The input value of its elements does not matter.
-Upon return, it contains the value of $latex f(x)$$.
+Upon return, it contains the value of :math:`f(x)`.
 
-$head jac$$
-This function evaluates $latex f'(x)$$
+jac
+***
+This function evaluates :math:`f'(x)`
 It has the following prototype
-$srcthisfile%
-    0%// BEGIN_JAC%// END_JAC%1
-1%$$
+{xsrst_file
+    // BEGIN_JAC
+    // END_JAC
+}
 The corresponding virtual functions must be defined by the derived class.
 
-$subhead ok$$
-If $icode%m% == 1%$$, this function returns $icode ok$$ as false
+ok
+==
+If *m* == 1 , this function returns *ok* as false
 and no other action is taken.
-Otherwise $icode ok$$ is true.
+Otherwise *ok* is true.
 
-$subhead x$$
-The argument $icode x$$ has size $icode n$$ and specifies
+x
+=
+The argument *x* has size *n* and specifies
 the point at which the function is evaluated.
-It is effectively $code const$$, but is not prototyped as such
+It is effectively ``const`` , but is not prototyped as such
 in order to avoid the time to copy the vector to a temporary.
 
-$subhead jac_out$$
-The return value $icode jac_out$$ has size $icode%m% * %n%$$.
+jac_out
+=======
+The return value *jac_out* has size *m* * *n* .
 The input value of its elements does not matter.
-Upon return, it contains the value of $latex f'(x)$$.
+Upon return, it contains the value of :math:`f'(x)`.
 To be specific,
-for $icode%i% = 0 , %...%, %m%-1%$$,
-$icode%j% = 0 , %...%, %n%-1%$$,
-$icode%jac_out%[%i% + %m% * %j%]%$$
-is the partial of $latex f_i (x)$$ with respect to $latex x_j$$.
+for *i* = 0 , ... , *m* -1 ,
+*j* = 0 , ... , *n* -1 ,
+*jac_out* [ *i* + *m* * *j* ]
+is the partial of :math:`f_i (x)` with respect to :math:`x_j`.
 
-$head grad$$
-This function evaluates $latex f'(x)$$.
+grad
+****
+This function evaluates :math:`f'(x)`.
 It has the following prototype
-$srcthisfile%
-    0%// BEGIN_GRAD%// END_GRAD%1
-1%$$
+{xsrst_file
+    // BEGIN_GRAD
+    // END_GRAD
+}
 The corresponding virtual functions must be defined by the derived class.
 
-$subhead ok$$
-If $icode%m% != 1%$$, this function returns $icode ok$$ as false
+ok
+==
+If *m* ``!= 1`` , this function returns *ok* as false
 and no other action is taken.
-Otherwise $icode ok$$ is true.
+Otherwise *ok* is true.
 
-$subhead x$$
-The argument $icode x$$ has size $icode n$$ and specifies
+x
+=
+The argument *x* has size *n* and specifies
 the point at which the function is evaluated.
-It is effectively $code const$$, but is not prototyped as such
+It is effectively ``const`` , but is not prototyped as such
 in order to avoid the time to copy the vector to a temporary.
 
-$subhead grad_out$$
-The return value $icode grad_out$$ has size $icode n$$.
+grad_out
+========
+The return value *grad_out* has size *n* .
 The input value of its elements does not matter.
-Upon return, it contains the value of $latex f'(x)$$.
+Upon return, it contains the value of :math:`f'(x)`.
 To be specific,
-for $icode%j% = 0 , %...%, %n%-1%$$,
-$icode%grad_out%[%j%]%$$
-is the partial of $latex f(x)$$ with respect to $latex x_j$$.
+for *j* = 0 , ... , *n* -1 ,
+*grad_out* [ *j* ]
+is the partial of :math:`f(x)` with respect to :math:`x_j`.
 
-$head hes$$
-This function evaluates $latex f^{(2)}(x)$$.
+hes
+***
+This function evaluates :math:`f^{(2)}(x)`.
 It has the following prototype
-$srcthisfile%
-    0%// BEGIN_HES%// END_HES%1
-1%$$
+{xsrst_file
+    // BEGIN_HES
+    // END_HES
+}
 The corresponding virtual functions must be defined by the derived class.
 
-$subhead ok$$
-If $icode%m% != 1%$$, this function returns $icode ok$$ as false
+ok
+==
+If *m* ``!= 1`` , this function returns *ok* as false
 and no other action is taken.
-Otherwise $icode ok$$ is true.
+Otherwise *ok* is true.
 
-$subhead x$$
-The argument $icode x$$ has size $icode n$$ and specifies
+x
+=
+The argument *x* has size *n* and specifies
 the point at which the function is evaluated.
-It is effectively $code const$$, but is not prototyped as such
+It is effectively ``const`` , but is not prototyped as such
 in order to avoid the time to copy the vector to a temporary.
 
-$subhead hes_out$$
-The return value $icode hes_out$$ has size $icode%n% * %n%$$.
+hes_out
+=======
+The return value *hes_out* has size *n* * *n* .
 The input value of its elements does not matter.
-Upon return, it contains the value of $latex f^{(2)} (x)$$.
+Upon return, it contains the value of :math:`f^{(2)} (x)`.
 To be specific,
-for $icode%j% = 0 , %...%, %n%-1%$$,
-$icode%k% = 0 , %...%, %n%-1%$$,
-$icode%hes_out%[%j% + %k% * %n%]%$$
-is the second partial of $latex f(x)$$ with respect to
-$latex x_j$$ and $latex x_k$$.
+for *j* = 0 , ... , *n* -1 ,
+*k* = 0 , ... , *n* -1 ,
+*hes_out* [ *j* + *k* * *n* ]
+is the second partial of :math:`f(x)` with respect to
+:math:`x_j` and :math:`x_k`.
 
-
-$end
+{xsrst_end fun_base_hpp}
 */
 
 # include <src/typedef.hpp>

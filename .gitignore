@@ -15,6 +15,10 @@
 /build.debug/
 /build.release/
 #
+# sphinx build directories
+/sphinx/xsrst
+/sphinx/_build
+#
 # new directories (used like git cache)
 /new/
 /new.*/

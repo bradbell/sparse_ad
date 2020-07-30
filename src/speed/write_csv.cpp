@@ -1,93 +1,109 @@
 // vim: set expandtab:
 /*
-$begin speed_write_csv$$
-$spell
-    Csv
+{xsrst_begin speed_write_csv}
+
+.. include:: ../preamble.rst
+
+{xsrst_spell
+    csv
     colpack
     onepass
     nnz
-$$
+}
 
-$section Writes One Row of the Speed Csv Output File$$
+Writes One Row of the Speed Csv Output File
+###########################################
 
-$head Syntax$$
-$codei%write_csv(
-    %csv_file% ,
-    %name%     ,
-    %value%    ,
-    %implement%   ,
-    %problem%  ,
-    %colpack%  ,
-    %indirect% ,
-    %optimize% ,
-    %setup%    ,
-    %reverse%  ,
-    %onepass%  ,
-    %correct%  ,
-    %n%        ,
-    %m%        ,
-    %nnz%      ,
-    %sec%
-)%$$
+Syntax
+******
 
-$head Prototype$$
-$srcthisfile%
-    0%// BEGIN_PROTOTYPE%// END_PROTOTYPE%1
-%$$
+| ``write_csv`` (
+| |tab| *csv_file* ,
+| |tab| *name* ,
+| |tab| *value* ,
+| |tab| *implement* ,
+| |tab| *problem* ,
+| |tab| *colpack* ,
+| |tab| *indirect* ,
+| |tab| *optimize* ,
+| |tab| *setup* ,
+| |tab| *reverse* ,
+| |tab| *onepass* ,
+| |tab| *correct* ,
+| |tab| *n* ,
+| |tab| *m* ,
+| |tab| *nnz* ,
+| |tab| *sec*
+| )
 
-$head csv_file$$
+Prototype
+*********
+{xsrst_file
+    // BEGIN_PROTOTYPE
+    // END_PROTOTYPE
+}
+
+csv_file
+********
 is the name of the csv file.
 If the file does not exist the header is written to the file.
 Otherwise, the header is checked to make sure it is as expected.
 The data corresponding to this call is written as one row at the
 end of the file.
 
-$subhead header$$
+header
+======
 The header for the csv file is its first row.
 The header row begins with
-$codei%
-    %first_name%,%...%,%last_name%,implement,problem,
-%$$
-where $icode first_name$$ is the first component of $icode name$$,
-and $icode last_name$$ is the last component of $icode name$$.
+
+| |tab| *first_name* , ... , *last_name* , ``implement,problem`` ,
+
+where *first_name* is the first component of *name* ,
+and *last_name* is the last component of *name* .
 The header row ends with
-$codei%
-    colpack,indirect,optimize,setup,reverse,onepass,correct,n,m,nnz,sec
-%$$
+
+| |tab| ``colpack,indirect,optimize,setup,reverse,onepass,correct,n,m,nnz,sec``
+
 There are no spaces in the header row.
 
-$head name, value$$
-The vectors $icode name$$ and $icode value$$ have the same size.
-The $th i$$ element of $icode name$$ is the header entry
-corresponding to the $th i$$ element of $icode value$$.
+name, value
+***********
+The vectors *name* and *value* have the same size.
+The *i*-th element of *name* is the header entry
+corresponding to the *i*-th element of *value* .
 
-$head implement$$
-This is the value written in the $icode implement$$ column.
+implement
+*********
+This is the value written in the *implement* column.
 
-$head problem$$
+problem
+*******
 This is the value written in the problem column.
 
-$head options$$
+options
+*******
 The option arguments are
-$icode colpack$$,
-$icode indirect$$,
-$icode optimize$$,
-$icode setup$$,
-$icode reverse$$,
-$icode onepass$$,
-$icode correct$$.
+*colpack* ,
+*indirect* ,
+*optimize* ,
+*setup* ,
+*reverse* ,
+*onepass* ,
+*correct* .
 For each option, if it is true (false)
-the string $code true$$ ($code false$$) is written in the corresponding column.
+the string ``true`` ( ``false`` ) is written in the corresponding column.
 
-$head n, m, nnz$$
+n, m, nnz
+*********
 These values are converted to strings and written in
 the corresponding columns.
 
-$head sec$$
+sec
+***
 This value is converted to a string using fixed point notation
 and ten digits after the decimal point.
 
-$end
+{xsrst_end speed_write_csv}
 */
 # include <iostream>
 # include <iomanip>

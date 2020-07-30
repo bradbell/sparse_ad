@@ -1,49 +1,56 @@
 #! /bin/bash -e
 # vim: set expandtab:
 #
-# $begin f2c.sh$$ $newlinech #$$
-# $spell
+# {xsrst_comment_ch #}
+#
+# {xsrst_begin f2c_sh}
+#
+# .. include:: ../preamble.rst
+#
+# {xsrst_spell
 #   dir
-#   gitignore
-#   minpack
 #   tprobs
 #   dficfj
-#   diff
-# $$
+# }
 #
-# $section Create a C Version of a Fortran File$$
+# Create a C Version of a Fortran File
+# ####################################
 #
-# $head Syntax$$
-# $codei%bin/f2c.sh %dir%/%name%.f
-# %$$
+# Syntax
+# ******
 #
-# $head Working Directory$$
-# see $cref/working directory/bin/Working Directory/$$.
+# | ``bin/f2c.sh`` *dir* / *name* . ``f``
 #
-# $head dir, name$$
-# The command line argument $icode%dir%/%name%.f%$$
+# Working Directory
+# *****************
+# see :ref:`working_directory<bin.working_directory>`.
+#
+# dir, name
+# *********
+# The command line argument *dir* / *name* . ``f``
 # is an existing Fortran file name
 # relative to the current working directory.
-# The $icode name$$ part does not contain any $code /$$ characters; i.e.,
-# all the $code /$$ characters are in the $icode dir$$ part of the
+# The *name* part does not contain any ``/`` characters; i.e.,
+# all the ``/`` characters are in the *dir* part of the
 # command line argument.
 #
-# $head Result$$
-# The file $icode%dir%/c/%name%.c%$$ is a C version of the Fortran file
-# (created by $code f2c$$).
+# Result
+# ******
+# The file *dir* / ``c`` *name* . ``c`` is a C version of the Fortran file
+# (created by ``f2c`` ).
 #
-# $head Example$$
+# Example
+# *******
 # If one is in the git root directory, the command
-# $codei%
-#   bin/f2c.sh minpack2/tprobs.92/dficfj.f
-# %$$
-# will overwrite the git repository copy of $code dficfj.c$$.
-# The result file should be the same which you can check using
-# $codei%
-#   git diff minpack2/tprobs.92/c/dficfj.c
-# %$$
 #
-# $end
+# | |tab| ``bin/f2c.sh minpack2/tprobs.92/dficfj.f``
+#
+# will overwrite the git repository copy of ``dficfj.c`` .
+# The result file should be the same which you can check using
+#
+# | |tab| ``git diff minpack2/tprobs.92/c/dficfj.c``
+#
+# {xsrst_end f2c_sh}
 # -----------------------------------------------------------------------------
 # bash function that echos and executes a command
 echo_eval() {

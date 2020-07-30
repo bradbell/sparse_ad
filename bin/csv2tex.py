@@ -1,48 +1,57 @@
 #! /usr/bin/python3
 # vim: set expandtab:
 '''
-$begin csv2tex.py$$
-$spell
-    Csv
+{xsrst_begin csv2tex_py}
+
+.. include:: ../preamble.rst
+
+{xsrst_spell
+    csv
     py
     deptfg
     dierfj
     dficfj
-$$
+}
 
-$section Extract Latex Tables From Speed Test Csv File$$
+Extract Latex Tables From Speed Test Csv File
+#############################################
 
-$head Syntax$$
-$codei%bin/csv2tex.py %csv_file%$$
+Syntax
+******
+``bin/csv2tex.py`` *csv_file*
 
-$head Csv File$$
+Csv File
+********
 Each line of this input file corresponds to one run of the
-$cref speed$$ program.
+:ref:`speed<speed>` program.
 
-$head Output Files$$
+Output Files
+************
 
-$subhead Subset$$
+Subset
+======
 Each one is a latex table that corresponds to a subset of the input data
-where $icode problem$$, and $icode setup$$ have one value that corresponds
+where *problem* , and *setup* have one value that corresponds
 to the file name.
 For each subset, only the combination of options that has the smallest
-value in the $icode sec$$ column is included.
+value in the *sec* column is included.
 
-$subhead Problem$$
-The possible value for $icode problem$$ are
-$code deptfg$$, $code dierfj$$, $code dficfj$$.
-We use $icode Problem$$ to denote the $icode problem$$
+Problem
+=======
+The possible value for *problem* are
+``deptfg`` , ``dierfj`` , ``dficfj`` .
+We use *Problem* to denote the *problem*
 with the first letter in upper case; e.g.,
-$code Deptfg$$ is the $icode Problem$$ corresponding to $code deptfg$$.
+``Deptfg`` is the *Problem* corresponding to ``deptfg`` .
 
-$subhead Files$$
-The output files are written in the $code build/tex$$ directory.
+Files
+=====
+The output files are written in the ``build/tex`` directory.
 For each of the possible problems, the output file
-$icode%Problem%YesSetup.tex%%$$ ( $icode%Problem%NoSetup.tex%$$ )
-corresponds to $icode setup$$ true (false).
+*Problem* ``YesSetup.tex`` ( *Problem* ``NoSetup.tex`` )
+corresponds to *setup* true (false).
 
-
-$end
+{xsrst_end csv2tex_py}
 '''
 # -----------------------------------------------------------------------------
 import sys

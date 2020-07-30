@@ -2,76 +2,88 @@
 # ifndef SRC_SPEED_SETUP_HPP
 # define SRC_SPEED_SETUP_HPP
 /*
-$begin speed_setup$$
-$spell
+{xsrst_begin speed_setup}
+
+.. include:: ../preamble.rst
+
+{xsrst_spell
     hes
     jac
-    Jacobian
     adolc
     cppad
     subgraph
     cppadcg
     subcg
     ptr
-    Globals
+    globals
     nnz
-$$
+}
 
-$section Setup a Speed Test Problem$$
+Setup a Speed Test Problem
+##########################
 
+Syntax
+******
+``setup_`` *implement* ()
 
-$head Syntax$$
-$codei%setup_%implement%()%$$
-
-$head Prototype$$
-$srccode%hpp% */
+Prototype
+*********
+{xsrst_code hpp} */
 extern void setup_adolc(void);
 extern void setup_cppad(void);
 extern void setup_subgraph(void);
 extern void setup_cppadcg(void);
 extern void setup_subcg(void);
-/* %$$
+/* {xsrst_code}
 
-$head Purpose$$
+Purpose
+*******
 Do as much of the calculation as possible, excluding knowing
-the argument value $latex x$$ at which we are evaluating the Jacobian or
-Hessian of $latex f(x)$$.
+the argument value :math:`x` at which we are evaluating the Jacobian or
+Hessian of :math:`f(x)`.
 
-$head implement$$
+implement
+*********
 is one of the following
-$code adolc$$,
-$code cppad$$,
-$code subgraph$$,
-$code cppadcg$$,
-$code subcg$$.
+``adolc`` ,
+``cppad`` ,
+``subgraph`` ,
+``cppadcg`` ,
+``subcg`` .
 
-$head Globals$$
+Globals
+*******
 
-$subhead Initialization$$
-The $cref/initialization/speed_global/Initialization/$$ global variables
+Initialization
+==============
+The :ref:`initialization<speed_global.initialization>` global variables
 are inputs and not changed by the setup routines.
 
-$subhead m$$
-We use $icode m$$ for the value $code global_problem_ptr->size_range()$$
-see $cref/global_problem_ptr/speed_global/Initialization/global_problem_ptr/$$.
-This is the dimension of the range space for $latex f(x)$$.
+m
+=
+We use *m* for the value ``global_problem_ptr->size_range()``
+see :ref:`global_problem_ptr<speed_global.initialization.global_problem_ptr>`.
+This is the dimension of the range space for :math:`f(x)`.
 
-$subhead Hessian$$
-A problem is a Hessian test case if $icode%m% = 1%$$.
-In the case $codei%test_%implement%_hes%$$ will be called to determine
+Hessian
+=======
+A problem is a Hessian test case if *m* = 1 .
+In the case ``test_`` *implement* ``_hes`` will be called to determine
 the speed of evaluation of the Hessian.
 
-$subhead Jacobian$$
-A problem is a Jacobian test case if $icode%m% > 1%$$.
-In the case $codei%test_%implement%_jac%$$ will be called to determine
+Jacobian
+========
+A problem is a Jacobian test case if *m* > 1 .
+In the case ``test_`` *implement* ``_jac`` will be called to determine
 the speed of evaluation of the Jacobian.
 
-$subhead Not used$$
-$cref/global_nnz/speed_global/global_nnz/$$ and
-$cref/global_correct_ok/speed_global/global_correct_ok/$$
+Not used
+========
+:ref:`global_nnz<speed_global.global_nnz>` and
+:ref:`global_correct_ok<speed_global.global_correct_ok>`
 are not used by these routines.
 
-$end
+{xsrst_end speed_setup}
 */
 
 # endif

@@ -17,8 +17,7 @@ fi
 list=`git ls-files | sed \
     -e '/\/c\/[^/]*$/d' \
     -e '/\/hpp\/[^/]*$/d' \
-    -e '/tex\/siam171217.cls$/d' \
-    -e '/tex\/siamplain.bst$/d' \
+    -e '/^sphinx\/Makefile$/d' \
 `
 ok='yes'
 for file in $list

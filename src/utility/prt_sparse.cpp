@@ -2,43 +2,52 @@
 # include "prt_sparse.hpp"
 
 /*
-$begin prt_sparse$$
-$spell
-    CppAD
+{xsrst_begin prt_sparse}
+
+.. include:: ../preamble.rst
+
+{xsrst_spell
+    cpp
     prt
-$$
+}
 
-$section Print A CppAD Sparsity Pattern or Sparse Matrix$$
+Print A CppAD Sparsity Pattern or Sparse Matrix
+###############################################
 
-$head Syntax$$
-$codei%prt_sparse(%name%, %pattern%)
-%$$
-$codei%prt_sparse(%name%, %matrix%)
-%$$
+Syntax
+******
 
-$head Prototype$$
-$srcthisfile%0
-    %// BEGIN_PATTERN_PROTOTYPE%// END_PATTERN_PROTOTYPE%
-1%$$
-$srcthisfile%0
-    %// BEGIN_MATRIX_PROTOTYPE%// END_MATRIX_PROTOTYPE%
-1%$$
+| ``prt_sparse`` ( *name* , *pattern* )
+| ``prt_sparse`` ( *name* , *matrix* )
 
-$head name$$
+Prototype
+*********
+{xsrst_file
+    // BEGIN_PATTERN_PROTOTYPE
+    // END_PATTERN_PROTOTYPE
+}
+{xsrst_file
+    // BEGIN_MATRIX_PROTOTYPE
+    // END_MATRIX_PROTOTYPE
+}
+
+name
+****
 Is the name for the matrix.
 
-$head pattern$$
+pattern
+*******
 Is the sparsity pattern that is printed.
 In this case the row and column indices
 corresponding to possibly non-zero values are printed.
 
-$head matrix$$
+matrix
+******
 Is the sparse matrix that is printed.
 In this case the possibly non-zero values are printed
 along with the corresponding row and column indices.
 
-
-$end
+{xsrst_end prt_sparse}
 */
 
 // BEGIN_PATTERN_PROTOTYPE

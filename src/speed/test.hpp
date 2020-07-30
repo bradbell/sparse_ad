@@ -2,100 +2,116 @@
 # ifndef SRC_SPEED_TEST_HPP
 # define SRC_SPEED_TEST_HPP
 /*
-$begin speed_test$$
-$spell
+{xsrst_begin speed_test}
+
+.. include:: ../preamble.rst
+
+{xsrst_spell
     hes
     jac
-    Jacobian
     adolc
     cppad
     subgraph
     cppadcg
     subcg
     ptr
-    Globals
+    globals
     nnz
-$$
+}
 
-$section Setup a Speed Test Problem$$
+Setup a Speed Test Problem
+##########################
 
+Syntax
+******
 
-$head Syntax$$
-$codei%test_%implement%_jac(%repeat%)
-%$$
-$code%test_%implement%_hes(%repeat%)%$$
+| ``test_`` *implement* ``_jac`` ( *repeat* )
 
-$head Prototype$$
+``%test_%implement%_hes(%repeat%)%``
 
-$subhead Jacobian$$
-$srccode%hpp% */
+Prototype
+*********
+
+Jacobian
+========
+{xsrst_code hpp} */
 extern void test_adolc_jac(size_t repeat);
 extern void test_cppad_jac(size_t repeat);
 extern void test_subgraph_jac(size_t repeat);
 extern void test_cppadcg_jac(size_t repeat);
 extern void test_subcg_jac(size_t repeat);
-/* %$$
+/* {xsrst_code}
 
-$subhead Hessian$$
-$srccode%hpp% */
+Hessian
+=======
+{xsrst_code hpp} */
 extern void test_adolc_hes(size_t repeat);
 extern void test_cppad_hes(size_t repeat);
 extern void test_subgraph_hes(size_t repeat);
 extern void test_cppadcg_hes(size_t repeat);
 extern void test_subcg_hes(size_t repeat);
-/* %$$
+/* {xsrst_code}
 
-$head Purpose$$
+Purpose
+*******
 The Jacobian (Hessian) routines calculate the Jacobian (Hessian)
 for objective corresponding to the problem specified by
-$cref/global_problem_ptr/speed_global/Initialization/global_problem_ptr/$$
+:ref:`global_problem_ptr<speed_global.initialization.global_problem_ptr>`
 
-$head implement$$
+implement
+*********
 is one of the following
-$code adolc$$,
-$code cppad$$,
-$code subgraph$$,
-$code cppadcg$$,
-$code subcg$$.
+``adolc`` ,
+``cppad`` ,
+``subgraph`` ,
+``cppadcg`` ,
+``subcg`` .
 
-$head Setup$$
-The routine $codei%setup_%implement%()%$$ is called before
-$codei%test_%implement%_jac(%repeat%)%$$ or
-$code%test_%implement%_hes(%repeat%)%$$.
+Setup
+*****
+The routine ``setup_`` *implement* () is called before
+``test_`` *implement* ``_jac`` ( *repeat* ) or
+``%test_%implement%_hes(%repeat%)%`` .
 
-$head Globals$$
+Globals
+*******
 
-$subhead Initialization$$
-The $cref/initialization/speed_global/Initialization/$$ global variables
+Initialization
+==============
+The :ref:`initialization<speed_global.initialization>` global variables
 are inputs and not changed by the setup routines.
 In addition, the have the same values as during the call to
-$codei%setup_%implement%()%$$.
+``setup_`` *implement* () .
 
-$subhead m$$
-We use $icode m$$ for the value $code global_problem_ptr->size_range()$$
-see $cref/global_problem_ptr/speed_global/Initialization/global_problem_ptr/$$.
-This is the dimension of the range space for $latex f(x)$$.
+m
+=
+We use *m* for the value ``global_problem_ptr->size_range()``
+see :ref:`global_problem_ptr<speed_global.initialization.global_problem_ptr>`.
+This is the dimension of the range space for :math:`f(x)`.
 
-$subhead Jacobian$$
-If $icode%m% > 1%$$, the Jacobian test for this implementation is called.
+Jacobian
+========
+If *m* > 1 , the Jacobian test for this implementation is called.
 
-$subhead Hessian$$
-If $icode%m% = 1%$$, the Hessian test for this implementation is called.
+Hessian
+=======
+If *m* = 1 , the Hessian test for this implementation is called.
 
-$subhead global_nnz$$
+global_nnz
+==========
 The input value of this global does not matter.
 Upon return, it has been set to the number of non-zeros in the sparsity
 pattern for the sparse Jacobian or Hessian that is calculated.
 
-$subhead global_correct_ok$$
+global_correct_ok
+=================
 The input value of this global does not matter.
-If $cref/global_correct/speed_global/Initialization/global_correct/$$
-is true, $code global_correct_ok$$ has been set to true (false)
+If :ref:`global_correct<speed_global.initialization.global_correct>`
+is true, ``global_correct_ok`` has been set to true (false)
 if the result calculated by the last repetition of the test
-passes (fails) the correctness test; see $cref check_sparse$$.
+passes (fails) the correctness test; see :ref:`check_sparse<check_sparse>`.
 
-
-$end
+{xsrst_end speed_test}
 */
 
 # endif

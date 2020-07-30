@@ -1,72 +1,79 @@
 #! /bin/python3
 # vim: set expandtab:
 #
-# $begin c2hpp.py$$ $newlinech #$$
-# $spell
+# {xsrst_comment_ch #}
+#
+# {xsrst_begin c2hpp_py}
+#
+# .. include:: ../preamble.rst
+#
+# {xsrst_spell
 #   dir
-#   gitignore
-#   minpack
 #   tprobs
 #   dficfj
-#   diff
 #   hpp
 #   py
 #   doublereal
 #   ftnlen
-#   f2clib
+#   clib
 #   adolc
 #   cppad
 #   cppadcg
-# $$
+# }
 #
-# $section Create a C++ Template Version of an f2c File$$
+# Create a C++ Template Version of an f2c File
+# ############################################
 #
-# $head Syntax$$
-# $codei%bin/c2hpp.py %dir%/c/%name%.c
-# %$$
+# Syntax
+# ******
 #
-# $head Working Directory$$
-# see $cref/working directory/bin/Working Directory/$$.
+# | ``bin/c2hpp.py`` *dir* / ``c`` *name* . ``c``
 #
-# $head dir, name$$
-# The command line argument $icode%dir%/c/%name%.c%$$
+# Working Directory
+# *****************
+# see :ref:`working_directory<bin.working_directory>`.
+#
+# dir, name
+# *********
+# The command line argument *dir* / ``c`` *name* . ``c``
 # is an existing C file name,
 # relative to the current working directory,
-# and created by $cref f2c.sh$$.
-# The $icode name$$ part does not contain any $code /$$ characters; i.e.,
-# all the $code /$$ characters are in the $icode dir$$ part of the
+# and created by :ref:`f2c_sh<f2c_sh>`.
+# The *name* part does not contain any ``/`` characters; i.e.,
+# all the ``/`` characters are in the *dir* part of the
 # command line argument.
 #
-# $head Result$$
-# The file $icode%dir%/hpp/%name%.hpp%$$ is a C++ version of the C file.
-# The $code f2c$$ data types
-# $code doublereal$$, $code integer$$, and $code ftnlen$$
+# Result
+# ******
+# The file *dir* / ``hpp`` / *name* . ``hpp`` is a C++ version of the C file.
+# The ``f2c`` data types
+# ``doublereal`` , ``integer`` , and ``ftnlen``
 # are converted to be template parameters in this include file.
 #
-# $head Warning$$
+# Warning
+# *******
 # This conversion has only been tested for the files in the
-# $code minpack2/tprobs.92/c$$ directory and the $cref/types/typedef.hpp/$$
-# $code double$$, $code adolc_double$$, $code cppad_double$$,
-# $code cppadcg_double$$.
+# ``minpack2/tprobs.92/c`` directory and the :ref:`types<typedef_hpp>`
+# ``double`` , ``adolc_double`` , ``cppad_double`` ,
+# ``cppadcg_double`` .
 # New files and types may require modifications to the script
-# $code bin/c2hpp.py$$
-# and new library files may need to be added to $code f2clib.hpp$$; see
-# $codei%
-#   minpack2/tprobs.92/hpp/f2clib.hpp
-# %$$
+# ``bin/c2hpp.py``
+# and new library files may need to be added to ``f2clib.hpp`` ; see
 #
-# $head Example$$
+# | |tab| ``minpack2/tprobs.92/hpp/f2clib.hpp``
+#
+# Example
+# *******
 # If one is in the git root directory, the command
-# $codei%
-#   bin/c2hpp.py minpack2/tprobs.92/c/dficfj.c
-# %$$
-# will overwrite the git repository copy of $code dficfj.hpp$$.
-# The result file should be the same which you can check using
-# $codei%
-#   git diff minpack2/tprobs.92/hpp/dficfj.hpp
-# %$$
 #
-# $end
+# | |tab| ``bin/c2hpp.py minpack2/tprobs.92/c/dficfj.c``
+#
+# will overwrite the git repository copy of ``dficfj.hpp`` .
+# The result file should be the same which you can check using
+#
+# | |tab| ``git diff minpack2/tprobs.92/hpp/dficfj.hpp``
+#
+# {xsrst_end c2hpp_py}
 # -----------------------------------------------------------------------------
 import sys
 import re

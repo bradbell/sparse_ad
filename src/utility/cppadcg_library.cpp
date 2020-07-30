@@ -1,77 +1,90 @@
 // vim: set expandtab:
 /*
-$begin cppadcg_library$$
-$spell
-    CppAD
+{xsrst_begin cppadcg_library}
+
+.. include:: ../preamble.rst
+
+{xsrst_spell
+    cpp
     cppadcg
     cg
-$$
+}
 
-$section CppADCodeGen Dynamic Libraries$$
+CppADCodeGen Dynamic Libraries
+##############################
 
-$head Syntax$$
-$codei%cppadcg_library %fun_name%(%cg_fun%, %file_name%)
-%$$
-$codei%cppadcg_library %fun_name%(%file_name%)
-%$$
-$codei%cppadcg_library %fun_name%()
-%$$
-$icode%fun_name%.swap(%other_fun%)
-%$$
-$icode%y% = %fun_name%(%x%)
-%$$
+Syntax
+******
 
-$head Prototype$$
-$srcthisfile%
-    0%// BEGIN_CTOR_AD_FUN_FILE_NAME%// END_CTOR_AD_FUN_FILE_NAME%1
-%$$
-$srcthisfile%
-    0%// BEGIN_CTOR_FILE_NAME%// END_CTOR_FILE_NAME%1
-%$$
-$srcthisfile%
-    0%// BEGIN_CTOR_VOID%// END_CTOR_VOID%1
-%$$
-$srcthisfile%
-    0%// BEGIN_SWAP_OTHER_FUN%// END_SWAP_OTHER_FUN%1
-%$$
-$srcthisfile%
-    0%// BEGIN_FUN_NAME_X%// END_FUN_NAME_X%1
-%$$
+| ``cppadcg_library`` *fun_name* ( *cg_fun* , *file_name* )
+| ``cppadcg_library`` *fun_name* ( *file_name* )
+| ``cppadcg_library`` *fun_name* ()
+| *fun_name* . ``swap`` ( *other_fun* )
+| *y* = *fun_name* ( *x* )
 
-$head fun_name$$
-This is the name of the $code cppadcg_library$$ object.
+Prototype
+*********
+{xsrst_file
+    // BEGIN_CTOR_AD_FUN_FILE_NAME
+    // END_CTOR_AD_FUN_FILE_NAME
+}
+{xsrst_file
+    // BEGIN_CTOR_FILE_NAME
+    // END_CTOR_FILE_NAME
+}
+{xsrst_file
+    // BEGIN_CTOR_VOID
+    // END_CTOR_VOID
+}
+{xsrst_file
+    // BEGIN_SWAP_OTHER_FUN
+    // END_SWAP_OTHER_FUN
+}
+{xsrst_file
+    // BEGIN_FUN_NAME_X
+    // END_FUN_NAME_X
+}
 
-$head other_fun$$
-This is the name of another $code cppadcg_library$$ object.
+fun_name
+********
+This is the name of the ``cppadcg_library`` object.
 
-$head cg_fun$$
+other_fun
+*********
+This is the name of another ``cppadcg_library`` object.
+
+cg_fun
+******
 This is a CppAD function object that corresponds to a function
-$latex f : \B{R}^n \rightarrow \B{R}^m$$.
+:math:`f : \B{R}^n \rightarrow \B{R}^m`.
 If this arguments is present in the constructor,
 a new dynamic library is created.
 
-$head file_name$$
+file_name
+*********
 This is the absolute or relative path for the
 file that contains the dynamic library.
 It does not include the files extension at the end that is used
 for dynamic libraries on this system.
-If $icode cg_fun$$ is not present in the constructor,
+If *cg_fun* is not present in the constructor,
 it must have been present in a previous constructor with the same
-$icode file_name$$.
+*file_name* .
 
-$head swap$$
-This exchanges the library in $icode fun_name$$ with the library in
-$icode other_fun$$.
+swap
+****
+This exchanges the library in *fun_name* with the library in
+*other_fun* .
 
-$head x$$
-is a vector of size $icode n$$ specifying the argument value
+x
+*
+is a vector of size *n* specifying the argument value
 at which the function will be evaluated.
 
-$head y$$
-This return value has size $icode m$$ and is the value of $latex f(x)$$.
+y
+*
+This return value has size *m* and is the value of :math:`f(x)`.
 
-
-$end
+{xsrst_end cppadcg_library}
 */
 
 # include "cppadcg_library.hpp"

@@ -41,6 +41,7 @@ list=`ls $dir/*.f`
 change='no'
 for file in $list
 do
+    echo "bin/wget_minpack2.sh $file >& /dev/null"
     if ! bin/wget_minpack2.sh $file >& /dev/null
     then
         echo 'bin/check_all.sh: bin/wget_minpack2.sh failed'
@@ -85,14 +86,7 @@ then
 fi
 # -----------------------------------------------------------------------------
 # check documentation runs
-if which run_omhelp.sh >& /dev/null
-then
-    run_omhelp.sh doc
-else
-    echo 'Cannot find run_omhelp.sh on this system; i.e.,'
-    echo "Brad's devel tools are not installed"
-fi
-bin/run_cmake.sh
+bin/run_xsrst.sh
 # -----------------------------------------------------------------------------
 # check example
 pushd build

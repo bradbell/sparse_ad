@@ -1,14 +1,20 @@
 vim: set expandtab:
 
-$begin utility$$
+{xsrst_begin utility}
 
-$section Utility Routines$$
+.. include:: ../preamble.rst
 
-$childtable%src/utility/check_sparse.cpp
-    %src/utility/adolc2sparse_rcv.cpp
-    %src/utility/prt_sparse.cpp
-    %src/utility/upper_triangle.cpp
-    %src/utility/cppadcg_library.cpp
-%$$
+Utility Routines
+################
 
-$end
+Children
+********
+{xsrst_child_list
+    src/utility/check_sparse.cpp
+    src/utility/adolc2sparse_rcv.cpp
+    src/utility/prt_sparse.cpp
+    src/utility/upper_triangle.cpp
+    src/utility/cppadcg_library.cpp
+}
+
+{xsrst_end utility}

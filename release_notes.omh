@@ -1,26 +1,27 @@
-$begin release_notes$$
-$spell
+{xsrst_begin release_notes}
+
+.. include:: ../preamble.rst
+
+{xsrst_spell
     cppadcg
     gcc
-    xsrst
-$$
+}
 
-$section Changes and Additions to sparse_ad$$
+Changes and Additions to sparse_ad
+##################################
 
-$head 2020-07-29$$
-Add $code bin/get_xsrst.sh$$ to $cref get_all.sh$$.
+2020-07-29
+**********
+Add ``bin/get_xsrst.sh`` to :ref:`get_all_sh<get_all_sh>`.
 
-$head 2020-07-27$$
-$list number$$
-Add these release notes and $cref get_all.sh$$
-to the documentation.
-$lnext
-Add a timeout check to $cref wget_minpack2.sh$$
-(in case the server is down).
-$lnext
-Advance $code bin/get_cppadcg.sh$$ from version 2.4.2 to 2.4.3
-(this fixes a compiler error with gcc 10.1.1.
-$lend
+2020-07-27
+**********
 
+#.  Add these release notes and :ref:`get_all_sh<get_all_sh>`
+    to the documentation.
+#.  Add a timeout check to :ref:`wget_minpack2_sh<wget_minpack2_sh>`
+    (in case the server is down).
+#.  Advance ``bin/get_cppadcg.sh`` from version 2.4.2 to 2.4.3
+    (this fixes a compiler error with gcc 10.1.1.
 
-$end
+{xsrst_end release_notes}

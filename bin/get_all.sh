@@ -12,25 +12,32 @@ then
     exit 1
 fi
 # --------------------------------------------------------------------------
-# $begin get_all.sh$$ $newlinech #$$
+# {xsrst_comment_ch #}
 #
-# $section Local install of Packages Required by sparse_ad$$
+# {xsrst_begin get_all_sh}
 #
-# $head Syntax$$
-# $codei%bin/get_all.sh%$$
+# .. include:: ../preamble.rst
 #
-# $head Implementation$$
+# Local install of Packages Required by sparse_ad
+# ###############################################
+#
+# Syntax
+# ******
+# ``bin/get_all.sh``
+#
+# Implementation
+# **************
 # This script just executes the following scripts in order:
-# $srccode%sh%
+# {xsrst_code sh}
 bin/get_colpack.sh  # Colpack
 bin/get_adolc.sh    # ADOL-C:requires colpack
 bin/get_eigen.sh    # Eigen
 bin/get_cppad.sh    # CppAD
 bin/get_cppadcg.sh  # CppADCodeGen: requires Eigen and CppAD
 bin/get_xsrst.sh    # Only needed to build sparse_ad documentation
-# %$$
+# {xsrst_code}
 #
-# $end
+# {xsrst_end get_all_sh}
 #
 # --------------------------------------------------------------------------
 echo 'bin/get_all.sh: OK'

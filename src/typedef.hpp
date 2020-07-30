@@ -6,105 +6,125 @@
 # include <cppad/cg/cppadcg.hpp>
 
 /*
-$begin typedef.hpp$$
-$spell
+{xsrst_begin typedef_hpp}
+
+.. include:: ../preamble.rst
+
+{xsrst_spell
     ftnlen
     adolc
     cppad
     subgraph
-    CppAD
-    src
-    typedef.hpp
+    cpp
+    typedef
+    hpp
     cppadcg
     cg
-$$
+}
 
-$section Type Definitions$$
+Type Definitions
+################
 
-$head Syntax$$
-$codei%# include <src/typedef.hpp>
-%$$
+Syntax
+******
 
-$head Scalar Types$$
+| ``# include <src/typedef.hpp`` >
 
-$subhead ftnlen$$
+Scalar Types
+************
+
+ftnlen
+======
 type used by f2c for fortran integers:
-$srccode%hpp% */
+{xsrst_code hpp} */
 typedef int                          ftnlen;
-/* %$$
+/* {xsrst_code}
 
-$subhead adolc_double$$
+adolc_double
+============
 type used by adolc implementation to record operations:
-$srccode%hpp% */
+{xsrst_code hpp} */
 typedef adouble                      adolc_double;
-/* %$$
+/* {xsrst_code}
 
-$subhead cppad_double$$
+cppad_double
+============
 type used by cppad and subgraph implementations to record operations:
-$srccode%hpp% */
+{xsrst_code hpp} */
 typedef CppAD::AD<double>            cppad_double;
-/* %$$
+/* {xsrst_code}
 
-$subhead cg_double$$
+cg_double
+=========
 type used by cppadcg implementations to evaluate derivatives
-$srccode%hpp% */
+{xsrst_code hpp} */
 typedef CppAD::cg::CG<double>        cg_double;
-/* %$$
+/* {xsrst_code}
 
-$subhead cppadcg_double$$
+cppadcg_double
+==============
 type used by cppadcg implementations to record operations:
-$srccode%hpp% */
+{xsrst_code hpp} */
 typedef CppAD::AD<cg_double>         cppadcg_double;
-/* %$$
+/* {xsrst_code}
 
-$head Vector Types$$
-$codei%CppAD::vector<%T%>%$$ is a vector with elements of type $icode T$$ and
-$codei%CppAD::vector<%T%>::data()%$$ is the corresponding $icode%T%*%$$
+Vector Types
+************
+``CppAD::vector`` < *T* > is a vector with elements of type *T* and
+``CppAD::vector`` < *T* > ``::data`` () is the corresponding *T* *
 pointer.
 
-$subhead d_vector$$
-$srccode%hpp% */
+d_vector
+========
+{xsrst_code hpp} */
 typedef CppAD::vector<double>          d_vector;
-/* %$$
+/* {xsrst_code}
 
-$subhead c_vector$$
-$srccode%hpp% */
+c_vector
+========
+{xsrst_code hpp} */
 typedef CppAD::vector<char>            c_vector;
-/* %$$
+/* {xsrst_code}
 
-$subhead s_vector$$
-$srccode%hpp% */
+s_vector
+========
+{xsrst_code hpp} */
 typedef CppAD::vector<size_t>          s_vector;
-/* %$$
+/* {xsrst_code}
 
-$subhead b_vector$$
-$srccode%hpp% */
+b_vector
+========
+{xsrst_code hpp} */
 typedef CppAD::vector<bool>            b_vector;
-/* %$$
+/* {xsrst_code}
 
-$subhead adolc_vector$$
-$srccode%hpp% */
+adolc_vector
+============
+{xsrst_code hpp} */
 typedef CppAD::vector<adolc_double>    adolc_vector;
-/* %$$
+/* {xsrst_code}
 
-$subhead cppad_vector$$
-$srccode%hpp% */
+cppad_vector
+============
+{xsrst_code hpp} */
 typedef CppAD::vector<cppad_double>    cppad_vector;
 
-/* %$$
+/* {xsrst_code}
 
-$subhead cg_vector$$
-$srccode%hpp% */
+cg_vector
+=========
+{xsrst_code hpp} */
 typedef CppAD::vector<cg_double>       cg_vector;
 
-/* %$$
+/* {xsrst_code}
 
-$subhead cppadcg_vector$$
-$srccode%hpp% */
+cppadcg_vector
+==============
+{xsrst_code hpp} */
 typedef CppAD::vector<cppadcg_double>  cppadcg_vector;
 
-/* %$$
-$end
+/* {xsrst_code}
+{xsrst_end typedef_hpp}
 */
 
 # endif

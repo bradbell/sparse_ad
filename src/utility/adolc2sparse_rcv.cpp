@@ -1,52 +1,67 @@
 // vim: set expandtab:
 
 /*
-$begin adolc2sparse_rcv$$
-$spell
-    Adolc
-    CppAD
+{xsrst_begin adolc2sparse_rcv}
+
+.. include:: ../preamble.rst
+
+{xsrst_spell
+    adolc
+    cpp
     rcv
     nr
     nc
     nnz
     cind
     cppad
-$$
+}
 
-$section Convert An Adolc Sparse Matrix to CppAD Form$$
+Convert An Adolc Sparse Matrix to CppAD Form
+############################################
 
-$head Syntax$$
-$icode%sparse_matrix% = adolc2sparse_rcv(
-    %nr%, %nc%, %nnz%, %rind%, %cind%, %values%
-)%$$
+Syntax
+******
 
-$head Prototype$$
-$srcthisfile%0
-    %// BEGIN_PROTOTYPE%// END_PROTOTYPE%
-1%$$
+| *sparse_matrix* =  ``adolc2sparse_rcv`` (
+| |tab| *nr* , *nc* , *nnz* , *rind* , *cind* , *values*
+| )
 
-$head nr$$
+Prototype
+*********
+{xsrst_file
+    // BEGIN_PROTOTYPE
+    // END_PROTOTYPE
+}
+
+nr
+**
 number of rows in the matrix.
 
-$head nc$$
+nc
+**
 number of columns in the matrix.
 
-$head nnz$$
+nnz
+***
 number of possibly non-zero entries in the matrix.
 
-$head rind$$
+rind
+****
 The row indices for possibly non-zero values.
 
-$head cind$$
+cind
+****
 The column indices for possibly non-zero values.
 
-$head values$$
+values
+******
 The possibly non-zero values.
 
-$head sparse_matrix$$
+sparse_matrix
+*************
 The cppad sparse representation for the matrix.
 
-$end
+{xsrst_end adolc2sparse_rcv}
 */
 
 # include <cppad/utility/vector.hpp>
