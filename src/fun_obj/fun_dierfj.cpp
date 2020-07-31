@@ -1,4 +1,3 @@
-// vim: set expandtab:
 # include <dierfj.hpp>
 # include "fun_dierfj.hpp"
 

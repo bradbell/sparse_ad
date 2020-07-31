@@ -30,6 +30,4 @@
 # '
 # ----------------------------------------------------------------------------
 # Put other sed commands below here and without # at start of line
-/^    cpp$/d
-/^#   cpp$/d
-#
+/vim: set expandtab:/d

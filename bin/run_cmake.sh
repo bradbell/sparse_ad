@@ -1,5 +1,4 @@
 #! /bin/bash -e
-# vim: set expandtab:
 # -----------------------------------------------------------------------------
 # Parameters that can be changed
 # build_type and prefix are used by all the get routines.

@@ -1,4 +1,3 @@
-// vim: set expandtab:
 # include <dficfj.hpp>
 # include "fun_dficfj.hpp"
 

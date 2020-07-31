@@ -1,5 +1,4 @@
 #! /bin/python3
-# vim: set expandtab:
 #
 # {xsrst_comment_ch #}
 #

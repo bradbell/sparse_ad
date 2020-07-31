@@ -1,5 +1,4 @@
 #! /bin/bash -e
-# vim: set expandtab:
 #
 # {xsrst_comment_ch #}
 #

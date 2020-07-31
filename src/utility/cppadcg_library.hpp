@@ -1,4 +1,3 @@
-// vim: set expandtab:
 # ifndef SRC_UTILITY_CPPADCG_LIBRARY_HPP
 # define SRC_UTILITY_CPPADCG_LIBRARY_HPP
 

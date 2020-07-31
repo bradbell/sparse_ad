@@ -1,4 +1,3 @@
-# vim: set expandtab:
 SET(source_list
     adolc2sparse_rcv.cpp
     check_sparse.cpp

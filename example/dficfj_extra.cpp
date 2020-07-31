@@ -1,5 +1,3 @@
-// vim: set expandtab:
-
 // This is an extra test the dficfj problem that is useful for debugging
 
 # include <cstring>

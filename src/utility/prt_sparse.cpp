@@ -1,4 +1,3 @@
-// vim: set expandtab:
 # include "prt_sparse.hpp"
 
 /*

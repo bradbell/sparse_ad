@@ -1,5 +1,4 @@
 #! /bin/bash -e
-# vim: set expandtab:
 # --------------------------------------------------------------------------
 version='3.3.7'
 web_page='https://gitlab.com/libeigen/eigen.git'

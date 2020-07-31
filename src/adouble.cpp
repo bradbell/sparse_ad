@@ -1,5 +1,3 @@
-// vim: set expandtab:
-
 # include <cmath>
 
 double cos(double x)

@@ -1,4 +1,3 @@
-// vim: set expandtab:
 # include <cppad/cg/cppadcg.hpp>
 # include <src/typedef.hpp>
 # include <src/fun_obj/fun_base.hpp>

@@ -1,4 +1,3 @@
-// vim: set expandtab:
 # ifndef EXAMPLE_FUN_BASE_OK_HPP
 # define EXAMPLE_FUN_BASE_OK_HPP
 

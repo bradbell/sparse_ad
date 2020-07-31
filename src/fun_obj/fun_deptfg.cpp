@@ -1,4 +1,3 @@
-// vim: set expandtab:
 # include <deptfg.hpp>
 # include <minpack2/tprobs.92/c/depths.h>
 # include "fun_deptfg.hpp"

@@ -1,5 +1,3 @@
-// vim: set expandtab:
-
 # include <cstring>
 # include <cmath>
 # include <cppad/cg/cppadcg.hpp>

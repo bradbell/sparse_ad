@@ -1,5 +1,3 @@
-// vim: set expandtab:
-
 /*
 {xsrst_begin upper_triangle}
 

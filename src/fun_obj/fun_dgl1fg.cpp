@@ -1,4 +1,3 @@
-// vim: set expandtab:
 # include <dgl1fg.hpp>
 # include <minpack2/tprobs.92/c/dgl1hs.h>
 # include "fun_dgl1fg.hpp"

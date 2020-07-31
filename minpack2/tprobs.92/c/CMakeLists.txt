@@ -1,4 +1,3 @@
-# vim: set expandtab:
 SET(source_list
     s_copy.c
     s_cmp.c

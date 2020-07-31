@@ -1,4 +1,3 @@
-// vim: set expandtab:
 # ifndef SRC_FUN_OBJ_FUN_DIERFJ_HPP
 # define SRC_FUN_OBJ_FUN_DIERFJ_HPP
 

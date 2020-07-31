@@ -1,4 +1,3 @@
-// vim: set expandtab:
 /*
 {xsrst_begin cppadcg_library}
 

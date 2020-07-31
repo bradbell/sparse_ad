@@ -1,4 +1,3 @@
-// vim: set expandtab:
 # ifndef SRC_UTILITY_UPPER_TRIANGLE_HPP
 # define SRC_UTILITY_UPPER_TRIANGLE_HPP
 

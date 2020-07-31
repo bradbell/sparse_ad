@@ -1,4 +1,3 @@
-// vim: set expandtab:
 # ifndef SRC_TYPEDEF_HPP
 # define SRC_TYPEDEF_HPP
 

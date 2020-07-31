@@ -1,4 +1,3 @@
-// vim: set expandtab:
 # ifndef SRC_UTILITY_PRT_SPARSE_HPP
 # define SRC_UTILITY_PRT_SPARSE_HPP
 

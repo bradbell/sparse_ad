@@ -1,5 +1,3 @@
-// vim: set expandtab:
-
 # include <cstring>
 # include <cmath>
 # include <cppad/speed/uniform_01.hpp>

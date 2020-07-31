@@ -1,4 +1,3 @@
-// vim: set expandtab:
 # include <cstdlib>
 # include <cppad/speed/uniform_01.hpp>
 # include <src/typedef.hpp>

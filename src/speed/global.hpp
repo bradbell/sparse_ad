@@ -1,4 +1,3 @@
-// vim: set expandtab:
 # ifndef SRC_SPEED_GLOBAL_HPP
 # define SRC_SPEED_GLOBAL_HPP
 

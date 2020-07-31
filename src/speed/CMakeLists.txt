@@ -1,4 +1,3 @@
-# vim: set expandtab:
 #
 ADD_EXECUTABLE(speed EXCLUDE_FROM_ALL speed.cpp
     adolc.cpp

@@ -1,4 +1,3 @@
-# vim: set expandtab:
 SET(source_list
     example.cpp
     f2cpp_ok.cpp

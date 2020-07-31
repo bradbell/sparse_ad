@@ -1,4 +1,3 @@
-// vim: set expandtab:
 # include <adolc/adolc.h>
 # include <adolc/adolc_sparse.h>
 # include <src/utility/adolc2sparse_rcv.hpp>

@@ -1,5 +1,3 @@
-// vim: set expandtab:
-
 /*
 {xsrst_begin adolc2sparse_rcv}
 

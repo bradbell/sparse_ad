@@ -1,5 +1,3 @@
-// vim: set expandtab:
-
 # include <src/fun_obj/fun_deptfg.hpp>
 # include "fun_base_ok.hpp"
 

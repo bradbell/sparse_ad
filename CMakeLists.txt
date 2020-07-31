@@ -1,4 +1,3 @@
-# vim: set expandtab:
 # usage: cmake \
 #   -D adolc_prefix=value \
 #   -D colpack_prefix=value \

@@ -1,4 +1,3 @@
-# vim: set expandtab:
 SET(source_list
     fun_base.cpp
     fun_dficfj.cpp

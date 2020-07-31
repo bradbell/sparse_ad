@@ -1,4 +1,3 @@
-// vim: set expandtab:
 # include <src/typedef.hpp>
 # include <src/fun_obj/fun_base.hpp>
 # include <src/utility/check_sparse.hpp>

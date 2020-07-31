@@ -1,5 +1,3 @@
-// vim: set expandtab:
-
 // utility that runs a single test
 # include <cppad/utility/test_boolofvoid.hpp>
 # include <cppad/utility/thread_alloc.hpp>

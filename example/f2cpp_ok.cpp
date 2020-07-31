@@ -1,5 +1,3 @@
-// vim: set expandtab:
-
 # include <cstring>
 # include <cmath>
 # include <src/fun_obj/fun_base.hpp>

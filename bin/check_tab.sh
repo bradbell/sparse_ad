@@ -1,5 +1,4 @@
 #! /bin/bash -e
-# vim: set expandtab:
 # -----------------------------------------------------------------------------
 # bash function that echos and executes a command
 echo_eval() {

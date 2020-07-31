@@ -1,5 +1,4 @@
 #! /bin/bash -e
-# vim: set expandtab:
 web_page='https://github.com/coin-or/ADOL-C.git'
 version='25a69c486829ddaa19c115afc05cb7cf3b4e2410'
 # --------------------------------------------------------------------------

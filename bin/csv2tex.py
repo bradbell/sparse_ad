@@ -1,5 +1,4 @@
 #! /usr/bin/python3
-# vim: set expandtab:
 '''
 {xsrst_begin csv2tex_py}
 

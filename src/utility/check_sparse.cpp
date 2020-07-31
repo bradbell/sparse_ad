@@ -1,4 +1,3 @@
-// vim: set expandtab:
 # include <limits>
 # include "check_sparse.hpp"
 
