@@ -80,12 +80,12 @@ where *mm* is the current month and *dd* is the current day.
 Children
 ********
 {xsrst_child_list
-    src/speed/speed.omh
-    bin/bin.omh
+    src/speed/speed.xsrst
+    bin/bin.xsrst
     src/typedef.hpp
     src/fun_obj/fun_base.hpp
-    src/utility/utility.omh
-    release_notes.omh
+    src/utility/utility.xsrst
+    release_notes.xsrst
 }
 
 {xsrst_end sparse_ad}
