@@ -47,12 +47,14 @@ Children
    f2c_sh
    c2hpp_py
    csv2tex_py
+   run_speed_sh
 
 #. get_all_sh: :ref:`get_all_sh`
 #. wget_minpack2_sh: :ref:`wget_minpack2_sh`
 #. f2c_sh: :ref:`f2c_sh`
 #. c2hpp_py: :ref:`c2hpp_py`
 #. csv2tex_py: :ref:`csv2tex_py`
+#. run_speed_sh: :ref:`run_speed_sh`
 
 ----
 

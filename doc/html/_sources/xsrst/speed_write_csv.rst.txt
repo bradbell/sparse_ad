@@ -64,7 +64,7 @@ Prototype
 *********
 
 .. literalinclude:: ../../src/speed/write_csv.cpp
-    :lines: 111-127
+    :lines: 110-126
     :language: cpp
 
 .. meta::

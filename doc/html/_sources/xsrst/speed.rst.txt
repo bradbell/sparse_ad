@@ -5,14 +5,14 @@ speed
 .. include:: ../preamble.rst
 
 .. meta::
-   :keywords: speed, running, jacobian, and, hessian, speed, tests
+   :keywords: speed, run, a, jacobian, or, hessian, speed, test
 
-.. index:: speed, running, jacobian, and, hessian, speed, tests
+.. index:: speed, run, a, jacobian, or, hessian, speed, test
 
 .. _speed:
 
-Running Jacobian and Hessian Speed Tests
-########################################
+Run a Jacobian or Hessian Speed Test
+####################################
 - :ref:`speed.syntax`
 - :ref:`speed.name_k=value_k`
 - :ref:`speed.implement`
@@ -25,6 +25,7 @@ Running Jacobian and Hessian Speed Tests
     - :ref:`speed.problem.dficfj`
     - :ref:`speed.problem.dierfj`
     - :ref:`speed.problem.deptfg`
+    - :ref:`speed.problem.dgl1fg`
 - :ref:`speed.size`
 - :ref:`speed.option_list`
     - :ref:`speed.option_list.--colpack`
@@ -198,6 +199,20 @@ The corresponding test computes sparse Hessians
 for :math:`f : \B{R}^n \rightarrow \B{R}`.
 
 .. meta::
+   :keywords: dgl1fg
+
+.. index:: dgl1fg
+
+.. _speed.problem.dgl1fg:
+
+dgl1fg
+======
+This is the Minpack2 Inhomogeneous Superconductors
+(One Dimensional Ginzburg-Landau) problem.
+The corresponding test computes sparse Hessians
+for :math:`f : \B{R}^n \rightarrow \B{R}`.
+
+.. meta::
    :keywords: size
 
 .. index:: size
@@ -217,6 +232,7 @@ This corresponds to the number of variables is *n* below:
     ``dficfj`` , 8 * *size*
     ``dierfj`` , 15 * *size* + 3
     ``deptfg`` , *size* * *size*
+    ``dgl2fg`` , *size*
 
 .. meta::
    :keywords: option_list

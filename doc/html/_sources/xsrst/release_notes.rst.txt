@@ -13,44 +13,71 @@ release_notes
 
 Changes and Additions to sparse_ad
 ##################################
-- :ref:`release_notes.2020-07-31`
-- :ref:`release_notes.2020-07-29`
-- :ref:`release_notes.2020-07-27`
+- :ref:`release_notes.2020`
+    - :ref:`release_notes.2020.08-01`
+    - :ref:`release_notes.2020.07-31`
+    - :ref:`release_notes.2020.07-29`
+    - :ref:`release_notes.2020.07-27`
 
 .. meta::
-   :keywords: 2020-07-31
+   :keywords: 2020
 
-.. index:: 2020-07-31
+.. index:: 2020
 
-.. _release_notes.2020-07-31:
+.. _release_notes.2020:
 
-2020-07-31
-**********
+2020
+****
+
+.. meta::
+   :keywords: 08-01
+
+.. index:: 08-01
+
+.. _release_notes.2020.08-01:
+
+08-01
+=====
+#.  Document :ref:`run_speed.sh<run_speed_sh>`.
+#.  Put all the :ref:`problems<speed.problem>` and ``csv``
+    in the xsrst spelling exceptions file.
+#.  Include :ref:`dgl1fg<speed.problem.dgl1fg>` in the
+    speed problem documentation (it was missing).
+#.  Add version number to the top documentation :ref:`page<sparse_ad>`.
+
+.. meta::
+   :keywords: 07-31
+
+.. index:: 07-31
+
+.. _release_notes.2020.07-31:
+
+07-31
+=====
 Change the documentation source from omhelp to sphinx with the
 `xsrst <https://bradbell.github.io/cppad_py/doc/html/xsrst/xsrst_py.html>`_
 extension.
 
 .. meta::
-   :keywords: 2020-07-29
+   :keywords: 07-29
 
-.. index:: 2020-07-29
+.. index:: 07-29
 
-.. _release_notes.2020-07-29:
+.. _release_notes.2020.07-29:
 
-2020-07-29
-**********
+07-29
+=====
 Add ``bin/get_xsrst.sh`` to :ref:`get_all_sh<get_all_sh>`.
 
 .. meta::
-   :keywords: 2020-07-27
+   :keywords: 07-27
 
-.. index:: 2020-07-27
+.. index:: 07-27
 
-.. _release_notes.2020-07-27:
+.. _release_notes.2020.07-27:
 
-2020-07-27
-**********
-
+07-27
+=====
 #.  Add these release notes and :ref:`get_all_sh<get_all_sh>`
     to the documentation.
 #.  Add a timeout check to :ref:`wget_minpack2_sh<wget_minpack2_sh>`

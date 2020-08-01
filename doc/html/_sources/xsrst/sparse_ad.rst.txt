@@ -17,6 +17,7 @@ sparse_ad
 
 Computing Sparse Jacobians and Hessians Using AD
 ################################################
+- :ref:`sparse_ad.version_20200801`
 - :ref:`sparse_ad.github`
 - :ref:`sparse_ad.system_requirements`
 - :ref:`sparse_ad.build_type`
@@ -24,6 +25,16 @@ Computing Sparse Jacobians and Hessians Using AD
 - :ref:`sparse_ad.check_build`
 - :ref:`sparse_ad.run_speed_tests`
 - :ref:`sparse_ad.children`
+
+.. meta::
+   :keywords: version, 20200801
+
+.. index:: version, 20200801
+
+.. _sparse_ad.version_20200801:
+
+Version 20200801
+****************
 
 .. meta::
    :keywords: github
