@@ -4,17 +4,14 @@
 
 {xsrst_spell
     jac
-    dierfj
-    dficfj
     nnz
-    csv
-    deptfg
     onepass
     coloring
+    Ginzburg
 }
 
-Running Jacobian and Hessian Speed Tests
-########################################
+Run a Jacobian or Hessian Speed Test
+####################################
 
 Syntax
 ******
@@ -84,6 +81,13 @@ This is the Minpack2 Elastic-Plastic Torsion problem.
 The corresponding test computes sparse Hessians
 for :math:`f : \B{R}^n \rightarrow \B{R}`.
 
+dgl1fg
+======
+This is the Minpack2 Inhomogeneous Superconductors
+(One Dimensional Ginzburg-Landau) problem.
+The corresponding test computes sparse Hessians
+for :math:`f : \B{R}^n \rightarrow \B{R}`.
+
 size
 ****
 This is the size of the test problem; e.g.,
@@ -97,6 +101,7 @@ This corresponds to the number of variables is *n* below:
     ``dficfj`` , 8 * *size*
     ``dierfj`` , 15 * *size* + 3
     ``deptfg`` , *size* * *size*
+    ``dgl2fg`` , *size*
 
 option_list
 ***********

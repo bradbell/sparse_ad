@@ -4,7 +4,6 @@
 .. include:: ../preamble.rst
 
 {xsrst_spell
-    csv
     onepass
     nnz
 }

@@ -9,7 +9,6 @@
 # {xsrst_spell
 #   dir
 #   tprobs
-#   dficfj
 # }
 #
 # Create a C Version of a Fortran File

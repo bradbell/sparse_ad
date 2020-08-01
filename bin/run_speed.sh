@@ -1,7 +1,68 @@
 #! /bin/bash -e
-implement_list='adolc cppad subgraph' # without code generation
+# {xsrst_comment_ch #}
+# {xsrst_begin run_speed_sh}
+# {xsrst_spell
+#   mmdd
+# }
+#
+# .. include:: ../preamble.rst
+#
+# Run All the Jacobian and Hessian Speed Tests
+# ############################################
+#
+# Purpose
+# *******
+# The :ref:`speed<speed>` program has many possible
+# combinations of options.
+# This script runs all the possible combinations
+# and collects the results in one csv file.
+#
+# Syntax
+# ******
+# - ``bin/run_speed.sh`` *name* *build_type*
+# - ``bin/run_speed.sh`` *name* *build_type* --correct
+#
+# name
+# ****
+# The results for the speed tests are written to the file
+#
+# |tab| ``build/src/speed/`` *name* - *mmdd* ``.csv``
+#
+# where *mmdd** is the current month and day.
+#
+# build_type
+# **********
+# This is either ``debug`` or release and determines which build
+# is used to run the speed tests.
+# The ``debug`` build is only intended for debugging and testing.
+#
+# --correct
+# *********
+# If ``--correct`` is present, the
+# :ref:`--correct<speed.option_list.--correct>` option is included
+# for all the speed tests.
+# This is only intended for correctness testing.
+#
+# Implementation List
+# *******************
+# The code below selects which
+# :ref:`implementations<speed.implement>` are included:
+# {xsrst_code sh}
 implement_list='adolc cppad subgraph cppadcg subcg'
+implement_list='adolc cppad subgraph' # without code generation
+# {xsrst_code}
+# This code is in ``bin/run_speed.sh`` and can be changed.
+#
+# Problem List
+# ************
+# The code below selects which
+# :ref:`problems<speed.problem>` are included:
+# {xsrst_code sh}
 problem_list='dficfj dierfj deptfg dgl1fg'
+# {xsrst_code}
+# This code is in ``bin/run_speed.sh`` and can be changed.
+#
+# {xsrst_end run_speed_sh}
 # --------------------------------------------------------------------------
 echo_eval() {
     echo $*

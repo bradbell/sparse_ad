@@ -12,7 +12,6 @@
 #   mcs
 #   anl
 #   tprobs
-#   dficfj
 # }
 #
 # Get a Minpack2 File From Argonne National Laboratory

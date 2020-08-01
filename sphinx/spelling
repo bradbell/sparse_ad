@@ -1,6 +1,7 @@
 # standard computer words
 bool
 cpp
+csv
 diff
 extern
 # sphinx commands
@@ -15,5 +16,11 @@ cppadcg
 colpack
 subcg
 subgraph
+# problems note dgl1fg is dgl and fg
+deptfg
+dierfj
+dficfj
+dgl
+fg
 # latex commands
 \rightarrow

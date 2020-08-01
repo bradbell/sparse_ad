@@ -5,11 +5,7 @@
 .. include:: ../preamble.rst
 
 {xsrst_spell
-    csv
     py
-    deptfg
-    dierfj
-    dficfj
 }
 
 Extract Latex Tables From Speed Test Csv File

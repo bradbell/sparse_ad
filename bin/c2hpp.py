@@ -9,7 +9,6 @@
 # {xsrst_spell
 #   dir
 #   tprobs
-#   dficfj
 #   hpp
 #   py
 #   doublereal

@@ -12,20 +12,29 @@
 Changes and Additions to sparse_ad
 ##################################
 
-2020-07-31
-**********
+2020
+****
+
+08-01
+=====
+#.  Document :ref:`run_speed.sh<run_speed_sh>`.
+#.  Put all the :ref:`problems<speed.problem>` and ``csv``
+    in the xsrst spelling exceptions file.
+#.  Include :ref:`dgl1fg<speed.problem.dgl1fg>` in the
+    speed problem documentation (it was missing).
+
+07-31
+=====
 Change the documentation source from omhelp to sphinx with the
 `xsrst <https://bradbell.github.io/cppad_py/doc/html/xsrst/xsrst_py.html>`_
 extension.
 
-
-2020-07-29
-**********
+07-29
+=====
 Add ``bin/get_xsrst.sh`` to :ref:`get_all_sh<get_all_sh>`.
 
-2020-07-27
-**********
-
+07-27
+=====
 #.  Add these release notes and :ref:`get_all_sh<get_all_sh>`
     to the documentation.
 #.  Add a timeout check to :ref:`wget_minpack2_sh<wget_minpack2_sh>`
