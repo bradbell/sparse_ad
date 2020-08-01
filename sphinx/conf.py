@@ -8,7 +8,6 @@ import sphinx_rtd_theme
 project   = 'sparse_ad'
 copyright = '2020'
 author    = 'Brad Bell'
-version = '20200731'
 
 # -- General configuration ---------------------------------------------------
 extensions = [

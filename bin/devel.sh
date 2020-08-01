@@ -13,7 +13,7 @@ image_link=''
 # List of files, besides CMakeLists.txt, that have have a copy of the
 # version number (can be empty).
 version_files='
-    sphinx/conf.py
+    doc.xsrst
 '
 #
 #

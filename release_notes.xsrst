@@ -22,6 +22,7 @@ Changes and Additions to sparse_ad
     in the xsrst spelling exceptions file.
 #.  Include :ref:`dgl1fg<speed.problem.dgl1fg>` in the
     speed problem documentation (it was missing).
+#.  Add version number to the top documentation :ref:`page<sparse_ad>`.
 
 07-31
 =====

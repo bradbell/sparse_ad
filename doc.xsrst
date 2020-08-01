@@ -17,6 +17,9 @@
 Computing Sparse Jacobians and Hessians Using AD
 ################################################
 
+Version 20200801
+****************
+
 github
 ******
 `github <https://github.com/bradbell/sparse_ad>`_.
