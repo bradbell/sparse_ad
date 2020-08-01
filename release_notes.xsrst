@@ -6,10 +6,18 @@
     gcc
     timeout
     wget
+    omhelp
 }
 
 Changes and Additions to sparse_ad
 ##################################
+
+2020-07-31
+**********
+Change the documentation source from omhelp to sphinx with the
+`xsrst <https://bradbell.github.io/cppad_py/doc/html/xsrst/xsrst_py.html>`_
+extension.
+
 
 2020-07-29
 **********
