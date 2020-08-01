@@ -1,0 +1,133 @@
+!!!!!!!!!!!!!!!!
+adolc2sparse_rcv
+!!!!!!!!!!!!!!!!
+
+.. include:: ../preamble.rst
+
+.. meta::
+   :keywords: adolc2sparse_rcv, convert, an, adolc, sparse, matrix, to, cppad, form
+
+.. index:: adolc2sparse_rcv, convert, an, adolc, sparse, matrix, to, cppad, form
+
+.. _adolc2sparse_rcv:
+
+Convert An Adolc Sparse Matrix to CppAD Form
+############################################
+- :ref:`adolc2sparse_rcv.syntax`
+- :ref:`adolc2sparse_rcv.prototype`
+- :ref:`adolc2sparse_rcv.nr`
+- :ref:`adolc2sparse_rcv.nc`
+- :ref:`adolc2sparse_rcv.nnz`
+- :ref:`adolc2sparse_rcv.rind`
+- :ref:`adolc2sparse_rcv.cind`
+- :ref:`adolc2sparse_rcv.values`
+- :ref:`adolc2sparse_rcv.sparse_matrix`
+
+.. meta::
+   :keywords: syntax
+
+.. index:: syntax
+
+.. _adolc2sparse_rcv.syntax:
+
+Syntax
+******
+
+| *sparse_matrix* =  ``adolc2sparse_rcv`` (
+| |tab| *nr* , *nc* , *nnz* , *rind* , *cind* , *values*
+| )
+
+.. meta::
+   :keywords: prototype
+
+.. index:: prototype
+
+.. _adolc2sparse_rcv.prototype:
+
+Prototype
+*********
+
+.. literalinclude:: ../../src/utility/adolc2sparse_rcv.cpp
+    :lines: 66-72
+    :language: cpp
+
+.. meta::
+   :keywords: nr
+
+.. index:: nr
+
+.. _adolc2sparse_rcv.nr:
+
+nr
+**
+number of rows in the matrix.
+
+.. meta::
+   :keywords: nc
+
+.. index:: nc
+
+.. _adolc2sparse_rcv.nc:
+
+nc
+**
+number of columns in the matrix.
+
+.. meta::
+   :keywords: nnz
+
+.. index:: nnz
+
+.. _adolc2sparse_rcv.nnz:
+
+nnz
+***
+number of possibly non-zero entries in the matrix.
+
+.. meta::
+   :keywords: rind
+
+.. index:: rind
+
+.. _adolc2sparse_rcv.rind:
+
+rind
+****
+The row indices for possibly non-zero values.
+
+.. meta::
+   :keywords: cind
+
+.. index:: cind
+
+.. _adolc2sparse_rcv.cind:
+
+cind
+****
+The column indices for possibly non-zero values.
+
+.. meta::
+   :keywords: values
+
+.. index:: values
+
+.. _adolc2sparse_rcv.values:
+
+values
+******
+The possibly non-zero values.
+
+.. meta::
+   :keywords: sparse_matrix
+
+.. index:: sparse_matrix
+
+.. _adolc2sparse_rcv.sparse_matrix:
+
+sparse_matrix
+*************
+The cppad sparse representation for the matrix.
+
+----
+
+xsrst input file: ``src/utility/adolc2sparse_rcv.cpp``

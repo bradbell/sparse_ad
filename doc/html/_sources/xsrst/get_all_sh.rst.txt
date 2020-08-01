@@ -1,0 +1,52 @@
+!!!!!!!!!!
+get_all_sh
+!!!!!!!!!!
+
+.. include:: ../preamble.rst
+
+.. meta::
+   :keywords: get_all_sh, local, install, of, packages, required, by, sparse_ad
+
+.. index:: get_all_sh, local, install, of, packages, required, by, sparse_ad
+
+.. _get_all_sh:
+
+Local install of Packages Required by sparse_ad
+###############################################
+- :ref:`get_all_sh.syntax`
+- :ref:`get_all_sh.implementation`
+
+.. meta::
+   :keywords: syntax
+
+.. index:: syntax
+
+.. _get_all_sh.syntax:
+
+Syntax
+******
+``bin/get_all.sh``
+
+.. meta::
+   :keywords: implementation
+
+.. index:: implementation
+
+.. _get_all_sh.implementation:
+
+Implementation
+**************
+This script just executes the following scripts in order:
+
+.. code-block:: sh
+
+    bin/get_colpack.sh  # Colpack
+    bin/get_adolc.sh    # ADOL-C:requires colpack
+    bin/get_eigen.sh    # Eigen
+    bin/get_cppad.sh    # CppAD
+    bin/get_cppadcg.sh  # CppADCodeGen: requires Eigen and CppAD
+    bin/get_xsrst.sh    # Only needed to build sparse_ad documentation
+
+----
+
+xsrst input file: ``bin/get_all.sh``

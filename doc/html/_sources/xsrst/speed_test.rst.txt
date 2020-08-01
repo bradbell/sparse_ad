@@ -1,0 +1,222 @@
+!!!!!!!!!!
+speed_test
+!!!!!!!!!!
+
+.. include:: ../preamble.rst
+
+.. meta::
+   :keywords: speed_test, setup, a, speed, test, problem
+
+.. index:: speed_test, setup, a, speed, test, problem
+
+.. _speed_test:
+
+Setup a Speed Test Problem
+##########################
+- :ref:`speed_test.syntax`
+- :ref:`speed_test.prototype`
+    - :ref:`speed_test.prototype.jacobian`
+    - :ref:`speed_test.prototype.hessian`
+- :ref:`speed_test.purpose`
+- :ref:`speed_test.implement`
+- :ref:`speed_test.setup`
+- :ref:`speed_test.globals`
+    - :ref:`speed_test.globals.initialization`
+    - :ref:`speed_test.globals.m`
+    - :ref:`speed_test.globals.jacobian`
+    - :ref:`speed_test.globals.hessian`
+    - :ref:`speed_test.globals.global_nnz`
+    - :ref:`speed_test.globals.global_correct_ok`
+
+.. meta::
+   :keywords: syntax
+
+.. index:: syntax
+
+.. _speed_test.syntax:
+
+Syntax
+******
+
+| ``test_`` *implement* ``_jac`` ( *repeat* )
+
+``%test_%implement%_hes(%repeat%)%``
+
+.. meta::
+   :keywords: prototype
+
+.. index:: prototype
+
+.. _speed_test.prototype:
+
+Prototype
+*********
+
+.. meta::
+   :keywords: jacobian
+
+.. index:: jacobian
+
+.. _speed_test.prototype.jacobian:
+
+Jacobian
+========
+
+.. code-block:: cpp
+
+    extern void test_adolc_jac(size_t repeat);
+    extern void test_cppad_jac(size_t repeat);
+    extern void test_subgraph_jac(size_t repeat);
+    extern void test_cppadcg_jac(size_t repeat);
+    extern void test_subcg_jac(size_t repeat);
+
+.. meta::
+   :keywords: hessian
+
+.. index:: hessian
+
+.. _speed_test.prototype.hessian:
+
+Hessian
+=======
+
+.. code-block:: cpp
+
+    extern void test_adolc_hes(size_t repeat);
+    extern void test_cppad_hes(size_t repeat);
+    extern void test_subgraph_hes(size_t repeat);
+    extern void test_cppadcg_hes(size_t repeat);
+    extern void test_subcg_hes(size_t repeat);
+
+.. meta::
+   :keywords: purpose
+
+.. index:: purpose
+
+.. _speed_test.purpose:
+
+Purpose
+*******
+The Jacobian (Hessian) routines calculate the Jacobian (Hessian)
+for objective corresponding to the problem specified by
+:ref:`global_problem_ptr<speed_global.initialization.global_problem_ptr>`
+
+.. meta::
+   :keywords: implement
+
+.. index:: implement
+
+.. _speed_test.implement:
+
+implement
+*********
+is one of the following
+``adolc`` ,
+``cppad`` ,
+``subgraph`` ,
+``cppadcg`` ,
+``subcg`` .
+
+.. meta::
+   :keywords: setup
+
+.. index:: setup
+
+.. _speed_test.setup:
+
+Setup
+*****
+The routine ``setup_`` *implement* () is called before
+``test_`` *implement* ``_jac`` ( *repeat* ) or
+``%test_%implement%_hes(%repeat%)%`` .
+
+.. meta::
+   :keywords: globals
+
+.. index:: globals
+
+.. _speed_test.globals:
+
+Globals
+*******
+
+.. meta::
+   :keywords: initialization
+
+.. index:: initialization
+
+.. _speed_test.globals.initialization:
+
+Initialization
+==============
+The :ref:`initialization<speed_global.initialization>` global variables
+are inputs and not changed by the setup routines.
+In addition, the have the same values as during the call to
+``setup_`` *implement* () .
+
+.. meta::
+   :keywords: m
+
+.. index:: m
+
+.. _speed_test.globals.m:
+
+m
+=
+We use *m* for the value ``global_problem_ptr->size_range()``
+see :ref:`global_problem_ptr<speed_global.initialization.global_problem_ptr>`.
+This is the dimension of the range space for :math:`f(x)`.
+
+.. meta::
+   :keywords: jacobian
+
+.. index:: jacobian
+
+.. _speed_test.globals.jacobian:
+
+Jacobian
+========
+If *m* > 1 , the Jacobian test for this implementation is called.
+
+.. meta::
+   :keywords: hessian
+
+.. index:: hessian
+
+.. _speed_test.globals.hessian:
+
+Hessian
+=======
+If *m* = 1 , the Hessian test for this implementation is called.
+
+.. meta::
+   :keywords: global_nnz
+
+.. index:: global_nnz
+
+.. _speed_test.globals.global_nnz:
+
+global_nnz
+==========
+The input value of this global does not matter.
+Upon return, it has been set to the number of non-zeros in the sparsity
+pattern for the sparse Jacobian or Hessian that is calculated.
+
+.. meta::
+   :keywords: global_correct_ok
+
+.. index:: global_correct_ok
+
+.. _speed_test.globals.global_correct_ok:
+
+global_correct_ok
+=================
+The input value of this global does not matter.
+If :ref:`global_correct<speed_global.initialization.global_correct>`
+is true, ``global_correct_ok`` has been set to true (false)
+if the result calculated by the last repetition of the test
+passes (fails) the correctness test; see :ref:`check_sparse<check_sparse>`.
+
+----
+
+xsrst input file: ``src/speed/test.hpp``

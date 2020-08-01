@@ -1,0 +1,228 @@
+!!!!!!!!!!!!
+speed_global
+!!!!!!!!!!!!
+
+.. include:: ../preamble.rst
+
+.. meta::
+   :keywords: speed_global, speed, program, global, variables
+
+.. index:: speed_global, speed, program, global, variables
+
+.. _speed_global:
+
+Speed Program Global Variables
+##############################
+- :ref:`speed_global.initialization`
+    - :ref:`speed_global.initialization.global_problem_ptr`
+    - :ref:`speed_global.initialization.global_size`
+    - :ref:`speed_global.initialization.global_colpack`
+    - :ref:`speed_global.initialization.global_indirect`
+    - :ref:`speed_global.initialization.global_optimize`
+    - :ref:`speed_global.initialization.global_setup`
+    - :ref:`speed_global.initialization.global_reverse`
+    - :ref:`speed_global.initialization.global_onepass`
+    - :ref:`speed_global.initialization.global_correct`
+    - :ref:`speed_global.initialization.global_x`
+- :ref:`speed_global.global_nnz`
+- :ref:`speed_global.global_correct_ok`
+
+.. meta::
+   :keywords: initialization
+
+.. index:: initialization
+
+.. _speed_global.initialization:
+
+Initialization
+**************
+The following globals are set by the speed initialization routine
+before any other subroutines are called.
+
+.. meta::
+   :keywords: global_problem_ptr
+
+.. index:: global_problem_ptr
+
+.. _speed_global.initialization.global_problem_ptr:
+
+global_problem_ptr
+==================
+minpack2 representation of the problem:
+
+.. code-block:: cpp
+
+    fun_base* global_problem_ptr;
+
+.. meta::
+   :keywords: global_size
+
+.. index:: global_size
+
+.. _speed_global.initialization.global_size:
+
+global_size
+===========
+size for this problem:
+
+.. code-block:: cpp
+
+    size_t global_size;
+
+.. meta::
+   :keywords: global_colpack
+
+.. index:: global_colpack
+
+.. _speed_global.initialization.global_colpack:
+
+global_colpack
+==============
+use colpack coloring:
+
+.. code-block:: cpp
+
+    bool global_colpack;
+
+.. meta::
+   :keywords: global_indirect
+
+.. index:: global_indirect
+
+.. _speed_global.initialization.global_indirect:
+
+global_indirect
+===============
+use indirect computation
+
+.. code-block:: cpp
+
+    bool global_indirect;
+    
+
+.. meta::
+   :keywords: global_optimize
+
+.. index:: global_optimize
+
+.. _speed_global.initialization.global_optimize:
+
+global_optimize
+===============
+was this AD function optimized
+
+.. code-block:: cpp
+
+    bool global_optimize;
+
+.. meta::
+   :keywords: global_setup
+
+.. index:: global_setup
+
+.. _speed_global.initialization.global_setup:
+
+global_setup
+============
+is taping of function AD operations included in timing
+
+.. code-block:: cpp
+
+    bool global_setup;
+
+.. meta::
+   :keywords: global_reverse
+
+.. index:: global_reverse
+
+.. _speed_global.initialization.global_reverse:
+
+global_reverse
+==============
+are we using reverse mode (otherwise forward mode)
+
+.. code-block:: cpp
+
+    bool global_reverse;
+
+.. meta::
+   :keywords: global_onepass
+
+.. index:: global_onepass
+
+.. _speed_global.initialization.global_onepass:
+
+global_onepass
+==============
+are we using one pass of the tape to compute entire Jacobian
+
+.. code-block:: cpp
+
+    bool global_onepass;
+
+.. meta::
+   :keywords: global_correct
+
+.. index:: global_correct
+
+.. _speed_global.initialization.global_correct:
+
+global_correct
+==============
+are we checking for correctness and result of check
+
+.. code-block:: cpp
+
+    bool global_correct;
+
+.. meta::
+   :keywords: global_x
+
+.. index:: global_x
+
+.. _speed_global.initialization.global_x:
+
+global_x
+========
+argument value at which we are evaluation function and Jacobian
+
+.. code-block:: cpp
+
+    d_vector global_x;
+
+.. meta::
+   :keywords: global_nnz
+
+.. index:: global_nnz
+
+.. _speed_global.global_nnz:
+
+global_nnz
+**********
+This value, set at the end of every test, is the number of non-zeros
+int the sparsity pattern detected by the implementation:
+
+.. code-block:: cpp
+
+    size_t global_nnz;
+
+.. meta::
+   :keywords: global_correct_ok
+
+.. index:: global_correct_ok
+
+.. _speed_global.global_correct_ok:
+
+global_correct_ok
+*****************
+If *global_correct* is true this value is set at the end of every test
+and is true (fails) if the correctness test passes (fails):
+If *global_correct* is fails, this value is never set or used.
+
+.. code-block:: cpp
+
+    bool global_correct_ok;
+
+----
+
+xsrst input file: ``src/speed/speed.cpp``

@@ -1,0 +1,161 @@
+!!!!!!!!!!!
+speed_setup
+!!!!!!!!!!!
+
+.. include:: ../preamble.rst
+
+.. meta::
+   :keywords: speed_setup, setup, a, speed, test, problem
+
+.. index:: speed_setup, setup, a, speed, test, problem
+
+.. _speed_setup:
+
+Setup a Speed Test Problem
+##########################
+- :ref:`speed_setup.syntax`
+- :ref:`speed_setup.prototype`
+- :ref:`speed_setup.purpose`
+- :ref:`speed_setup.implement`
+- :ref:`speed_setup.globals`
+    - :ref:`speed_setup.globals.initialization`
+    - :ref:`speed_setup.globals.m`
+    - :ref:`speed_setup.globals.hessian`
+    - :ref:`speed_setup.globals.jacobian`
+    - :ref:`speed_setup.globals.not_used`
+
+.. meta::
+   :keywords: syntax
+
+.. index:: syntax
+
+.. _speed_setup.syntax:
+
+Syntax
+******
+``setup_`` *implement* ()
+
+.. meta::
+   :keywords: prototype
+
+.. index:: prototype
+
+.. _speed_setup.prototype:
+
+Prototype
+*********
+
+.. code-block:: cpp
+
+    extern void setup_adolc(void);
+    extern void setup_cppad(void);
+    extern void setup_subgraph(void);
+    extern void setup_cppadcg(void);
+    extern void setup_subcg(void);
+
+.. meta::
+   :keywords: purpose
+
+.. index:: purpose
+
+.. _speed_setup.purpose:
+
+Purpose
+*******
+Do as much of the calculation as possible, excluding knowing
+the argument value :math:`x` at which we are evaluating the Jacobian or
+Hessian of :math:`f(x)`.
+
+.. meta::
+   :keywords: implement
+
+.. index:: implement
+
+.. _speed_setup.implement:
+
+implement
+*********
+is one of the following
+``adolc`` ,
+``cppad`` ,
+``subgraph`` ,
+``cppadcg`` ,
+``subcg`` .
+
+.. meta::
+   :keywords: globals
+
+.. index:: globals
+
+.. _speed_setup.globals:
+
+Globals
+*******
+
+.. meta::
+   :keywords: initialization
+
+.. index:: initialization
+
+.. _speed_setup.globals.initialization:
+
+Initialization
+==============
+The :ref:`initialization<speed_global.initialization>` global variables
+are inputs and not changed by the setup routines.
+
+.. meta::
+   :keywords: m
+
+.. index:: m
+
+.. _speed_setup.globals.m:
+
+m
+=
+We use *m* for the value ``global_problem_ptr->size_range()``
+see :ref:`global_problem_ptr<speed_global.initialization.global_problem_ptr>`.
+This is the dimension of the range space for :math:`f(x)`.
+
+.. meta::
+   :keywords: hessian
+
+.. index:: hessian
+
+.. _speed_setup.globals.hessian:
+
+Hessian
+=======
+A problem is a Hessian test case if *m* = 1 .
+In the case ``test_`` *implement* ``_hes`` will be called to determine
+the speed of evaluation of the Hessian.
+
+.. meta::
+   :keywords: jacobian
+
+.. index:: jacobian
+
+.. _speed_setup.globals.jacobian:
+
+Jacobian
+========
+A problem is a Jacobian test case if *m* > 1 .
+In the case ``test_`` *implement* ``_jac`` will be called to determine
+the speed of evaluation of the Jacobian.
+
+.. meta::
+   :keywords: not, used
+
+.. index:: not, used
+
+.. _speed_setup.globals.not_used:
+
+Not used
+========
+:ref:`global_nnz<speed_global.global_nnz>` and
+:ref:`global_correct_ok<speed_global.global_correct_ok>`
+are not used by these routines.
+
+----
+
+xsrst input file: ``src/speed/setup.hpp``

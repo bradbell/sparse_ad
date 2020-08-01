@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  <meta content="c2hpp_py, create, a, c++, template, version, of, an, f2c, file" name="keywords" />
+<meta content="syntax" name="keywords" />
+<meta content="working, directory" name="keywords" />
+<meta content="dir, , name" name="keywords" />
+<meta content="result" name="keywords" />
+<meta content="warning" name="keywords" />
+<meta content="example" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>c2hpp_py &mdash; sparse_ad  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="csv2tex_py" href="csv2tex_py.html" />
+    <link rel="prev" title="f2c_sh" href="f2c_sh.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> sparse_ad
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                20200731
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="sparse_ad.html">sparse_ad</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="speed.html">speed</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="bin.html">bin</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="get_all_sh.html">get_all_sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wget_minpack2_sh.html">wget_minpack2_sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_sh.html">f2c_sh</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">c2hpp_py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csv2tex_py.html">csv2tex_py</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="typedef_hpp.html">typedef_hpp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun_base_hpp.html">fun_base_hpp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utility.html">utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html">release_notes</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">sparse_ad</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="sparse_ad.html">sparse_ad</a> &raquo;</li>
+        
+          <li><a href="bin.html">bin</a> &raquo;</li>
+        
+      <li>c2hpp_py</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/xsrst/c2hpp_py.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="c2hpp-py">
+<h1>c2hpp_py<a class="headerlink" href="#c2hpp-py" title="Permalink to this headline">¶</a></h1>
+<div class="math notranslate nohighlight">
+\[\newcommand{\B}[1]{ {\bf #1} }
+\newcommand{\R}[1]{ {\rm #1} }\]</div>
+<div class="section" id="create-a-c-template-version-of-an-f2c-file">
+<span id="id1"></span><h2>Create a C++ Template Version of an f2c File<a class="headerlink" href="#create-a-c-template-version-of-an-f2c-file" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#c2hpp-py-syntax"><span class="std std-ref">Syntax</span></a></p></li>
+<li><p><a class="reference internal" href="#c2hpp-py-working-directory"><span class="std std-ref">Working Directory</span></a></p></li>
+<li><p><a class="reference internal" href="#c2hpp-py-dir-name"><span class="std std-ref">dir, name</span></a></p></li>
+<li><p><a class="reference internal" href="#c2hpp-py-result"><span class="std std-ref">Result</span></a></p></li>
+<li><p><a class="reference internal" href="#c2hpp-py-warning"><span class="std std-ref">Warning</span></a></p></li>
+<li><p><a class="reference internal" href="#c2hpp-py-example"><span class="std std-ref">Example</span></a></p></li>
+</ul>
+<div class="section" id="syntax">
+<span id="c2hpp-py-syntax"></span><span id="index-1"></span><h3>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">bin/c2hpp.py</span></code> <em>dir</em> / <code class="docutils literal notranslate"><span class="pre">c</span></code> <em>name</em> . <code class="docutils literal notranslate"><span class="pre">c</span></code></div>
+</div>
+</div>
+<div class="section" id="working-directory">
+<span id="c2hpp-py-working-directory"></span><span id="index-2"></span><h3>Working Directory<a class="headerlink" href="#working-directory" title="Permalink to this headline">¶</a></h3>
+<p>see <a class="reference internal" href="bin.html#bin-working-directory"><span class="std std-ref">working_directory</span></a>.</p>
+</div>
+<div class="section" id="dir-name">
+<span id="c2hpp-py-dir-name"></span><span id="index-3"></span><h3>dir, name<a class="headerlink" href="#dir-name" title="Permalink to this headline">¶</a></h3>
+<p>The command line argument <em>dir</em> / <code class="docutils literal notranslate"><span class="pre">c</span></code> <em>name</em> . <code class="docutils literal notranslate"><span class="pre">c</span></code>
+is an existing C file name,
+relative to the current working directory,
+and created by <a class="reference internal" href="f2c_sh.html#id1"><span class="std std-ref">f2c_sh</span></a>.
+The <em>name</em> part does not contain any <code class="docutils literal notranslate"><span class="pre">/</span></code> characters; i.e.,
+all the <code class="docutils literal notranslate"><span class="pre">/</span></code> characters are in the <em>dir</em> part of the
+command line argument.</p>
+</div>
+<div class="section" id="result">
+<span id="c2hpp-py-result"></span><span id="index-4"></span><h3>Result<a class="headerlink" href="#result" title="Permalink to this headline">¶</a></h3>
+<p>The file <em>dir</em> / <code class="docutils literal notranslate"><span class="pre">hpp</span></code> / <em>name</em> . <code class="docutils literal notranslate"><span class="pre">hpp</span></code> is a C++ version of the C file.
+The <code class="docutils literal notranslate"><span class="pre">f2c</span></code> data types
+<code class="docutils literal notranslate"><span class="pre">doublereal</span></code> , <code class="docutils literal notranslate"><span class="pre">integer</span></code> , and <code class="docutils literal notranslate"><span class="pre">ftnlen</span></code>
+are converted to be template parameters in this include file.</p>
+</div>
+<div class="section" id="warning">
+<span id="c2hpp-py-warning"></span><span id="index-5"></span><h3>Warning<a class="headerlink" href="#warning" title="Permalink to this headline">¶</a></h3>
+<p>This conversion has only been tested for the files in the
+<code class="docutils literal notranslate"><span class="pre">minpack2/tprobs.92/c</span></code> directory and the <a class="reference internal" href="typedef_hpp.html#id1"><span class="std std-ref">types</span></a>
+<code class="docutils literal notranslate"><span class="pre">double</span></code> , <code class="docutils literal notranslate"><span class="pre">adolc_double</span></code> , <code class="docutils literal notranslate"><span class="pre">cppad_double</span></code> ,
+<code class="docutils literal notranslate"><span class="pre">cppadcg_double</span></code> .
+New files and types may require modifications to the script
+<code class="docutils literal notranslate"><span class="pre">bin/c2hpp.py</span></code>
+and new library files may need to be added to <code class="docutils literal notranslate"><span class="pre">f2clib.hpp</span></code> ; see</p>
+<div class="line-block">
+<div class="line">        <code class="docutils literal notranslate"><span class="pre">minpack2/tprobs.92/hpp/f2clib.hpp</span></code></div>
+</div>
+</div>
+<div class="section" id="example">
+<span id="c2hpp-py-example"></span><span id="index-6"></span><h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>If one is in the git root directory, the command</p>
+<div class="line-block">
+<div class="line">        <code class="docutils literal notranslate"><span class="pre">bin/c2hpp.py</span> <span class="pre">minpack2/tprobs.92/c/dficfj.c</span></code></div>
+</div>
+<p>will overwrite the git repository copy of <code class="docutils literal notranslate"><span class="pre">dficfj.hpp</span></code> .
+The result file should be the same which you can check using</p>
+<div class="line-block">
+<div class="line">        <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">minpack2/tprobs.92/hpp/dficfj.hpp</span></code></div>
+</div>
+<hr class="docutils" />
+<p>xsrst input file: <code class="docutils literal notranslate"><span class="pre">bin/c2hpp.py</span></code></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="csv2tex_py.html" class="btn btn-neutral float-right" title="csv2tex_py" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="f2c_sh.html" class="btn btn-neutral float-left" title="f2c_sh" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,580 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  <meta content="speed, running, jacobian, and, hessian, speed, tests" name="keywords" />
+<meta content="syntax" name="keywords" />
+<meta content="name_k=value_k" name="keywords" />
+<meta content="implement" name="keywords" />
+<meta content="adolc" name="keywords" />
+<meta content="cppad" name="keywords" />
+<meta content="subgraph" name="keywords" />
+<meta content="cppadcg" name="keywords" />
+<meta content="subcg" name="keywords" />
+<meta content="problem" name="keywords" />
+<meta content="dficfj" name="keywords" />
+<meta content="dierfj" name="keywords" />
+<meta content="deptfg" name="keywords" />
+<meta content="size" name="keywords" />
+<meta content="option_list" name="keywords" />
+<meta content="--colpack" name="keywords" />
+<meta content="--indirect" name="keywords" />
+<meta content="--optimize" name="keywords" />
+<meta content="--setup" name="keywords" />
+<meta content="--reverse" name="keywords" />
+<meta content="--onepass" name="keywords" />
+<meta content="--correct" name="keywords" />
+<meta content="csv_file" name="keywords" />
+<meta content="name_k" name="keywords" />
+<meta content="implement" name="keywords" />
+<meta content="problem" name="keywords" />
+<meta content="options" name="keywords" />
+<meta content="n, , m" name="keywords" />
+<meta content="nnz" name="keywords" />
+<meta content="sec" name="keywords" />
+<meta content="other, output" name="keywords" />
+<meta content="children" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>speed &mdash; sparse_ad  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="speed_global" href="speed_global.html" />
+    <link rel="prev" title="sparse_ad" href="sparse_ad.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> sparse_ad
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                20200731
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="sparse_ad.html">sparse_ad</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">speed</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="speed_global.html">speed_global</a></li>
+<li class="toctree-l3"><a class="reference internal" href="speed_setup.html">speed_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="speed_test.html">speed_test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="speed_write_csv.html">speed_write_csv</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bin.html">bin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typedef_hpp.html">typedef_hpp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun_base_hpp.html">fun_base_hpp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utility.html">utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html">release_notes</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">sparse_ad</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="sparse_ad.html">sparse_ad</a> &raquo;</li>
+        
+      <li>speed</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/xsrst/speed.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="speed">
+<h1>speed<a class="headerlink" href="#speed" title="Permalink to this headline">¶</a></h1>
+<div class="math notranslate nohighlight">
+\[\newcommand{\B}[1]{ {\bf #1} }
+\newcommand{\R}[1]{ {\rm #1} }\]</div>
+<div class="section" id="running-jacobian-and-hessian-speed-tests">
+<span id="id1"></span><h2>Running Jacobian and Hessian Speed Tests<a class="headerlink" href="#running-jacobian-and-hessian-speed-tests" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#speed-syntax"><span class="std std-ref">Syntax</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-name-k-value-k"><span class="std std-ref">name_k=value_k</span></a></p></li>
+<li><dl class="simple">
+<dt><a class="reference internal" href="#speed-implement"><span class="std std-ref">implement</span></a></dt><dd><ul>
+<li><p><a class="reference internal" href="#speed-implement-adolc"><span class="std std-ref">adolc</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-implement-cppad"><span class="std std-ref">cppad</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-implement-subgraph"><span class="std std-ref">subgraph</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-implement-cppadcg"><span class="std std-ref">cppadcg</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-implement-subcg"><span class="std std-ref">subcg</span></a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference internal" href="#speed-problem"><span class="std std-ref">problem</span></a></dt><dd><ul>
+<li><p><a class="reference internal" href="#speed-problem-dficfj"><span class="std std-ref">dficfj</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-problem-dierfj"><span class="std std-ref">dierfj</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-problem-deptfg"><span class="std std-ref">deptfg</span></a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><a class="reference internal" href="#speed-size"><span class="std std-ref">size</span></a></p></li>
+<li><dl class="simple">
+<dt><a class="reference internal" href="#speed-option-list"><span class="std std-ref">option_list</span></a></dt><dd><ul>
+<li><p><a class="reference internal" href="#speed-option-list-colpack"><span class="std std-ref">–colpack</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-option-list-indirect"><span class="std std-ref">–indirect</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-option-list-optimize"><span class="std std-ref">–optimize</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-option-list-setup"><span class="std std-ref">–setup</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-option-list-reverse"><span class="std std-ref">–reverse</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-option-list-onepass"><span class="std std-ref">–onepass</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-option-list-correct"><span class="std std-ref">–correct</span></a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference internal" href="#speed-csv-file"><span class="std std-ref">csv_file</span></a></dt><dd><ul>
+<li><p><a class="reference internal" href="#speed-csv-file-name-k"><span class="std std-ref">name_k</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-csv-file-implement"><span class="std std-ref">implement</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-csv-file-problem"><span class="std std-ref">problem</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-csv-file-options"><span class="std std-ref">Options</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-csv-file-n-m"><span class="std std-ref">n, m</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-csv-file-nnz"><span class="std std-ref">nnz</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-csv-file-sec"><span class="std std-ref">sec</span></a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><a class="reference internal" href="#speed-other-output"><span class="std std-ref">Other Output</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-children"><span class="std std-ref">Children</span></a></p></li>
+</ul>
+<div class="section" id="syntax">
+<span id="speed-syntax"></span><span id="index-1"></span><h3>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">speed</span></code> <em>csv_file</em> </div>
+<div class="line">        [  <em>name_1</em> = <em>value_1</em>  ] … [  <em>name_K</em> = <em>value_K</em>  ] </div>
+<div class="line">        <em>implement</em> <em>problem</em> <em>size</em> <em>option_list</em></div>
+</div>
+</div>
+<div class="section" id="name-k-value-k">
+<span id="speed-name-k-value-k"></span><span id="index-2"></span><h3>name_k=value_k<a class="headerlink" href="#name-k-value-k" title="Permalink to this headline">¶</a></h3>
+<p>For <em>k</em> =1, … , <em>K</em> , there is an extra column in the
+output file with heading equal to <em>name_k</em> .
+The value in this column,
+in the new row of <a class="reference internal" href="#speed-csv-file"><span class="std std-ref">csv_file</span></a>,
+is <em>value_k</em> .
+Neither <em>name_k</em> nor <em>value_k</em> can contain,
+<code class="docutils literal notranslate"><span class="pre">=</span></code> , the equals character.</p>
+</div>
+<div class="section" id="implement">
+<span id="speed-implement"></span><span id="index-3"></span><h3>implement<a class="headerlink" href="#implement" title="Permalink to this headline">¶</a></h3>
+<p>This must be one of the following:</p>
+<div class="section" id="adolc">
+<span id="speed-implement-adolc"></span><span id="index-4"></span><h4>adolc<a class="headerlink" href="#adolc" title="Permalink to this headline">¶</a></h4>
+<p>Use the ADOL-C <code class="docutils literal notranslate"><span class="pre">sparse_jac</span></code> routine to compute Jacobians.</p>
+</div>
+<div class="section" id="cppad">
+<span id="speed-implement-cppad"></span><span id="index-5"></span><h4>cppad<a class="headerlink" href="#cppad" title="Permalink to this headline">¶</a></h4>
+<p>Use the CppAD <code class="docutils literal notranslate"><span class="pre">sparse_jac_for</span></code> or <code class="docutils literal notranslate"><span class="pre">sparse_jac_rev</span></code>
+routine to compute Jacobians and Hessians.</p>
+</div>
+<div class="section" id="subgraph">
+<span id="speed-implement-subgraph"></span><span id="index-6"></span><h4>subgraph<a class="headerlink" href="#subgraph" title="Permalink to this headline">¶</a></h4>
+<p>Use the CppAD <code class="docutils literal notranslate"><span class="pre">subgraph_jac_rev</span></code> routine to compute Jacobians
+and Hessians.</p>
+</div>
+<div class="section" id="cppadcg">
+<span id="speed-implement-cppadcg"></span><span id="index-7"></span><h4>cppadcg<a class="headerlink" href="#cppadcg" title="Permalink to this headline">¶</a></h4>
+<p>Use the CppAD <code class="docutils literal notranslate"><span class="pre">sparse_jac_for</span></code> or <code class="docutils literal notranslate"><span class="pre">sparse_jac_rev</span></code> routine
+together with CppADCodeGen to compute Jacobians.</p>
+</div>
+<div class="section" id="subcg">
+<span id="speed-implement-subcg"></span><span id="index-8"></span><h4>subcg<a class="headerlink" href="#subcg" title="Permalink to this headline">¶</a></h4>
+<p>Use the CppAD <code class="docutils literal notranslate"><span class="pre">subgraph_jac_rev</span></code> routine together with CppADCodeGen
+to compute Jacobians and Hessians.</p>
+</div>
+</div>
+<div class="section" id="problem">
+<span id="speed-problem"></span><span id="index-9"></span><h3>problem<a class="headerlink" href="#problem" title="Permalink to this headline">¶</a></h3>
+<p>This argument identifies the case that we are testing and
+is one of the following:</p>
+<div class="section" id="dficfj">
+<span id="speed-problem-dficfj"></span><span id="index-10"></span><h4>dficfj<a class="headerlink" href="#dficfj" title="Permalink to this headline">¶</a></h4>
+<p>This is the Minpack2 Flow in a Channel problem.
+The corresponding test computes sparse Jacobians
+for <span class="math notranslate nohighlight">\(f : \B{R}^n \rightarrow \B{R}^n\)</span>.</p>
+</div>
+<div class="section" id="dierfj">
+<span id="speed-problem-dierfj"></span><span id="index-11"></span><h4>dierfj<a class="headerlink" href="#dierfj" title="Permalink to this headline">¶</a></h4>
+<p>This is the Minpack2 Incompressible Elastic Rod problem.
+The corresponding test computes sparse Jacobians
+for <span class="math notranslate nohighlight">\(f : \B{R}^n \rightarrow \B{R}^n\)</span>.</p>
+</div>
+<div class="section" id="deptfg">
+<span id="speed-problem-deptfg"></span><span id="index-12"></span><h4>deptfg<a class="headerlink" href="#deptfg" title="Permalink to this headline">¶</a></h4>
+<p>This is the Minpack2 Elastic-Plastic Torsion problem.
+The corresponding test computes sparse Hessians
+for <span class="math notranslate nohighlight">\(f : \B{R}^n \rightarrow \B{R}\)</span>.</p>
+</div>
+</div>
+<div class="section" id="size">
+<span id="speed-size"></span><span id="index-13"></span><h3>size<a class="headerlink" href="#size" title="Permalink to this headline">¶</a></h3>
+<p>This is the size of the test problem; e.g.,
+for <code class="docutils literal notranslate"><span class="pre">dficfj</span></code> it is the number of sub-intervals.
+This corresponds to the number of variables is <em>n</em> below:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><em>problem</em></p></td>
+<td><p><em>n</em></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dficfj</span></code></p></td>
+<td><p>8 * <em>size</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dierfj</span></code></p></td>
+<td><p>15 * <em>size</em> + 3</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">deptfg</span></code></p></td>
+<td><p><em>size</em> * <em>size</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="option-list">
+<span id="speed-option-list"></span><span id="index-14"></span><h3>option_list<a class="headerlink" href="#option-list" title="Permalink to this headline">¶</a></h3>
+<p>This is a list of options,
+that may or may not be present, at the end of the command line.
+The possible options are as follows:</p>
+<div class="section" id="colpack">
+<span id="speed-option-list-colpack"></span><span id="index-15"></span><h4>–colpack<a class="headerlink" href="#colpack" title="Permalink to this headline">¶</a></h4>
+<p>This option must be present when using the <code class="docutils literal notranslate"><span class="pre">adolc</span></code> implementation and
+can not be present when using the <code class="docutils literal notranslate"><span class="pre">subgraph</span></code> and <code class="docutils literal notranslate"><span class="pre">subcg</span></code> implementations.
+If it is present (not present) the matrix compression is computed
+using the Colpack (CppAD) coloring algorithms.
+(The <code class="docutils literal notranslate"><span class="pre">subgraph</span></code> and <code class="docutils literal notranslate"><span class="pre">subcg</span></code> implementations
+does not use a coloring algorithm.)</p>
+</div>
+<div class="section" id="indirect">
+<span id="speed-option-list-indirect"></span><span id="index-16"></span><h4>–indirect<a class="headerlink" href="#indirect" title="Permalink to this headline">¶</a></h4>
+<p>This option can only be present when computing sparse Hessians
+using the <code class="docutils literal notranslate"><span class="pre">adolc</span></code> implementation.
+If it is present (not present)
+the corresponding sparse Hessian is
+computed by solving a triangular set of equations (computed directly)
+from the AD results.</p>
+</div>
+<div class="section" id="optimize">
+<span id="speed-option-list-optimize"></span><span id="index-17"></span><h4>–optimize<a class="headerlink" href="#optimize" title="Permalink to this headline">¶</a></h4>
+<p>If this option is present (not present),
+the corresponding cppad function objects are optimized (not optimized).
+This optimization is not include in the timing results.
+This option can not be used when <em>implement</em> is <code class="docutils literal notranslate"><span class="pre">adolc</span></code> .</p>
+</div>
+<div class="section" id="setup">
+<span id="speed-option-list-setup"></span><span id="index-18"></span><h4>–setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h4>
+<p>If this option is present (not present),
+the time to setup the AD calculation is included (not included)
+in the timing test.
+This includes recording the function,
+calculating the sparsity pattern,  compression.
+In the case of <code class="docutils literal notranslate"><span class="pre">cppadcg</span></code> and <code class="docutils literal notranslate"><span class="pre">subcg</span></code> implementations
+it also includes generating and compiling the source code.</p>
+</div>
+<div class="section" id="reverse">
+<span id="speed-option-list-reverse"></span><span id="index-19"></span><h4>–reverse<a class="headerlink" href="#reverse" title="Permalink to this headline">¶</a></h4>
+<p>If this option is present (not present),
+reverse mode is used (not used) to calculate the results.
+This option must be present when <em>implement</em> is
+<code class="docutils literal notranslate"><span class="pre">subgraph</span></code> or <code class="docutils literal notranslate"><span class="pre">subcg</span></code> .
+(so far CppAD has only implemented reverse mode sub-graphs).
+This option can’t be present when implementation is
+<code class="docutils literal notranslate"><span class="pre">cppad</span></code> or <code class="docutils literal notranslate"><span class="pre">cppadcg</span></code> and
+<a class="reference internal" href="#speed-option-list-onepass"><span class="std std-ref">–onepass</span></a> is present.
+It can’t be present for Hessian problems when <em>implement</em> is <code class="docutils literal notranslate"><span class="pre">adolc</span></code> .</p>
+</div>
+<div class="section" id="onepass">
+<span id="speed-option-list-onepass"></span><span id="index-20"></span><h4>–onepass<a class="headerlink" href="#onepass" title="Permalink to this headline">¶</a></h4>
+<p>If this option is present (not present),
+one pass of the tape (recorded function)
+is used to compute the entire sparse Jacobian.
+Otherwise only one direction is computed for each pass of the tape.
+(Multiple columns of the Jacobian still get compressed into each pass).
+This option must be present for the Jacobian cases where
+<em>implement</em> is <code class="docutils literal notranslate"><span class="pre">adolc</span></code> .
+This option can’t be present for the following cases:</p>
+<ol class="arabic simple">
+<li><p>Hessian problems.</p></li>
+<li><p>when <em>implement</em> is <code class="docutils literal notranslate"><span class="pre">subgraph</span></code> or <code class="docutils literal notranslate"><span class="pre">subcg</span></code> .</p></li>
+<li><p>when <em>implement</em> is <code class="docutils literal notranslate"><span class="pre">cppad</span></code> or <code class="docutils literal notranslate"><span class="pre">cppadcg</span></code>
+and <a class="reference internal" href="#speed-option-list-reverse"><span class="std std-ref">–reverse</span></a> is present.
+(so far CppAD has only implemented multiple directions for forward mode).</p></li>
+</ol>
+</div>
+<div class="section" id="correct">
+<span id="speed-option-list-correct"></span><span id="index-21"></span><h4>–correct<a class="headerlink" href="#correct" title="Permalink to this headline">¶</a></h4>
+<p>If this option is present (not present),
+a correctness check is included (not included).
+This slows down the calculations and is intended to be used
+to check that the program is functioning properly.</p>
+</div>
+</div>
+<div class="section" id="csv-file">
+<span id="speed-csv-file"></span><span id="index-22"></span><h3>csv_file<a class="headerlink" href="#csv-file" title="Permalink to this headline">¶</a></h3>
+<p>The first line of this csv file is the header which contains the column names.
+It starts with</p>
+<div class="line-block">
+<div class="line">        <em>name_1</em> , … , <em>name_K</em> , <code class="docutils literal notranslate"><span class="pre">implement,problem</span></code> ,</div>
+</div>
+<p>Next the header contains the names of the options in order; i.e.,</p>
+<div class="line-block">
+<div class="line">        <code class="docutils literal notranslate"><span class="pre">colpack</span></code> , … , <code class="docutils literal notranslate"><span class="pre">correct</span></code> ,</div>
+</div>
+<p>At the end the header contains the column names</p>
+<div class="line-block">
+<div class="line">        <code class="docutils literal notranslate"><span class="pre">n,nnz,sec</span></code></div>
+</div>
+<p>If the file does not exist, it is created.
+Each run of <code class="docutils literal notranslate"><span class="pre">speed</span></code> creates a new line of data
+at the end of the file in this file.
+The values placed in this line, for each column,
+is specified below:</p>
+<div class="section" id="name-k">
+<span id="speed-csv-file-name-k"></span><span id="index-23"></span><h4>name_k<a class="headerlink" href="#name-k" title="Permalink to this headline">¶</a></h4>
+<p>For <em>k</em> =1, … , <em>K</em> , the value <em>value_k</em> is placed
+in column <em>name_k</em> .</p>
+</div>
+<div class="section" id="speed-csv-file-implement">
+<span id="index-24"></span><span id="id2"></span><h4>implement<a class="headerlink" href="#speed-csv-file-implement" title="Permalink to this headline">¶</a></h4>
+<p>The values <em>implement</em> is the corresponding
+command line arguments when <code class="docutils literal notranslate"><span class="pre">speed</span></code> .</p>
+</div>
+<div class="section" id="speed-csv-file-problem">
+<span id="index-25"></span><span id="id3"></span><h4>problem<a class="headerlink" href="#speed-csv-file-problem" title="Permalink to this headline">¶</a></h4>
+<p>The values <em>problem</em> is the corresponding
+command line arguments when <code class="docutils literal notranslate"><span class="pre">speed</span></code> .</p>
+</div>
+<div class="section" id="options">
+<span id="speed-csv-file-options"></span><span id="index-26"></span><h4>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h4>
+<p>The option values <em>colpack</em> , … , <em>correct</em> are
+<code class="docutils literal notranslate"><span class="pre">true</span></code> ( <code class="docutils literal notranslate"><span class="pre">false</span></code> )
+if the corresponding option is present (not present) in the
+<a class="reference internal" href="#speed-option-list"><span class="std std-ref">option_list</span></a>.</p>
+</div>
+<div class="section" id="n-m">
+<span id="speed-csv-file-n-m"></span><span id="index-27"></span><h4>n, m<a class="headerlink" href="#n-m" title="Permalink to this headline">¶</a></h4>
+<p>The value <em>n</em> ( <em>m</em> ) is the size of the domain space
+(range space).</p>
+</div>
+<div class="section" id="nnz">
+<span id="speed-csv-file-nnz"></span><span id="index-28"></span><h4>nnz<a class="headerlink" href="#nnz" title="Permalink to this headline">¶</a></h4>
+<p>The value <em>nnz</em> is the number of non-zeros in the sparse
+Jacobian (when <em>m</em> <code class="docutils literal notranslate"><span class="pre">!=</span> <span class="pre">1</span></code> ) or sparse Hessian (when <em>m</em> == 1 ).
+Note that <em>nnz</em> for the <code class="docutils literal notranslate"><span class="pre">double</span></code> implementation is the
+actual number of non-zeros, while for the other implementations it is number
+of possibly non-zero values.</p>
+</div>
+<div class="section" id="sec">
+<span id="speed-csv-file-sec"></span><span id="index-29"></span><h4>sec<a class="headerlink" href="#sec" title="Permalink to this headline">¶</a></h4>
+<p>The value <em>sec</em> is the average number of seconds for each calculation
+of the Jacobian if <em>m</em> == 1 , or Hessian if <em>m</em> &gt; 1 .</p>
+</div>
+</div>
+<div class="section" id="other-output">
+<span id="speed-other-output"></span><span id="index-30"></span><h3>Other Output<a class="headerlink" href="#other-output" title="Permalink to this headline">¶</a></h3>
+<p>If no errors are detected, <code class="docutils literal notranslate"><span class="pre">speed:</span> <span class="pre">OK</span></code> is printed
+on standard output and
+program exits with status <code class="docutils literal notranslate"><span class="pre">0</span></code> .
+If an error is detected; e.g., the correctness check fails,
+an error message is printed on standard error and the program exits
+with status <code class="docutils literal notranslate"><span class="pre">1</span></code> .</p>
+</div>
+<div class="section" id="children">
+<span id="speed-children"></span><span id="index-31"></span><h3>Children<a class="headerlink" href="#children" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+</div>
+<ol class="arabic simple">
+<li><p>speed_global: <a class="reference internal" href="speed_global.html#id1"><span class="std std-ref">Speed Program Global Variables</span></a></p></li>
+<li><p>speed_setup: <a class="reference internal" href="speed_setup.html#id1"><span class="std std-ref">Setup a Speed Test Problem</span></a></p></li>
+<li><p>speed_test: <a class="reference internal" href="speed_test.html#id1"><span class="std std-ref">Setup a Speed Test Problem</span></a></p></li>
+<li><p>speed_write_csv: <a class="reference internal" href="speed_write_csv.html#id1"><span class="std std-ref">Writes One Row of the Speed Csv Output File</span></a></p></li>
+</ol>
+<hr class="docutils" />
+<p>xsrst input file: <code class="docutils literal notranslate"><span class="pre">src/speed/speed.xsrst</span></code></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="speed_global.html" class="btn btn-neutral float-right" title="speed_global" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sparse_ad.html" class="btn btn-neutral float-left" title="sparse_ad" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
