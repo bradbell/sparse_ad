@@ -15,6 +15,12 @@ Changes and Additions to sparse_ad
 2020
 ****
 
+11-09
+=====
+Use new version of program that changes from omhelp to sphinx
+to redo change on 07-29 below.
+Then redo other changes up to current date.
+
 08-01
 =====
 #.  Document :ref:`run_speed.sh<run_speed_sh>`.
