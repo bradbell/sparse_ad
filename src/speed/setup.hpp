@@ -18,7 +18,7 @@ Setup a Speed Test Problem
 
 Syntax
 ******
-``setup_`` *implement* ()
+``setup_``\ *implement()*
 
 Prototype
 *********
@@ -61,14 +61,14 @@ This is the dimension of the range space for :math:`f(x)`.
 
 Hessian
 =======
-A problem is a Hessian test case if *m* = 1 .
-In the case ``test_`` *implement* ``_hes`` will be called to determine
+A problem is a Hessian test case if *m = 1* .
+In the case ``test_``\ *implement*\ ``_hes`` will be called to determine
 the speed of evaluation of the Hessian.
 
 Jacobian
 ========
-A problem is a Jacobian test case if *m* > 1 .
-In the case ``test_`` *implement* ``_jac`` will be called to determine
+A problem is a Jacobian test case if *m > 1* .
+In the case ``test_``\ *implement*\ ``_jac`` will be called to determine
 the speed of evaluation of the Jacobian.
 
 Not used

@@ -20,13 +20,13 @@
 # Syntax
 # ******
 # - ``bin/run_speed.sh`` *name* *build_type*
-# - ``bin/run_speed.sh`` *name* *build_type* --correct
+# - ``bin/run_speed.sh`` *name* *build_type* ``--correct``
 #
 # name
 # ****
 # The results for the speed tests are written to the file
 #
-# |tab| ``build/src/speed/`` *name* - *mmdd* ``.csv``
+# |tab| ``build/src/speed/``\ *name-mmdd*\ ``.csv``
 #
 # where *mmdd** is the current month and day.
 #

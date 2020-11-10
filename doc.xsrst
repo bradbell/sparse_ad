@@ -44,7 +44,7 @@ The special requirements ``adolc`` , ``colpack`` , ``cppadcg`` ,
 
 | |tab| ``bin/get_all.sh``
 
-The ``build`` directory is soft link to ``build`` . *build_type*
+The ``build`` directory is soft link to ``build.``\ *build_type*
 which is where the programs get installed.
 
 Check Build
@@ -56,11 +56,11 @@ The following command will build and check all the programs:
 The following command will check all the possible :ref:`speed<speed>` program
 options, methods, and problems:
 
-| |tab| ``bin/run_speed.sh correct`` *build_type* -- ``correct``
+| |tab| ``bin/run_speed.sh correct`` *build_type* ``--correct``
 
 The results will be written to the file
 
-| |tab| ``build/src/speed/correct`` - *mmdd*
+| |tab| ``build/src/speed/correct-``\ *mmdd*
 
 where *mm* is the current month and *dd* is the current day.
 
@@ -75,7 +75,7 @@ You can run all the possible option and problem combinations using the command:
 This will take a while because (hours) to complete.
 The results will be written to the file
 
-| |tab| ``build/src/speed/speed`` - *mmdd*
+| |tab| ``build/src/speed/speed-``\ *mmdd*
 
 where *mm* is the current month and *dd* is the current day.
 

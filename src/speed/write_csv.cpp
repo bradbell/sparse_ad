@@ -14,22 +14,22 @@ Writes One Row of the Speed Csv Output File
 Syntax
 ******
 
-| ``write_csv`` (
-| |tab| *csv_file* ,
-| |tab| *name* ,
-| |tab| *value* ,
-| |tab| *implement* ,
-| |tab| *problem* ,
-| |tab| *colpack* ,
-| |tab| *indirect* ,
-| |tab| *optimize* ,
-| |tab| *setup* ,
-| |tab| *reverse* ,
-| |tab| *onepass* ,
-| |tab| *correct* ,
-| |tab| *n* ,
-| |tab| *m* ,
-| |tab| *nnz* ,
+| ``write_csv(``
+| |tab| *csv_file ,*
+| |tab| *name     ,*
+| |tab| *value    ,*
+| |tab| *implement   ,*
+| |tab| *problem  ,*
+| |tab| *colpack  ,*
+| |tab| *indirect ,*
+| |tab| *optimize ,*
+| |tab| *setup    ,*
+| |tab| *reverse  ,*
+| |tab| *onepass  ,*
+| |tab| *correct  ,*
+| |tab| *n        ,*
+| |tab| *m        ,*
+| |tab| *nnz      ,*
 | |tab| *sec*
 | )
 
@@ -53,7 +53,7 @@ header
 The header for the csv file is its first row.
 The header row begins with
 
-| |tab| *first_name* , ... , *last_name* , ``implement,problem`` ,
+| |tab| *first_name,*\ ... *,last_name*\ ``,implement,problem,``
 
 where *first_name* is the first component of *name* ,
 and *last_name* is the last component of *name* .

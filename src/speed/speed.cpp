@@ -15,11 +15,11 @@
 .. include:: ../preamble.rst
 
 {xsrst_spell
+    coloring
     globals
     ptr
     onepass
     nnz
-    coloring
 }
 
 Speed Program Global Variables

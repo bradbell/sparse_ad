@@ -13,11 +13,11 @@ CppADCodeGen Dynamic Libraries
 Syntax
 ******
 
-| ``cppadcg_library`` *fun_name* ( *cg_fun* , *file_name* )
-| ``cppadcg_library`` *fun_name* ( *file_name* )
-| ``cppadcg_library`` *fun_name* ()
-| *fun_name* . ``swap`` ( *other_fun* )
-| *y* = *fun_name* ( *x* )
+| ``cppadcg_library`` *fun_name(cg_fun, file_name)*
+| ``cppadcg_library`` *fun_name(file_name)*
+| ``cppadcg_library`` *fun_name()*
+| *fun_name*\ ``.swap(``\ *other_fun)*
+| *y = fun_name(x)*
 
 Prototype
 *********

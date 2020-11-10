@@ -88,11 +88,13 @@ fi
 bin/run_xsrst.sh
 # -----------------------------------------------------------------------------
 # check example
+bin/run_cmake.sh
 pushd build
 make check_example
 popd
 # -----------------------------------------------------------------------------
 # check speed
+bin/run_cmake.sh
 pushd build/src/speed
 make speed
 if [ -e speed.csv ]

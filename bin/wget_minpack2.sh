@@ -20,7 +20,7 @@
 # Syntax
 # ******
 #
-# | ``bin/wget_minpack2.sh minpack2`` / *file*
+# | ``bin/wget_minpack2.sh minpack2/``\ *file*
 #
 # Working Directory
 # *****************
@@ -29,16 +29,16 @@
 # file
 # ****
 # The *file* part of the command line argument
-# ``minpack2`` / *file* is a valid file location
+# ``minpack2/``\ *file* is a valid file location
 # relative to the Argonne National Laboratory copy of minpack2; i.e.,
 #
-# | |tab| ``ftp.mcs.anl.gov/pub/MINPACK-2`` *file*
+# | |tab| ``ftp.mcs.anl.gov/pub/MINPACK-2``\ *file*
 #
 # is the a valid file location.
 #
 # Result
 # ******
-# The file is copied to the location ``minpack2`` / *file*
+# The file is copied to the location ``minpack2/``\ *file*
 # relative to the current working directory (git root directory).
 #
 # Example
@@ -87,8 +87,8 @@ then
     exit 1
 fi
 local_file=`echo $file | sed -e 's|^minpack2/||'`
-echo wget --timeout=10 $remote/$local_file -O minpack2/$local_file
-if ! wget --timeout=10 $remote/$local_file -O minpack2/$local_file
+echo wget --timeout=5 $remote/$local_file -O minpack2/$local_file
+if ! wget --timeout=5 $remote/$local_file -O minpack2/$local_file
 then
     echo 'wget_minpack.sh: Error'
     exit 1

@@ -17,8 +17,8 @@ Convert An Adolc Sparse Matrix to CppAD Form
 Syntax
 ******
 
-| *sparse_matrix* =  ``adolc2sparse_rcv`` (
-| |tab| *nr* , *nc* , *nnz* , *rind* , *cind* , *values*
+| *sparse_matrix*  ``= adolc2sparse_rcv(``
+| |tab| *nr, nc, nnz, rind, cind, values*
 | )
 
 Prototype

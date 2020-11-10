@@ -17,8 +17,8 @@ Compare A CppAD Sparse Matrix and a Dense Matrix
 Syntax
 ******
 
-| *ok* =  ``check_sparse`` (
-| |tab| *sparse_matrix* , *dense_matrix* , *print_label* , *print_done*
+| *ok*  ``= check_sparse(``
+| |tab| *sparse_matrix, dense_matrix, print_label, print_done*
 | )
 
 Prototype
@@ -36,8 +36,8 @@ dense_matrix
 ************
 A dense representation of the matrix as a vector of with size
 *nr* * *nc* and in column major order; i.e.,
-the value of the ( *i* , *j* ) element of the matrix is
-*dense_matrix* [ *i* + * *nr* * *j* ] .
+the value of the ( *i,j)* element of the matrix is
+*dense_matrix[*\ *i + *nr * j]* .
 
 print_label
 ***********
@@ -46,7 +46,7 @@ and one of the possibly non-zero values in the sparse matrix
 has value zero in *dense_matrix* .
 The message printed is
 
-| |tab| ``:`` *print_label* ``matrix`` ( *i* , *j* ) == 0.0 ``:``
+| |tab| : *print_label*  ``matrix(``\ *i,j) == 0.0:*
 
 Note this is still correct if the corresponding sparse matrix value
 is also zero.

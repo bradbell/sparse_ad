@@ -43,7 +43,7 @@ Files
 =====
 The output files are written in the ``build/tex`` directory.
 For each of the possible problems, the output file
-*Problem* ``YesSetup.tex`` ( *Problem* ``NoSetup.tex`` )
+*Problem*\ ``YesSetup.tex`` ( *Problem*\ ``NoSetup.tex`` )
 corresponds to *setup* true (false).
 
 {xsrst_end csv2tex_py}

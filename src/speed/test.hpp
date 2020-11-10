@@ -19,9 +19,8 @@ Setup a Speed Test Problem
 Syntax
 ******
 
-| ``test_`` *implement* ``_jac`` ( *repeat* )
-
-``%test_%implement%_hes(%repeat%)%``
+| ``test_``\ *implement*\ ``_jac(``\ *repeat)*
+| ``test_``\ *implement*\ ``_hes(``\ *repeat)*
 
 Prototype
 *********
@@ -63,9 +62,9 @@ is one of the following
 
 Setup
 *****
-The routine ``setup_`` *implement* () is called before
-``test_`` *implement* ``_jac`` ( *repeat* ) or
-``%test_%implement%_hes(%repeat%)%`` .
+The routine ``setup_``\ *implement()* is called before
+``test_``\ *implement*\ ``_jac(``\ *repeat)* or
+``test_``\ *implement*\ ``_hes(``\ *repeat)* .
 
 Globals
 *******
@@ -75,7 +74,7 @@ Initialization
 The :ref:`initialization<speed_global.initialization>` global variables
 are inputs and not changed by the setup routines.
 In addition, the have the same values as during the call to
-``setup_`` *implement* () .
+``setup_``\ *implement()* .
 
 m
 =
@@ -85,11 +84,11 @@ This is the dimension of the range space for :math:`f(x)`.
 
 Jacobian
 ========
-If *m* > 1 , the Jacobian test for this implementation is called.
+If *m > 1* , the Jacobian test for this implementation is called.
 
 Hessian
 =======
-If *m* = 1 , the Hessian test for this implementation is called.
+If *m = 1* , the Hessian test for this implementation is called.
 
 global_nnz
 ==========

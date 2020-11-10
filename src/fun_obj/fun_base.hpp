@@ -8,15 +8,15 @@
 .. include:: ../preamble.rst
 
 {xsrst_spell
+    typedef
+    destructor
+    grad
     obj
     const
     jac
     prototyped
     hes
     hpp
-    grad
-    destructor
-    typedef
 }
 
 Base Class For Test Function Objects
@@ -25,13 +25,13 @@ Base Class For Test Function Objects
 Syntax
 ******
 
-| ``# include <src/fun_obj/fun_base.hpp`` >
-| *x_out* = *fun_obj* . ``start`` ()
-| *m* = *fun_obj* . ``size_range`` ()
-| *fun_obj* . ``fun`` ( *x* , *fun_out* )
-| *ok* = *fun_obj* . ``jac`` ( *x* , *jac_out* )
-| *ok* = *fun_obj* . ``grad`` ( *x* , *grad_out* )
-| *ok* = *fun_obj* . ``hes`` ( *x* , *hes_out* )
+| ``# include <src/fun_obj/fun_base.hpp>``
+| *x_out = fun_obj*\ ``.start()``
+| *m = fun_obj*\ ``.size_range()``
+| *fun_obj*\ ``.fun(``\ *x, fun_out)*
+| *ok = fun_obj*\ ``.jac(``\ *x, jac_out)*
+| *ok = fun_obj*\ ``.grad(``\ *x, grad_out)*
+| *ok = fun_obj*\ ``.hes(``\ *x, hes_out)*
 
 Purpose
 *******
@@ -118,7 +118,7 @@ The corresponding virtual functions must be defined by the derived class.
 
 ok
 ==
-If *m* == 1 , this function returns *ok* as false
+If *m == 1* , this function returns *ok* as false
 and no other action is taken.
 Otherwise *ok* is true.
 
@@ -135,9 +135,9 @@ The return value *jac_out* has size *m* * *n* .
 The input value of its elements does not matter.
 Upon return, it contains the value of :math:`f'(x)`.
 To be specific,
-for *i* = 0 , ... , *m* -1 ,
-*j* = 0 , ... , *n* -1 ,
-*jac_out* [ *i* + *m* * *j* ]
+for *i = 0 ,* ... *, m-1* ,
+*j = 0 ,* ... *, n-1* ,
+*jac_out[*\ *i + m * j]*
 is the partial of :math:`f_i (x)` with respect to :math:`x_j`.
 
 grad
@@ -152,7 +152,7 @@ The corresponding virtual functions must be defined by the derived class.
 
 ok
 ==
-If *m* ``!= 1`` , this function returns *ok* as false
+If *m != 1* , this function returns *ok* as false
 and no other action is taken.
 Otherwise *ok* is true.
 
@@ -169,8 +169,8 @@ The return value *grad_out* has size *n* .
 The input value of its elements does not matter.
 Upon return, it contains the value of :math:`f'(x)`.
 To be specific,
-for *j* = 0 , ... , *n* -1 ,
-*grad_out* [ *j* ]
+for *j = 0 ,* ... *, n-1* ,
+*grad_out[*\ *j]*
 is the partial of :math:`f(x)` with respect to :math:`x_j`.
 
 hes
@@ -185,7 +185,7 @@ The corresponding virtual functions must be defined by the derived class.
 
 ok
 ==
-If *m* ``!= 1`` , this function returns *ok* as false
+If *m != 1* , this function returns *ok* as false
 and no other action is taken.
 Otherwise *ok* is true.
 
@@ -202,9 +202,9 @@ The return value *hes_out* has size *n* * *n* .
 The input value of its elements does not matter.
 Upon return, it contains the value of :math:`f^{(2)} (x)`.
 To be specific,
-for *j* = 0 , ... , *n* -1 ,
-*k* = 0 , ... , *n* -1 ,
-*hes_out* [ *j* + *k* * *n* ]
+for *j = 0 ,* ... *, n-1* ,
+*k = 0 ,* ... *, n-1* ,
+*hes_out[*\ *j + k * n]*
 is the second partial of :math:`f(x)` with respect to
 :math:`x_j` and :math:`x_k`.
 

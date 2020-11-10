@@ -10,11 +10,11 @@
 .. include:: ../preamble.rst
 
 {xsrst_spell
+    adouble
     ftnlen
     typedef
     hpp
     cg
-    adouble
 }
 
 Type Definitions
@@ -23,7 +23,7 @@ Type Definitions
 Syntax
 ******
 
-| ``# include <src/typedef.hpp`` >
+| ``# include <src/typedef.hpp>``
 
 Scalar Types
 ************
@@ -65,8 +65,8 @@ typedef CppAD::AD<cg_double>         cppadcg_double;
 
 Vector Types
 ************
-``CppAD::vector`` < *T* > is a vector with elements of type *T* and
-``CppAD::vector`` < *T* > ``::data`` () is the corresponding *T* *
+``CppAD::vector<``\ *T>* is a vector with elements of type *T* and
+``CppAD::vector<``\ *T*\ ``>::data()`` is the corresponding *T* *
 pointer.
 
 d_vector

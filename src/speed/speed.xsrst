@@ -16,8 +16,8 @@ Run a Jacobian or Hessian Speed Test
 Syntax
 ******
 
-| ``speed`` *csv_file* \
-| |tab| [  *name_1* = *value_1*  ] ... [  *name_K* = *value_K*  ] \
+| ``speed`` *csv_file* \\
+| |tab| [  *name_1* = *value_1*  ] ... [  *name_K* = *value_K*  ] \\
 | |tab| *implement* *problem* *size* *option_list*
 
 name_k=value_k

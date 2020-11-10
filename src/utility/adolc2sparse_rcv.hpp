@@ -1,4 +1,3 @@
-// :vim set expandtab:
 # ifndef SRC_UTILITY_ADOLC2SPARSE_RCV_HPP
 # define SRC_UTILITY_ADOLC2SPARSE_RCV_HPP
 

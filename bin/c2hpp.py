@@ -22,7 +22,7 @@
 # Syntax
 # ******
 #
-# | ``bin/c2hpp.py`` *dir* / ``c`` *name* . ``c``
+# | ``bin/c2hpp.py`` *dir*\ ``/c/``\ *name*\ ``.c``
 #
 # Working Directory
 # *****************
@@ -30,7 +30,7 @@
 #
 # dir, name
 # *********
-# The command line argument *dir* / ``c`` *name* . ``c``
+# The command line argument *dir*\ ``/c/``\ *name*\ ``.c``
 # is an existing C file name,
 # relative to the current working directory,
 # and created by :ref:`f2c_sh<f2c_sh>`.
@@ -40,7 +40,7 @@
 #
 # Result
 # ******
-# The file *dir* / ``hpp`` / *name* . ``hpp`` is a C++ version of the C file.
+# The file *dir*\ ``/hpp/``\ *name*\ ``.hpp`` is a C++ version of the C file.
 # The ``f2c`` data types
 # ``doublereal`` , ``integer`` , and ``ftnlen``
 # are converted to be template parameters in this include file.

@@ -15,8 +15,8 @@ Print A CppAD Sparsity Pattern or Sparse Matrix
 Syntax
 ******
 
-| ``prt_sparse`` ( *name* , *pattern* )
-| ``prt_sparse`` ( *name* , *matrix* )
+| ``prt_sparse(``\ *name, pattern)*
+| ``prt_sparse(``\ *name, matrix)*
 
 Prototype
 *********

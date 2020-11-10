@@ -15,7 +15,7 @@ fi
 sphinx_dir='sphinx'
 root_section='sparse_ad'
 #
-echo_eval xsrst.py doc.xsrst $sphinx_dir spelling keyword
+echo_eval xsrst.py html doc.xsrst $sphinx_dir spelling keyword
 echo_eval cd $sphinx_dir
 echo_eval make html
 cat << EOF > _build/index.html

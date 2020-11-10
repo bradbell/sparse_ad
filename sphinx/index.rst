@@ -16,7 +16,7 @@ Table of Contents
 =================
 
 .. toctree::
-
+   xsrst/xsrst_automatic
    xsrst/sparse_ad
 
 Index

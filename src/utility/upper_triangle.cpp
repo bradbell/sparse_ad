@@ -3,15 +3,12 @@
 
 .. include:: ../preamble.rst
 
-{xsrst_spell
-}
-
 Extract Upper Triangle From A CppAD Sparsity Pattern
 ####################################################
 
 Syntax
 ******
-*upper* =  ``upper_triangle`` ( *pattern* )
+*upper*  ``= upper_triangle(``\ *pattern)*
 
 Prototype
 *********
@@ -27,8 +24,8 @@ The a CppAD sparsity pattern.
 upper
 *****
 Is the CppAD sparsity pattern for the upper triangle of the
-matrix; i.e., only elements with index ( *i* , *j* ) such that
-*i* <= *j* are included in *upper* .
+matrix; i.e., only elements with index ( *i, j)* such that
+*i <=* *j* are included in *upper* .
 
 {xsrst_end upper_triangle}
 */

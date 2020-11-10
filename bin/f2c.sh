@@ -17,7 +17,7 @@
 # Syntax
 # ******
 #
-# | ``bin/f2c.sh`` *dir* / *name* . ``f``
+# | ``bin/f2c.sh`` *dir/name*\ ``.f``
 #
 # Working Directory
 # *****************
@@ -25,7 +25,7 @@
 #
 # dir, name
 # *********
-# The command line argument *dir* / *name* . ``f``
+# The command line argument *dir/*\ *name*\ ``.f``
 # is an existing Fortran file name
 # relative to the current working directory.
 # The *name* part does not contain any ``/`` characters; i.e.,
@@ -34,7 +34,7 @@
 #
 # Result
 # ******
-# The file *dir* / ``c`` *name* . ``c`` is a C version of the Fortran file
+# The file *dir*\ ``/c/``\ *name*\ ``.c`` is a C version of the Fortran file
 # (created by ``f2c`` ).
 #
 # Example
