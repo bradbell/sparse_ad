@@ -1,0 +1,116 @@
+!!!!!!!!
+c2hpp_py
+!!!!!!!!
+
+.. include:: ../preamble.rst
+
+.. meta::
+   :keywords: c2hpp_py, create, a, c++, template, version, of, an, f2c, file
+
+.. index:: c2hpp_py, create, a, c++, template, version, of, an, f2c, file
+
+.. _c2hpp_py:
+
+Create a C++ Template Version of an f2c File
+############################################
+- :ref:`c2hpp_py.syntax`
+- :ref:`c2hpp_py.working_directory`
+- :ref:`c2hpp_py.dir,_name`
+- :ref:`c2hpp_py.result`
+- :ref:`c2hpp_py.warning`
+- :ref:`c2hpp_py.example`
+
+.. meta::
+   :keywords: syntax
+
+.. index:: syntax
+
+.. _c2hpp_py.syntax:
+
+Syntax
+******
+
+| ``bin/c2hpp.py`` *dir*\ ``/c/``\ *name*\ ``.c``
+
+.. meta::
+   :keywords: working, directory
+
+.. index:: working, directory
+
+.. _c2hpp_py.working_directory:
+
+Working Directory
+*****************
+see :ref:`working_directory<bin.working_directory>`.
+
+.. meta::
+   :keywords: dir, , name
+
+.. index:: dir, , name
+
+.. _c2hpp_py.dir,_name:
+
+dir, name
+*********
+The command line argument *dir*\ ``/c/``\ *name*\ ``.c``
+is an existing C file name,
+relative to the current working directory,
+and created by :ref:`f2c_sh<f2c_sh>`.
+The *name* part does not contain any ``/`` characters; i.e.,
+all the ``/`` characters are in the *dir* part of the
+command line argument.
+
+.. meta::
+   :keywords: result
+
+.. index:: result
+
+.. _c2hpp_py.result:
+
+Result
+******
+The file *dir*\ ``/hpp/``\ *name*\ ``.hpp`` is a C++ version of the C file.
+The ``f2c`` data types
+``doublereal`` , ``integer`` , and ``ftnlen``
+are converted to be template parameters in this include file.
+
+.. meta::
+   :keywords: warning
+
+.. index:: warning
+
+.. _c2hpp_py.warning:
+
+Warning
+*******
+This conversion has only been tested for the files in the
+``minpack2/tprobs.92/c`` directory and the :ref:`types<typedef_hpp>`
+``double`` , ``adolc_double`` , ``cppad_double`` ,
+``cppadcg_double`` .
+New files and types may require modifications to the script
+``bin/c2hpp.py``
+and new library files may need to be added to ``f2clib.hpp`` ; see
+
+| |tab| ``minpack2/tprobs.92/hpp/f2clib.hpp``
+
+.. meta::
+   :keywords: example
+
+.. index:: example
+
+.. _c2hpp_py.example:
+
+Example
+*******
+If one is in the git root directory, the command
+
+| |tab| ``bin/c2hpp.py minpack2/tprobs.92/c/dficfj.c``
+
+will overwrite the git repository copy of ``dficfj.hpp`` .
+The result file should be the same which you can check using
+
+| |tab| ``git diff minpack2/tprobs.92/hpp/dficfj.hpp``
+
+----
+
+xsrst input file: ``bin/c2hpp.py``

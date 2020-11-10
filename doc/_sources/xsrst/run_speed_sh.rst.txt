@@ -1,0 +1,131 @@
+!!!!!!!!!!!!
+run_speed_sh
+!!!!!!!!!!!!
+
+.. include:: ../preamble.rst
+
+.. meta::
+   :keywords: run_speed_sh, run, all, the, jacobian, and, hessian, speed, tests
+
+.. index:: run_speed_sh, run, all, the, jacobian, and, hessian, speed, tests
+
+.. _run_speed_sh:
+
+Run All the Jacobian and Hessian Speed Tests
+############################################
+- :ref:`run_speed_sh.purpose`
+- :ref:`run_speed_sh.syntax`
+- :ref:`run_speed_sh.name`
+- :ref:`run_speed_sh.build_type`
+- :ref:`run_speed_sh.--correct`
+- :ref:`run_speed_sh.implementation_list`
+- :ref:`run_speed_sh.problem_list`
+
+.. meta::
+   :keywords: purpose
+
+.. index:: purpose
+
+.. _run_speed_sh.purpose:
+
+Purpose
+*******
+The :ref:`speed<speed>` program has many possible
+combinations of options.
+This script runs all the possible combinations
+and collects the results in one csv file.
+
+.. meta::
+   :keywords: syntax
+
+.. index:: syntax
+
+.. _run_speed_sh.syntax:
+
+Syntax
+******
+- ``bin/run_speed.sh`` *name* *build_type*
+- ``bin/run_speed.sh`` *name* *build_type* ``--correct``
+
+.. meta::
+   :keywords: name
+
+.. index:: name
+
+.. _run_speed_sh.name:
+
+name
+****
+The results for the speed tests are written to the file
+
+|tab| ``build/src/speed/``\ *name-mmdd*\ ``.csv``
+
+where *mmdd** is the current month and day.
+
+.. meta::
+   :keywords: build_type
+
+.. index:: build_type
+
+.. _run_speed_sh.build_type:
+
+build_type
+**********
+This is either ``debug`` or release and determines which build
+is used to run the speed tests.
+The ``debug`` build is only intended for debugging and testing.
+
+.. meta::
+   :keywords: --correct
+
+.. index:: --correct
+
+.. _run_speed_sh.--correct:
+
+--correct
+*********
+If ``--correct`` is present, the
+:ref:`--correct<speed.option_list.--correct>` option is included
+for all the speed tests.
+This is only intended for correctness testing.
+
+.. meta::
+   :keywords: implementation, list
+
+.. index:: implementation, list
+
+.. _run_speed_sh.implementation_list:
+
+Implementation List
+*******************
+The code below selects which
+:ref:`implementations<speed.implement>` are included:
+
+.. code-block:: sh
+
+    implement_list='adolc cppad subgraph cppadcg subcg'
+    implement_list='adolc cppad subgraph' # without code generation
+
+This code is in ``bin/run_speed.sh`` and can be changed.
+
+.. meta::
+   :keywords: problem, list
+
+.. index:: problem, list
+
+.. _run_speed_sh.problem_list:
+
+Problem List
+************
+The code below selects which
+:ref:`problems<speed.problem>` are included:
+
+.. code-block:: sh
+
+    problem_list='dficfj dierfj deptfg dgl1fg'
+
+This code is in ``bin/run_speed.sh`` and can be changed.
+
+----
+
+xsrst input file: ``bin/run_speed.sh``

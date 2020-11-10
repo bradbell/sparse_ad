@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  <meta content="run_speed_sh, run, all, the, jacobian, and, hessian, speed, tests" name="keywords" />
+<meta content="purpose" name="keywords" />
+<meta content="syntax" name="keywords" />
+<meta content="name" name="keywords" />
+<meta content="build_type" name="keywords" />
+<meta content="--correct" name="keywords" />
+<meta content="implementation, list" name="keywords" />
+<meta content="problem, list" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>run_speed_sh &mdash; sparse_ad  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="typedef_hpp" href="typedef_hpp.html" />
+    <link rel="prev" title="csv2tex_py" href="csv2tex_py.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> sparse_ad
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="xsrst_automatic.html">Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xsrst_automatic.html#link-to-index">Link to Index</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sparse_ad.html">sparse_ad</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="speed.html">speed</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="bin.html">bin</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="get_all_sh.html">get_all_sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wget_minpack2_sh.html">wget_minpack2_sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_sh.html">f2c_sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c2hpp_py.html">c2hpp_py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csv2tex_py.html">csv2tex_py</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">run_speed_sh</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="typedef_hpp.html">typedef_hpp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun_base_hpp.html">fun_base_hpp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utility.html">utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html">release_notes</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">sparse_ad</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="sparse_ad.html">sparse_ad</a> &raquo;</li>
+        
+          <li><a href="bin.html">bin</a> &raquo;</li>
+        
+      <li>run_speed_sh</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/xsrst/run_speed_sh.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="run-speed-sh">
+<h1>run_speed_sh<a class="headerlink" href="#run-speed-sh" title="Permalink to this headline">¶</a></h1>
+<div class="math notranslate nohighlight">
+\[\newcommand{\B}[1]{ {\bf #1} }
+\newcommand{\R}[1]{ {\rm #1} }\]</div>
+<div class="section" id="run-all-the-jacobian-and-hessian-speed-tests">
+<span id="id1"></span><h2>Run All the Jacobian and Hessian Speed Tests<a class="headerlink" href="#run-all-the-jacobian-and-hessian-speed-tests" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#run-speed-sh-purpose"><span class="std std-ref">Purpose</span></a></p></li>
+<li><p><a class="reference internal" href="#run-speed-sh-syntax"><span class="std std-ref">Syntax</span></a></p></li>
+<li><p><a class="reference internal" href="#run-speed-sh-name"><span class="std std-ref">name</span></a></p></li>
+<li><p><a class="reference internal" href="#run-speed-sh-build-type"><span class="std std-ref">build_type</span></a></p></li>
+<li><p><a class="reference internal" href="#run-speed-sh-correct"><span class="std std-ref">–correct</span></a></p></li>
+<li><p><a class="reference internal" href="#run-speed-sh-implementation-list"><span class="std std-ref">Implementation List</span></a></p></li>
+<li><p><a class="reference internal" href="#run-speed-sh-problem-list"><span class="std std-ref">Problem List</span></a></p></li>
+</ul>
+<div class="section" id="purpose">
+<span id="run-speed-sh-purpose"></span><span id="index-1"></span><h3>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="speed.html#id1"><span class="std std-ref">speed</span></a> program has many possible
+combinations of options.
+This script runs all the possible combinations
+and collects the results in one csv file.</p>
+</div>
+<div class="section" id="syntax">
+<span id="run-speed-sh-syntax"></span><span id="index-2"></span><h3>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bin/run_speed.sh</span></code> <em>name</em> <em>build_type</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bin/run_speed.sh</span></code> <em>name</em> <em>build_type</em> <code class="docutils literal notranslate"><span class="pre">--correct</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="name">
+<span id="run-speed-sh-name"></span><span id="index-3"></span><h3>name<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h3>
+<p>The results for the speed tests are written to the file</p>
+<p>        <code class="docutils literal notranslate"><span class="pre">build/src/speed/</span></code><em>name-mmdd</em><code class="docutils literal notranslate"><span class="pre">.csv</span></code></p>
+<p>where <em>mmdd*</em> is the current month and day.</p>
+</div>
+<div class="section" id="build-type">
+<span id="run-speed-sh-build-type"></span><span id="index-4"></span><h3>build_type<a class="headerlink" href="#build-type" title="Permalink to this headline">¶</a></h3>
+<p>This is either <code class="docutils literal notranslate"><span class="pre">debug</span></code> or release and determines which build
+is used to run the speed tests.
+The <code class="docutils literal notranslate"><span class="pre">debug</span></code> build is only intended for debugging and testing.</p>
+</div>
+<div class="section" id="correct">
+<span id="run-speed-sh-correct"></span><span id="index-5"></span><h3>–correct<a class="headerlink" href="#correct" title="Permalink to this headline">¶</a></h3>
+<p>If <code class="docutils literal notranslate"><span class="pre">--correct</span></code> is present, the
+<a class="reference internal" href="speed.html#speed-option-list-correct"><span class="std std-ref">–correct</span></a> option is included
+for all the speed tests.
+This is only intended for correctness testing.</p>
+</div>
+<div class="section" id="implementation-list">
+<span id="run-speed-sh-implementation-list"></span><span id="index-6"></span><h3>Implementation List<a class="headerlink" href="#implementation-list" title="Permalink to this headline">¶</a></h3>
+<p>The code below selects which
+<a class="reference internal" href="speed.html#speed-implement"><span class="std std-ref">implementations</span></a> are included:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">implement_list</span><span class="o">=</span><span class="s1">&#39;adolc cppad subgraph cppadcg subcg&#39;</span>
+<span class="nv">implement_list</span><span class="o">=</span><span class="s1">&#39;adolc cppad subgraph&#39;</span> <span class="c1"># without code generation</span>
+</pre></div>
+</div>
+<p>This code is in <code class="docutils literal notranslate"><span class="pre">bin/run_speed.sh</span></code> and can be changed.</p>
+</div>
+<div class="section" id="problem-list">
+<span id="run-speed-sh-problem-list"></span><span id="index-7"></span><h3>Problem List<a class="headerlink" href="#problem-list" title="Permalink to this headline">¶</a></h3>
+<p>The code below selects which
+<a class="reference internal" href="speed.html#speed-problem"><span class="std std-ref">problems</span></a> are included:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">problem_list</span><span class="o">=</span><span class="s1">&#39;dficfj dierfj deptfg dgl1fg&#39;</span>
+</pre></div>
+</div>
+<p>This code is in <code class="docutils literal notranslate"><span class="pre">bin/run_speed.sh</span></code> and can be changed.</p>
+<hr class="docutils" />
+<p>xsrst input file: <code class="docutils literal notranslate"><span class="pre">bin/run_speed.sh</span></code></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="typedef_hpp.html" class="btn btn-neutral float-right" title="typedef_hpp" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="csv2tex_py.html" class="btn btn-neutral float-left" title="csv2tex_py" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

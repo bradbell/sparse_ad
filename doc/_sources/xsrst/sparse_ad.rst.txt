@@ -1,0 +1,169 @@
+!!!!!!!!!
+sparse_ad
+!!!!!!!!!
+
+.. include:: ../preamble.rst
+
+.. comment:  Begin: Setting that apply to all sections
+
+.. comment:  End: Setting that apply to all sections
+
+.. meta::
+   :keywords: sparse_ad, computing, sparse, jacobians, and, hessians, using, ad
+
+.. index:: sparse_ad, computing, sparse, jacobians, and, hessians, using, ad
+
+.. _sparse_ad:
+
+Computing Sparse Jacobians and Hessians Using AD
+################################################
+- :ref:`sparse_ad.version_20201109`
+- :ref:`sparse_ad.github`
+- :ref:`sparse_ad.system_requirements`
+- :ref:`sparse_ad.build_type`
+- :ref:`sparse_ad.special_requirements`
+- :ref:`sparse_ad.check_build`
+- :ref:`sparse_ad.run_speed_tests`
+- :ref:`sparse_ad.children`
+
+.. meta::
+   :keywords: version, 20201109
+
+.. index:: version, 20201109
+
+.. _sparse_ad.version_20201109:
+
+Version 20201109
+****************
+
+.. meta::
+   :keywords: github
+
+.. index:: github
+
+.. _sparse_ad.github:
+
+github
+******
+`github <https://github.com/bradbell/sparse_ad>`_.
+
+.. meta::
+   :keywords: system, requirements
+
+.. index:: system, requirements
+
+.. _sparse_ad.system_requirements:
+
+System Requirements
+*******************
+In addition to the standard Linux utilities, like ``bash`` ,
+you must have the following programs installed on your system:
+``clang`` , ``git`` , ``f2c`` , ``python3`` , ``valgrind`` .
+
+.. meta::
+   :keywords: build_type
+
+.. index:: build_type
+
+.. _sparse_ad.build_type:
+
+build_type
+**********
+The current *build_type* is set in the script ``bin/run_cmake.sh``
+and must be either ``debug`` or ``release`` .
+You can choose this setting with ``release`` being faster
+and ``debug`` being useful for debugging.
+
+.. meta::
+   :keywords: special, requirements
+
+.. index:: special, requirements
+
+.. _sparse_ad.special_requirements:
+
+Special Requirements
+********************
+The special requirements ``adolc`` , ``colpack`` , ``cppadcg`` ,
+``cppad`` , and ``eigen`` are installed with the following command:
+
+| |tab| ``bin/get_all.sh``
+
+The ``build`` directory is soft link to ``build.``\ *build_type*
+which is where the programs get installed.
+
+.. meta::
+   :keywords: check, build
+
+.. index:: check, build
+
+.. _sparse_ad.check_build:
+
+Check Build
+***********
+The following command will build and check all the programs:
+
+| |tab| ``bin/check_all.sh``
+
+The following command will check all the possible :ref:`speed<speed>` program
+options, methods, and problems:
+
+| |tab| ``bin/run_speed.sh correct`` *build_type* ``--correct``
+
+The results will be written to the file
+
+| |tab| ``build/src/speed/correct-``\ *mmdd*
+
+where *mm* is the current month and *dd* is the current day.
+
+.. meta::
+   :keywords: run, speed, tests
+
+.. index:: run, speed, tests
+
+.. _sparse_ad.run_speed_tests:
+
+Run Speed Tests
+***************
+The :ref:`speed<speed>` program is in the ``build/src/speed`` directory.
+You can use it to run one speed test.
+You can run all the possible option and problem combinations using the command:
+
+| |tab| ``bin/run_speed.sh speed`` *build_type*
+
+This will take a while because (hours) to complete.
+The results will be written to the file
+
+| |tab| ``build/src/speed/speed-``\ *mmdd*
+
+where *mm* is the current month and *dd* is the current day.
+
+.. meta::
+   :keywords: children
+
+.. index:: children
+
+.. _sparse_ad.children:
+
+Children
+********
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   speed
+   bin
+   typedef_hpp
+   fun_base_hpp
+   utility
+   release_notes
+
+#. speed: :ref:`speed`
+#. bin: :ref:`bin`
+#. typedef_hpp: :ref:`typedef_hpp`
+#. fun_base_hpp: :ref:`fun_base_hpp`
+#. utility: :ref:`utility`
+#. release_notes: :ref:`release_notes`
+
+----
+
+xsrst input file: ``doc.xsrst``

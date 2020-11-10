@@ -1,0 +1,367 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  <meta content="speed_global, speed, program, global, variables" name="keywords" />
+<meta content="initialization" name="keywords" />
+<meta content="global_problem_ptr" name="keywords" />
+<meta content="global_size" name="keywords" />
+<meta content="global_colpack" name="keywords" />
+<meta content="global_indirect" name="keywords" />
+<meta content="global_optimize" name="keywords" />
+<meta content="global_setup" name="keywords" />
+<meta content="global_reverse" name="keywords" />
+<meta content="global_onepass" name="keywords" />
+<meta content="global_correct" name="keywords" />
+<meta content="global_x" name="keywords" />
+<meta content="global_nnz" name="keywords" />
+<meta content="global_correct_ok" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>speed_global &mdash; sparse_ad  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="speed_setup" href="speed_setup.html" />
+    <link rel="prev" title="speed" href="speed.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> sparse_ad
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="xsrst_automatic.html">Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xsrst_automatic.html#link-to-index">Link to Index</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sparse_ad.html">sparse_ad</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="speed.html">speed</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">speed_global</a></li>
+<li class="toctree-l3"><a class="reference internal" href="speed_setup.html">speed_setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="speed_test.html">speed_test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="speed_write_csv.html">speed_write_csv</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bin.html">bin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typedef_hpp.html">typedef_hpp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun_base_hpp.html">fun_base_hpp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utility.html">utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html">release_notes</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">sparse_ad</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="sparse_ad.html">sparse_ad</a> &raquo;</li>
+        
+          <li><a href="speed.html">speed</a> &raquo;</li>
+        
+      <li>speed_global</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/xsrst/speed_global.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="speed-global">
+<h1>speed_global<a class="headerlink" href="#speed-global" title="Permalink to this headline">¶</a></h1>
+<div class="math notranslate nohighlight">
+\[\newcommand{\B}[1]{ {\bf #1} }
+\newcommand{\R}[1]{ {\rm #1} }\]</div>
+<div class="section" id="speed-program-global-variables">
+<span id="id1"></span><h2>Speed Program Global Variables<a class="headerlink" href="#speed-program-global-variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt><a class="reference internal" href="#speed-global-initialization"><span class="std std-ref">Initialization</span></a></dt><dd><ul>
+<li><p><a class="reference internal" href="#speed-global-initialization-global-problem-ptr"><span class="std std-ref">global_problem_ptr</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-global-initialization-global-size"><span class="std std-ref">global_size</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-global-initialization-global-colpack"><span class="std std-ref">global_colpack</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-global-initialization-global-indirect"><span class="std std-ref">global_indirect</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-global-initialization-global-optimize"><span class="std std-ref">global_optimize</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-global-initialization-global-setup"><span class="std std-ref">global_setup</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-global-initialization-global-reverse"><span class="std std-ref">global_reverse</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-global-initialization-global-onepass"><span class="std std-ref">global_onepass</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-global-initialization-global-correct"><span class="std std-ref">global_correct</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-global-initialization-global-x"><span class="std std-ref">global_x</span></a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><a class="reference internal" href="#speed-global-global-nnz"><span class="std std-ref">global_nnz</span></a></p></li>
+<li><p><a class="reference internal" href="#speed-global-global-correct-ok"><span class="std std-ref">global_correct_ok</span></a></p></li>
+</ul>
+<div class="section" id="initialization">
+<span id="speed-global-initialization"></span><span id="index-1"></span><h3>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h3>
+<p>The following globals are set by the speed initialization routine
+before any other subroutines are called.</p>
+<div class="section" id="global-problem-ptr">
+<span id="speed-global-initialization-global-problem-ptr"></span><span id="index-2"></span><h4>global_problem_ptr<a class="headerlink" href="#global-problem-ptr" title="Permalink to this headline">¶</a></h4>
+<p>minpack2 representation of the problem:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">fun_base</span><span class="o">*</span> <span class="n">global_problem_ptr</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="global-size">
+<span id="speed-global-initialization-global-size"></span><span id="index-3"></span><h4>global_size<a class="headerlink" href="#global-size" title="Permalink to this headline">¶</a></h4>
+<p>size for this problem:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">size_t</span> <span class="n">global_size</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="global-colpack">
+<span id="speed-global-initialization-global-colpack"></span><span id="index-4"></span><h4>global_colpack<a class="headerlink" href="#global-colpack" title="Permalink to this headline">¶</a></h4>
+<p>use colpack coloring:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">global_colpack</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="global-indirect">
+<span id="speed-global-initialization-global-indirect"></span><span id="index-5"></span><h4>global_indirect<a class="headerlink" href="#global-indirect" title="Permalink to this headline">¶</a></h4>
+<p>use indirect computation</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">global_indirect</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="global-optimize">
+<span id="speed-global-initialization-global-optimize"></span><span id="index-6"></span><h4>global_optimize<a class="headerlink" href="#global-optimize" title="Permalink to this headline">¶</a></h4>
+<p>was this AD function optimized</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">global_optimize</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="global-setup">
+<span id="speed-global-initialization-global-setup"></span><span id="index-7"></span><h4>global_setup<a class="headerlink" href="#global-setup" title="Permalink to this headline">¶</a></h4>
+<p>is taping of function AD operations included in timing</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">global_setup</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="global-reverse">
+<span id="speed-global-initialization-global-reverse"></span><span id="index-8"></span><h4>global_reverse<a class="headerlink" href="#global-reverse" title="Permalink to this headline">¶</a></h4>
+<p>are we using reverse mode (otherwise forward mode)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">global_reverse</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="global-onepass">
+<span id="speed-global-initialization-global-onepass"></span><span id="index-9"></span><h4>global_onepass<a class="headerlink" href="#global-onepass" title="Permalink to this headline">¶</a></h4>
+<p>are we using one pass of the tape to compute entire Jacobian</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">global_onepass</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="global-correct">
+<span id="speed-global-initialization-global-correct"></span><span id="index-10"></span><h4>global_correct<a class="headerlink" href="#global-correct" title="Permalink to this headline">¶</a></h4>
+<p>are we checking for correctness and result of check</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">global_correct</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="global-x">
+<span id="speed-global-initialization-global-x"></span><span id="index-11"></span><h4>global_x<a class="headerlink" href="#global-x" title="Permalink to this headline">¶</a></h4>
+<p>argument value at which we are evaluation function and Jacobian</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">d_vector</span> <span class="n">global_x</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="global-nnz">
+<span id="speed-global-global-nnz"></span><span id="index-12"></span><h3>global_nnz<a class="headerlink" href="#global-nnz" title="Permalink to this headline">¶</a></h3>
+<p>This value, set at the end of every test, is the number of non-zeros
+int the sparsity pattern detected by the implementation:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">size_t</span> <span class="n">global_nnz</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="global-correct-ok">
+<span id="speed-global-global-correct-ok"></span><span id="index-13"></span><h3>global_correct_ok<a class="headerlink" href="#global-correct-ok" title="Permalink to this headline">¶</a></h3>
+<p>If <em>global_correct</em> is true this value is set at the end of every test
+and is true (fails) if the correctness test passes (fails):
+If <em>global_correct</em> is fails, this value is never set or used.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">global_correct_ok</span><span class="p">;</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>xsrst input file: <code class="docutils literal notranslate"><span class="pre">src/speed/speed.cpp</span></code></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="speed_setup.html" class="btn btn-neutral float-right" title="speed_setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="speed.html" class="btn btn-neutral float-left" title="speed" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  <meta content="typedef_hpp, type, definitions" name="keywords" />
+<meta content="syntax" name="keywords" />
+<meta content="scalar, types" name="keywords" />
+<meta content="ftnlen" name="keywords" />
+<meta content="adolc_double" name="keywords" />
+<meta content="cppad_double" name="keywords" />
+<meta content="cg_double" name="keywords" />
+<meta content="cppadcg_double" name="keywords" />
+<meta content="vector, types" name="keywords" />
+<meta content="d_vector" name="keywords" />
+<meta content="c_vector" name="keywords" />
+<meta content="s_vector" name="keywords" />
+<meta content="b_vector" name="keywords" />
+<meta content="adolc_vector" name="keywords" />
+<meta content="cppad_vector" name="keywords" />
+<meta content="cg_vector" name="keywords" />
+<meta content="cppadcg_vector" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>typedef_hpp &mdash; sparse_ad  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="fun_base_hpp" href="fun_base_hpp.html" />
+    <link rel="prev" title="run_speed_sh" href="run_speed_sh.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> sparse_ad
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="xsrst_automatic.html">Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xsrst_automatic.html#link-to-index">Link to Index</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sparse_ad.html">sparse_ad</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="speed.html">speed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bin.html">bin</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">typedef_hpp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fun_base_hpp.html">fun_base_hpp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utility.html">utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html">release_notes</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">sparse_ad</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="sparse_ad.html">sparse_ad</a> &raquo;</li>
+        
+      <li>typedef_hpp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/xsrst/typedef_hpp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="typedef-hpp">
+<h1>typedef_hpp<a class="headerlink" href="#typedef-hpp" title="Permalink to this headline">¶</a></h1>
+<div class="math notranslate nohighlight">
+\[\newcommand{\B}[1]{ {\bf #1} }
+\newcommand{\R}[1]{ {\rm #1} }\]</div>
+<div class="section" id="type-definitions">
+<span id="id1"></span><h2>Type Definitions<a class="headerlink" href="#type-definitions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#typedef-hpp-syntax"><span class="std std-ref">Syntax</span></a></p></li>
+<li><dl class="simple">
+<dt><a class="reference internal" href="#typedef-hpp-scalar-types"><span class="std std-ref">Scalar Types</span></a></dt><dd><ul>
+<li><p><a class="reference internal" href="#typedef-hpp-scalar-types-ftnlen"><span class="std std-ref">ftnlen</span></a></p></li>
+<li><p><a class="reference internal" href="#typedef-hpp-scalar-types-adolc-double"><span class="std std-ref">adolc_double</span></a></p></li>
+<li><p><a class="reference internal" href="#typedef-hpp-scalar-types-cppad-double"><span class="std std-ref">cppad_double</span></a></p></li>
+<li><p><a class="reference internal" href="#typedef-hpp-scalar-types-cg-double"><span class="std std-ref">cg_double</span></a></p></li>
+<li><p><a class="reference internal" href="#typedef-hpp-scalar-types-cppadcg-double"><span class="std std-ref">cppadcg_double</span></a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference internal" href="#typedef-hpp-vector-types"><span class="std std-ref">Vector Types</span></a></dt><dd><ul>
+<li><p><a class="reference internal" href="#typedef-hpp-vector-types-d-vector"><span class="std std-ref">d_vector</span></a></p></li>
+<li><p><a class="reference internal" href="#typedef-hpp-vector-types-c-vector"><span class="std std-ref">c_vector</span></a></p></li>
+<li><p><a class="reference internal" href="#typedef-hpp-vector-types-s-vector"><span class="std std-ref">s_vector</span></a></p></li>
+<li><p><a class="reference internal" href="#typedef-hpp-vector-types-b-vector"><span class="std std-ref">b_vector</span></a></p></li>
+<li><p><a class="reference internal" href="#typedef-hpp-vector-types-adolc-vector"><span class="std std-ref">adolc_vector</span></a></p></li>
+<li><p><a class="reference internal" href="#typedef-hpp-vector-types-cppad-vector"><span class="std std-ref">cppad_vector</span></a></p></li>
+<li><p><a class="reference internal" href="#typedef-hpp-vector-types-cg-vector"><span class="std std-ref">cg_vector</span></a></p></li>
+<li><p><a class="reference internal" href="#typedef-hpp-vector-types-cppadcg-vector"><span class="std std-ref">cppadcg_vector</span></a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="section" id="syntax">
+<span id="typedef-hpp-syntax"></span><span id="index-1"></span><h3>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">include</span> <span class="pre">&lt;src/typedef.hpp&gt;</span></code></div>
+</div>
+</div>
+<div class="section" id="scalar-types">
+<span id="typedef-hpp-scalar-types"></span><span id="index-2"></span><h3>Scalar Types<a class="headerlink" href="#scalar-types" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ftnlen">
+<span id="typedef-hpp-scalar-types-ftnlen"></span><span id="index-3"></span><h4>ftnlen<a class="headerlink" href="#ftnlen" title="Permalink to this headline">¶</a></h4>
+<p>type used by f2c for fortran integers:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="kt">int</span>                          <span class="n">ftnlen</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adolc-double">
+<span id="typedef-hpp-scalar-types-adolc-double"></span><span id="index-4"></span><h4>adolc_double<a class="headerlink" href="#adolc-double" title="Permalink to this headline">¶</a></h4>
+<p>type used by adolc implementation to record operations:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="n">adouble</span>                      <span class="n">adolc_double</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cppad-double">
+<span id="typedef-hpp-scalar-types-cppad-double"></span><span id="index-5"></span><h4>cppad_double<a class="headerlink" href="#cppad-double" title="Permalink to this headline">¶</a></h4>
+<p>type used by cppad and subgraph implementations to record operations:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="n">CppAD</span><span class="o">::</span><span class="n">AD</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span>            <span class="n">cppad_double</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cg-double">
+<span id="typedef-hpp-scalar-types-cg-double"></span><span id="index-6"></span><h4>cg_double<a class="headerlink" href="#cg-double" title="Permalink to this headline">¶</a></h4>
+<p>type used by cppadcg implementations to evaluate derivatives</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="n">CppAD</span><span class="o">::</span><span class="n">cg</span><span class="o">::</span><span class="n">CG</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span>        <span class="n">cg_double</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cppadcg-double">
+<span id="typedef-hpp-scalar-types-cppadcg-double"></span><span id="index-7"></span><h4>cppadcg_double<a class="headerlink" href="#cppadcg-double" title="Permalink to this headline">¶</a></h4>
+<p>type used by cppadcg implementations to record operations:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="n">CppAD</span><span class="o">::</span><span class="n">AD</span><span class="o">&lt;</span><span class="n">cg_double</span><span class="o">&gt;</span>         <span class="n">cppadcg_double</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="vector-types">
+<span id="typedef-hpp-vector-types"></span><span id="index-8"></span><h3>Vector Types<a class="headerlink" href="#vector-types" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">CppAD::vector&lt;</span></code><em>T&gt;</em> is a vector with elements of type <em>T</em> and
+<code class="docutils literal notranslate"><span class="pre">CppAD::vector&lt;</span></code><em>T</em><code class="docutils literal notranslate"><span class="pre">&gt;::data()</span></code> is the corresponding <em>T</em> *
+pointer.</p>
+<div class="section" id="d-vector">
+<span id="typedef-hpp-vector-types-d-vector"></span><span id="index-9"></span><h4>d_vector<a class="headerlink" href="#d-vector" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="n">CppAD</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span>          <span class="n">d_vector</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="c-vector">
+<span id="typedef-hpp-vector-types-c-vector"></span><span id="index-10"></span><h4>c_vector<a class="headerlink" href="#c-vector" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="n">CppAD</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span>            <span class="n">c_vector</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="s-vector">
+<span id="typedef-hpp-vector-types-s-vector"></span><span id="index-11"></span><h4>s_vector<a class="headerlink" href="#s-vector" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="n">CppAD</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;</span>          <span class="n">s_vector</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="b-vector">
+<span id="typedef-hpp-vector-types-b-vector"></span><span id="index-12"></span><h4>b_vector<a class="headerlink" href="#b-vector" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="n">CppAD</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span>            <span class="n">b_vector</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adolc-vector">
+<span id="typedef-hpp-vector-types-adolc-vector"></span><span id="index-13"></span><h4>adolc_vector<a class="headerlink" href="#adolc-vector" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="n">CppAD</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">adolc_double</span><span class="o">&gt;</span>    <span class="n">adolc_vector</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cppad-vector">
+<span id="typedef-hpp-vector-types-cppad-vector"></span><span id="index-14"></span><h4>cppad_vector<a class="headerlink" href="#cppad-vector" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="n">CppAD</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">cppad_double</span><span class="o">&gt;</span>    <span class="n">cppad_vector</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cg-vector">
+<span id="typedef-hpp-vector-types-cg-vector"></span><span id="index-15"></span><h4>cg_vector<a class="headerlink" href="#cg-vector" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="n">CppAD</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">cg_double</span><span class="o">&gt;</span>       <span class="n">cg_vector</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cppadcg-vector">
+<span id="typedef-hpp-vector-types-cppadcg-vector"></span><span id="index-16"></span><h4>cppadcg_vector<a class="headerlink" href="#cppadcg-vector" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="n">CppAD</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">cppadcg_double</span><span class="o">&gt;</span>  <span class="n">cppadcg_vector</span><span class="p">;</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>xsrst input file: <code class="docutils literal notranslate"><span class="pre">src/typedef.hpp</span></code></p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fun_base_hpp.html" class="btn btn-neutral float-right" title="fun_base_hpp" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="run_speed_sh.html" class="btn btn-neutral float-left" title="run_speed_sh" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
