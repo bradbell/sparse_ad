@@ -51,7 +51,7 @@ Check Build
 ***********
 The following command will build and check all the programs:
 
-| |tab| ``bin/check_all.sh``
+| |tab| ``bin/check_all.sh`` *build_type*
 
 The following command will check all the possible :ref:`speed<speed>` program
 options, methods, and problems:

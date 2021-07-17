@@ -13,11 +13,18 @@ then
 fi
 if [ "$1" != 'debug' ] && [ "$1" != 'release' ]
 then
-    echo 'usage: bin/check_all.sh build_type'
+    echo 'usage: bin/check_all.sh build_type [+doc]'
+    echo 'where build_type is debug or release'
+    exit 1
+fi
+if [ "$2" != '' ] && [ "$2" != '+doc' ]
+then
+    echo 'usage: bin/check_all.sh build_type [+doc]'
     echo 'where build_type is debug or release'
     exit 1
 fi
 build_type="$1"
+check_doc="$2"
 # -----------------------------------------------------------------------------
 if ! grep "^build_type='release'" bin/run_cmake.sh > /dev/null
 then
@@ -85,7 +92,10 @@ then
 fi
 # -----------------------------------------------------------------------------
 # check documentation runs
-bin/run_xsrst.sh
+if [ "$check_doc" == '+doc' ]
+then
+    bin/run_xsrst.sh
+fi
 # -----------------------------------------------------------------------------
 # check example
 bin/run_cmake.sh

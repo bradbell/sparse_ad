@@ -51,7 +51,9 @@
 implement_list='adolc cppad subgraph cppadcg subcg'
 implement_list='adolc cppad subgraph' # without code generation
 # {xsrst_code}
-# This code is in ``bin/run_speed.sh`` and can be changed.
+# This choice is in ``bin/run_speed.sh`` and can be changed.
+# Note that the ``cppadcg`` and ``subcg`` choices run the derivative code
+# throught a compiler before using it and the compliation can take a long time.
 #
 # Problem List
 # ************
