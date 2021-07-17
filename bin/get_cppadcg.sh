@@ -67,6 +67,11 @@ echo_eval git reset --hard
 echo_eval git checkout master
 echo_eval git pull
 echo_eval git checkout --quiet $version
+# --------------------------------------------------------------------------
+# Fix checking CppAD version so it works when there is no release
+# in the version number
+sed -i cmake/FindCppAD.cmake -e 's|\[0-9\]+\\\\[.]\[0-9\]+|[0-9.]+|'
+# --------------------------------------------------------------------------
 if [ -e build ]
 then
     echo_eval rm -r build

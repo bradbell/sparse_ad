@@ -15,7 +15,12 @@ fi
 sphinx_dir='sphinx'
 root_section='sparse_ad'
 #
-echo_eval xsrst.py html doc.xsrst $sphinx_dir spelling keyword
+# prefix
+cmd=`grep '^prefix=' bin/run_cmake.sh`
+eval $cmd
+echo "prefix=$prefix"
+#
+echo_eval $prefix/bin/xsrst.py html doc.xsrst $sphinx_dir spelling keyword
 echo_eval cd $sphinx_dir
 echo_eval make html
 cat << EOF > _build/index.html
