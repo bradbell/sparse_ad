@@ -7,10 +7,28 @@
     timeout
     wget
     omhelp
+    gitignore
 }
 
 Changes and Additions to sparse_ad
 ##################################
+
+2021
+****
+
+07-18
+=====
+Change :ref:`run_speed_sh` to use year, month, and day in csv file names
+(not just month and day).
+
+07-16
+=====
+#. Fix ``bin/get_cppadcg.sh`` (check of CppAD version number was not working).
+#. Use temp for temporary file names in ``.gitignore`` (instead of junk).
+#. Make building documentation optional in ``bin/check_all.sh``
+   so that it is not necessary to have sphinx installed.
+#. Add comment about fact that cppadcg speed test take long time to compile;
+   see :ref:`run_speed_sh.implementation_list`.
 
 2020
 ****

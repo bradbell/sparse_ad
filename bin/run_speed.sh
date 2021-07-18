@@ -2,7 +2,7 @@
 # {xsrst_comment_ch #}
 # {xsrst_begin run_speed_sh}
 # {xsrst_spell
-#   mmdd
+#   yymmdd
 # }
 #
 # .. include:: ../preamble.rst
@@ -26,9 +26,9 @@
 # ****
 # The results for the speed tests are written to the file
 #
-# |tab| ``build/src/speed/``\ *name-mmdd*\ ``.csv``
+# |tab| ``build/src/speed/``\ *name-yymmdd*\ ``.csv``
 #
-# where *mmdd** is the current month and day.
+# where *yymmdd** is the current year, month and day.
 #
 # build_type
 # **********
@@ -103,7 +103,7 @@ cat << EOF
 usage: bin/run_speed.sh name build_type [--correct]
 
 Runs speed tests possible combinations of options except for --correct.
-This creates the file build/src/speed/name-mmmdd.csv with results
+This creates the file build/src/speed/name-yymmdd.csv with results
 where mm is the current month and add is the current day.
 The build_type must be debug or release.
 If --correct is present, the --correct option is included in the speed runs.
@@ -114,8 +114,8 @@ name="$1"
 build_type="$2"
 correct="$3"
 # --------------------------------------------------------------------------
-mmdd=`date +%m%d`
-csv_file="$name-$mmdd.csv"
+yymmdd=`date +%y%m%d`
+csv_file="$name-$yymmdd.csv"
 if [ -e build/src/speed/$csv_file ]
 then
     echo 'bin/run_speed.sh: The output file already exists, remove it ?'
