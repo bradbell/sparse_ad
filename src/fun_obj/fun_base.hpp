@@ -9,7 +9,6 @@
 
 {xsrst_spell
     typedef
-    destructor
     grad
     obj
     const

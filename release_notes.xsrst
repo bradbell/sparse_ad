@@ -16,10 +16,15 @@ Changes and Additions to sparse_ad
 2021
 ****
 
+07-19
+=====
+Change :ref:`run_speed.sh<run_speed_sh>` to write its output file in the
+``csv`` directory (instead of the ``build/src/speed`` directory).
+
 07-18
 =====
-Change :ref:`run_speed_sh` to use year, month, and day in csv file names
-(not just month and day).
+Change :ref:`run_speed.sh<run_speed_sh>` to use year, month, and day
+in csv file names (not just month and day).
 
 07-16
 =====

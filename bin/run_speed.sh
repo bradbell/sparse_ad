@@ -26,7 +26,7 @@
 # ****
 # The results for the speed tests are written to the file
 #
-# |tab| ``build/src/speed/``\ *name-yymmdd*\ ``.csv``
+# |tab| ``csv/``\ *name-yymmdd*\ ``.csv``
 #
 # where *yymmdd** is the current year, month and day.
 #
@@ -53,7 +53,7 @@ implement_list='adolc cppad subgraph' # without code generation
 # {xsrst_code}
 # This choice is in ``bin/run_speed.sh`` and can be changed.
 # Note that the ``cppadcg`` and ``subcg`` choices run the derivative code
-# throught a compiler before using it and the compliation can take a long time.
+# through a compiler before using it and the compliation can take a long time.
 #
 # Problem List
 # ************
@@ -71,14 +71,15 @@ echo_eval() {
     eval $*
 }
 # --------------------------------------------------------------------------
-top_srcdir=`pwd`
+top_srcdir=$(pwd)
+speed_program='../build/src/speed/speed'
 run_speed() {
-    echo "$top_srcdir/bin/massif.sh ./speed dummy.csv $*"
-    n_bytes=`$top_srcdir/bin/massif.sh ./speed dummy.csv $*`
+    echo "$top_srcdir/bin/massif.sh $speed_program dummy.csv $*"
+    n_bytes=`$top_srcdir/bin/massif.sh $speed_program dummy.csv $*`
     echo "KB = $n_bytes / 1000"
     KB=`echo "$n_bytes 1000" | awk '{print int($1 / $2 + 0.5)}'`
-    echo "./speed $csv_file KB=$KB $*"
-    ./speed $csv_file KB=$KB $*
+    echo "$speed_program $csv_file KB=$KB $*"
+    $speed_program $csv_file KB=$KB $*
 }
 # --------------------------------------------------------------------------
 if [ "$0" != 'bin/run_speed.sh' ]
@@ -103,7 +104,7 @@ cat << EOF
 usage: bin/run_speed.sh name build_type [--correct]
 
 Runs speed tests possible combinations of options except for --correct.
-This creates the file build/src/speed/name-yymmdd.csv with results
+This creates the file csv/name-yymmdd.csv with results
 where mm is the current month and add is the current day.
 The build_type must be debug or release.
 If --correct is present, the --correct option is included in the speed runs.
@@ -116,18 +117,22 @@ correct="$3"
 # --------------------------------------------------------------------------
 yymmdd=`date +%y%m%d`
 csv_file="$name-$yymmdd.csv"
-if [ -e build/src/speed/$csv_file ]
+if [ -e csv/$csv_file ]
 then
     echo 'bin/run_speed.sh: The output file already exists, remove it ?'
-    echo "    rm build/src/speed/$csv_file"
+    echo "    rm csv/$csv_file"
     exit 1
 fi
 # --------------------------------------------------------------------------
 # set build_type as specified at top of this file
 sed -i bin/run_cmake.sh -e "s|^build_type=.*|build_type='$build_type'|"
+# configure
 bin/run_cmake.sh
-cd build/src/speed
+# make speed
+cd build
 make speed
+# set csv to be the working directory
+cd ../csv
 # --------------------------------------------------------------------------
 # set memory limits
 #

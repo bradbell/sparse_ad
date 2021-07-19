@@ -19,6 +19,9 @@
 /sphinx/xsrst
 /sphinx/_build
 #
+# directory containing csv result files
+/csv/
+#
 # new directories (used like git cache)
 /new/
 /new.*/
