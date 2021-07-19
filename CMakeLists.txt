@@ -7,7 +7,7 @@
 #
 CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 PROJECT(sparsity_paper)
-SET(sparsity_paper_version "20210718")
+SET(sparsity_paper_version "20210719")
 #
 # command line definitions
 SET(cmd_define_list
