@@ -8,6 +8,7 @@
     wget
     omhelp
     gitignore
+    py
 }
 
 Changes and Additions to sparse_ad
@@ -15,6 +16,10 @@ Changes and Additions to sparse_ad
 
 2021
 ****
+
+07-20
+=====
+Add the :ref:`csv_summary.py<csv_summary_py>` program.
 
 07-19
 =====

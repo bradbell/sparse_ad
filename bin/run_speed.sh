@@ -53,7 +53,7 @@ implement_list='adolc cppad subgraph' # without code generation
 # {xsrst_code}
 # This choice is in ``bin/run_speed.sh`` and can be changed.
 # Note that the ``cppadcg`` and ``subcg`` choices run the derivative code
-# through a compiler before using it and the compliation can take a long time.
+# through a compiler before using it and the compilation can take a long time.
 #
 # Problem List
 # ************
@@ -266,6 +266,7 @@ done
 done
 #
 list='massif.err massif.out massif.tmp sparse_jac_val.so sparse_hes_val.so'
+list="$list dummy.csv"
 for file in $list
 do
     if [ -e $file ]

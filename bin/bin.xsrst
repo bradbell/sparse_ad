@@ -24,6 +24,7 @@ Children
     bin/c2hpp.py
     bin/csv2tex.py
     bin/run_speed.sh
+    bin/csv_summary.py
 }
 
 {xsrst_end bin}
