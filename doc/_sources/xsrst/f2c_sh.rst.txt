@@ -13,11 +13,8 @@ f2c_sh
 
 Create a C Version of a Fortran File
 ####################################
-- :ref:`f2c_sh.syntax`
-- :ref:`f2c_sh.working_directory`
-- :ref:`f2c_sh.dir,_name`
-- :ref:`f2c_sh.result`
-- :ref:`f2c_sh.example`
+.. contents::
+   :local:
 
 .. meta::
    :keywords: syntax

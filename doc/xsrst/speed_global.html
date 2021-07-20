@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="speed_global, speed, program, global, variables" name="keywords" />
@@ -25,18 +26,12 @@
   
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
   
   
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -49,6 +44,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="speed_setup" href="speed_setup.html" />
@@ -66,7 +65,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> sparse_ad
+            <a href="../index.html" class="icon icon-home"> sparse_ad
           
 
           
@@ -89,7 +88,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -120,7 +118,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -159,7 +156,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html">Docs</a> &raquo;</li>
         
           <li><a href="sparse_ad.html">sparse_ad</a> &raquo;</li>
         
@@ -191,95 +188,95 @@
 \newcommand{\R}[1]{ {\rm #1} }\]</div>
 <div class="section" id="speed-program-global-variables">
 <span id="id1"></span><h2>Speed Program Global Variables<a class="headerlink" href="#speed-program-global-variables" title="Permalink to this headline">¶</a></h2>
+<div class="contents local topic" id="contents">
 <ul class="simple">
-<li><dl class="simple">
-<dt><a class="reference internal" href="#speed-global-initialization"><span class="std std-ref">Initialization</span></a></dt><dd><ul>
-<li><p><a class="reference internal" href="#speed-global-initialization-global-problem-ptr"><span class="std std-ref">global_problem_ptr</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-global-initialization-global-size"><span class="std std-ref">global_size</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-global-initialization-global-colpack"><span class="std std-ref">global_colpack</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-global-initialization-global-indirect"><span class="std std-ref">global_indirect</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-global-initialization-global-optimize"><span class="std std-ref">global_optimize</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-global-initialization-global-setup"><span class="std std-ref">global_setup</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-global-initialization-global-reverse"><span class="std std-ref">global_reverse</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-global-initialization-global-onepass"><span class="std std-ref">global_onepass</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-global-initialization-global-correct"><span class="std std-ref">global_correct</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-global-initialization-global-x"><span class="std std-ref">global_x</span></a></p></li>
+<li><p><a class="reference internal" href="#initialization" id="id2">Initialization</a></p>
+<ul>
+<li><p><a class="reference internal" href="#global-problem-ptr" id="id3">global_problem_ptr</a></p></li>
+<li><p><a class="reference internal" href="#global-size" id="id4">global_size</a></p></li>
+<li><p><a class="reference internal" href="#global-colpack" id="id5">global_colpack</a></p></li>
+<li><p><a class="reference internal" href="#global-indirect" id="id6">global_indirect</a></p></li>
+<li><p><a class="reference internal" href="#global-optimize" id="id7">global_optimize</a></p></li>
+<li><p><a class="reference internal" href="#global-setup" id="id8">global_setup</a></p></li>
+<li><p><a class="reference internal" href="#global-reverse" id="id9">global_reverse</a></p></li>
+<li><p><a class="reference internal" href="#global-onepass" id="id10">global_onepass</a></p></li>
+<li><p><a class="reference internal" href="#global-correct" id="id11">global_correct</a></p></li>
+<li><p><a class="reference internal" href="#global-x" id="id12">global_x</a></p></li>
 </ul>
-</dd>
-</dl>
 </li>
-<li><p><a class="reference internal" href="#speed-global-global-nnz"><span class="std std-ref">global_nnz</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-global-global-correct-ok"><span class="std std-ref">global_correct_ok</span></a></p></li>
+<li><p><a class="reference internal" href="#global-nnz" id="id13">global_nnz</a></p></li>
+<li><p><a class="reference internal" href="#global-correct-ok" id="id14">global_correct_ok</a></p></li>
 </ul>
+</div>
 <div class="section" id="initialization">
-<span id="speed-global-initialization"></span><span id="index-1"></span><h3>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h3>
+<span id="speed-global-initialization"></span><span id="index-1"></span><h3><a class="toc-backref" href="#id2">Initialization</a><a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h3>
 <p>The following globals are set by the speed initialization routine
 before any other subroutines are called.</p>
 <div class="section" id="global-problem-ptr">
-<span id="speed-global-initialization-global-problem-ptr"></span><span id="index-2"></span><h4>global_problem_ptr<a class="headerlink" href="#global-problem-ptr" title="Permalink to this headline">¶</a></h4>
+<span id="speed-global-initialization-global-problem-ptr"></span><span id="index-2"></span><h4><a class="toc-backref" href="#id3">global_problem_ptr</a><a class="headerlink" href="#global-problem-ptr" title="Permalink to this headline">¶</a></h4>
 <p>minpack2 representation of the problem:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">fun_base</span><span class="o">*</span> <span class="n">global_problem_ptr</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="global-size">
-<span id="speed-global-initialization-global-size"></span><span id="index-3"></span><h4>global_size<a class="headerlink" href="#global-size" title="Permalink to this headline">¶</a></h4>
+<span id="speed-global-initialization-global-size"></span><span id="index-3"></span><h4><a class="toc-backref" href="#id4">global_size</a><a class="headerlink" href="#global-size" title="Permalink to this headline">¶</a></h4>
 <p>size for this problem:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">size_t</span> <span class="n">global_size</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="global-colpack">
-<span id="speed-global-initialization-global-colpack"></span><span id="index-4"></span><h4>global_colpack<a class="headerlink" href="#global-colpack" title="Permalink to this headline">¶</a></h4>
+<span id="speed-global-initialization-global-colpack"></span><span id="index-4"></span><h4><a class="toc-backref" href="#id5">global_colpack</a><a class="headerlink" href="#global-colpack" title="Permalink to this headline">¶</a></h4>
 <p>use colpack coloring:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">global_colpack</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="global-indirect">
-<span id="speed-global-initialization-global-indirect"></span><span id="index-5"></span><h4>global_indirect<a class="headerlink" href="#global-indirect" title="Permalink to this headline">¶</a></h4>
+<span id="speed-global-initialization-global-indirect"></span><span id="index-5"></span><h4><a class="toc-backref" href="#id6">global_indirect</a><a class="headerlink" href="#global-indirect" title="Permalink to this headline">¶</a></h4>
 <p>use indirect computation</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">global_indirect</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="global-optimize">
-<span id="speed-global-initialization-global-optimize"></span><span id="index-6"></span><h4>global_optimize<a class="headerlink" href="#global-optimize" title="Permalink to this headline">¶</a></h4>
+<span id="speed-global-initialization-global-optimize"></span><span id="index-6"></span><h4><a class="toc-backref" href="#id7">global_optimize</a><a class="headerlink" href="#global-optimize" title="Permalink to this headline">¶</a></h4>
 <p>was this AD function optimized</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">global_optimize</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="global-setup">
-<span id="speed-global-initialization-global-setup"></span><span id="index-7"></span><h4>global_setup<a class="headerlink" href="#global-setup" title="Permalink to this headline">¶</a></h4>
+<span id="speed-global-initialization-global-setup"></span><span id="index-7"></span><h4><a class="toc-backref" href="#id8">global_setup</a><a class="headerlink" href="#global-setup" title="Permalink to this headline">¶</a></h4>
 <p>is taping of function AD operations included in timing</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">global_setup</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="global-reverse">
-<span id="speed-global-initialization-global-reverse"></span><span id="index-8"></span><h4>global_reverse<a class="headerlink" href="#global-reverse" title="Permalink to this headline">¶</a></h4>
+<span id="speed-global-initialization-global-reverse"></span><span id="index-8"></span><h4><a class="toc-backref" href="#id9">global_reverse</a><a class="headerlink" href="#global-reverse" title="Permalink to this headline">¶</a></h4>
 <p>are we using reverse mode (otherwise forward mode)</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">global_reverse</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="global-onepass">
-<span id="speed-global-initialization-global-onepass"></span><span id="index-9"></span><h4>global_onepass<a class="headerlink" href="#global-onepass" title="Permalink to this headline">¶</a></h4>
+<span id="speed-global-initialization-global-onepass"></span><span id="index-9"></span><h4><a class="toc-backref" href="#id10">global_onepass</a><a class="headerlink" href="#global-onepass" title="Permalink to this headline">¶</a></h4>
 <p>are we using one pass of the tape to compute entire Jacobian</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">global_onepass</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="global-correct">
-<span id="speed-global-initialization-global-correct"></span><span id="index-10"></span><h4>global_correct<a class="headerlink" href="#global-correct" title="Permalink to this headline">¶</a></h4>
+<span id="speed-global-initialization-global-correct"></span><span id="index-10"></span><h4><a class="toc-backref" href="#id11">global_correct</a><a class="headerlink" href="#global-correct" title="Permalink to this headline">¶</a></h4>
 <p>are we checking for correctness and result of check</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">global_correct</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="global-x">
-<span id="speed-global-initialization-global-x"></span><span id="index-11"></span><h4>global_x<a class="headerlink" href="#global-x" title="Permalink to this headline">¶</a></h4>
+<span id="speed-global-initialization-global-x"></span><span id="index-11"></span><h4><a class="toc-backref" href="#id12">global_x</a><a class="headerlink" href="#global-x" title="Permalink to this headline">¶</a></h4>
 <p>argument value at which we are evaluation function and Jacobian</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">d_vector</span> <span class="n">global_x</span><span class="p">;</span>
 </pre></div>
@@ -287,7 +284,7 @@ before any other subroutines are called.</p>
 </div>
 </div>
 <div class="section" id="global-nnz">
-<span id="speed-global-global-nnz"></span><span id="index-12"></span><h3>global_nnz<a class="headerlink" href="#global-nnz" title="Permalink to this headline">¶</a></h3>
+<span id="speed-global-global-nnz"></span><span id="index-12"></span><h3><a class="toc-backref" href="#id13">global_nnz</a><a class="headerlink" href="#global-nnz" title="Permalink to this headline">¶</a></h3>
 <p>This value, set at the end of every test, is the number of non-zeros
 int the sparsity pattern detected by the implementation:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">size_t</span> <span class="n">global_nnz</span><span class="p">;</span>
@@ -295,7 +292,7 @@ int the sparsity pattern detected by the implementation:</p>
 </div>
 </div>
 <div class="section" id="global-correct-ok">
-<span id="speed-global-global-correct-ok"></span><span id="index-13"></span><h3>global_correct_ok<a class="headerlink" href="#global-correct-ok" title="Permalink to this headline">¶</a></h3>
+<span id="speed-global-global-correct-ok"></span><span id="index-13"></span><h3><a class="toc-backref" href="#id14">global_correct_ok</a><a class="headerlink" href="#global-correct-ok" title="Permalink to this headline">¶</a></h3>
 <p>If <em>global_correct</em> is true this value is set at the end of every test
 and is true (fails) if the correctness test passes (fails):
 If <em>global_correct</em> is fails, this value is never set or used.</p>
@@ -328,19 +325,11 @@ If <em>global_correct</em> is fails, this value is never set or used.</p>
 
   <div role="contentinfo">
     <p>
-        
         &copy; Copyright 2020
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -351,6 +340,7 @@ If <em>global_correct</em> is fails, this value is never set or used.</p>
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

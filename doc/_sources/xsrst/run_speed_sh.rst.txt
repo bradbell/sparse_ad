@@ -13,13 +13,8 @@ run_speed_sh
 
 Run All the Jacobian and Hessian Speed Tests
 ############################################
-- :ref:`run_speed_sh.purpose`
-- :ref:`run_speed_sh.syntax`
-- :ref:`run_speed_sh.name`
-- :ref:`run_speed_sh.build_type`
-- :ref:`run_speed_sh.--correct`
-- :ref:`run_speed_sh.implementation_list`
-- :ref:`run_speed_sh.problem_list`
+.. contents::
+   :local:
 
 .. meta::
    :keywords: purpose
@@ -58,9 +53,9 @@ name
 ****
 The results for the speed tests are written to the file
 
-|tab| ``build/src/speed/``\ *name-mmdd*\ ``.csv``
+|tab| ``csv/``\ *name-yymmdd*\ ``.csv``
 
-where *mmdd** is the current month and day.
+where *yymmdd** is the current year, month and day.
 
 .. meta::
    :keywords: build_type
@@ -106,7 +101,9 @@ The code below selects which
     implement_list='adolc cppad subgraph cppadcg subcg'
     implement_list='adolc cppad subgraph' # without code generation
 
-This code is in ``bin/run_speed.sh`` and can be changed.
+This choice is in ``bin/run_speed.sh`` and can be changed.
+Note that the ``cppadcg`` and ``subcg`` choices run the derivative code
+through a compiler before using it and the compilation can take a long time.
 
 .. meta::
    :keywords: problem, list

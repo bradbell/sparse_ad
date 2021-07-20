@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="run_speed_sh, run, all, the, jacobian, and, hessian, speed, tests" name="keywords" />
@@ -19,18 +20,12 @@
   
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
   
   
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -43,9 +38,13 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="typedef_hpp" href="typedef_hpp.html" />
+    <link rel="next" title="csv_summary_py" href="csv_summary_py.html" />
     <link rel="prev" title="csv2tex_py" href="csv2tex_py.html" /> 
 </head>
 
@@ -60,7 +59,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> sparse_ad
+            <a href="../index.html" class="icon icon-home"> sparse_ad
           
 
           
@@ -83,7 +82,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -103,6 +101,7 @@
 <li class="toctree-l3"><a class="reference internal" href="c2hpp_py.html">c2hpp_py</a></li>
 <li class="toctree-l3"><a class="reference internal" href="csv2tex_py.html">csv2tex_py</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">run_speed_sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csv_summary_py.html">csv_summary_py</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="typedef_hpp.html">typedef_hpp</a></li>
@@ -116,7 +115,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -155,7 +153,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html">Docs</a> &raquo;</li>
         
           <li><a href="sparse_ad.html">sparse_ad</a> &raquo;</li>
         
@@ -187,60 +185,64 @@
 \newcommand{\R}[1]{ {\rm #1} }\]</div>
 <div class="section" id="run-all-the-jacobian-and-hessian-speed-tests">
 <span id="id1"></span><h2>Run All the Jacobian and Hessian Speed Tests<a class="headerlink" href="#run-all-the-jacobian-and-hessian-speed-tests" title="Permalink to this headline">¶</a></h2>
+<div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#run-speed-sh-purpose"><span class="std std-ref">Purpose</span></a></p></li>
-<li><p><a class="reference internal" href="#run-speed-sh-syntax"><span class="std std-ref">Syntax</span></a></p></li>
-<li><p><a class="reference internal" href="#run-speed-sh-name"><span class="std std-ref">name</span></a></p></li>
-<li><p><a class="reference internal" href="#run-speed-sh-build-type"><span class="std std-ref">build_type</span></a></p></li>
-<li><p><a class="reference internal" href="#run-speed-sh-correct"><span class="std std-ref">–correct</span></a></p></li>
-<li><p><a class="reference internal" href="#run-speed-sh-implementation-list"><span class="std std-ref">Implementation List</span></a></p></li>
-<li><p><a class="reference internal" href="#run-speed-sh-problem-list"><span class="std std-ref">Problem List</span></a></p></li>
+<li><p><a class="reference internal" href="#purpose" id="id2">Purpose</a></p></li>
+<li><p><a class="reference internal" href="#syntax" id="id3">Syntax</a></p></li>
+<li><p><a class="reference internal" href="#name" id="id4">name</a></p></li>
+<li><p><a class="reference internal" href="#build-type" id="id5">build_type</a></p></li>
+<li><p><a class="reference internal" href="#correct" id="id6">–correct</a></p></li>
+<li><p><a class="reference internal" href="#implementation-list" id="id7">Implementation List</a></p></li>
+<li><p><a class="reference internal" href="#problem-list" id="id8">Problem List</a></p></li>
 </ul>
+</div>
 <div class="section" id="purpose">
-<span id="run-speed-sh-purpose"></span><span id="index-1"></span><h3>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h3>
+<span id="run-speed-sh-purpose"></span><span id="index-1"></span><h3><a class="toc-backref" href="#id2">Purpose</a><a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="speed.html#id1"><span class="std std-ref">speed</span></a> program has many possible
 combinations of options.
 This script runs all the possible combinations
 and collects the results in one csv file.</p>
 </div>
 <div class="section" id="syntax">
-<span id="run-speed-sh-syntax"></span><span id="index-2"></span><h3>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
+<span id="run-speed-sh-syntax"></span><span id="index-2"></span><h3><a class="toc-backref" href="#id3">Syntax</a><a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">bin/run_speed.sh</span></code> <em>name</em> <em>build_type</em></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">bin/run_speed.sh</span></code> <em>name</em> <em>build_type</em> <code class="docutils literal notranslate"><span class="pre">--correct</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="name">
-<span id="run-speed-sh-name"></span><span id="index-3"></span><h3>name<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h3>
+<span id="run-speed-sh-name"></span><span id="index-3"></span><h3><a class="toc-backref" href="#id4">name</a><a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h3>
 <p>The results for the speed tests are written to the file</p>
-<p>        <code class="docutils literal notranslate"><span class="pre">build/src/speed/</span></code><em>name-mmdd</em><code class="docutils literal notranslate"><span class="pre">.csv</span></code></p>
-<p>where <em>mmdd*</em> is the current month and day.</p>
+<p>        <code class="docutils literal notranslate"><span class="pre">csv/</span></code><em>name-yymmdd</em><code class="docutils literal notranslate"><span class="pre">.csv</span></code></p>
+<p>where <em>yymmdd*</em> is the current year, month and day.</p>
 </div>
 <div class="section" id="build-type">
-<span id="run-speed-sh-build-type"></span><span id="index-4"></span><h3>build_type<a class="headerlink" href="#build-type" title="Permalink to this headline">¶</a></h3>
+<span id="run-speed-sh-build-type"></span><span id="index-4"></span><h3><a class="toc-backref" href="#id5">build_type</a><a class="headerlink" href="#build-type" title="Permalink to this headline">¶</a></h3>
 <p>This is either <code class="docutils literal notranslate"><span class="pre">debug</span></code> or release and determines which build
 is used to run the speed tests.
 The <code class="docutils literal notranslate"><span class="pre">debug</span></code> build is only intended for debugging and testing.</p>
 </div>
 <div class="section" id="correct">
-<span id="run-speed-sh-correct"></span><span id="index-5"></span><h3>–correct<a class="headerlink" href="#correct" title="Permalink to this headline">¶</a></h3>
+<span id="run-speed-sh-correct"></span><span id="index-5"></span><h3><a class="toc-backref" href="#id6">–correct</a><a class="headerlink" href="#correct" title="Permalink to this headline">¶</a></h3>
 <p>If <code class="docutils literal notranslate"><span class="pre">--correct</span></code> is present, the
 <a class="reference internal" href="speed.html#speed-option-list-correct"><span class="std std-ref">–correct</span></a> option is included
 for all the speed tests.
 This is only intended for correctness testing.</p>
 </div>
 <div class="section" id="implementation-list">
-<span id="run-speed-sh-implementation-list"></span><span id="index-6"></span><h3>Implementation List<a class="headerlink" href="#implementation-list" title="Permalink to this headline">¶</a></h3>
+<span id="run-speed-sh-implementation-list"></span><span id="index-6"></span><h3><a class="toc-backref" href="#id7">Implementation List</a><a class="headerlink" href="#implementation-list" title="Permalink to this headline">¶</a></h3>
 <p>The code below selects which
 <a class="reference internal" href="speed.html#speed-implement"><span class="std std-ref">implementations</span></a> are included:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">implement_list</span><span class="o">=</span><span class="s1">&#39;adolc cppad subgraph cppadcg subcg&#39;</span>
 <span class="nv">implement_list</span><span class="o">=</span><span class="s1">&#39;adolc cppad subgraph&#39;</span> <span class="c1"># without code generation</span>
 </pre></div>
 </div>
-<p>This code is in <code class="docutils literal notranslate"><span class="pre">bin/run_speed.sh</span></code> and can be changed.</p>
+<p>This choice is in <code class="docutils literal notranslate"><span class="pre">bin/run_speed.sh</span></code> and can be changed.
+Note that the <code class="docutils literal notranslate"><span class="pre">cppadcg</span></code> and <code class="docutils literal notranslate"><span class="pre">subcg</span></code> choices run the derivative code
+through a compiler before using it and the compilation can take a long time.</p>
 </div>
 <div class="section" id="problem-list">
-<span id="run-speed-sh-problem-list"></span><span id="index-7"></span><h3>Problem List<a class="headerlink" href="#problem-list" title="Permalink to this headline">¶</a></h3>
+<span id="run-speed-sh-problem-list"></span><span id="index-7"></span><h3><a class="toc-backref" href="#id8">Problem List</a><a class="headerlink" href="#problem-list" title="Permalink to this headline">¶</a></h3>
 <p>The code below selects which
 <a class="reference internal" href="speed.html#speed-problem"><span class="std std-ref">problems</span></a> are included:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">problem_list</span><span class="o">=</span><span class="s1">&#39;dficfj dierfj deptfg dgl1fg&#39;</span>
@@ -261,7 +263,7 @@ This is only intended for correctness testing.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="typedef_hpp.html" class="btn btn-neutral float-right" title="typedef_hpp" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="csv_summary_py.html" class="btn btn-neutral float-right" title="csv_summary_py" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="csv2tex_py.html" class="btn btn-neutral float-left" title="csv2tex_py" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -273,19 +275,11 @@ This is only intended for correctness testing.</p>
 
   <div role="contentinfo">
     <p>
-        
         &copy; Copyright 2020
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -296,6 +290,7 @@ This is only intended for correctness testing.</p>
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

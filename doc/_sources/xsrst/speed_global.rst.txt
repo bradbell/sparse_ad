@@ -13,19 +13,8 @@ speed_global
 
 Speed Program Global Variables
 ##############################
-- :ref:`speed_global.initialization`
-    - :ref:`speed_global.initialization.global_problem_ptr`
-    - :ref:`speed_global.initialization.global_size`
-    - :ref:`speed_global.initialization.global_colpack`
-    - :ref:`speed_global.initialization.global_indirect`
-    - :ref:`speed_global.initialization.global_optimize`
-    - :ref:`speed_global.initialization.global_setup`
-    - :ref:`speed_global.initialization.global_reverse`
-    - :ref:`speed_global.initialization.global_onepass`
-    - :ref:`speed_global.initialization.global_correct`
-    - :ref:`speed_global.initialization.global_x`
-- :ref:`speed_global.global_nnz`
-- :ref:`speed_global.global_correct_ok`
+.. contents::
+   :local:
 
 .. meta::
    :keywords: initialization

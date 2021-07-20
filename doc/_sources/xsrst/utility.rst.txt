@@ -2,6 +2,16 @@
 utility
 !!!!!!!
 
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   check_sparse
+   adolc2sparse_rcv
+   prt_sparse
+   upper_triangle
+   cppadcg_library
+
 .. include:: ../preamble.rst
 
 .. meta::
@@ -13,7 +23,8 @@ utility
 
 Utility Routines
 ################
-- :ref:`utility.children`
+.. contents::
+   :local:
 
 .. meta::
    :keywords: children
@@ -24,21 +35,12 @@ Utility Routines
 
 Children
 ********
-.. toctree::
-   :maxdepth: 1
-   :hidden:
 
-   check_sparse
-   adolc2sparse_rcv
-   prt_sparse
-   upper_triangle
-   cppadcg_library
-
-#. check_sparse: :ref:`check_sparse`
-#. adolc2sparse_rcv: :ref:`adolc2sparse_rcv`
-#. prt_sparse: :ref:`prt_sparse`
-#. upper_triangle: :ref:`upper_triangle`
-#. cppadcg_library: :ref:`cppadcg_library`
+-  :ref:`check_sparse`
+-  :ref:`adolc2sparse_rcv`
+-  :ref:`prt_sparse`
+-  :ref:`upper_triangle`
+-  :ref:`cppadcg_library`
 
 ----
 

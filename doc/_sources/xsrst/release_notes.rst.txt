@@ -13,12 +13,69 @@ release_notes
 
 Changes and Additions to sparse_ad
 ##################################
-- :ref:`release_notes.2020`
-    - :ref:`release_notes.2020.11-09`
-    - :ref:`release_notes.2020.08-01`
-    - :ref:`release_notes.2020.07-31`
-    - :ref:`release_notes.2020.07-29`
-    - :ref:`release_notes.2020.07-27`
+.. contents::
+   :local:
+
+.. meta::
+   :keywords: 2021
+
+.. index:: 2021
+
+.. _release_notes.2021:
+
+2021
+****
+
+.. meta::
+   :keywords: 07-20
+
+.. index:: 07-20
+
+.. _release_notes.2021.07-20:
+
+07-20
+=====
+Add the :ref:`csv_summary.py<csv_summary_py>` program.
+
+.. meta::
+   :keywords: 07-19
+
+.. index:: 07-19
+
+.. _release_notes.2021.07-19:
+
+07-19
+=====
+Change :ref:`run_speed.sh<run_speed_sh>` to write its output file in the
+``csv`` directory (instead of the ``build/src/speed`` directory).
+
+.. meta::
+   :keywords: 07-18
+
+.. index:: 07-18
+
+.. _release_notes.2021.07-18:
+
+07-18
+=====
+Change :ref:`run_speed.sh<run_speed_sh>` to use year, month, and day
+in csv file names (not just month and day).
+
+.. meta::
+   :keywords: 07-16
+
+.. index:: 07-16
+
+.. _release_notes.2021.07-16:
+
+07-16
+=====
+#. Fix ``bin/get_cppadcg.sh`` (check of CppAD version number was not working).
+#. Use temp for temporary file names in ``.gitignore`` (instead of junk).
+#. Make building documentation optional in ``bin/check_all.sh``
+   so that it is not necessary to have sphinx installed.
+#. Add comment about fact that cppadcg speed test take long time to compile;
+   see :ref:`run_speed_sh.implementation_list`.
 
 .. meta::
    :keywords: 2020

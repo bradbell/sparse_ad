@@ -13,20 +13,8 @@ speed_test
 
 Setup a Speed Test Problem
 ##########################
-- :ref:`speed_test.syntax`
-- :ref:`speed_test.prototype`
-    - :ref:`speed_test.prototype.jacobian`
-    - :ref:`speed_test.prototype.hessian`
-- :ref:`speed_test.purpose`
-- :ref:`speed_test.implement`
-- :ref:`speed_test.setup`
-- :ref:`speed_test.globals`
-    - :ref:`speed_test.globals.initialization`
-    - :ref:`speed_test.globals.m`
-    - :ref:`speed_test.globals.jacobian`
-    - :ref:`speed_test.globals.hessian`
-    - :ref:`speed_test.globals.global_nnz`
-    - :ref:`speed_test.globals.global_correct_ok`
+.. contents::
+   :local:
 
 .. meta::
    :keywords: syntax

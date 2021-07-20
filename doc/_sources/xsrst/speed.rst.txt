@@ -2,6 +2,15 @@
 speed
 !!!!!
 
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   speed_global
+   speed_setup
+   speed_test
+   speed_write_csv
+
 .. include:: ../preamble.rst
 
 .. meta::
@@ -13,38 +22,8 @@ speed
 
 Run a Jacobian or Hessian Speed Test
 ####################################
-- :ref:`speed.syntax`
-- :ref:`speed.name_k=value_k`
-- :ref:`speed.implement`
-    - :ref:`speed.implement.adolc`
-    - :ref:`speed.implement.cppad`
-    - :ref:`speed.implement.subgraph`
-    - :ref:`speed.implement.cppadcg`
-    - :ref:`speed.implement.subcg`
-- :ref:`speed.problem`
-    - :ref:`speed.problem.dficfj`
-    - :ref:`speed.problem.dierfj`
-    - :ref:`speed.problem.deptfg`
-    - :ref:`speed.problem.dgl1fg`
-- :ref:`speed.size`
-- :ref:`speed.option_list`
-    - :ref:`speed.option_list.--colpack`
-    - :ref:`speed.option_list.--indirect`
-    - :ref:`speed.option_list.--optimize`
-    - :ref:`speed.option_list.--setup`
-    - :ref:`speed.option_list.--reverse`
-    - :ref:`speed.option_list.--onepass`
-    - :ref:`speed.option_list.--correct`
-- :ref:`speed.csv_file`
-    - :ref:`speed.csv_file.name_k`
-    - :ref:`speed.csv_file.implement`
-    - :ref:`speed.csv_file.problem`
-    - :ref:`speed.csv_file.options`
-    - :ref:`speed.csv_file.n,_m`
-    - :ref:`speed.csv_file.nnz`
-    - :ref:`speed.csv_file.sec`
-- :ref:`speed.other_output`
-- :ref:`speed.children`
+.. contents::
+   :local:
 
 .. meta::
    :keywords: syntax
@@ -509,19 +488,11 @@ with status ``1`` .
 
 Children
 ********
-.. toctree::
-   :maxdepth: 1
-   :hidden:
 
-   speed_global
-   speed_setup
-   speed_test
-   speed_write_csv
-
-#. speed_global: :ref:`speed_global`
-#. speed_setup: :ref:`speed_setup`
-#. speed_test: :ref:`speed_test`
-#. speed_write_csv: :ref:`speed_write_csv`
+-  :ref:`speed_global`
+-  :ref:`speed_setup`
+-  :ref:`speed_test`
+-  :ref:`speed_write_csv`
 
 ----
 

@@ -13,11 +13,8 @@ prt_sparse
 
 Print A CppAD Sparsity Pattern or Sparse Matrix
 ###############################################
-- :ref:`prt_sparse.syntax`
-- :ref:`prt_sparse.prototype`
-- :ref:`prt_sparse.name`
-- :ref:`prt_sparse.pattern`
-- :ref:`prt_sparse.matrix`
+.. contents::
+   :local:
 
 .. meta::
    :keywords: syntax

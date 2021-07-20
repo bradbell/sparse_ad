@@ -13,31 +13,8 @@ fun_base_hpp
 
 Base Class For Test Function Objects
 ####################################
-- :ref:`fun_base_hpp.syntax`
-- :ref:`fun_base_hpp.purpose`
-- :ref:`fun_base_hpp.fun_obj`
-- :ref:`fun_base_hpp.constructor`
-- :ref:`fun_base_hpp.type_definitions`
-- :ref:`fun_base_hpp.start`
-    - :ref:`fun_base_hpp.start.x_out`
-    - :ref:`fun_base_hpp.start.n`
-- :ref:`fun_base_hpp.size_range`
-    - :ref:`fun_base_hpp.size_range.m`
-- :ref:`fun_base_hpp.fun`
-    - :ref:`fun_base_hpp.fun.x`
-    - :ref:`fun_base_hpp.fun.fun_out`
-- :ref:`fun_base_hpp.jac`
-    - :ref:`fun_base_hpp.jac.ok`
-    - :ref:`fun_base_hpp.jac.x`
-    - :ref:`fun_base_hpp.jac.jac_out`
-- :ref:`fun_base_hpp.grad`
-    - :ref:`fun_base_hpp.grad.ok`
-    - :ref:`fun_base_hpp.grad.x`
-    - :ref:`fun_base_hpp.grad.grad_out`
-- :ref:`fun_base_hpp.hes`
-    - :ref:`fun_base_hpp.hes.ok`
-    - :ref:`fun_base_hpp.hes.x`
-    - :ref:`fun_base_hpp.hes.hes_out`
+.. contents::
+   :local:
 
 .. meta::
    :keywords: syntax
@@ -118,7 +95,7 @@ This function returns the standard starting point for point for optimizing
 the function. It has the following prototype
 
 .. literalinclude:: ../../src/fun_obj/fun_base.hpp
-    :lines: 225-225
+    :lines: 224-224
     :language: cpp
 
 .. meta::
@@ -155,7 +132,7 @@ size_range
 This function has the following prototype
 
 .. literalinclude:: ../../src/fun_obj/fun_base.hpp
-    :lines: 229-229
+    :lines: 228-228
     :language: cpp
 
 The corresponding virtual function must be defined by the derived class.
@@ -184,7 +161,7 @@ These functions function evaluate :math:`f(x)`.
 They have the following prototypes
 
 .. literalinclude:: ../../src/fun_obj/fun_base.hpp
-    :lines: 233-236
+    :lines: 232-235
     :language: cpp
 
 The corresponding virtual functions must be defined by the derived class.
@@ -229,7 +206,7 @@ This function evaluates :math:`f'(x)`
 It has the following prototype
 
 .. literalinclude:: ../../src/fun_obj/fun_base.hpp
-    :lines: 240-240
+    :lines: 239-239
     :language: cpp
 
 The corresponding virtual functions must be defined by the derived class.
@@ -292,7 +269,7 @@ This function evaluates :math:`f'(x)`.
 It has the following prototype
 
 .. literalinclude:: ../../src/fun_obj/fun_base.hpp
-    :lines: 244-244
+    :lines: 243-243
     :language: cpp
 
 The corresponding virtual functions must be defined by the derived class.
@@ -354,7 +331,7 @@ This function evaluates :math:`f^{(2)}(x)`.
 It has the following prototype
 
 .. literalinclude:: ../../src/fun_obj/fun_base.hpp
-    :lines: 248-248
+    :lines: 247-247
     :language: cpp
 
 The corresponding virtual functions must be defined by the derived class.

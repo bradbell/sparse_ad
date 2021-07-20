@@ -13,12 +13,8 @@ c2hpp_py
 
 Create a C++ Template Version of an f2c File
 ############################################
-- :ref:`c2hpp_py.syntax`
-- :ref:`c2hpp_py.working_directory`
-- :ref:`c2hpp_py.dir,_name`
-- :ref:`c2hpp_py.result`
-- :ref:`c2hpp_py.warning`
-- :ref:`c2hpp_py.example`
+.. contents::
+   :local:
 
 .. meta::
    :keywords: syntax

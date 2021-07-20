@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="speed_write_csv, writes, one, row, of, the, speed, csv, output, file" name="keywords" />
@@ -22,18 +23,12 @@
   
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
   
   
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -46,6 +41,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="bin" href="bin.html" />
@@ -63,7 +62,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> sparse_ad
+            <a href="../index.html" class="icon icon-home"> sparse_ad
           
 
           
@@ -86,7 +85,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -117,7 +115,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -156,7 +153,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html">Docs</a> &raquo;</li>
         
           <li><a href="sparse_ad.html">sparse_ad</a> &raquo;</li>
         
@@ -188,25 +185,25 @@
 \newcommand{\R}[1]{ {\rm #1} }\]</div>
 <div class="section" id="writes-one-row-of-the-speed-csv-output-file">
 <span id="id1"></span><h2>Writes One Row of the Speed Csv Output File<a class="headerlink" href="#writes-one-row-of-the-speed-csv-output-file" title="Permalink to this headline">¶</a></h2>
+<div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#speed-write-csv-syntax"><span class="std std-ref">Syntax</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-write-csv-prototype"><span class="std std-ref">Prototype</span></a></p></li>
-<li><dl class="simple">
-<dt><a class="reference internal" href="#speed-write-csv-csv-file"><span class="std std-ref">csv_file</span></a></dt><dd><ul>
-<li><p><a class="reference internal" href="#speed-write-csv-csv-file-header"><span class="std std-ref">header</span></a></p></li>
+<li><p><a class="reference internal" href="#syntax" id="id2">Syntax</a></p></li>
+<li><p><a class="reference internal" href="#prototype" id="id3">Prototype</a></p></li>
+<li><p><a class="reference internal" href="#csv-file" id="id4">csv_file</a></p>
+<ul>
+<li><p><a class="reference internal" href="#header" id="id5">header</a></p></li>
 </ul>
-</dd>
-</dl>
 </li>
-<li><p><a class="reference internal" href="#speed-write-csv-name-value"><span class="std std-ref">name, value</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-write-csv-implement"><span class="std std-ref">implement</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-write-csv-problem"><span class="std std-ref">problem</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-write-csv-options"><span class="std std-ref">options</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-write-csv-n-m-nnz"><span class="std std-ref">n, m, nnz</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-write-csv-sec"><span class="std std-ref">sec</span></a></p></li>
+<li><p><a class="reference internal" href="#name-value" id="id6">name, value</a></p></li>
+<li><p><a class="reference internal" href="#implement" id="id7">implement</a></p></li>
+<li><p><a class="reference internal" href="#problem" id="id8">problem</a></p></li>
+<li><p><a class="reference internal" href="#options" id="id9">options</a></p></li>
+<li><p><a class="reference internal" href="#n-m-nnz" id="id10">n, m, nnz</a></p></li>
+<li><p><a class="reference internal" href="#sec" id="id11">sec</a></p></li>
 </ul>
+</div>
 <div class="section" id="syntax">
-<span id="speed-write-csv-syntax"></span><span id="index-1"></span><h3>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
+<span id="speed-write-csv-syntax"></span><span id="index-1"></span><h3><a class="toc-backref" href="#id2">Syntax</a><a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><code class="docutils literal notranslate"><span class="pre">write_csv(</span></code></div>
 <div class="line">        <em>csv_file ,</em></div>
@@ -229,7 +226,7 @@
 </div>
 </div>
 <div class="section" id="prototype">
-<span id="speed-write-csv-prototype"></span><span id="index-2"></span><h3>Prototype<a class="headerlink" href="#prototype" title="Permalink to this headline">¶</a></h3>
+<span id="speed-write-csv-prototype"></span><span id="index-2"></span><h3><a class="toc-backref" href="#id3">Prototype</a><a class="headerlink" href="#prototype" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">write_csv</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span>                <span class="n">csv_file</span>   <span class="p">,</span>
     <span class="k">const</span> <span class="n">CppAD</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">name</span>       <span class="p">,</span>
@@ -251,14 +248,14 @@
 </div>
 </div>
 <div class="section" id="csv-file">
-<span id="speed-write-csv-csv-file"></span><span id="index-3"></span><h3>csv_file<a class="headerlink" href="#csv-file" title="Permalink to this headline">¶</a></h3>
+<span id="speed-write-csv-csv-file"></span><span id="index-3"></span><h3><a class="toc-backref" href="#id4">csv_file</a><a class="headerlink" href="#csv-file" title="Permalink to this headline">¶</a></h3>
 <p>is the name of the csv file.
 If the file does not exist the header is written to the file.
 Otherwise, the header is checked to make sure it is as expected.
 The data corresponding to this call is written as one row at the
 end of the file.</p>
 <div class="section" id="header">
-<span id="speed-write-csv-csv-file-header"></span><span id="index-4"></span><h4>header<a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h4>
+<span id="speed-write-csv-csv-file-header"></span><span id="index-4"></span><h4><a class="toc-backref" href="#id5">header</a><a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h4>
 <p>The header for the csv file is its first row.
 The header row begins with</p>
 <div class="line-block">
@@ -274,21 +271,21 @@ The header row ends with</p>
 </div>
 </div>
 <div class="section" id="name-value">
-<span id="speed-write-csv-name-value"></span><span id="index-5"></span><h3>name, value<a class="headerlink" href="#name-value" title="Permalink to this headline">¶</a></h3>
+<span id="speed-write-csv-name-value"></span><span id="index-5"></span><h3><a class="toc-backref" href="#id6">name, value</a><a class="headerlink" href="#name-value" title="Permalink to this headline">¶</a></h3>
 <p>The vectors <em>name</em> and <em>value</em> have the same size.
 The <em>i</em>-th element of <em>name</em> is the header entry
 corresponding to the <em>i</em>-th element of <em>value</em> .</p>
 </div>
 <div class="section" id="implement">
-<span id="speed-write-csv-implement"></span><span id="index-6"></span><h3>implement<a class="headerlink" href="#implement" title="Permalink to this headline">¶</a></h3>
+<span id="speed-write-csv-implement"></span><span id="index-6"></span><h3><a class="toc-backref" href="#id7">implement</a><a class="headerlink" href="#implement" title="Permalink to this headline">¶</a></h3>
 <p>This is the value written in the <em>implement</em> column.</p>
 </div>
 <div class="section" id="problem">
-<span id="speed-write-csv-problem"></span><span id="index-7"></span><h3>problem<a class="headerlink" href="#problem" title="Permalink to this headline">¶</a></h3>
+<span id="speed-write-csv-problem"></span><span id="index-7"></span><h3><a class="toc-backref" href="#id8">problem</a><a class="headerlink" href="#problem" title="Permalink to this headline">¶</a></h3>
 <p>This is the value written in the problem column.</p>
 </div>
 <div class="section" id="options">
-<span id="speed-write-csv-options"></span><span id="index-8"></span><h3>options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
+<span id="speed-write-csv-options"></span><span id="index-8"></span><h3><a class="toc-backref" href="#id9">options</a><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
 <p>The option arguments are
 <em>colpack</em> ,
 <em>indirect</em> ,
@@ -301,12 +298,12 @@ For each option, if it is true (false)
 the string <code class="docutils literal notranslate"><span class="pre">true</span></code> ( <code class="docutils literal notranslate"><span class="pre">false</span></code> ) is written in the corresponding column.</p>
 </div>
 <div class="section" id="n-m-nnz">
-<span id="speed-write-csv-n-m-nnz"></span><span id="index-9"></span><h3>n, m, nnz<a class="headerlink" href="#n-m-nnz" title="Permalink to this headline">¶</a></h3>
+<span id="speed-write-csv-n-m-nnz"></span><span id="index-9"></span><h3><a class="toc-backref" href="#id10">n, m, nnz</a><a class="headerlink" href="#n-m-nnz" title="Permalink to this headline">¶</a></h3>
 <p>These values are converted to strings and written in
 the corresponding columns.</p>
 </div>
 <div class="section" id="sec">
-<span id="speed-write-csv-sec"></span><span id="index-10"></span><h3>sec<a class="headerlink" href="#sec" title="Permalink to this headline">¶</a></h3>
+<span id="speed-write-csv-sec"></span><span id="index-10"></span><h3><a class="toc-backref" href="#id11">sec</a><a class="headerlink" href="#sec" title="Permalink to this headline">¶</a></h3>
 <p>This value is converted to a string using fixed point notation
 and ten digits after the decimal point.</p>
 <hr class="docutils" />
@@ -335,19 +332,11 @@ and ten digits after the decimal point.</p>
 
   <div role="contentinfo">
     <p>
-        
         &copy; Copyright 2020
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -358,6 +347,7 @@ and ten digits after the decimal point.</p>
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

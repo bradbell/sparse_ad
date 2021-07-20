@@ -13,15 +13,8 @@ adolc2sparse_rcv
 
 Convert An Adolc Sparse Matrix to CppAD Form
 ############################################
-- :ref:`adolc2sparse_rcv.syntax`
-- :ref:`adolc2sparse_rcv.prototype`
-- :ref:`adolc2sparse_rcv.nr`
-- :ref:`adolc2sparse_rcv.nc`
-- :ref:`adolc2sparse_rcv.nnz`
-- :ref:`adolc2sparse_rcv.rind`
-- :ref:`adolc2sparse_rcv.cind`
-- :ref:`adolc2sparse_rcv.values`
-- :ref:`adolc2sparse_rcv.sparse_matrix`
+.. contents::
+   :local:
 
 .. meta::
    :keywords: syntax

@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="speed_setup, setup, a, speed, test, problem" name="keywords" />
@@ -22,18 +23,12 @@
   
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
   
   
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -46,6 +41,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="speed_test" href="speed_test.html" />
@@ -63,7 +62,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> sparse_ad
+            <a href="../index.html" class="icon icon-home"> sparse_ad
           
 
           
@@ -86,7 +85,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -117,7 +115,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -156,7 +153,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html">Docs</a> &raquo;</li>
         
           <li><a href="sparse_ad.html">sparse_ad</a> &raquo;</li>
         
@@ -188,29 +185,29 @@
 \newcommand{\R}[1]{ {\rm #1} }\]</div>
 <div class="section" id="setup-a-speed-test-problem">
 <span id="id1"></span><h2>Setup a Speed Test Problem<a class="headerlink" href="#setup-a-speed-test-problem" title="Permalink to this headline">¶</a></h2>
+<div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#speed-setup-syntax"><span class="std std-ref">Syntax</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-setup-prototype"><span class="std std-ref">Prototype</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-setup-purpose"><span class="std std-ref">Purpose</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-setup-implement"><span class="std std-ref">implement</span></a></p></li>
-<li><dl class="simple">
-<dt><a class="reference internal" href="#speed-setup-globals"><span class="std std-ref">Globals</span></a></dt><dd><ul>
-<li><p><a class="reference internal" href="#speed-setup-globals-initialization"><span class="std std-ref">Initialization</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-setup-globals-m"><span class="std std-ref">m</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-setup-globals-hessian"><span class="std std-ref">Hessian</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-setup-globals-jacobian"><span class="std std-ref">Jacobian</span></a></p></li>
-<li><p><a class="reference internal" href="#speed-setup-globals-not-used"><span class="std std-ref">Not used</span></a></p></li>
+<li><p><a class="reference internal" href="#syntax" id="id2">Syntax</a></p></li>
+<li><p><a class="reference internal" href="#prototype" id="id3">Prototype</a></p></li>
+<li><p><a class="reference internal" href="#purpose" id="id4">Purpose</a></p></li>
+<li><p><a class="reference internal" href="#implement" id="id5">implement</a></p></li>
+<li><p><a class="reference internal" href="#globals" id="id6">Globals</a></p>
+<ul>
+<li><p><a class="reference internal" href="#initialization" id="id7">Initialization</a></p></li>
+<li><p><a class="reference internal" href="#m" id="id8">m</a></p></li>
+<li><p><a class="reference internal" href="#hessian" id="id9">Hessian</a></p></li>
+<li><p><a class="reference internal" href="#jacobian" id="id10">Jacobian</a></p></li>
+<li><p><a class="reference internal" href="#not-used" id="id11">Not used</a></p></li>
 </ul>
-</dd>
-</dl>
 </li>
 </ul>
+</div>
 <div class="section" id="syntax">
-<span id="speed-setup-syntax"></span><span id="index-1"></span><h3>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
+<span id="speed-setup-syntax"></span><span id="index-1"></span><h3><a class="toc-backref" href="#id2">Syntax</a><a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">setup_</span></code><em>implement()</em></p>
 </div>
 <div class="section" id="prototype">
-<span id="speed-setup-prototype"></span><span id="index-2"></span><h3>Prototype<a class="headerlink" href="#prototype" title="Permalink to this headline">¶</a></h3>
+<span id="speed-setup-prototype"></span><span id="index-2"></span><h3><a class="toc-backref" href="#id3">Prototype</a><a class="headerlink" href="#prototype" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">extern</span> <span class="kt">void</span> <span class="nf">setup_adolc</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 <span class="k">extern</span> <span class="kt">void</span> <span class="nf">setup_cppad</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 <span class="k">extern</span> <span class="kt">void</span> <span class="nf">setup_subgraph</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
@@ -220,13 +217,13 @@
 </div>
 </div>
 <div class="section" id="purpose">
-<span id="speed-setup-purpose"></span><span id="index-3"></span><h3>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h3>
+<span id="speed-setup-purpose"></span><span id="index-3"></span><h3><a class="toc-backref" href="#id4">Purpose</a><a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h3>
 <p>Do as much of the calculation as possible, excluding knowing
 the argument value <span class="math notranslate nohighlight">\(x\)</span> at which we are evaluating the Jacobian or
 Hessian of <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
 </div>
 <div class="section" id="implement">
-<span id="speed-setup-implement"></span><span id="index-4"></span><h3>implement<a class="headerlink" href="#implement" title="Permalink to this headline">¶</a></h3>
+<span id="speed-setup-implement"></span><span id="index-4"></span><h3><a class="toc-backref" href="#id5">implement</a><a class="headerlink" href="#implement" title="Permalink to this headline">¶</a></h3>
 <p>is one of the following
 <code class="docutils literal notranslate"><span class="pre">adolc</span></code> ,
 <code class="docutils literal notranslate"><span class="pre">cppad</span></code> ,
@@ -235,32 +232,32 @@ Hessian of <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
 <code class="docutils literal notranslate"><span class="pre">subcg</span></code> .</p>
 </div>
 <div class="section" id="globals">
-<span id="speed-setup-globals"></span><span id="index-5"></span><h3>Globals<a class="headerlink" href="#globals" title="Permalink to this headline">¶</a></h3>
+<span id="speed-setup-globals"></span><span id="index-5"></span><h3><a class="toc-backref" href="#id6">Globals</a><a class="headerlink" href="#globals" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="initialization">
-<span id="speed-setup-globals-initialization"></span><span id="index-6"></span><h4>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h4>
+<span id="speed-setup-globals-initialization"></span><span id="index-6"></span><h4><a class="toc-backref" href="#id7">Initialization</a><a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h4>
 <p>The <a class="reference internal" href="speed_global.html#speed-global-initialization"><span class="std std-ref">initialization</span></a> global variables
 are inputs and not changed by the setup routines.</p>
 </div>
 <div class="section" id="m">
-<span id="speed-setup-globals-m"></span><span id="index-7"></span><h4>m<a class="headerlink" href="#m" title="Permalink to this headline">¶</a></h4>
+<span id="speed-setup-globals-m"></span><span id="index-7"></span><h4><a class="toc-backref" href="#id8">m</a><a class="headerlink" href="#m" title="Permalink to this headline">¶</a></h4>
 <p>We use <em>m</em> for the value <code class="docutils literal notranslate"><span class="pre">global_problem_ptr-&gt;size_range()</span></code>
 see <a class="reference internal" href="speed_global.html#speed-global-initialization-global-problem-ptr"><span class="std std-ref">global_problem_ptr</span></a>.
 This is the dimension of the range space for <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
 </div>
 <div class="section" id="hessian">
-<span id="speed-setup-globals-hessian"></span><span id="index-8"></span><h4>Hessian<a class="headerlink" href="#hessian" title="Permalink to this headline">¶</a></h4>
+<span id="speed-setup-globals-hessian"></span><span id="index-8"></span><h4><a class="toc-backref" href="#id9">Hessian</a><a class="headerlink" href="#hessian" title="Permalink to this headline">¶</a></h4>
 <p>A problem is a Hessian test case if <em>m = 1</em> .
 In the case <code class="docutils literal notranslate"><span class="pre">test_</span></code><em>implement</em><code class="docutils literal notranslate"><span class="pre">_hes</span></code> will be called to determine
 the speed of evaluation of the Hessian.</p>
 </div>
 <div class="section" id="jacobian">
-<span id="speed-setup-globals-jacobian"></span><span id="index-9"></span><h4>Jacobian<a class="headerlink" href="#jacobian" title="Permalink to this headline">¶</a></h4>
+<span id="speed-setup-globals-jacobian"></span><span id="index-9"></span><h4><a class="toc-backref" href="#id10">Jacobian</a><a class="headerlink" href="#jacobian" title="Permalink to this headline">¶</a></h4>
 <p>A problem is a Jacobian test case if <em>m &gt; 1</em> .
 In the case <code class="docutils literal notranslate"><span class="pre">test_</span></code><em>implement</em><code class="docutils literal notranslate"><span class="pre">_jac</span></code> will be called to determine
 the speed of evaluation of the Jacobian.</p>
 </div>
 <div class="section" id="not-used">
-<span id="speed-setup-globals-not-used"></span><span id="index-10"></span><h4>Not used<a class="headerlink" href="#not-used" title="Permalink to this headline">¶</a></h4>
+<span id="speed-setup-globals-not-used"></span><span id="index-10"></span><h4><a class="toc-backref" href="#id11">Not used</a><a class="headerlink" href="#not-used" title="Permalink to this headline">¶</a></h4>
 <p><a class="reference internal" href="speed_global.html#speed-global-global-nnz"><span class="std std-ref">global_nnz</span></a> and
 <a class="reference internal" href="speed_global.html#speed-global-global-correct-ok"><span class="std std-ref">global_correct_ok</span></a>
 are not used by these routines.</p>
@@ -291,19 +288,11 @@ are not used by these routines.</p>
 
   <div role="contentinfo">
     <p>
-        
         &copy; Copyright 2020
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -314,6 +303,7 @@ are not used by these routines.</p>
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

@@ -13,16 +13,8 @@ speed_setup
 
 Setup a Speed Test Problem
 ##########################
-- :ref:`speed_setup.syntax`
-- :ref:`speed_setup.prototype`
-- :ref:`speed_setup.purpose`
-- :ref:`speed_setup.implement`
-- :ref:`speed_setup.globals`
-    - :ref:`speed_setup.globals.initialization`
-    - :ref:`speed_setup.globals.m`
-    - :ref:`speed_setup.globals.hessian`
-    - :ref:`speed_setup.globals.jacobian`
-    - :ref:`speed_setup.globals.not_used`
+.. contents::
+   :local:
 
 .. meta::
    :keywords: syntax

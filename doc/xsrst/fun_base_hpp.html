@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="fun_base_hpp, base, class, for, test, function, objects" name="keywords" />
@@ -37,18 +38,12 @@
   
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
   
   
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -61,6 +56,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="utility" href="utility.html" />
@@ -78,7 +77,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> sparse_ad
+            <a href="../index.html" class="icon icon-home"> sparse_ad
           
 
           
@@ -101,7 +100,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -126,7 +124,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -165,7 +162,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html">Docs</a> &raquo;</li>
         
           <li><a href="sparse_ad.html">sparse_ad</a> &raquo;</li>
         
@@ -195,65 +192,55 @@
 \newcommand{\R}[1]{ {\rm #1} }\]</div>
 <div class="section" id="base-class-for-test-function-objects">
 <span id="id1"></span><h2>Base Class For Test Function Objects<a class="headerlink" href="#base-class-for-test-function-objects" title="Permalink to this headline">¶</a></h2>
+<div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#fun-base-hpp-syntax"><span class="std std-ref">Syntax</span></a></p></li>
-<li><p><a class="reference internal" href="#fun-base-hpp-purpose"><span class="std std-ref">Purpose</span></a></p></li>
-<li><p><a class="reference internal" href="#fun-base-hpp-fun-obj"><span class="std std-ref">fun_obj</span></a></p></li>
-<li><p><a class="reference internal" href="#fun-base-hpp-constructor"><span class="std std-ref">Constructor</span></a></p></li>
-<li><p><a class="reference internal" href="#fun-base-hpp-type-definitions"><span class="std std-ref">Type Definitions</span></a></p></li>
-<li><dl class="simple">
-<dt><a class="reference internal" href="#fun-base-hpp-start"><span class="std std-ref">start</span></a></dt><dd><ul>
-<li><p><a class="reference internal" href="#fun-base-hpp-start-x-out"><span class="std std-ref">x_out</span></a></p></li>
-<li><p><a class="reference internal" href="#fun-base-hpp-start-n"><span class="std std-ref">n</span></a></p></li>
+<li><p><a class="reference internal" href="#syntax" id="id7">Syntax</a></p></li>
+<li><p><a class="reference internal" href="#purpose" id="id8">Purpose</a></p></li>
+<li><p><a class="reference internal" href="#fun-obj" id="id9">fun_obj</a></p></li>
+<li><p><a class="reference internal" href="#constructor" id="id10">Constructor</a></p></li>
+<li><p><a class="reference internal" href="#type-definitions" id="id11">Type Definitions</a></p></li>
+<li><p><a class="reference internal" href="#start" id="id12">start</a></p>
+<ul>
+<li><p><a class="reference internal" href="#x-out" id="id13">x_out</a></p></li>
+<li><p><a class="reference internal" href="#n" id="id14">n</a></p></li>
 </ul>
-</dd>
-</dl>
 </li>
-<li><dl class="simple">
-<dt><a class="reference internal" href="#fun-base-hpp-size-range"><span class="std std-ref">size_range</span></a></dt><dd><ul>
-<li><p><a class="reference internal" href="#fun-base-hpp-size-range-m"><span class="std std-ref">m</span></a></p></li>
+<li><p><a class="reference internal" href="#size-range" id="id15">size_range</a></p>
+<ul>
+<li><p><a class="reference internal" href="#m" id="id16">m</a></p></li>
 </ul>
-</dd>
-</dl>
 </li>
-<li><dl class="simple">
-<dt><a class="reference internal" href="#fun-base-hpp-fun"><span class="std std-ref">fun</span></a></dt><dd><ul>
-<li><p><a class="reference internal" href="#fun-base-hpp-fun-x"><span class="std std-ref">x</span></a></p></li>
-<li><p><a class="reference internal" href="#fun-base-hpp-fun-fun-out"><span class="std std-ref">fun_out</span></a></p></li>
+<li><p><a class="reference internal" href="#fun" id="id17">fun</a></p>
+<ul>
+<li><p><a class="reference internal" href="#x" id="id18">x</a></p></li>
+<li><p><a class="reference internal" href="#fun-out" id="id19">fun_out</a></p></li>
 </ul>
-</dd>
-</dl>
 </li>
-<li><dl class="simple">
-<dt><a class="reference internal" href="#fun-base-hpp-jac"><span class="std std-ref">jac</span></a></dt><dd><ul>
-<li><p><a class="reference internal" href="#fun-base-hpp-jac-ok"><span class="std std-ref">ok</span></a></p></li>
-<li><p><a class="reference internal" href="#fun-base-hpp-jac-x"><span class="std std-ref">x</span></a></p></li>
-<li><p><a class="reference internal" href="#fun-base-hpp-jac-jac-out"><span class="std std-ref">jac_out</span></a></p></li>
+<li><p><a class="reference internal" href="#jac" id="id20">jac</a></p>
+<ul>
+<li><p><a class="reference internal" href="#ok" id="id21">ok</a></p></li>
+<li><p><a class="reference internal" href="#fun-base-hpp-jac-x" id="id22">x</a></p></li>
+<li><p><a class="reference internal" href="#jac-out" id="id23">jac_out</a></p></li>
 </ul>
-</dd>
-</dl>
 </li>
-<li><dl class="simple">
-<dt><a class="reference internal" href="#fun-base-hpp-grad"><span class="std std-ref">grad</span></a></dt><dd><ul>
-<li><p><a class="reference internal" href="#fun-base-hpp-grad-ok"><span class="std std-ref">ok</span></a></p></li>
-<li><p><a class="reference internal" href="#fun-base-hpp-grad-x"><span class="std std-ref">x</span></a></p></li>
-<li><p><a class="reference internal" href="#fun-base-hpp-grad-grad-out"><span class="std std-ref">grad_out</span></a></p></li>
+<li><p><a class="reference internal" href="#grad" id="id24">grad</a></p>
+<ul>
+<li><p><a class="reference internal" href="#fun-base-hpp-grad-ok" id="id25">ok</a></p></li>
+<li><p><a class="reference internal" href="#fun-base-hpp-grad-x" id="id26">x</a></p></li>
+<li><p><a class="reference internal" href="#grad-out" id="id27">grad_out</a></p></li>
 </ul>
-</dd>
-</dl>
 </li>
-<li><dl class="simple">
-<dt><a class="reference internal" href="#fun-base-hpp-hes"><span class="std std-ref">hes</span></a></dt><dd><ul>
-<li><p><a class="reference internal" href="#fun-base-hpp-hes-ok"><span class="std std-ref">ok</span></a></p></li>
-<li><p><a class="reference internal" href="#fun-base-hpp-hes-x"><span class="std std-ref">x</span></a></p></li>
-<li><p><a class="reference internal" href="#fun-base-hpp-hes-hes-out"><span class="std std-ref">hes_out</span></a></p></li>
+<li><p><a class="reference internal" href="#hes" id="id28">hes</a></p>
+<ul>
+<li><p><a class="reference internal" href="#fun-base-hpp-hes-ok" id="id29">ok</a></p></li>
+<li><p><a class="reference internal" href="#fun-base-hpp-hes-x" id="id30">x</a></p></li>
+<li><p><a class="reference internal" href="#hes-out" id="id31">hes_out</a></p></li>
 </ul>
-</dd>
-</dl>
 </li>
 </ul>
+</div>
 <div class="section" id="syntax">
-<span id="fun-base-hpp-syntax"></span><span id="index-1"></span><h3>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
+<span id="fun-base-hpp-syntax"></span><span id="index-1"></span><h3><a class="toc-backref" href="#id7">Syntax</a><a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">include</span> <span class="pre">&lt;src/fun_obj/fun_base.hpp&gt;</span></code></div>
 <div class="line"><em>x_out = fun_obj</em><code class="docutils literal notranslate"><span class="pre">.start()</span></code></div>
@@ -265,55 +252,55 @@
 </div>
 </div>
 <div class="section" id="purpose">
-<span id="fun-base-hpp-purpose"></span><span id="index-2"></span><h3>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h3>
+<span id="fun-base-hpp-purpose"></span><span id="index-2"></span><h3><a class="toc-backref" href="#id8">Purpose</a><a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h3>
 <p>Each of the test functions is a mapping
 <span class="math notranslate nohighlight">\(f : \B{R}^n \rightarrow \B{R}^m\)</span>.
 It is defined using a class that is derived from the base class
 <code class="docutils literal notranslate"><span class="pre">fun_base</span></code> .</p>
 </div>
 <div class="section" id="fun-obj">
-<span id="fun-base-hpp-fun-obj"></span><span id="index-3"></span><h3>fun_obj<a class="headerlink" href="#fun-obj" title="Permalink to this headline">¶</a></h3>
+<span id="fun-base-hpp-fun-obj"></span><span id="index-3"></span><h3><a class="toc-backref" href="#id9">fun_obj</a><a class="headerlink" href="#fun-obj" title="Permalink to this headline">¶</a></h3>
 <p>We use the notation <em>fun_obj</em> for a derived class object
 corresponding to the function <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
 </div>
 <div class="section" id="constructor">
-<span id="fun-base-hpp-constructor"></span><span id="index-4"></span><h3>Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h3>
+<span id="fun-base-hpp-constructor"></span><span id="index-4"></span><h3><a class="toc-backref" href="#id10">Constructor</a><a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h3>
 <p>The constructor (and destructor) for a <code class="docutils literal notranslate"><span class="pre">fun_base</span></code> has no arguments.</p>
 </div>
 <div class="section" id="type-definitions">
-<span id="fun-base-hpp-type-definitions"></span><span id="index-5"></span><h3>Type Definitions<a class="headerlink" href="#type-definitions" title="Permalink to this headline">¶</a></h3>
+<span id="fun-base-hpp-type-definitions"></span><span id="index-5"></span><h3><a class="toc-backref" href="#id11">Type Definitions</a><a class="headerlink" href="#type-definitions" title="Permalink to this headline">¶</a></h3>
 <p>The file <a class="reference internal" href="typedef_hpp.html#id1"><span class="std std-ref">typedef_hpp</span></a> is included by <code class="docutils literal notranslate"><span class="pre">fun_base.hpp</span></code> .</p>
 </div>
 <div class="section" id="start">
-<span id="fun-base-hpp-start"></span><span id="index-6"></span><h3>start<a class="headerlink" href="#start" title="Permalink to this headline">¶</a></h3>
+<span id="fun-base-hpp-start"></span><span id="index-6"></span><h3><a class="toc-backref" href="#id12">start</a><a class="headerlink" href="#start" title="Permalink to this headline">¶</a></h3>
 <p>This function returns the standard starting point for point for optimizing
 the function. It has the following prototype</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>    <span class="k">virtual</span> <span class="n">d_vector</span> <span class="nf">start</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span>
 </pre></div>
 </div>
 <div class="section" id="x-out">
-<span id="fun-base-hpp-start-x-out"></span><span id="index-7"></span><h4>x_out<a class="headerlink" href="#x-out" title="Permalink to this headline">¶</a></h4>
+<span id="fun-base-hpp-start-x-out"></span><span id="index-7"></span><h4><a class="toc-backref" href="#id13">x_out</a><a class="headerlink" href="#x-out" title="Permalink to this headline">¶</a></h4>
 <p>This vector is the starting point.</p>
 </div>
 <div class="section" id="n">
-<span id="fun-base-hpp-start-n"></span><span id="index-8"></span><h4>n<a class="headerlink" href="#n" title="Permalink to this headline">¶</a></h4>
+<span id="fun-base-hpp-start-n"></span><span id="index-8"></span><h4><a class="toc-backref" href="#id14">n</a><a class="headerlink" href="#n" title="Permalink to this headline">¶</a></h4>
 <p>The dimension of the domain space is equal to the size of <em>x_out</em> .</p>
 </div>
 </div>
 <div class="section" id="size-range">
-<span id="fun-base-hpp-size-range"></span><span id="index-9"></span><h3>size_range<a class="headerlink" href="#size-range" title="Permalink to this headline">¶</a></h3>
+<span id="fun-base-hpp-size-range"></span><span id="index-9"></span><h3><a class="toc-backref" href="#id15">size_range</a><a class="headerlink" href="#size-range" title="Permalink to this headline">¶</a></h3>
 <p>This function has the following prototype</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>    <span class="k">virtual</span> <span class="kt">size_t</span> <span class="nf">size_range</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>The corresponding virtual function must be defined by the derived class.</p>
 <div class="section" id="m">
-<span id="fun-base-hpp-size-range-m"></span><span id="index-10"></span><h4>m<a class="headerlink" href="#m" title="Permalink to this headline">¶</a></h4>
+<span id="fun-base-hpp-size-range-m"></span><span id="index-10"></span><h4><a class="toc-backref" href="#id16">m</a><a class="headerlink" href="#m" title="Permalink to this headline">¶</a></h4>
 <p>The return value <em>m</em> is the dimension of the range.</p>
 </div>
 </div>
 <div class="section" id="fun">
-<span id="fun-base-hpp-fun"></span><span id="index-11"></span><h3>fun<a class="headerlink" href="#fun" title="Permalink to this headline">¶</a></h3>
+<span id="fun-base-hpp-fun"></span><span id="index-11"></span><h3><a class="toc-backref" href="#id17">fun</a><a class="headerlink" href="#fun" title="Permalink to this headline">¶</a></h3>
 <p>These functions function evaluate <span class="math notranslate nohighlight">\(f(x)\)</span>.
 They have the following prototypes</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">fun</span><span class="p">(</span><span class="n">d_vector</span><span class="o">&amp;</span>       <span class="n">x</span><span class="p">,</span> <span class="n">d_vector</span><span class="o">&amp;</span>       <span class="n">fun_out</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span>
@@ -324,21 +311,21 @@ They have the following prototypes</p>
 </div>
 <p>The corresponding virtual functions must be defined by the derived class.</p>
 <div class="section" id="x">
-<span id="fun-base-hpp-fun-x"></span><span id="index-12"></span><h4>x<a class="headerlink" href="#x" title="Permalink to this headline">¶</a></h4>
+<span id="fun-base-hpp-fun-x"></span><span id="index-12"></span><h4><a class="toc-backref" href="#id18">x</a><a class="headerlink" href="#x" title="Permalink to this headline">¶</a></h4>
 <p>The argument <em>x</em> has size <em>n</em> and specifies
 the point at which the function is evaluated.
 It is effectively <code class="docutils literal notranslate"><span class="pre">const</span></code> , but is not prototyped as such
 in order to avoid the time to copy the vector to a temporary.</p>
 </div>
 <div class="section" id="fun-out">
-<span id="fun-base-hpp-fun-fun-out"></span><span id="index-13"></span><h4>fun_out<a class="headerlink" href="#fun-out" title="Permalink to this headline">¶</a></h4>
+<span id="fun-base-hpp-fun-fun-out"></span><span id="index-13"></span><h4><a class="toc-backref" href="#id19">fun_out</a><a class="headerlink" href="#fun-out" title="Permalink to this headline">¶</a></h4>
 <p>The return value <em>fun_out</em> has size <em>m</em> .
 The input value of its elements does not matter.
 Upon return, it contains the value of <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
 </div>
 </div>
 <div class="section" id="jac">
-<span id="fun-base-hpp-jac"></span><span id="index-14"></span><h3>jac<a class="headerlink" href="#jac" title="Permalink to this headline">¶</a></h3>
+<span id="fun-base-hpp-jac"></span><span id="index-14"></span><h3><a class="toc-backref" href="#id20">jac</a><a class="headerlink" href="#jac" title="Permalink to this headline">¶</a></h3>
 <p>This function evaluates <span class="math notranslate nohighlight">\(f'(x)\)</span>
 It has the following prototype</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>    <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">jac</span><span class="p">(</span><span class="n">d_vector</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">,</span> <span class="n">d_vector</span><span class="o">&amp;</span> <span class="n">jac_out</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span>
@@ -346,20 +333,20 @@ It has the following prototype</p>
 </div>
 <p>The corresponding virtual functions must be defined by the derived class.</p>
 <div class="section" id="ok">
-<span id="fun-base-hpp-jac-ok"></span><span id="index-15"></span><h4>ok<a class="headerlink" href="#ok" title="Permalink to this headline">¶</a></h4>
+<span id="fun-base-hpp-jac-ok"></span><span id="index-15"></span><h4><a class="toc-backref" href="#id21">ok</a><a class="headerlink" href="#ok" title="Permalink to this headline">¶</a></h4>
 <p>If <em>m == 1</em> , this function returns <em>ok</em> as false
 and no other action is taken.
 Otherwise <em>ok</em> is true.</p>
 </div>
 <div class="section" id="fun-base-hpp-jac-x">
-<span id="index-16"></span><span id="id2"></span><h4>x<a class="headerlink" href="#fun-base-hpp-jac-x" title="Permalink to this headline">¶</a></h4>
+<span id="index-16"></span><span id="id2"></span><h4><a class="toc-backref" href="#id22">x</a><a class="headerlink" href="#fun-base-hpp-jac-x" title="Permalink to this headline">¶</a></h4>
 <p>The argument <em>x</em> has size <em>n</em> and specifies
 the point at which the function is evaluated.
 It is effectively <code class="docutils literal notranslate"><span class="pre">const</span></code> , but is not prototyped as such
 in order to avoid the time to copy the vector to a temporary.</p>
 </div>
 <div class="section" id="jac-out">
-<span id="fun-base-hpp-jac-jac-out"></span><span id="index-17"></span><h4>jac_out<a class="headerlink" href="#jac-out" title="Permalink to this headline">¶</a></h4>
+<span id="fun-base-hpp-jac-jac-out"></span><span id="index-17"></span><h4><a class="toc-backref" href="#id23">jac_out</a><a class="headerlink" href="#jac-out" title="Permalink to this headline">¶</a></h4>
 <p>The return value <em>jac_out</em> has size <em>m</em> * <em>n</em> .
 The input value of its elements does not matter.
 Upon return, it contains the value of <span class="math notranslate nohighlight">\(f'(x)\)</span>.
@@ -371,7 +358,7 @@ is the partial of <span class="math notranslate nohighlight">\(f_i (x)\)</span> 
 </div>
 </div>
 <div class="section" id="grad">
-<span id="fun-base-hpp-grad"></span><span id="index-18"></span><h3>grad<a class="headerlink" href="#grad" title="Permalink to this headline">¶</a></h3>
+<span id="fun-base-hpp-grad"></span><span id="index-18"></span><h3><a class="toc-backref" href="#id24">grad</a><a class="headerlink" href="#grad" title="Permalink to this headline">¶</a></h3>
 <p>This function evaluates <span class="math notranslate nohighlight">\(f'(x)\)</span>.
 It has the following prototype</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>    <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">grad</span><span class="p">(</span><span class="n">d_vector</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">,</span> <span class="n">d_vector</span><span class="o">&amp;</span> <span class="n">grad_out</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span>
@@ -379,20 +366,20 @@ It has the following prototype</p>
 </div>
 <p>The corresponding virtual functions must be defined by the derived class.</p>
 <div class="section" id="fun-base-hpp-grad-ok">
-<span id="index-19"></span><span id="id3"></span><h4>ok<a class="headerlink" href="#fun-base-hpp-grad-ok" title="Permalink to this headline">¶</a></h4>
+<span id="index-19"></span><span id="id3"></span><h4><a class="toc-backref" href="#id25">ok</a><a class="headerlink" href="#fun-base-hpp-grad-ok" title="Permalink to this headline">¶</a></h4>
 <p>If <em>m != 1</em> , this function returns <em>ok</em> as false
 and no other action is taken.
 Otherwise <em>ok</em> is true.</p>
 </div>
 <div class="section" id="fun-base-hpp-grad-x">
-<span id="index-20"></span><span id="id4"></span><h4>x<a class="headerlink" href="#fun-base-hpp-grad-x" title="Permalink to this headline">¶</a></h4>
+<span id="index-20"></span><span id="id4"></span><h4><a class="toc-backref" href="#id26">x</a><a class="headerlink" href="#fun-base-hpp-grad-x" title="Permalink to this headline">¶</a></h4>
 <p>The argument <em>x</em> has size <em>n</em> and specifies
 the point at which the function is evaluated.
 It is effectively <code class="docutils literal notranslate"><span class="pre">const</span></code> , but is not prototyped as such
 in order to avoid the time to copy the vector to a temporary.</p>
 </div>
 <div class="section" id="grad-out">
-<span id="fun-base-hpp-grad-grad-out"></span><span id="index-21"></span><h4>grad_out<a class="headerlink" href="#grad-out" title="Permalink to this headline">¶</a></h4>
+<span id="fun-base-hpp-grad-grad-out"></span><span id="index-21"></span><h4><a class="toc-backref" href="#id27">grad_out</a><a class="headerlink" href="#grad-out" title="Permalink to this headline">¶</a></h4>
 <p>The return value <em>grad_out</em> has size <em>n</em> .
 The input value of its elements does not matter.
 Upon return, it contains the value of <span class="math notranslate nohighlight">\(f'(x)\)</span>.
@@ -403,7 +390,7 @@ is the partial of <span class="math notranslate nohighlight">\(f(x)\)</span> wit
 </div>
 </div>
 <div class="section" id="hes">
-<span id="fun-base-hpp-hes"></span><span id="index-22"></span><h3>hes<a class="headerlink" href="#hes" title="Permalink to this headline">¶</a></h3>
+<span id="fun-base-hpp-hes"></span><span id="index-22"></span><h3><a class="toc-backref" href="#id28">hes</a><a class="headerlink" href="#hes" title="Permalink to this headline">¶</a></h3>
 <p>This function evaluates <span class="math notranslate nohighlight">\(f^{(2)}(x)\)</span>.
 It has the following prototype</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>    <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">hes</span><span class="p">(</span><span class="n">d_vector</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">,</span> <span class="n">d_vector</span><span class="o">&amp;</span> <span class="n">hes_out</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span>
@@ -411,20 +398,20 @@ It has the following prototype</p>
 </div>
 <p>The corresponding virtual functions must be defined by the derived class.</p>
 <div class="section" id="fun-base-hpp-hes-ok">
-<span id="index-23"></span><span id="id5"></span><h4>ok<a class="headerlink" href="#fun-base-hpp-hes-ok" title="Permalink to this headline">¶</a></h4>
+<span id="index-23"></span><span id="id5"></span><h4><a class="toc-backref" href="#id29">ok</a><a class="headerlink" href="#fun-base-hpp-hes-ok" title="Permalink to this headline">¶</a></h4>
 <p>If <em>m != 1</em> , this function returns <em>ok</em> as false
 and no other action is taken.
 Otherwise <em>ok</em> is true.</p>
 </div>
 <div class="section" id="fun-base-hpp-hes-x">
-<span id="index-24"></span><span id="id6"></span><h4>x<a class="headerlink" href="#fun-base-hpp-hes-x" title="Permalink to this headline">¶</a></h4>
+<span id="index-24"></span><span id="id6"></span><h4><a class="toc-backref" href="#id30">x</a><a class="headerlink" href="#fun-base-hpp-hes-x" title="Permalink to this headline">¶</a></h4>
 <p>The argument <em>x</em> has size <em>n</em> and specifies
 the point at which the function is evaluated.
 It is effectively <code class="docutils literal notranslate"><span class="pre">const</span></code> , but is not prototyped as such
 in order to avoid the time to copy the vector to a temporary.</p>
 </div>
 <div class="section" id="hes-out">
-<span id="fun-base-hpp-hes-hes-out"></span><span id="index-25"></span><h4>hes_out<a class="headerlink" href="#hes-out" title="Permalink to this headline">¶</a></h4>
+<span id="fun-base-hpp-hes-hes-out"></span><span id="index-25"></span><h4><a class="toc-backref" href="#id31">hes_out</a><a class="headerlink" href="#hes-out" title="Permalink to this headline">¶</a></h4>
 <p>The return value <em>hes_out</em> has size <em>n</em> * <em>n</em> .
 The input value of its elements does not matter.
 Upon return, it contains the value of <span class="math notranslate nohighlight">\(f^{(2)} (x)\)</span>.
@@ -461,19 +448,11 @@ is the second partial of <span class="math notranslate nohighlight">\(f(x)\)</sp
 
   <div role="contentinfo">
     <p>
-        
         &copy; Copyright 2020
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -484,6 +463,7 @@ is the second partial of <span class="math notranslate nohighlight">\(f(x)\)</sp
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

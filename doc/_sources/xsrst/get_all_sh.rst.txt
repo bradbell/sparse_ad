@@ -13,8 +13,8 @@ get_all_sh
 
 Local install of Packages Required by sparse_ad
 ###############################################
-- :ref:`get_all_sh.syntax`
-- :ref:`get_all_sh.implementation`
+.. contents::
+   :local:
 
 .. meta::
    :keywords: syntax

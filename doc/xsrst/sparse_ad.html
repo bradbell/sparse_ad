@@ -1,11 +1,12 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta content="sparse_ad, computing, sparse, jacobians, and, hessians, using, ad" name="keywords" />
-<meta content="version, 20201109" name="keywords" />
+<meta content="version, 20210720" name="keywords" />
 <meta content="github" name="keywords" />
 <meta content="system, requirements" name="keywords" />
 <meta content="build_type" name="keywords" />
@@ -20,18 +21,12 @@
   
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
   
   
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -44,6 +39,10 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="speed" href="speed.html" />
@@ -61,7 +60,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> sparse_ad
+            <a href="../index.html" class="icon icon-home"> sparse_ad
           
 
           
@@ -84,7 +83,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -109,7 +107,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -148,7 +145,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html">Docs</a> &raquo;</li>
         
       <li>sparse_ad</li>
     
@@ -171,43 +168,47 @@
             
   <div class="section" id="sparse-ad">
 <h1>sparse_ad<a class="headerlink" href="#sparse-ad" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
 <div class="math notranslate nohighlight">
 \[\newcommand{\B}[1]{ {\bf #1} }
 \newcommand{\R}[1]{ {\rm #1} }\]</div>
 <div class="section" id="computing-sparse-jacobians-and-hessians-using-ad">
 <span id="id1"></span><h2>Computing Sparse Jacobians and Hessians Using AD<a class="headerlink" href="#computing-sparse-jacobians-and-hessians-using-ad" title="Permalink to this headline">¶</a></h2>
+<div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#sparse-ad-version-20201109"><span class="std std-ref">Version 20201109</span></a></p></li>
-<li><p><a class="reference internal" href="#sparse-ad-github"><span class="std std-ref">github</span></a></p></li>
-<li><p><a class="reference internal" href="#sparse-ad-system-requirements"><span class="std std-ref">System Requirements</span></a></p></li>
-<li><p><a class="reference internal" href="#sparse-ad-build-type"><span class="std std-ref">build_type</span></a></p></li>
-<li><p><a class="reference internal" href="#sparse-ad-special-requirements"><span class="std std-ref">Special Requirements</span></a></p></li>
-<li><p><a class="reference internal" href="#sparse-ad-check-build"><span class="std std-ref">Check Build</span></a></p></li>
-<li><p><a class="reference internal" href="#sparse-ad-run-speed-tests"><span class="std std-ref">Run Speed Tests</span></a></p></li>
-<li><p><a class="reference internal" href="#sparse-ad-children"><span class="std std-ref">Children</span></a></p></li>
+<li><p><a class="reference internal" href="#version-20210720" id="id3">Version 20210720</a></p></li>
+<li><p><a class="reference internal" href="#github" id="id4">github</a></p></li>
+<li><p><a class="reference internal" href="#system-requirements" id="id5">System Requirements</a></p></li>
+<li><p><a class="reference internal" href="#build-type" id="id6">build_type</a></p></li>
+<li><p><a class="reference internal" href="#special-requirements" id="id7">Special Requirements</a></p></li>
+<li><p><a class="reference internal" href="#check-build" id="id8">Check Build</a></p></li>
+<li><p><a class="reference internal" href="#run-speed-tests" id="id9">Run Speed Tests</a></p></li>
+<li><p><a class="reference internal" href="#children" id="id10">Children</a></p></li>
 </ul>
-<div class="section" id="version-20201109">
-<span id="sparse-ad-version-20201109"></span><span id="index-1"></span><h3>Version 20201109<a class="headerlink" href="#version-20201109" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="version-20210720">
+<span id="sparse-ad-version-20210720"></span><span id="index-1"></span><h3><a class="toc-backref" href="#id3">Version 20210720</a><a class="headerlink" href="#version-20210720" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="github">
-<span id="sparse-ad-github"></span><span id="index-2"></span><h3>github<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h3>
+<span id="sparse-ad-github"></span><span id="index-2"></span><h3><a class="toc-backref" href="#id4">github</a><a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://github.com/bradbell/sparse_ad">github</a>.</p>
 </div>
 <div class="section" id="system-requirements">
-<span id="sparse-ad-system-requirements"></span><span id="index-3"></span><h3>System Requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h3>
+<span id="sparse-ad-system-requirements"></span><span id="index-3"></span><h3><a class="toc-backref" href="#id5">System Requirements</a><a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h3>
 <p>In addition to the standard Linux utilities, like <code class="docutils literal notranslate"><span class="pre">bash</span></code> ,
 you must have the following programs installed on your system:
 <code class="docutils literal notranslate"><span class="pre">clang</span></code> , <code class="docutils literal notranslate"><span class="pre">git</span></code> , <code class="docutils literal notranslate"><span class="pre">f2c</span></code> , <code class="docutils literal notranslate"><span class="pre">python3</span></code> , <code class="docutils literal notranslate"><span class="pre">valgrind</span></code> .</p>
 </div>
 <div class="section" id="build-type">
-<span id="sparse-ad-build-type"></span><span id="index-4"></span><h3>build_type<a class="headerlink" href="#build-type" title="Permalink to this headline">¶</a></h3>
+<span id="sparse-ad-build-type"></span><span id="index-4"></span><h3><a class="toc-backref" href="#id6">build_type</a><a class="headerlink" href="#build-type" title="Permalink to this headline">¶</a></h3>
 <p>The current <em>build_type</em> is set in the script <code class="docutils literal notranslate"><span class="pre">bin/run_cmake.sh</span></code>
 and must be either <code class="docutils literal notranslate"><span class="pre">debug</span></code> or <code class="docutils literal notranslate"><span class="pre">release</span></code> .
 You can choose this setting with <code class="docutils literal notranslate"><span class="pre">release</span></code> being faster
 and <code class="docutils literal notranslate"><span class="pre">debug</span></code> being useful for debugging.</p>
 </div>
 <div class="section" id="special-requirements">
-<span id="sparse-ad-special-requirements"></span><span id="index-5"></span><h3>Special Requirements<a class="headerlink" href="#special-requirements" title="Permalink to this headline">¶</a></h3>
+<span id="sparse-ad-special-requirements"></span><span id="index-5"></span><h3><a class="toc-backref" href="#id7">Special Requirements</a><a class="headerlink" href="#special-requirements" title="Permalink to this headline">¶</a></h3>
 <p>The special requirements <code class="docutils literal notranslate"><span class="pre">adolc</span></code> , <code class="docutils literal notranslate"><span class="pre">colpack</span></code> , <code class="docutils literal notranslate"><span class="pre">cppadcg</span></code> ,
 <code class="docutils literal notranslate"><span class="pre">cppad</span></code> , and <code class="docutils literal notranslate"><span class="pre">eigen</span></code> are installed with the following command:</p>
 <div class="line-block">
@@ -217,10 +218,10 @@ and <code class="docutils literal notranslate"><span class="pre">debug</span></c
 which is where the programs get installed.</p>
 </div>
 <div class="section" id="check-build">
-<span id="sparse-ad-check-build"></span><span id="index-6"></span><h3>Check Build<a class="headerlink" href="#check-build" title="Permalink to this headline">¶</a></h3>
+<span id="sparse-ad-check-build"></span><span id="index-6"></span><h3><a class="toc-backref" href="#id8">Check Build</a><a class="headerlink" href="#check-build" title="Permalink to this headline">¶</a></h3>
 <p>The following command will build and check all the programs:</p>
 <div class="line-block">
-<div class="line">        <code class="docutils literal notranslate"><span class="pre">bin/check_all.sh</span></code></div>
+<div class="line">        <code class="docutils literal notranslate"><span class="pre">bin/check_all.sh</span></code> <em>build_type</em></div>
 </div>
 <p>The following command will check all the possible <a class="reference internal" href="speed.html#id1"><span class="std std-ref">speed</span></a> program
 options, methods, and problems:</p>
@@ -234,7 +235,7 @@ options, methods, and problems:</p>
 <p>where <em>mm</em> is the current month and <em>dd</em> is the current day.</p>
 </div>
 <div class="section" id="run-speed-tests">
-<span id="sparse-ad-run-speed-tests"></span><span id="index-7"></span><h3>Run Speed Tests<a class="headerlink" href="#run-speed-tests" title="Permalink to this headline">¶</a></h3>
+<span id="sparse-ad-run-speed-tests"></span><span id="index-7"></span><h3><a class="toc-backref" href="#id9">Run Speed Tests</a><a class="headerlink" href="#run-speed-tests" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="speed.html#id1"><span class="std std-ref">speed</span></a> program is in the <code class="docutils literal notranslate"><span class="pre">build/src/speed</span></code> directory.
 You can use it to run one speed test.
 You can run all the possible option and problem combinations using the command:</p>
@@ -249,17 +250,15 @@ The results will be written to the file</p>
 <p>where <em>mm</em> is the current month and <em>dd</em> is the current day.</p>
 </div>
 <div class="section" id="children">
-<span id="sparse-ad-children"></span><span id="index-8"></span><h3>Children<a class="headerlink" href="#children" title="Permalink to this headline">¶</a></h3>
-<div class="toctree-wrapper compound">
-</div>
-<ol class="arabic simple">
-<li><p>speed: <a class="reference internal" href="speed.html#id1"><span class="std std-ref">Run a Jacobian or Hessian Speed Test</span></a></p></li>
-<li><p>bin: <a class="reference internal" href="bin.html#id1"><span class="std std-ref">Executable Scripts</span></a></p></li>
-<li><p>typedef_hpp: <a class="reference internal" href="typedef_hpp.html#id1"><span class="std std-ref">Type Definitions</span></a></p></li>
-<li><p>fun_base_hpp: <a class="reference internal" href="fun_base_hpp.html#id1"><span class="std std-ref">Base Class For Test Function Objects</span></a></p></li>
-<li><p>utility: <a class="reference internal" href="utility.html#id1"><span class="std std-ref">Utility Routines</span></a></p></li>
-<li><p>release_notes: <a class="reference internal" href="release_notes.html#id1"><span class="std std-ref">Changes and Additions to sparse_ad</span></a></p></li>
-</ol>
+<span id="sparse-ad-children"></span><span id="index-8"></span><h3><a class="toc-backref" href="#id10">Children</a><a class="headerlink" href="#children" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="speed.html#id1"><span class="std std-ref">Run a Jacobian or Hessian Speed Test</span></a></p></li>
+<li><p><a class="reference internal" href="bin.html#id1"><span class="std std-ref">Executable Scripts</span></a></p></li>
+<li><p><a class="reference internal" href="typedef_hpp.html#id1"><span class="std std-ref">Type Definitions</span></a></p></li>
+<li><p><a class="reference internal" href="fun_base_hpp.html#id1"><span class="std std-ref">Base Class For Test Function Objects</span></a></p></li>
+<li><p><a class="reference internal" href="utility.html#id1"><span class="std std-ref">Utility Routines</span></a></p></li>
+<li><p><a class="reference internal" href="release_notes.html#id1"><span class="std std-ref">Changes and Additions to sparse_ad</span></a></p></li>
+</ul>
 <hr class="docutils" />
 <p>xsrst input file: <code class="docutils literal notranslate"><span class="pre">doc.xsrst</span></code></p>
 </div>
@@ -286,19 +285,11 @@ The results will be written to the file</p>
 
   <div role="contentinfo">
     <p>
-        
         &copy; Copyright 2020
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -309,6 +300,7 @@ The results will be written to the file</p>
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

@@ -13,11 +13,8 @@ wget_minpack2_sh
 
 Get a Minpack2 File From Argonne National Laboratory
 ####################################################
-- :ref:`wget_minpack2_sh.syntax`
-- :ref:`wget_minpack2_sh.working_directory`
-- :ref:`wget_minpack2_sh.file`
-- :ref:`wget_minpack2_sh.result`
-- :ref:`wget_minpack2_sh.example`
+.. contents::
+   :local:
 
 .. meta::
    :keywords: syntax

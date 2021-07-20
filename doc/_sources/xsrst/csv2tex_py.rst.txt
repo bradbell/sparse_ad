@@ -13,12 +13,8 @@ csv2tex_py
 
 Extract Latex Tables From Speed Test Csv File
 #############################################
-- :ref:`csv2tex_py.syntax`
-- :ref:`csv2tex_py.csv_file`
-- :ref:`csv2tex_py.output_files`
-    - :ref:`csv2tex_py.output_files.subset`
-    - :ref:`csv2tex_py.output_files.problem`
-    - :ref:`csv2tex_py.output_files.files`
+.. contents::
+   :local:
 
 .. meta::
    :keywords: syntax

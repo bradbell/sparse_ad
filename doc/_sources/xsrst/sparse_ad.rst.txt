@@ -2,6 +2,17 @@
 sparse_ad
 !!!!!!!!!
 
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   speed
+   bin
+   typedef_hpp
+   fun_base_hpp
+   utility
+   release_notes
+
 .. include:: ../preamble.rst
 
 .. comment:  Begin: Setting that apply to all sections
@@ -17,23 +28,17 @@ sparse_ad
 
 Computing Sparse Jacobians and Hessians Using AD
 ################################################
-- :ref:`sparse_ad.version_20201109`
-- :ref:`sparse_ad.github`
-- :ref:`sparse_ad.system_requirements`
-- :ref:`sparse_ad.build_type`
-- :ref:`sparse_ad.special_requirements`
-- :ref:`sparse_ad.check_build`
-- :ref:`sparse_ad.run_speed_tests`
-- :ref:`sparse_ad.children`
+.. contents::
+   :local:
 
 .. meta::
-   :keywords: version, 20201109
+   :keywords: version, 20210720
 
-.. index:: version, 20201109
+.. index:: version, 20210720
 
-.. _sparse_ad.version_20201109:
+.. _sparse_ad.version_20210720:
 
-Version 20201109
+Version 20210720
 ****************
 
 .. meta::
@@ -102,7 +107,7 @@ Check Build
 ***********
 The following command will build and check all the programs:
 
-| |tab| ``bin/check_all.sh``
+| |tab| ``bin/check_all.sh`` *build_type*
 
 The following command will check all the possible :ref:`speed<speed>` program
 options, methods, and problems:
@@ -146,23 +151,13 @@ where *mm* is the current month and *dd* is the current day.
 
 Children
 ********
-.. toctree::
-   :maxdepth: 1
-   :hidden:
 
-   speed
-   bin
-   typedef_hpp
-   fun_base_hpp
-   utility
-   release_notes
-
-#. speed: :ref:`speed`
-#. bin: :ref:`bin`
-#. typedef_hpp: :ref:`typedef_hpp`
-#. fun_base_hpp: :ref:`fun_base_hpp`
-#. utility: :ref:`utility`
-#. release_notes: :ref:`release_notes`
+-  :ref:`speed`
+-  :ref:`bin`
+-  :ref:`typedef_hpp`
+-  :ref:`fun_base_hpp`
+-  :ref:`utility`
+-  :ref:`release_notes`
 
 ----
 

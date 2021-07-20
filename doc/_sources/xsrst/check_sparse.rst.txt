@@ -13,13 +13,8 @@ check_sparse
 
 Compare A CppAD Sparse Matrix and a Dense Matrix
 ################################################
-- :ref:`check_sparse.syntax`
-- :ref:`check_sparse.prototype`
-- :ref:`check_sparse.sparse_matrix`
-- :ref:`check_sparse.dense_matrix`
-- :ref:`check_sparse.print_label`
-- :ref:`check_sparse.print_done`
-- :ref:`check_sparse.ok`
+.. contents::
+   :local:
 
 .. meta::
    :keywords: syntax

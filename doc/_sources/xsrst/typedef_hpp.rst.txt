@@ -13,22 +13,8 @@ typedef_hpp
 
 Type Definitions
 ################
-- :ref:`typedef_hpp.syntax`
-- :ref:`typedef_hpp.scalar_types`
-    - :ref:`typedef_hpp.scalar_types.ftnlen`
-    - :ref:`typedef_hpp.scalar_types.adolc_double`
-    - :ref:`typedef_hpp.scalar_types.cppad_double`
-    - :ref:`typedef_hpp.scalar_types.cg_double`
-    - :ref:`typedef_hpp.scalar_types.cppadcg_double`
-- :ref:`typedef_hpp.vector_types`
-    - :ref:`typedef_hpp.vector_types.d_vector`
-    - :ref:`typedef_hpp.vector_types.c_vector`
-    - :ref:`typedef_hpp.vector_types.s_vector`
-    - :ref:`typedef_hpp.vector_types.b_vector`
-    - :ref:`typedef_hpp.vector_types.adolc_vector`
-    - :ref:`typedef_hpp.vector_types.cppad_vector`
-    - :ref:`typedef_hpp.vector_types.cg_vector`
-    - :ref:`typedef_hpp.vector_types.cppadcg_vector`
+.. contents::
+   :local:
 
 .. meta::
    :keywords: syntax

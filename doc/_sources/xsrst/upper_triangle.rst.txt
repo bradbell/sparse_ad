@@ -13,10 +13,8 @@ upper_triangle
 
 Extract Upper Triangle From A CppAD Sparsity Pattern
 ####################################################
-- :ref:`upper_triangle.syntax`
-- :ref:`upper_triangle.prototype`
-- :ref:`upper_triangle.pattern`
-- :ref:`upper_triangle.upper`
+.. contents::
+   :local:
 
 .. meta::
    :keywords: syntax

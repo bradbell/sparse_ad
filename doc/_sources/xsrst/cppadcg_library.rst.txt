@@ -13,15 +13,8 @@ cppadcg_library
 
 CppADCodeGen Dynamic Libraries
 ##############################
-- :ref:`cppadcg_library.syntax`
-- :ref:`cppadcg_library.prototype`
-- :ref:`cppadcg_library.fun_name`
-- :ref:`cppadcg_library.other_fun`
-- :ref:`cppadcg_library.cg_fun`
-- :ref:`cppadcg_library.file_name`
-- :ref:`cppadcg_library.swap`
-- :ref:`cppadcg_library.x`
-- :ref:`cppadcg_library.y`
+.. contents::
+   :local:
 
 .. meta::
    :keywords: syntax

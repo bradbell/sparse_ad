@@ -13,16 +13,8 @@ speed_write_csv
 
 Writes One Row of the Speed Csv Output File
 ###########################################
-- :ref:`speed_write_csv.syntax`
-- :ref:`speed_write_csv.prototype`
-- :ref:`speed_write_csv.csv_file`
-    - :ref:`speed_write_csv.csv_file.header`
-- :ref:`speed_write_csv.name,_value`
-- :ref:`speed_write_csv.implement`
-- :ref:`speed_write_csv.problem`
-- :ref:`speed_write_csv.options`
-- :ref:`speed_write_csv.n,_m,_nnz`
-- :ref:`speed_write_csv.sec`
+.. contents::
+   :local:
 
 .. meta::
    :keywords: syntax
