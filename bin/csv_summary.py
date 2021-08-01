@@ -7,6 +7,7 @@
 # .. include:: ../preamble.rst
 #
 # {xsrst_spell
+#   py
 #   onepass
 #   nnz
 #   true true

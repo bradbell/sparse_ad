@@ -17,6 +17,13 @@ Changes and Additions to sparse_ad
 2021
 ****
 
+07-31
+=====
+The documentation for
+:ref:`sparse_ad.check_build` and :ref:`sparse_ad.run_speed_tests`
+had the old location of the csv output files.
+This has been corrected to say they are in the csv sub-directory.
+
 07-20
 =====
 Add the :ref:`csv_summary.py<csv_summary_py>` program.
