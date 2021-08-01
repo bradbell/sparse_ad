@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="sparse_ad, computing, sparse, jacobians, and, hessians, using, ad" name="keywords" />
-<meta content="version, 20210720" name="keywords" />
+<meta content="version, 20210731" name="keywords" />
 <meta content="github" name="keywords" />
 <meta content="system, requirements" name="keywords" />
 <meta content="build_type" name="keywords" />
@@ -177,7 +177,7 @@
 <span id="id1"></span><h2>Computing Sparse Jacobians and Hessians Using AD<a class="headerlink" href="#computing-sparse-jacobians-and-hessians-using-ad" title="Permalink to this headline">¶</a></h2>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#version-20210720" id="id3">Version 20210720</a></p></li>
+<li><p><a class="reference internal" href="#version-20210731" id="id3">Version 20210731</a></p></li>
 <li><p><a class="reference internal" href="#github" id="id4">github</a></p></li>
 <li><p><a class="reference internal" href="#system-requirements" id="id5">System Requirements</a></p></li>
 <li><p><a class="reference internal" href="#build-type" id="id6">build_type</a></p></li>
@@ -187,8 +187,8 @@
 <li><p><a class="reference internal" href="#children" id="id10">Children</a></p></li>
 </ul>
 </div>
-<div class="section" id="version-20210720">
-<span id="sparse-ad-version-20210720"></span><span id="index-1"></span><h3><a class="toc-backref" href="#id3">Version 20210720</a><a class="headerlink" href="#version-20210720" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="version-20210731">
+<span id="sparse-ad-version-20210731"></span><span id="index-1"></span><h3><a class="toc-backref" href="#id3">Version 20210731</a><a class="headerlink" href="#version-20210731" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="github">
 <span id="sparse-ad-github"></span><span id="index-2"></span><h3><a class="toc-backref" href="#id4">github</a><a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h3>
@@ -215,7 +215,10 @@ and <code class="docutils literal notranslate"><span class="pre">debug</span></c
 <div class="line">        <code class="docutils literal notranslate"><span class="pre">bin/get_all.sh</span></code></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">build</span></code> directory is soft link to <code class="docutils literal notranslate"><span class="pre">build.</span></code><em>build_type</em>
-which is where the programs get installed.</p>
+which is where the programs get installed.
+You can build both debug and release versions of the special requirements
+buy running <code class="docutils literal notranslate"><span class="pre">bin/get_all</span></code> twice, once with <em>build_type</em> equal to
+<code class="docutils literal notranslate"><span class="pre">debug</span></code> and once with it equal to <code class="docutils literal notranslate"><span class="pre">release</span></code>.</p>
 </div>
 <div class="section" id="check-build">
 <span id="sparse-ad-check-build"></span><span id="index-6"></span><h3><a class="toc-backref" href="#id8">Check Build</a><a class="headerlink" href="#check-build" title="Permalink to this headline">¶</a></h3>
@@ -230,9 +233,10 @@ options, methods, and problems:</p>
 </div>
 <p>The results will be written to the file</p>
 <div class="line-block">
-<div class="line">        <code class="docutils literal notranslate"><span class="pre">build/src/speed/correct-</span></code><em>mmdd</em></div>
+<div class="line">        <code class="docutils literal notranslate"><span class="pre">csv/correct-</span></code><em>yymmdd</em><code class="docutils literal notranslate"><span class="pre">.csv</span></code></div>
 </div>
-<p>where <em>mm</em> is the current month and <em>dd</em> is the current day.</p>
+<p>where <em>yy</em> is the current year,
+<em>mm</em> is the current month and <em>dd</em> is the current day.</p>
 </div>
 <div class="section" id="run-speed-tests">
 <span id="sparse-ad-run-speed-tests"></span><span id="index-7"></span><h3><a class="toc-backref" href="#id9">Run Speed Tests</a><a class="headerlink" href="#run-speed-tests" title="Permalink to this headline">¶</a></h3>
@@ -242,12 +246,13 @@ You can run all the possible option and problem combinations using the command:<
 <div class="line-block">
 <div class="line">        <code class="docutils literal notranslate"><span class="pre">bin/run_speed.sh</span> <span class="pre">speed</span></code> <em>build_type</em></div>
 </div>
-<p>This will take a while because (hours) to complete.
-The results will be written to the file</p>
+<p>This will take a while because to complete.
+The results will be written to a file called</p>
 <div class="line-block">
-<div class="line">        <code class="docutils literal notranslate"><span class="pre">build/src/speed/speed-</span></code><em>mmdd</em></div>
+<div class="line">        <code class="docutils literal notranslate"><span class="pre">csv/speed-</span></code><em>yymmdd</em><code class="docutils literal notranslate"><span class="pre">.csv</span></code></div>
 </div>
-<p>where <em>mm</em> is the current month and <em>dd</em> is the current day.</p>
+<p>where <em>yy</em> is the current year,
+<em>mm</em> is the current month and <em>dd</em> is the current day.</p>
 </div>
 <div class="section" id="children">
 <span id="sparse-ad-children"></span><span id="index-8"></span><h3><a class="toc-backref" href="#id10">Children</a><a class="headerlink" href="#children" title="Permalink to this headline">¶</a></h3>

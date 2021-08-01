@@ -32,13 +32,13 @@ Computing Sparse Jacobians and Hessians Using AD
    :local:
 
 .. meta::
-   :keywords: version, 20210720
+   :keywords: version, 20210731
 
-.. index:: version, 20210720
+.. index:: version, 20210731
 
-.. _sparse_ad.version_20210720:
+.. _sparse_ad.version_20210731:
 
-Version 20210720
+Version 20210731
 ****************
 
 .. meta::
@@ -95,6 +95,9 @@ The special requirements ``adolc`` , ``colpack`` , ``cppadcg`` ,
 
 The ``build`` directory is soft link to ``build.``\ *build_type*
 which is where the programs get installed.
+You can build both debug and release versions of the special requirements
+buy running ``bin/get_all`` twice, once with *build_type* equal to
+``debug`` and once with it equal to ``release``.
 
 .. meta::
    :keywords: check, build
@@ -116,9 +119,10 @@ options, methods, and problems:
 
 The results will be written to the file
 
-| |tab| ``build/src/speed/correct-``\ *mmdd*
+| |tab| ``csv/correct-``\ *yymmdd*\ ``.csv``
 
-where *mm* is the current month and *dd* is the current day.
+where *yy* is the current year,
+*mm* is the current month and *dd* is the current day.
 
 .. meta::
    :keywords: run, speed, tests
@@ -135,12 +139,13 @@ You can run all the possible option and problem combinations using the command:
 
 | |tab| ``bin/run_speed.sh speed`` *build_type*
 
-This will take a while because (hours) to complete.
-The results will be written to the file
+This will take a while because to complete.
+The results will be written to a file called
 
-| |tab| ``build/src/speed/speed-``\ *mmdd*
+| |tab| ``csv/speed-``\ *yymmdd*\ ``.csv``
 
-where *mm* is the current month and *dd* is the current day.
+where *yy* is the current year,
+*mm* is the current month and *dd* is the current day.
 
 .. meta::
    :keywords: children
